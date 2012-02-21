@@ -1,0 +1,22 @@
+8
+
+dir
+2883
+svn+ssh://dvdpost/data/svn/website/branches/newconnection/eda/jquery
+svn+ssh://dvdpost/data/svn
+
+
+
+2011-04-06T12:06:06.416693Z
+2883
+gs
+
+
+svn:special svn:externals svn:needs-lock
+
+css
+dir
+
+js
+dir
+

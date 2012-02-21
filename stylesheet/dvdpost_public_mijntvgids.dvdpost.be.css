@@ -1,0 +1,1003 @@
+dl, li, input {font-size:0.3em;} 
+
+td {font-size: 0em;}
+
+a {
+font-weight:normal !important;
+
+}
+
+.new {
+	color: red;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+
+
+
+/* orignal */
+
+.public {background-color:#0194C7;}
+
+/* halloween 
+.public { background-color:#e25b24;}
+*/
+	.faqs_explain {
+	font-family: Arial, Helvetica, sans-serif;
+	padding-right:15px;
+	padding-left:15px;
+	font-size: 13px;
+	color: #2A2A2A;
+}
+
+
+	.dvdtitle_link{font-size: 10px;font-family: Arial, Helvetica, sans-serif;color: #934431;}
+	
+	a.dvdtitle_link{font-size: 10px;font-family: Arial, Helvetica, sans-serif;color: #934431; text-decoration:none;}
+	a.dvdtitle_link:hover{font-size: 10px;font-family: Arial, Helvetica, sans-serif;color: #934431; text-decoration:underline;}
+	
+	.public_bckg{
+	background-image:url(http://www.dvdpost.be/images/www3/step/backgroundpublic.gif);
+	background-repeat:repeat-x;
+	background-color:#FFFFFF;
+	text-align:left;			
+	}
+	
+	.subscription_start{
+	font-family:Helvetica , Arial, Verdana , sans-serif;
+	font-size:22px;
+	padding-left:10px;
+	height:25px;
+	text-align:left;
+	}
+	
+	.subscription_step{
+	font-family: Arial, Verdana , sans-serif;
+	font-size:14px;
+	color:#666666;
+	padding-right:10px;
+	text-align:left;
+	}
+	
+	.subtotal{
+	border-top: solid 1px #2D2C2C;
+	}
+	
+	.subscription_shipping{
+	font-family: Arial, Verdana , sans-serif;
+	font-size:12px;
+	padding-left:10px;
+	color:#666666;	
+	}
+	
+	.dvd_shipped {
+		font-family: Arial, Verdana, sans-serif;
+		font-size:10px;
+		line-height:15px;
+		text-align:center;
+		margin-top:12px;
+		margin-bottom:12px;
+		color:#CC0000;		
+	}
+	
+	.dvd_price_per_dvd {
+		font-family: Arial, Verdana, sans-serif;
+		font-size:18px;
+		line-height:21px;
+		text-align:center;
+		color:#000000;		
+	}
+	
+	.sup {
+		font-family: Arial, Verdana, sans-serif;
+		font-size:9px;
+		color:#000000;	
+	}
+	
+	.dvd_price_per_month {
+		font-family: Arial, Verdana, sans-serif;
+		font-size:15px;
+		line-height:18px;
+		text-align:center;
+		color:#000000;		
+	}
+	
+	.step90_table_top{
+		height:65px;
+		border-top:	solid 1px #1E77AF;
+	
+	}
+	
+	.step90_table_top_left{
+		height:65px;
+		border-top:solid 1px #1E77AF;
+		border-left:solid 1px #1E77AF;		
+	}
+	
+	.step90_left{
+		height:65px;
+		border-left:solid 1px #1E77AF;		
+	}
+	
+	.step90_DVD{
+		font-family: Arial, Verdana, sans-serif;
+		font-size:35px;
+		font-weight:bold;
+		color:#1E77AF;		
+	}
+	
+	.step90_DVD_per_month{
+		position:relative;
+		top:0px;
+		left:0px;
+		font-family: Arial, Verdana, sans-serif;
+		font-size:15px;
+		color:#1E77AF;		
+	}
+	
+	.step90_DVD_shipped{
+		position:relative;
+		top:0px;
+		left:0px;
+		font-family: Arial, Verdana, sans-serif;
+		font-size:11px;
+		color:#454343;		
+	}
+	
+	#dvdpost_content{
+		text-align:center;
+		
+	}
+	
+	#step90_price{
+	border:none;
+	position:relative;
+	float:right;
+	top:23px;
+	right:15px;
+	font-family: Arial, Verdana , sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#070707;
+	
+	}
+	
+	.asterisk_step{
+	font-family: Arial, Verdana , sans-serif;
+	font-size:20px;
+	color:#FF0000;
+	padding-right:10px;
+	margin-top:5px;
+	margin-bottom:5px;
+	}
+	
+	.asterisk_explain_step{
+	font-family: Arial, Verdana , sans-serif;
+	font-size:9px;
+	color:#FF0000;
+	padding-left:10px;
+	}
+	
+	.new_step_input {
+     width:190px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+	 border-top:#000000 1px  solid ;
+	 border-bottom:#B6B6B6 1px  solid ;
+	 border-left:#B6B6B6 1px  solid ;
+	 border-right:#B6B6B6 1px  solid ;
+	 margin-bottom:5px;
+	 }
+	 
+	 .new_step_input_mini {
+     width:95px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+	 border-top:#000000 1px solid;
+	 border-bottom:#B6B6B6 1px solid ; 
+	 border-left:#B6B6B6 1px solid ; 
+	 border-right:#B6B6B6 1px solid ;
+	 margin-bottom:5px;
+	 }
+	 
+	 .new_step_select {
+     width:190px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+	 border-top:#000000 1px  solid ;
+	 border-bottom:#B6B6B6 1px  solid ;
+	 border-left:#B6B6B6 1px  solid ;
+	 border-right:#B6B6B6 1px  solid ;
+	 margin-bottom:5px;
+	 }
+	 
+	 .step_dvd_image{
+	margin-top:12px;
+	margin-bottom:12px;
+	text-align:center;		 
+	}
+	 
+	 .new_step_date {
+     width:55px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+	 border-top:#000000 1px  solid ;
+	 border-bottom:#B6B6B6 1px  solid ;
+	 border-left:#B6B6B6 1px  solid ;
+	 border-right:#B6B6B6 1px  solid ;
+	 margin-bottom:5px;
+	}
+	 
+	 .explain_text{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		color: #000000;
+		padding-left:10px;
+		width: 80px
+		margin-bottom:5px;
+		} 
+		
+	 .exp{
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:9px;
+		margin-top:25px;
+		color:#000000;
+	}
+
+#common_need_help{
+	float:left;
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/help.gif);
+	background-repeat:no-repeat;	
+	width:358px;
+	height:52px;
+	padding-left:50px;
+	font-family:Helvetica, Arial, Verdana, sans-serif;
+	font-size:12px;
+	padding-top:13px;
+	line-height:15px;
+	margin-top:20px;
+	}
+	
+#step_container{
+	width: 772px;
+	border:none;
+	margin-bottom:20px;
+	}
+
+#default_container{
+	width: 772px;
+	border:none;
+	text-align:center;
+	
+	}
+
+#step_promo_container{
+	margin-top:25px;
+	margin-left:5px;
+	float : left;
+	left:0px;
+	top:2px;
+	width:360px;	
+	border:none;
+	
+	}
+	
+#step2_promo_container{
+	margin-top:25px;
+	margin-left:10px;
+	padding-right:2px;
+	float : left;
+	left:0px;
+	top:2px;
+	width:230px;	
+	border:none;
+	
+	}
+	
+#step_promo_explain{	
+	width:360px;
+	padding-left:6px;
+	text-align:left;
+	color:#CC0000;
+	font-family:Helvetica, Arial, Verdana , sans-serif;
+	font-size:34px;
+	font-weight:bold;
+	line-height:40px;
+	list-style:none;
+	}
+	
+#step90_welcome{	
+	margin-top:15px;
+	padding-left:15px;
+	
+	color:#000000;
+	font-family: Arial, Verdana , sans-serif;
+	font-size:12px;
+	line-height:15px;
+	font-weight:normal;
+	}
+	
+#step90_welcome a{	
+	margin-top:15px;
+	padding-left:15px;
+	
+	color:#000000;
+	font-family: Arial, Verdana , sans-serif;
+	font-size:12px;
+	text-decoration:underline;
+	line-height:20px;
+	font-weight:normal;
+	}
+
+#step2_promo_explain{	
+	width:230px;	
+	padding-left:6px;
+	
+	color:#000000;
+	font-family:Helvetica, Arial, Verdana , sans-serif;
+	font-size:12px;
+	line-height:40px;	
+	}
+	
+	#step2_promo_explain li{	
+	padding-left:12px;
+	padding-right:12px;
+	
+	color:#000000;
+	font-family:Helvetica, Arial, Verdana , sans-serif;
+	font-size:12px;
+	line-height:15px;
+	margin-bottom:20px;
+	list-style:none;
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/bullet.gif);
+	background-repeat:no-repeat;	
+	}
+
+
+	#pass_promo{
+	color:#000000;
+	font-family: Helvetica, Arial, Verdana , sans-serif;
+	font-size:12px;
+	line-height:27px;
+	font-weight:normal;
+	}
+	
+	#step1_promo{
+	margin-top:15px;
+	
+	color:#000000;
+	font-family: Helvetica, Arial, Verdana , sans-serif;
+	font-size:12px;
+	line-height:27px;
+	font-weight:normal;
+	}
+	#step1_promo_pastille{
+	float:left;
+	
+	color:#000000;
+	font-family: Helvetica, Arial, Verdana , sans-serif;
+	font-size:12px;
+	line-height:27px;
+	font-weight:normal;
+	}
+	
+	#step1_pastille_explain{
+	float:left;
+	
+	color:#000000;
+	font-family: Helvetica, Arial, Verdana , sans-serif;
+	font-size:12px;
+	line-height:27px;
+	font-weight:normal;
+	padding-left:20px;
+	}
+	
+	#step_subscription_container{
+	margin-top:20px;
+	width:395px;
+	float : right;
+	right:380px;
+	}
+	
+	#step_subscription_top{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/top_step_subscription.gif);
+	background-repeat:no-repeat;	
+	width:391px;
+	height:8px;
+	font-size:0px;
+	}	
+	
+	#step_subscription{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/bckg_step_subscription.gif);
+	background-repeat:repeat-y;	
+	width:391px;
+	font-family:Helvetica, Arial, Verdana, sans-serif;
+	font-size:12px;
+	}
+	#step_subscription_bottom{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/bottom_step_subscription.gif);
+	background-repeat:no-repeat;
+	width:391px;
+	height:9px;
+	}
+	
+	
+	#step2_subscription_container{
+	margin-top:20px;
+	width:512px;
+	float : LEFT;
+	}
+	
+	#step2_subscription_top{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/step3_top.gif);
+	background-repeat:no-repeat;	
+	width:512px;
+	height:14px;
+	font-size:0px;
+	}
+	
+	#step2_subscription{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/step3_bckg.gif);
+	background-repeat:repeat-y;	
+	width:512px;
+	font-family:Helvetica, Arial, Verdana, sans-serif;
+	font-size:12px;
+	}
+	#step2_subscription_bottom{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/step3_bottom.gif);
+	background-repeat:no-repeat;
+	width:512px;
+	height:14px;
+	margin-bottom:15px;
+	}
+	
+	#formula_std_top{
+	margin-top:20px;
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/formula_top.gif);
+	background-repeat:no-repeat;
+	height:30px;
+	width:94px;
+	margin-left:4px;
+	margin-right:2px;
+	font-family:Helvetica, Arial, Verdana, sans-serif;
+	font-size:11px;
+	line-height:15px;
+	text-align:center;
+	color:#CC0000;
+	}
+	
+	#formula_focus_top{
+	margin-top:20px;
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/formula_focus_top.gif);
+	background-repeat:no-repeat;
+	height:30px;
+	width:94px;
+	margin-left:4px;
+	margin-right:2px;
+	font-family:Helvetica, Arial, Verdana, sans-serif;
+	font-size:11px;
+	line-height:15px;
+	text-align:center;
+	color:#CC0000;
+	}
+	
+	#formula_std_content{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/formula_bckg.jpg);
+	background-repeat:repeat-y;
+	width:94px;
+	height:217px;
+	margin-left:4px;
+	margin-right:2px;
+	text-align:center;
+	}
+	
+	#formula_focus_content{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/formula_focus_bckg.gif);
+	background-repeat:no-repeat;
+	width:94px;
+	height:217px;
+	margin-left:4px;
+	margin-right:2px;
+	text-align:center;
+	}
+	
+	#formula_std_bottom{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/formula_bottom.jpg);
+	background-repeat:no-repeat;
+	height:10px;
+	width:94px;
+	margin-left:4px;
+	margin-right:2px;
+	}
+	
+	#formula_focus_bottom{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/formula_focus_bottom.gif);
+	background-repeat:no-repeat;
+	height:10px;
+	width:94px;
+	margin-left:4px;
+	margin-right:2px;
+	}
+	
+	#step1_footer{
+	float:left;
+	width:742px;
+	padding-left:15px;
+	padding-right:15px;
+	text-align:left;
+	}
+	
+	#step1_footer p {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	margin-top:25px;
+	color:#666666;
+	}
+
+	#step3_shipping_duration{
+	margin-top:30px;
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/step/shipping_duration.jpg);
+	background-repeat:no-repeat;
+	padding-left:120px;
+	padding-top:10px;
+	height:145px;
+	
+	color:#000000;
+	font-family:Helvetica, Arial, Verdana, sans-serif;
+	font-size:12px;
+	line-height:20px;
+	font-weight:normal;
+	}
+	
+	#step3_formula_left{
+		font-family: Arial, Helvetica, sans-serif;
+		float:left;
+		width:220px;
+		font-size: 12px;
+		color: #000000;
+		line-height:21px;
+		padding-left:5px;
+		margin-bottom:5px;
+		} 
+	
+	#step3_credit_card{
+		font-family: Arial, Helvetica, sans-serif;
+		float:left;
+		width:165px;
+		font-size: 12px;
+		color: #000000;
+		line-height:21px;
+		padding-left:10px;
+		margin-bottom:5px;
+		} 
+		
+	#step3_dom_bcmc{
+		font-family: Arial, Helvetica, sans-serif;
+		float:left;
+		position:relative;
+		font-size: 12px;
+		color: #000000;
+		line-height:21px;
+		padding-left:10px;
+		margin-bottom:5px;
+		} 
+
+
+		
+/* CSS default begin */
+li.point {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFF00;
+	line-height:19px;
+}
+
+.dvdexpform {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+}
+
+a.dvdexpform {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	text-decoration:underline;
+}
+
+.dvdexpformtitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #FFFFFF;
+}
+
+	#right{
+		float:right; 
+		position:relative; 
+		font-family	: Verdana ,Arial,  Helvetica, sans-serif; 
+		font-size:34px; 
+		color:#FFFFFF; 
+		width: 430px;
+		padding-top:20px;
+		padding-right:40px;
+		text-align:right;
+		line-height:37px;
+		
+	
+	}
+	#pastille{
+	right:0px; 
+	top:122px; 
+	position:absolute; 
+	height:190px;
+	width: 131px;
+	border:0px;
+	margin-right:45px;
+	}
+	
+	#freetrial_code{
+	background-color:#c9c3ba;
+	border:#FFFFFF solid 1px;
+	right:25px; 
+	height:35px;
+	width:230px;
+	top:300px; 
+	position:absolute; 
+	font-family: Arial, verdana, Helvetica, sans-serif;
+	font-size:13px;
+	text-align:left;
+	padding-top:10px;
+	padding-left:10px;
+
+}
+
+	#freetrial_code INPUT.inputs_codes{
+	width:150px;
+	height:25px;
+	margin-right:4px;
+	margin-top:-5px;
+	font-size:14px;
+	color:#000000;
+	padding-top:0px;
+	font-family: Arial, verdana, Helvetica, sans-serif;
+	
+	}
+
+	#freetrial{
+	right:0px; 
+	top:370px; 
+	position:absolute; 
+	width: 230px;
+	border:0px;
+	margin-right:10px;
+	text-align:left;
+	line-height:15px;
+	}
+	
+
+	#button{
+	right:0px; 
+	top:282px; 
+	position:absolute; 
+	width: 210px;
+	border:0px;
+	margin-right:55px;
+	}
+	INPUT.inputs_codes{
+	width:150px;
+	height:18px;
+	margin-right:4px;
+	margin-top:-5px;
+	font:Arial, verdana, Helvetica, sans-serif; 
+	font-size:11px; color:#000000;
+	padding-top:0px;
+	}
+/* CSS default begin */	
+		
+/* CSS howdoesitwork begin */
+#how-content{
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/how/how_bckg.gif);
+	background-repeat : no-repeat;
+	width:741px;
+	margin-right:15px;
+	margin-left:15px;
+}
+/* CSS howdoesitwork end */		
+		
+			
+	
+/* CSS freetrial begin */
+
+
+#trial_info_page-content	{
+	height:720px;
+	background-image:url(http://www.dvdpost.be/images/www3/canvas/freetrial_info_bottom.jpg);
+	background-position: 0 100%; 
+	background-repeat : no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #444342;
+	width:774px;
+}
+
+#trial_info_page-content h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 38px;
+	color: #cc0000;
+	padding-bottom:10px;
+	text-align: center;
+}
+
+#trial_info_contenu_gauche {
+
+	float:left;
+	width:330px;
+	padding-left: 30px;
+	padding-right:12px;
+	padding-bottom: 50px;
+	text-align:left;
+}
+
+#trial_info_contenu_droit {
+	float:right;
+	width:330px;
+	padding-left:12px;
+	padding-right:20px;
+	padding-bottom:50px;
+	text-align:left;
+}
+
+#trial_info_button {
+
+	padding-top:15px;
+
+}
+
+a.trial_info {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #234F91;
+	text-decoration:underline;
+}
+
+a.blue_linked{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #444342;
+	text-decoration:underline;
+	padding-left:15px;
+}
+/* CSS freetrial end */
+
+
+/* CSS domiciliation begin */
+
+
+#domiciliation_page-content	{
+	width:764px;
+	height:620px;
+	background-position: 0 100%; 
+	background-repeat : no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #444342;
+	width:774px;
+	text-align: left;
+	}
+
+#domiciliation_page-content h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	color: #cc0000;
+	padding-bottom:10px;
+	text-align: center;
+}
+
+h2.dom_info {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #1e77b8;
+	font-weight: bold;
+	text-align: left;
+}
+
+#domiciliation_contenu_gauche {
+
+	float:left;
+	width:330px;
+	padding-left: 40px;
+	padding-right:12px;
+	padding-bottom: 50px;
+	text-align: left;
+}
+
+.button_dom{
+	word-spacing:30px;
+	float:left;
+	width:190px;	
+}
+
+.domicilation_info {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	
+}
+
+#domiciliation_contenu_droit {
+
+	float:right;
+	width:330px;
+	padding-left:12px;
+	padding-right:40px;
+	padding-bottom:50px;
+	text-align: left;
+}
+
+.domicilation_info_attention {
+
+	padding-left:8px;
+	padding-right:8px;
+	padding-bottom:10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #444342;
+
+}
+
+/* CSS domiciliation end */
+
+/* CSS contact begin */
+
+
+#contact_page-content	{
+	width:773px;
+	background-position: 0 100%; 
+	background-repeat : no-repeat;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #444342;
+	}
+
+#contact_page-content h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 25px;
+	color: #9b0305;
+	padding-bottom:10px;
+	padding-left:25px;
+}
+
+#contact_page-content h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #1e77b8;
+	font-weight: bold;	
+}
+
+#contact_formulaire {
+
+	padding-left: 20px;
+	padding-right:12px;
+	padding-bottom: 50px;
+}
+
+
+.contact_info {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-align: center;
+	background-color: #c9c3ba;
+	padding-right:15px;
+	padding-left:15px;
+}
+
+.contact_rappel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	padding-top: 20px;
+	
+}
+
+.contact_text_input_description {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.contact_text_input{
+	width:173px;
+	height:20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #444342;
+	padding-top:0px;
+	
+}
+
+.contact_list_input{
+	width:173px;
+	height:20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #444342;
+	text-align:center;
+	padding-top:0px;
+	border:Opx;
+	vertical-align:bottom;
+}
+
+.form_height{ 
+padding-bottom:6px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 13px;
+color: #444342;
+}
+/* CSS contact end */
+
+
+/* CSS Le Soir begin */
+
+.lesoir h1 {
+font-size:32px; 
+text-align:center;
+color:#FFFFFF;
+font-family:Arial, Helvetica, sans-serif;
+padding-top:10px;
+line-height:10px !important ;
+
+}
+
+.lesoir {
+background:url(http://www.dvdpost.be/images/www3/lesoir/home.jpg);
+background-repeat:no-repeat;
+background-color:#fef6dd;
+
+}
+
+#promo_code {
+padding-top:340px;
+font-size:14px;
+line-height:19px;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+
+}
+
+#promo_code {
+padding-top:340px;
+font-size:14px;
+line-height:19px;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+
+}
+
+
+
+/* CSS Le Soir end */
+
+
+/* CSS Shop begin */
+
+.shop_content{
+width:560px;
+height:435px;
+}
+
+.shop_content_160{
+width:150px;
+float:left;	
+}
+
+
+.shop_content_400{
+float:right;
+width:400px;
+margin-top:20px;
+}
+
+/* CSS shop end */

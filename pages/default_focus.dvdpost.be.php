@@ -1,0 +1,44 @@
+<style>
+
+.cinenews {
+
+
+background-color:#ffffff;
+
+
+
+}
+
+#promocode {
+padding-top:30px;
+font-size:14px;
+line-height:19px;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+margin-bottom:20px;
+}
+
+#cinenews_dvd { 
+text-align:center;
+}
+
+
+
+
+</style>
+<div class="main-holder">
+<form name="form1" method="post" action="activation_code_confirm.php">
+	
+				<div id="cinenews_dvd"><img src="<?php echo DIR_WS_IMAGES_LANGUAGES.$language ;?>/images/focus/home.jpg"></div>
+			  	<div id="promocode">
+                Introduire le CODE PROMO <strong><font color="#FF0000">FOCUS6DVD</font></strong> ci-dessous : <br />
+                <strong>CODE</strong>
+                    
+                  <input name="code" id="code" type="text" class="inputs_codes" size="20" value="FOCUS6DVD" size="18" onclick="form1.code.value='';">&nbsp;<input class="no_border_button" name="imageField" type="image" src="http://www.dvdpost.be/images/www3/languages/french/images/ptg/go.gif" width="69" height="21" align="absmiddle" border="0"><br /><br />
+				  <img src="<?php echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/hello/phone.gif' ;?>" />
+                </div>      
+	
+	<input name="condition1" type="hidden" id="condition1" value="gift">
+	</form>
+    </div>
+        		    		

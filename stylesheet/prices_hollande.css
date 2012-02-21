@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* CSS Prices Hollande */
+
+#step2 li#dvd2_en {
+	background-image: url(/images/step2/2dvd/en/allnl_new.gif);
+	background-position: 0 0;
+}	
+#step2 li#dvd4_en {
+	background-image: url(/images/step2/4dvd/en/allnl_new.gif);
+	background-position: 0 0;
+}	
+#step2 li#dvd8_en {
+	background-image: url(/images/step2/8dvd/en/allnl_new.gif);
+	background-position: 0 0;
+}	
+#step2 li#dvd12_en {
+	background-image: url(/images/step2/12dvd/en/allnl_new.gif);
+	background-position: 0 0;
+}
+#step2 li#dvd16_en {
+	background-image: url(/images/step2/16dvd/en/allnl_new.gif);
+	background-position: 0 0;
+}
+
+#step2 li#dvd2_en_hover {
+	background-image: url(/images/step2/2dvd/en/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+#step2 li#dvd4_en_hover {
+	background-image: url(/images/step2/4dvd/en/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+#step2 li#dvd8_en_hover {
+	background-image: url(/images/step2/8dvd/en/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+#step2 li#dvd12_en_hover {
+	background-image: url(/images/step2/12dvd/en/allnl_new.gif);
+	background-position: 0 -114px;
+}
+#step2 li#dvd16_en_hover {
+	background-image: url(/images/step2/16dvd/en/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+			
+#step2 li#dvd2_en:hover {
+	background-position: 0 -114px;
+}	
+#step2 li#dvd4_en:hover  {
+	background-position: 0 -114px;
+}	
+#step2 li#dvd8_en:hover  {
+	background-position: 0 -114px;;
+}	
+#step2 li#dvd12_en:hover  {
+	background-position: 0 -114px;
+}
+#step2 li#dvd16_en:hover  {
+	background-position: 0 -114px;
+}
+
+#step2 li#dvd2_nl {
+	background-image: url(/images/step2/2dvd/nl/allnl_new.gif);
+	background-position: 0 0;
+}	
+#step2 li#dvd4_nl {
+	background-image: url(/images/step2/4dvd/nl/allnl_new.gif);
+	background-position: 0 0;
+}	
+#step2 li#dvd8_nl {
+	background-image: url(/images/step2/8dvd/nl/allnl_new.gif);
+	background-position: 0 0;
+}	
+#step2 li#dvd12_nl {
+	background-image: url(/images/step2/12dvd/nl/allnl_new.gif);
+	background-position: 0 0;
+}
+#step2 li#dvd16_nl {
+	background-image: url(/images/step2/16dvd/nl/allnl_new.gif);
+	background-position: 0 0;
+}
+	
+#step2 li#dvd2_nl_hover {
+	background-image: url(/images/step2/2dvd/nl/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+#step2 li#dvd4_nl_hover {
+	background-image: url(/images/step2/4dvd/nl/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+#step2 li#dvd8_nl_hover {
+	background-image: url(/images/step2/8dvd/nl/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+#step2 li#dvd12_nl_hover {
+	background-image: url(/images/step2/12dvd/nl/allnl_new.gif);
+	background-position: 0 -114px;
+}
+#step2 li#dvd16_nl_hover {
+	background-image: url(/images/step2/16dvd/nl/allnl_new.gif);
+	background-position: 0 -114px;
+}
+		
+#step2 li#dvd2_nl:hover {
+	background-position: 0 -114px;
+}	
+#step2 li#dvd4_nl:hover  {
+	background-position: 0 -114px;
+}	
+#step2 li#dvd8_nl:hover {
+	background-position: 0 -114px;
+}	
+#step2 li#dvd12_nl:hover  {
+	background-position: 0 -114px;
+}
+#step2 li#dvd16_nl:hover  {
+	background-position: 0 -114px;
+}
+
+#step2 li#dvd2_fr {
+	background-image: url(/images/step2/2dvd/fr/allnl_new.gif);
+	background-position: 0 0;
+}	
+#step2 li#dvd4_fr {
+	background-image: url(/images/step2/4dvd/fr/allnl_new.gif);
+	background-position: 0 0;
+}	
+#step2 li#dvd8_fr {
+	background-image: url(/images/step2/8dvd/fr/allnl_new.gif);
+	background-position: 0 0;
+}	
+#step2 li#dvd12_fr {
+	background-image: url(/images/step2/12dvd/fr/allnl_new.gif);
+	background-position: 0 0;
+}
+#step2 li#dvd16_fr {
+	background-image: url(/images/step2/16dvd/fr/allnl_new.gif);
+	background-position: 0 0;
+}
+#step2 li#dvd2_fr_hover {
+	background-image: url(/images/step2/2dvd/fr/allnl_new.gif);
+	background-position:0 -114px;
+}	
+#step2 li#dvd4_fr_hover {
+	background-image: url(/images/step2/4dvd/fr/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+#step2 li#dvd8_fr_hover {
+	background-image: url(/images/step2/8dvd/fr/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+#step2 li#dvd12_fr_hover {
+	background-image: url(/images/step2/12dvd/fr/allnl_new.gif);
+	background-position: 0 -114px;
+}
+#step2 li#dvd16_fr_hover {
+	background-image: url(/images/step2/16dvd/fr/allnl_new.gif);
+	background-position: 0 -114px;
+}	
+		
+#step2 li#dvd2_fr:hover {
+	background-position:0 -114px;
+}	
+#step2 li#dvd4_fr:hover  {
+	background-position: 0 -114px;
+}	
+#step2 li#dvd8_fr:hover  {
+	background-position: 0 -114px;
+}	
+#step2 li#dvd12_fr:hover  {
+	background-position: 0 -114px;
+}
+#step2 li#dvd16_fr:hover {
+	background-position: 0 -114px;
+}	

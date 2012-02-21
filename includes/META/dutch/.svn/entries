@@ -1,0 +1,53 @@
+8
+
+dir
+2323
+svn+ssh://dvdpost/data/svn/website/branches/newconnection/includes/META/dutch
+svn+ssh://dvdpost/data/svn
+
+
+
+2009-06-23T14:14:44.345201Z
+45
+gs
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+bd38e7c8-1997-4f33-b139-e97201227266
+
+vssver.scc
+file
+
+
+
+
+2010-09-09T12:05:51.000000Z
+6ae0950f5c122a192d598f8b7714e19e
+2009-06-23T14:14:44.345201Z
+45
+gs
+has-props
+
+meta.php
+file
+
+
+
+
+2010-09-09T12:05:51.000000Z
+a97271e52fa83c1421f1e2d0f60e25ba
+2009-06-23T14:14:44.345201Z
+45
+gs
+

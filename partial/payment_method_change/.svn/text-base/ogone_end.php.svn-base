@@ -1,0 +1,1 @@
+<p><?= TEXT_OGONE_END ?></p>

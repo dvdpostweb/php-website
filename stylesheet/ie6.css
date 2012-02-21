@@ -1,0 +1,17 @@
+body {width:expression(document.documentElement.clientWidth < 970 ? "970px" : "auto");}
+.tool-tip-top {
+	background:url(http://www.dvdpost.be/images/dvdpost_public/none.gif);
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.dvdpost.be/images/dvdpost_public/bg-tool-tip-top.png', sizingmethod='crop');
+}
+.tool-tip-area {
+	background:url(http://www.dvdpost.be/images/dvdpost_public/none.gif);
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.dvdpost.be/images/dvdpost_public/bg-tool-tip.png', sizingmethod='scale');
+}
+.tool-tip-btm {
+	background:url(http://www.dvdpost.be/images/dvdpost_public/none.gif);
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.dvdpost.be/images/dvdpost_public/bg-tool-tip-btm.png', sizingmethod='crop');
+}
+.promo-block .text-holder {
+	background:url(http://www.dvdpost.be/images/dvdpost_public/none.gif);
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.dvdpost.be/images/dvdpost_public/bg-text.png', sizingmethod='scale');
+}

@@ -1,0 +1,158 @@
+
+
+.cinefriends a{
+
+color:#f92b06;
+text-decoration: underline;
+
+}
+
+.cinefriends{font-size:14px;
+padding-bottom:20px;
+
+
+
+}
+
+#header_cinefriends {
+    height: 60px;
+    position: relative;
+    width: 100%;
+    z-index: 100;
+}
+
+#header_cinefriends h1 a {
+    background: url("../images/cinefriends/logo.gif") no-repeat scroll 0 0 transparent;
+    height: 65px;
+    width: 970px;
+}
+
+#header_cinefriends h1 {
+    float: left;
+    height: 47px;
+    margin: 4px 0 0 0;
+    width: 210px;
+}
+
+html, body {
+    background: #191e24;
+  
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.cinefriendstopnav {
+    float: right;
+   font-size: 12px;
+    height: 45px;
+    width: 588px;
+}
+
+.top-nav a {
+    color: #202020;
+    font-size: 12px;
+}
+
+.top-nav li {
+    float: left;
+    font-size: 10pt;
+    margin-left: -8px;
+    padding: 0 14px 0 9px;
+}
+
+.langues {
+    margin-top: -9px;
+}
+
+.langues a {
+    color:#999999;
+}
+
+
+
+.top-nav {
+     font-size: 12px;
+    line-height: 41px;
+    list-style: none outside none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 3px;
+    top: 2px;
+}
+
+.retractation {
+    border-right: 1px solid #333333;
+    height: 31px;
+    margin-right: 16px;
+    margin-top: -9px;
+	
+}
+
+.retractation a {
+text-decoration:underline;}
+
+.selected a{
+font-weight:bold;
+color:#333333;
+
+}
+
+
+
+.button_cinefriends {
+    background: url("../images/cinefriends/button.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: white;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: bold;
+    height: 49px;
+    margin-bottom: 30px;
+    width: 299px;
+}
+
+.offre_friends .plusinfo a{
+color:#666;
+font-size:12px;
+
+}
+
+.offre_friends .inputs_codes {
+border:#666 1px solid;
+height:20px;
+
+}
+
+
+.cinefriends .tooltip {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 3px solid #E4E4E4;
+    box-shadow: 3px 3px 7px #000000;
+    padding: 10px;
+    position: absolute;
+    right: -50px;
+    top: 488px;
+    width: 280px;
+    z-index: 1000;
+}
+.tooltip:before, .tooltip:after {
+    border-bottom: 8px solid transparent;
+    border-right: 5px solid #E4E4E4;
+    border-top: 8px solid transparent;
+    content: "";
+    height: 0;
+    left: -7px;
+    position: absolute;
+    top: 15px;
+    width: 0;
+    z-index: 1001;
+}
+
+.tooltip:before {
+    border-right: 5px solid #FFFFFF;
+    left: -4px;
+    z-index: 1002;
+}

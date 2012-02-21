@@ -1,0 +1,308 @@
+	a.dvdpost_left_menu_link1 { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #0064A0;text-decoration: none ;}
+	a:hover.dvdpost_left_menu_link1 {text-decoration: underline ; }
+	
+		a.dvdpost_left_menu_link1_x { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #A00084;text-decoration: none ;}
+	a:hover.dvdpost_left_menu_link1_X {text-decoration: underline ; }
+	
+	a.dvdpost_recom {font-family: Arial, Helvetica, sans-serif; font-size: 11px;color: #666666;text-decoration: none ; }
+	a:hover.dvdpost_recom {text-decoration: underline ; }
+	
+	a.dvdpost_right_menu_more { font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: none ;}
+	a:hover.dvdpost_right_menu_more {text-decoration: underline ; }
+	
+	a.dvdpost_left_menu_link2 { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;text-decoration: underline ;}
+	a:hover.dvdpost_left_menu_link2 {text-decoration: underline ; } 
+	
+	a.basiclink {color: #000000 ; text-decoration: none ; font-family:Arial; font-size: 11px;}
+	a:hover.basiclink { color: #000000 ; text-decoration: underline ; }
+	
+	a.basiclink_menu {color: #000000 ; text-decoration: none ; font-family:Arial; font-size: 11px;}
+	a:hover.basiclink_menu { color: #000000 ; text-decoration: underline ; }
+	
+	a.red_basiclink {color: #D62C2E ; text-decoration: none ; font-family:Arial; font-size: 11px;text-decoration: underline ;}
+	
+	a.red_slogan {color: #D62C2E ; text-decoration: none ; font-family:Arial; font-size: 12px;text-decoration: underline ;}
+	
+	a.black_slogan {color: #000000 ; text-decoration: none ; font-family:Arial; font-size: 12px;text-decoration: underline ;}
+	
+	a.custserv_link {color: #666666 ; text-decoration: none ; font-family:Arial; font-size: 11px;text-decoration: none ;}
+	a:hover.custserv_link {text-decoration: underline ; }
+	
+	
+	a.dvdpost_brown_basiclink{font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: underline; }
+	
+	a.bold_11px {color: #000000 ; text-decoration: none ; font-family:Arial; font-size: 11px;font-weight: bold;text-decoration: none ;}
+	a:hover.bold_11px {text-decoration: underline ;}
+	
+	a.button_dvdpost{font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #FFFFFF ; text-decoration: underline ; } 
+	a:hover.button_dvdpost{ color: #FFFFFF ; text-decoration: underline ; }
+	
+	a.button{font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #FFFFFF ; text-decoration: underline ; } 
+	a:hover.button{ color: #FFFFFF ; text-decoration: underline ; }
+	
+	.memberlogon{color: #FF6600 ; font-family:Arial; font-size: 10px; } 
+	a.memberlogon{color: #FF6600 ; text-decoration: underline ;font-family:Arial; font-size: 10px; } 
+	a:hover.memberlogon{ color: #C85203 ; text-decoration: underline ; } 
+	
+	a.typo_menu { font-size: 9px;font-family: Arial, Helvetica, sans-serif;color: #FFFFFF;text-decoration: none ;}
+	a:hover.typo_menu {text-decoration: underline ; }
+	
+	a.dvdpost_menu3_private { 		
+		color: #535353; text-decoration: none ;padding-left:10px;padding-right:10px;word-spacing:6px;
+		}
+	a:hover.dvdpost_menu3_private {		
+		background-image:url('http://www.dvdpost.be/images/www3/shop/titlebar/hover.gif');
+		padding-left:10px;padding-right:10px;word-spacing:6px
+	}
+	
+	.dvdpost_menu3_private_click { 		
+		color: #CC0000;; text-decoration: none ;padding-left:10px;padding-right:10px;
+		background-image:url('http://www.dvdpost.be/images/www3/shop/titlebar/hover2.gif');
+		word-spacing:6px
+		}
+	a.link_SLOGAN_MENU2 { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: none ;}
+	a:hover.link_SLOGAN_MENU2 { text-decoration:underline;}
+	
+	a.link_SLOGAN_MENU3 { font-size: 13px;font-family: Arial, Helvetica, sans-serif;color: #9B3334;text-decoration: none ;}
+	a:hover.link_SLOGAN_MENU3 { text-decoration:underline;}
+	
+	a.TYPO_STD2_BLACK {color: #000000 ;font-family: Arial, Helvetica, sans-serif; font-size: 18px;text-decoration:underline;}
+	
+	
+	.dvdpost_left_menu_title {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		color: #FFFFFF
+		}
+	
+	.dvdpost_formula_red {
+		font-size: 20px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-style: italic;
+		font-weight: bold;	
+		color: #D62C2E;
+	}
+	.dvdpost_formula_grey {
+		font-size: 18px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-style: italic;
+		color: #737373;
+		}
+	
+	.dvdpost_brown_underline{font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: underline; }
+	.dvdpost_brown{font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;}
+	
+	.DVD_TITLE_BLANK {font-family: Arial, Helvetica, sans-serif; font-size: 11px;font-weight: bold;color: #FFFFFF; }	
+	
+	.SLOGAN_DETAIL {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666; }
+	.SLOGAN_DETAIL_ROUGE {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #D3411C; }
+	.SLOGAN_BLACK {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; }
+	.SLOGAN_RED {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #D32F30; }
+	.SLOGAN_GRIS_FONCE {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #545454; }
+	.SLOGAN_GRIS {font-family: Arial, Helvetica, sans-serif; font-weight: bold;font-size: 16px; color: #666666; }
+	.SLOGAN_GRIS_NON_BOLD {font-family: Arial, Helvetica, sans-serif;font-size: 14px; color: #666666; }
+	.SLOGAN_GRIS_13px {font-family: Arial, Helvetica, sans-serif; font-weight: bold;font-size: 13px; color: #666666; }
+	.SLOGAN_ROUGE {font-family: Arial, Helvetica, sans-serif; font-weight: bold;font-size: 16px; color: #D3411C; }
+	.SLOGAN_MENU { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #0064A0;text-decoration: none ;}
+	.SLOGAN_MENU2 { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;text-decoration: none ;}
+	.SLOGAN_MENU3 { font-size: 13px;font-family: Arial, Helvetica, sans-serif;color: #9B3334;text-decoration: none ;}
+	.SLOGAN_orange { font-size: 13px;font-family: Arial, Helvetica, sans-serif;color: #D72D2E;text-decoration: none ;}
+	
+	
+	
+	.TAB_MENU_ACTIVE {
+		background-color:#0072B6;
+		BORDER-TOP: #035282 1px solid;
+		BORDER-RIGHT: #000000 1px solid;
+		BORDER-LEFT: #000000 1px solid; 	
+		text-align: center;
+		height:28;
+		vertical-align:middle;
+		font-size: 9px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		color: #FFFFFF;
+		}
+	.TAB_MENU_GREY {background-color:#E3E3E3;vertical-align:bottom;text-align: left; height:40;}
+	
+	.TAB_MENU_PASSIVE {
+		background-color:#606060;
+		BORDER-TOP: #FFFFFF 1px solid;
+		BORDER-RIGHT: #FFFFFF 1px solid;
+		BORDER-LEFT: #FFFFFF 1px solid;
+		text-align: center;
+		height: 28px; 	
+		vertical-align:middle;	
+		}
+		
+	.TAB_MENU_PASSIVE2 {
+		background-color:#A8C3D3;
+		background-image: url('http://www.dvdpost.be/images/www3/nuancier_menu.gif');
+		BORDER-TOP: 1px solid #FFFFFF;
+		BORDER-LEFT: 1px solid #FFFFFF; 	
+		text-align: center;
+		height:23;
+		vertical-align:middle;
+		font-size: 9px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #FFFFFF
+		}
+		
+	.TAB_button_formula {	
+		background-image: url('http://www.dvdpost.be/images/www3/nuancier_menu.gif');
+		BORDER-TOP: 1px solid #C4C4C4;
+		BORDER-LEFT: 1px solid #C4C4C4;
+		text-align: center;
+		height:23;
+		vertical-align:middle;
+		font-size: 9px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #FFFFFF
+		}
+		
+	.TAB_button_try {	
+		background-image: url('http://www.dvdpost.be/images/www3/orange_menu.gif');
+		BORDER-TOP: 1px solid #C4C4C4;
+		BORDER-LEFT: 1px solid #C4C4C4;
+		text-align: center;
+		height:23;
+		vertical-align:middle;
+		font-size: 9px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #FFFFFF
+		}
+		
+	.TAB_nuancier {	
+		background-image: url('http://www.dvdpost.be/images/www3/nuancier_shop.jpg');
+		BORDER-TOP: 1px solid #C4C4C4;
+		BORDER-LEFT: 1px solid #C4C4C4;
+		height:23
+		}
+		
+	.TAB_MENU2_ACTIVE {
+		BORDER-TOP: #D62C2E 1px solid;
+		padding-left:10px;
+		text-align: left;
+		height:24;
+		vertical-align:center;
+		font-size: 11px;
+		font-family: Arial, Helvetica, sans-serif;
+		}
+	
+	.TAB_MENU2_PASSIVE {
+		BORDER-TOP: #D62C2E 1px solid;
+		padding-left:10px;
+		text-align: left;
+		height:24;
+		vertical-align:center;
+		font-size: 11px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #535353;} 
+	
+	.TAB_SELECT_ACTIVE {background-color:#E5E5E5;text-align: center;height:32;vertical-align:center; font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;}
+	.TAB_SELECT_PASSIVE {background-image: url('http://www.dvdpost.be/images/www3/backgroung_dvdsearch.jpg');background-color:#FFFFFF;text-align: center;height:32;vertical-align:center;font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #D62C2E}
+	
+	.TYPO_NUM_BLACK{color: #000000 ; font-family:Arial; font-size: 16px;}
+	
+	.TYPO_STD_BLACK{color: #000000 ; font-family:Arial; font-size: 11px;}
+	
+	.TYPO_STD_BLACK_15{color: #000000 ; font-family:Arial; font-size: 15px;}
+	
+	.TYPO_STD_BLACK_13{color: #000000 ; font-family:Arial; font-size: 13px;}
+	
+	.TYPO_STD_BLACK_bold {color: #000000 ; font-family:Arial; font-size: 11px;font-weight: bold;}
+	
+	.TYPO_STD2_BLACK {color: #000000 ;font-family: Arial, Helvetica, sans-serif; font-size: 18px;}
+	
+	.TYPO_STD_GREY{color: #666666 ; font-family:Arial, Helvetica, sans-serif; font-size: 11px;}
+	.TYPO_ASTERISK{color: #666666 ; font-family:Arial, Helvetica, sans-serif; font-size: 9px;}
+	
+	.TYPO_STD2_GREY{color: #666666 ; font-family:Arial, Helvetica, sans-serif; font-size: 18px;}
+	
+	.TYPO_PROMO {font-family: Arial, Helvetica, sans-serif; font-size: 11px;color: #666666 }
+	
+	.TYPO_ROUGE_ITALIQUE {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 16px; color: #D32F30;font-style: italic;}
+	
+	.TYPO_ROUGE_ITALIQUE2 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 18px; color: #D32F30;font-style: italic;}
+	
+	.TYPO_ROUGE{font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #D32F30;}
+	
+	.TYPO_ROUGE2 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 18px; color: #D32F30;}
+	
+	.TYPO_BLANC_ITALIQUE {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 16px; color: #FFFFFF;font-style: italic;}
+	.TYPO_BLANC_member {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 16px; color: #FFFFFF;}
+	.TYPO_BLANC_member_mini {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 11px; color: #FFFFFF;}
+	
+	.TYPO_BLANC_SHOP {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF;}
+	
+	.TYPO_X_MOVIX {color: #FDB2D9;font-size: 12px;font-family: Arial, Helvetica, sans-serif;}
+	
+	TABLE.formArea
+	{
+		BORDER-RIGHT: #B5B5B5 1px solid; 
+		BORDER-TOP: #B5B5B5 1px solid;
+		BACKGROUND: #F2F2F2;
+		BORDER-LEFT: #B5B5B5 1px solid;
+		BORDER-BOTTOM: #B5B5B5 1px solid
+	}
+	
+	.border
+	{
+		BORDER-RIGHT: #B5B5B5 1px solid;
+	}
+	
+	.GIFT_OK {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; }
+	.GIFT_NOT_OK {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #999999; text-decoration:line-through ;}
+	
+	a.invible_txt {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 1px;
+		color: #FFFFFF;
+	}
+	a:link.invible_txt {
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+	a:visited.invible_txt {
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+	a:hover.invible_txt {
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+	a:active.invible_txt {
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+	
+	.invisible_form_txt {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 1px;
+		color: #FFFFFF;
+	}
+	TABLE.DVDPost_hardgrey {
+		BACKGROUND-COLOR: #7C7A7A; 
+		width: 159px; color:#FFFFFF ; 
+		font-family:Arial, Helvetica, sans-serif ; 
+		font-size:12px;
+		}
+		
+	TABLE.DVDPost_softgrey {
+		BACKGROUND-COLOR: #A5A3A3; 
+		width: 159px; color:#FFFFFF ; 
+		font-family:Arial, Helvetica, sans-serif ; 
+		font-size:12px;
+		}
+		
+		
+	a.dvdpost_left_menu_link1_x_shop { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #A00084;text-decoration: none ;}
+	a:hover.dvdpost_left_menu_link1_x_shop {text-decoration: underline ; }
+	
+	.dvdpost_left_menu_title_shop {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF
+	}
+	a.dvdpost_left_menu_link1_shop { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #0072B6;text-decoration: none ;}
+	a:hover.dvdpost_left_menu_link1_shop {text-decoration: underline ; }

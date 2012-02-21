@@ -1,0 +1,40 @@
+8
+
+dir
+2939
+svn+ssh://dvdpost/data/svn/website/branches/newconnection/test
+svn+ssh://dvdpost/data/svn
+
+
+
+2011-04-18T10:25:35.357845Z
+2939
+gs
+
+
+svn:special svn:externals svn:needs-lock
+
+movie.php
+file
+3042
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+

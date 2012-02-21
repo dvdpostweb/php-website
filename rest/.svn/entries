@@ -1,0 +1,64 @@
+8
+
+dir
+2323
+svn+ssh://dvdpost/data/svn/website/branches/newconnection/rest
+svn+ssh://dvdpost/data/svn
+
+
+
+2010-08-05T15:42:07.733560Z
+2268
+gs
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+bd38e7c8-1997-4f33-b139-e97201227266
+
+tmp
+dir
+
+application
+dir
+
+library
+dir
+
+.htaccess
+file
+
+
+
+
+2010-09-09T12:04:55.000000Z
+6cf249245729135717d38cedd665514c
+2010-01-26T15:46:40.975275Z
+1342
+gs
+
+index.php
+file
+
+
+
+
+2010-09-09T12:04:55.000000Z
+f0f8f2b1e02ef2e21d0644b29c051fd3
+2010-07-22T07:55:17.922641Z
+2215
+gs
+
+public
+dir
+

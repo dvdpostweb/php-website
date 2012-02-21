@@ -1,0 +1,101 @@
+8
+
+dir
+2323
+svn+ssh://dvdpost/data/svn/website/branches/newconnection/stats
+svn+ssh://dvdpost/data/svn
+
+
+
+2009-09-09T09:29:26.218632Z
+429
+gs
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+bd38e7c8-1997-4f33-b139-e97201227266
+
+browser
+dir
+
+services
+dir
+
+graphe.swf
+file
+
+
+
+
+2010-09-09T12:06:01.000000Z
+8fd3b07ca047a2824bf2b6328898f81f
+2009-09-04T09:32:04.788588Z
+392
+gs
+has-props
+
+graphe2.swf
+file
+
+
+
+
+2010-09-09T12:06:01.000000Z
+d228db51c49e2cf14715e9bcfe2c0f69
+2009-09-09T09:29:26.218632Z
+429
+gs
+has-props
+
+gateway.php
+file
+
+
+
+
+2010-09-09T12:06:01.000000Z
+bda1a3c119a65ff9e9e6b16a39a6885b
+2009-08-07T14:43:55.958277Z
+273
+gs
+has-props
+
+core
+dir
+
+globals.php
+file
+
+
+
+
+2010-09-09T12:06:01.000000Z
+1296938314dbd1f80a1329275ea1d233
+2009-08-07T14:43:55.958277Z
+273
+gs
+has-props
+
+Calendar.html
+file
+
+
+
+
+2010-09-09T12:06:01.000000Z
+9855d47903bc0e7636f15e6e8db53410
+2009-08-07T14:43:55.958277Z
+273
+gs
+

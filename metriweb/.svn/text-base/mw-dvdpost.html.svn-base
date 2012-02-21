@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>MetriWeb tag test page</title>
+<!-- begin of section to copy (tag part 1)
+     path is correct if metriweb folder is located at root -->
+        <script type="text/javascript" src="/metriweb/mwTag.js">
+        </script>
+<!-- end of section to copy -->
+        <meta name="author" content="douwère" />
+    </head>
+
+    <body style="font-family: verdana">
+<!-- begin of section to copy (tag part 2)
+     keyword value should be changed for each page
+     extra value must be the page language ("en", "nl" or "fr") -->
+        <script type="text/javascript">
+        /* max. length:  123456789012345678901234 */
+            var keyword="mw_section/test_page";
+            var extra="en";
+            metriwebTag ("dvdpost", keyword, extra);
+        </script>
+<!-- end of section to copy -->
+        <div>
+            Welcome to the MetriWeb tag test page.<br /><br />
+        </div>
+        <div style="font-size: 10px; font-weight: bold">
+            Please check your browser status, to see if items were loaded correctly.<br />
+        </div>
+        <div style="font-size: 10px">
+            This page should contain one .js file and one .gif file.<br /><br />
+            If the .js file is missing...<br />
+            ...you may need to correct the path, as the "src" value in tag part 1
+            needs to match your own location.<br /><br />
+            If only the .gif file is missing, check your configuration, refer to
+            documentation for an explanation or contact us.<br />
+        </div>
+    </body>
+</html>

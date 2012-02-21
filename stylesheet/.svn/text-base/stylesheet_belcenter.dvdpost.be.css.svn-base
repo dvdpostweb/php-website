@@ -1,0 +1,378 @@
+
+a.dvdpost_left_menu_link1 { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: none ;}
+a:hover.dvdpost_left_menu_link1 {text-decoration: underline ; }
+
+a.dvdpost_right_menu_more { font-size: 12px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: none ;}
+a:hover.dvdpost_right_menu_more {text-decoration: underline ; }
+
+a.dvdpost_left_menu_link2 { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;text-decoration: underline ;}
+a:hover.dvdpost_left_menu_link2 {text-decoration: underline ; } 
+
+a.basiclink {color: #000000 ; text-decoration: none ; font-family:Arial; font-size: 11px;}
+a:hover.basiclink { color: #000000 ; text-decoration: underline ; }
+
+a.basiclink_menu {color: #FFFFFF ; text-decoration: underline ;font-family:Arial; font-size: 10px;}
+a:hover.basiclink_menu { color: #FFFFFF ; text-decoration: underline ; }
+
+a.red_basiclink {color: #D62C2E ; text-decoration: none ; font-family:Arial; font-size: 11px;text-decoration: underline ;}
+
+a.red_slogan {color: #D62C2E ; text-decoration: none ; font-family:Arial; font-size: 12px;text-decoration: underline ;}
+
+a.black_slogan {color: #000000 ; text-decoration: none ; font-family:Arial; font-size: 12px;text-decoration: underline ;}
+
+a.custserv_link {color: #666666 ; text-decoration: none ; font-family:Arial; font-size: 11px;text-decoration: none ;}
+a:hover.custserv_link {text-decoration: underline ; }
+
+
+a.dvdpost_brown_basiclink{font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: underline; }
+
+a.bold_11px {color: #000000 ; text-decoration: none ; font-family:Arial; font-size: 11px;font-weight: bold;text-decoration: none ;}
+a:hover.bold_11px {text-decoration: underline ;}
+
+a.button_dvdpost{font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #FFFFFF ; text-decoration: underline ; } 
+a:hover.button_dvdpost{ color: #FFFFFF ; text-decoration: underline ; }
+
+a.memberlogon{color: #FFFFFF ; text-decoration: underline ;font-family:Arial; font-size: 10px; } 
+a:hover.memberlogon{ color: #606060 ; text-decoration: underline ; } 
+
+a.typo_menu { font-size: 9px;font-family: Arial, Helvetica, sans-serif;color: #FFFFFF;text-decoration: none ;}
+a:hover.typo_menu {color: #FFFFFF; text-decoration: underline ; }
+
+a.dvdpost_menu3_private { color: #535353; text-decoration: none ;}
+a:hover.dvdpost_menu3_private {text-decoration: underline ;}
+
+a.link_SLOGAN_MENU2 { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: none ;}
+a:hover.link_SLOGAN_MENU2 { text-decoration:underline;}
+
+a.link_SLOGAN_MENU3 { font-size: 13px;font-family: Arial, Helvetica, sans-serif;color: #9B3334;text-decoration: none ;}
+a:hover.link_SLOGAN_MENU3 { text-decoration:underline;}
+
+a.TYPO_STD2_BLACK {color: #000000 ;font-family: Arial, Helvetica, sans-serif; font-size: 18px;text-decoration:underline;}
+
+
+.dvdpost_left_menu_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000
+	}
+
+.dvdpost_formula_red {
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	font-weight: bold;	
+	color: #D62C2E;
+}
+.dvdpost_formula_grey {
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	color: #737373;
+	}
+
+.dvdpost_brown_underline{font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: underline; }
+
+.DVD_TITLE_BLANK {font-family: Arial, Helvetica, sans-serif; font-size: 11px;font-weight: bold;color: #FFFFFF; }	
+
+.SLOGAN_DETAIL {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666; }
+.SLOGAN_DETAIL_ROUGE {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #D3411C; }
+.SLOGAN_BLACK {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; }
+.SLOGAN_GRIS_FONCE {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #999999; }
+.SLOGAN_GRIS {font-family: Arial, Helvetica, sans-serif; font-weight: bold;font-size: 16px; color: #666666; }
+.SLOGAN_GRIS_NON_BOLD {font-family: Arial, Helvetica, sans-serif;font-size: 14px; color: #666666; }
+.SLOGAN_GRIS_13px {font-family: Arial, Helvetica, sans-serif; font-weight: bold;font-size: 13px; color: #666666; }
+.SLOGAN_ROUGE {font-family: Arial, Helvetica, sans-serif; font-weight: bold;font-size: 16px; color: #D3411C; }
+.SLOGAN_MENU { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: none ;}
+.SLOGAN_MENU2 { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;text-decoration: none ;}
+.SLOGAN_MENU3 { font-size: 13px;font-family: Arial, Helvetica, sans-serif;color: #9B3334;text-decoration: none ;}
+.SLOGAN_orange { font-size: 13px;font-family: Arial, Helvetica, sans-serif;color: #D72D2E;text-decoration: none ;}
+
+
+
+.TAB_MENU_PASSIVE{
+	background-color:#707E93;
+	text-align: center;height:23;
+	vertical-align:center;
+	font-size: 9px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	}
+.TAB_MENU_GREY {background-color:#93A9C0;vertical-align:bottom;text-align: left; height:30;}
+
+.TAB_MENU_ACTIVE {
+	background-color:#DDE4ED;
+	text-align: center;
+	height:23;
+	vertical-align:center;
+	font-size: 9px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #000000;
+	}
+	
+
+
+.TAB_MENU2_ACTIVE {background-color:#E6E6E6;text-align: left;height:15;vertical-align:center; font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #CC0000;}
+.TAB_MENU2_PASSIVE {background-color:#C3C3C3;text-align: left;height:15;vertical-align:center;font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #535353;} 
+
+.TAB_SELECT_ACTIVE {background-color:#E5E5E5;text-align: center;height:32;vertical-align:center; font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #000000;}
+.TAB_SELECT_PASSIVE {background-image: url('http://www.dvdpost.be/images/www3/backgroung_dvdsearch.jpg');background-color:#FFFFFF;text-align: center;height:32;vertical-align:center;font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #D62C2E}
+
+.TYPO_NUM_BLACK{color: #000000 ; font-family:Arial; font-size: 16px;}
+
+.TYPO_STD_BLACK{color: #000000 ; font-family:Arial; font-size: 11px;}
+
+.TYPO_STD_BLACK_bold {color: #000000 ; font-family:Arial; font-size: 11px;font-weight: bold;}
+
+.TYPO_STD2_BLACK {color: #000000 ;font-family: Arial, Helvetica, sans-serif; font-size: 18px;}
+
+.TYPO_STD_GREY{color: #666666 ; font-family:Arial, Helvetica, sans-serif; font-size: 11px;}
+.TYPO_ASTERISK{color: #666666 ; font-family:Arial, Helvetica, sans-serif; font-size: 9px;}
+
+.TYPO_STD2_GREY{color: #666666 ; font-family:Arial, Helvetica, sans-serif; font-size: 18px;}
+
+.TYPO_PROMO {font-family: Arial, Helvetica, sans-serif; font-size: 11px;color: #666666 }
+
+.TYPO_ROUGE{font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 16px; color: #D32F30;}
+
+.TYPO_ROUGE2 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 18px; color: #D32F30;}
+
+.TYPO_ROUGE_ITALIQUE {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 16px; color: #D32F30;font-style: italic;}
+
+.TYPO_ROUGE_ITALIQUE2 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 18px; color: #D32F30;font-style: italic;}
+
+.TYPO_BLANC_ITALIQUE {font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 16px; color: #FFFFFF;font-style: italic;}
+
+
+.TYPO_X_MOVIX {color: #FDB2D9;font-size: 12px;font-family: Arial, Helvetica, sans-serif;}
+
+TABLE.formArea
+{
+    BORDER-RIGHT: #B5B5B5 1px solid; 
+    BORDER-TOP: #B5B5B5 1px solid;
+    BACKGROUND: #F2F2F2;
+    BORDER-LEFT: #B5B5B5 1px solid;
+    BORDER-BOTTOM: #B5B5B5 1px solid
+}
+
+.exell_left
+{
+    background-color:#FFFFFF;
+	BORDER-LEFT: #93A9C0 1px solid;
+	
+}
+
+.exell_right
+{
+    background-color:#FFFFFF;
+	BORDER-RIGHT: #93A9C0 1px solid;
+}
+
+
+.border
+{
+	BORDER-RIGHT: #B5B5B5 1px solid;
+}
+
+
+
+@charset "iso-8859-1";
+
+
+BODY {
+
+  background: #E6EDF5;
+  margin-left: 10px;
+
+}
+.toponglet {font: 9px Tahoma,Verdana; }
+
+
+
+
+font.Text {font: 10px Verdana, Arial, Helvetica;}
+.contenunew {font: 11px Verdana, Arial, Helvetica; font-weight: bold;}
+
+.webmail {font: 8px Verdana, Arial, Helvetica; font-weight: bold;}
+
+.contenu {font: 11px Tahoma; }
+.contenunea2 {font: 12px Arial, Helvetica; }
+.contenunew2 {font: 11px Verdana, Arial, Helvetica; }
+.contenunew3 {font: 14px Verdana, Arial, Helvetica; }
+.contenunew4 {font: 24px Verdana, Arial, Helvetica; }
+.contenunew8 {font: 10px Verdana, Arial, Helvetica; }
+
+
+.search {font: 8px Verdana, Arial, Helvetica; }
+.psearchurl {color: #042969; font: 15px Verdana, Arial, Helvetica; }
+.searchurl {color: #042969; font: 13px Verdana, Arial, Helvetica; }
+.searchurl2 {color: #000000; font: 9px Verdana, Arial, Helvetica; }
+.searchnb {color: #042969; font: 12px Verdana, Arial, Helvetica; }
+.searchnb2 {color: #042969; font: 9px Verdana, Arial, Helvetica; }
+
+
+.menubl {font: 12px Verdana, Arial, Helvetica;  font-weight: bold; color:#FFFFFF;}
+.bienvenue {font: 12px Verdana, Arial, Helvetica; font-weight: bold;}
+.menus {font: 12px Verdana, Arial, Helvetica; font-weight: bold;}
+.bar {font: 10px Verdana, Arial, Helvetica; font-weight: bold;}
+.bars {font: 10px Verdana, Arial, Helvetica;  font-weight: bold; color:#FFFFFF;}
+.contenu {font: 11px Verdana, Arial, Helvetica; }
+.contenup {font: 12px Verdana, Arial, Helvetica; color:#000000; }
+.internet {font: 12px Verdana, Arial, Helvetica; color:#FF0000;}
+.usa {font: 20px Verdana, Arial, Helvetica; color:#000000; }
+.actu {font: 10px Verdana, Arial, Helvetica; }
+
+
+A.do {color: #FFFFFF; text-decoration:none;}
+
+div.red {font: 12px Verdana, Arial, Helvetica; color: #FF0000 }
+div.finances {font: 12px Verdana, Arial, Helvetica; color: #3366CC }
+div.domain {font: 20px Verdana, Arial, Helvetica; }
+input.rech {font: 12px Verdana, Arial, Helvetica; color: #000000 }
+div.horoscope {font: 25px Verdana, Arial, Helvetica;  }
+.contenunewg {font: 25px Verdana, Arial, Helvetica;  }
+
+div.horoscope2 {font: 10px Verdana, Arial, Helvetica;  font-weight: bold;} 
+a.dhnet {color: #000099; font: 13px Verdana, Arial, Helvetica;  font-weight: bold;} 
+
+.dhnet {color: #000099; font: 13px Verdana, Arial, Helvetica;  font-weight: bold;}
+
+.contenunewdh {color: #000099; font: 11px Verdana, Arial, Helvetica;  font-weight: bold;}  
+a.contenunewdh {color: #000099; font: 11px Verdana, Arial, Helvetica; font-weight: bold;}
+
+a.dtactutitle {color: #000099; font: 11px Verdana, Arial, Helvetica; font-weight: bold;}
+.dtactuabstract {font: 10px Verdana, Arial, Helvetica; }
+.concours {color: #042969; font: 16px Verdana, Arial, Helvetica; font-weight: bold;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.borderimg {background: #042969; color: #FFFFFF; border: 1px solid #000000;}
+
+
+
+.tabg_home {background: #C4D9F5;}
+.tabg {background: #C4D9F5;}
+.tabg_home_light {background: #2B6CB5; color: #FFFFFF;}
+
+
+.tabg_lux {background: #C4D9F5;}
+.tabg_lux_light {background: #2B6CB5; color: #FFFFFF;}
+
+
+.tabg_utiles {background: #C3CCE3;}
+.tabg_utiles_light {background: #465E78; color: #FFFFFF;}
+
+.tabg_infos {background: #EEF0A3;}
+.tabg_infos_light {background: #E8BA00; color: #FFFFFF;}
+
+.tabg_telecom {background: #CAE8E8;}
+.tabg_telecom_light {background: #078F8F; color: #FFFFFF;}
+
+.tabg_culture {background: #F5D0D5;}
+.tabg_culture_light {background: #C7344A; color: #FFFFFF;}
+
+.tabg_voyages {background: #D8E4D8;}
+.tabg_voyages_light {background: #578057; color: #FFFFFF;}
+
+
+.tabg_home {background: #B4C4D6; }
+.tabg_home_light {background: #042969; color: #FFFFFF;}
+
+.tabg_utiles {background: #B4C4D6; }
+.tabg_utiles_light {background: #042969; color: #FFFFFF;}
+
+.tabg_telecom {background: #B4C4D6; }
+.tabg_telecom_light {background: #042969; color: #FFFFFF;}
+
+.tabg_culture {background: #B4C4D6; }
+.tabg_culture_light {background: #042969; color: #FFFFFF;}
+
+.tabg_voyages {background: #B4C4D6; }
+.tabg_voyages_light {background: #042969; color: #FFFFFF;}
+
+.tabg_infos {background: #B4C4D6; }
+.tabg_infos_light {background: #042969; color: #FFFFFF;}
+
+.new_home {background: #B4C4D6; }
+.new_home_light {background: #042969; color: #FFFFFF;}
+.new_home_tab {background: #E6EDF5;}
+.new_home_color {color: #042969;}
+
+.rl_home {background: #E8D6B3; }
+.rl_home_light {background: #000000; color: #FFFFFF;}
+.rl_home_tab {background: #FFFFFF;}
+.rl_home_color {color: #FFF7C2;}
+
+
+.rl2_home {background: #EF0000; }
+.rl2_home_light {background: #244FB7; color: #FFFFFF;}
+.rl2_home_tab {background: #244FB7;}
+.rl2_home_color {color: #244FB7;}
+
+
+
+
+
+.relook_home {background: #CFB246;}
+.relook_home {background: #C5A596;}
+.relook_home_light {background: #000000; color: #FFFFFF;}
+
+
+.relook2_home {background: #BECBD3;}
+.relook2_home {background: #E8DDDF; }
+.relook2_home_light {background: #5E3F20; color: #FFFFFF;}
+
+
+.posterthumb {
+	border: 1px solid #000000;
+}
+
+td.myquota {width: 1px;}
+
+a.invible_txt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1px;
+	color: #FFFFFF;
+}
+a:link.invible_txt {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:visited.invible_txt {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:hover.invible_txt {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+a:active.invible_txt {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.invisible_form_txt {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1px;
+	color: #FFFFFF;
+}
+
+	a.dvdpost_left_menu_link1_x_shop { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #A00084;text-decoration: none ;}
+	a:hover.dvdpost_left_menu_link1_x_shop {text-decoration: underline ; }
+	
+	.dvdpost_left_menu_title_shop {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF
+	}
+	a.dvdpost_left_menu_link1_shop { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #0072B6;text-decoration: none ;}
+	a:hover.dvdpost_left_menu_link1_shop {text-decoration: underline ; }

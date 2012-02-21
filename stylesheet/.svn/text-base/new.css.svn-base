@@ -1,0 +1,274 @@
+.cinopcis{
+	background-image:url(/images/www3/step/backgroundpublic.gif);
+	background-repeat: repeat-x;
+	padding:20px;
+	color: #000000 ; 
+	font-family:Arial; 
+	font-size: 11px;
+	margin:10px;
+	border: 1px #C1C5C8 solid;
+}
+
+.yellowlink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #FFFFFF;
+}
+a.yellowlink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #FFFFFF;
+	text-decoration: underline;	
+}
+
+.imgseparator {
+	padding-right: 8px;
+	padding-left: 8px;
+}
+
+
+.how_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	color: #2A2A2A;
+	text-align:left;
+}
+a.how_link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #234F91;
+}
+a.how_faq_link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #234F91;
+	padding-right: 60px;
+	padding-left: 30px;
+	height:30px;
+	text-align:left !important;
+	text-align:left ;
+}
+
+.how_faq_linked{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #234F91;
+	font-weight:bold;
+	padding-right: 60px;
+	padding-left: 30px;
+	height:30px;
+	text-align:left !important;
+	text-align:left ;
+}
+
+.how_explain {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #2A2A2A;
+	text-align:left;
+	line-height:18px;
+}
+
+.how_explain2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #2A2A2A;
+	text-align:left;
+	line-height:20px;
+	
+}
+
+.how {
+	padding-right: 30px;
+	padding-left: 30px;
+	text-align:left;
+	padding-top:7px;
+}
+
+.how_button_trial {
+	padding-right: 30px;
+	padding-left: 30px;
+	text-align:right;
+	padding-top:7px;
+}
+.catalog_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #3F3F3F;
+	padding-left: 20px;
+}
+
+/* page catalogue public */
+
+
+#catalog_button{
+width:538px;
+text-align:right;
+margin-bottom:10px;
+}
+
+#catalog_explain{
+width:538px;
+margin-bottom:25px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#000000;
+text-align:left;
+}
+
+#catalog_listing_top{
+width:538px;
+background-image:url(/images/www3/canvas/catalog/top_catalog.gif);
+height:17px
+}
+
+#catalog_listing_container{
+width:538px;
+background-image:url(/images/www3/canvas/catalog/bckg_catalog.gif);
+background-repeat:repeat-y;
+text-align:center;
+}
+
+#catalog_listing_bottom{
+width:538px;
+background-image:url(/images/www3/canvas/catalog/bottom_catalog.gif);
+height:17px
+}
+
+.category_name {
+padding-left: 5px;
+font-weight: bold;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#000000;
+text-align:left;
+	
+}
+
+.image_try {
+	padding-right: 20px;
+}
+
+
+/* asterisk emergency  layout - begin */
+#asterisk{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #3F3F3F;
+	padding: 20px;
+	background-color : #F2F2F2;
+}
+
+#asterisk a{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #9B0305;
+
+}
+/* asterisk emergency layout - end */
+
+/* products-info reviews - begin */
+.top_reviews {
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #DCD9D9;
+	height:15px;
+}
+
+.bottom_reviews {
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: #DCD9D9;
+	height:10px;
+}
+
+.middle_reviews {
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #AD3D3C;
+	height:15px;
+}
+
+.title_reviews {
+	text-align:left;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#3B3232;
+	font-size:12px;
+	font-weight:bold;
+}
+
+.text_reviews {
+	text-align:left;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#3B3232;
+	font-size:11px;
+	margin-top:2px;
+	margin-bottom:2px;
+	padding:5px;
+}
+.text_reviews_last {
+	text-align:left;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#3B3232;
+	font-size:11px;
+	margin-top:2px;
+	margin-bottom:2px;
+	padding:5px;
+	background-color:#B2A8A8;
+}
+.pertinant_reviews {
+	text-align:left;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#A9A0A0;
+	font-size:11px;
+	margin-top:1px;
+	margin-bottom:5px;
+	padding:5px;
+}
+
+.pertinant_reviews a {
+	text-align:left;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#A9A0A0;
+	font-size:11px;
+	text-decoration:underline;
+}
+
+.pertinant_reviews_last {
+	text-align:left;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	font-size:11px;
+	height:25px;
+	vertical-align:middle;
+	margin-bottom:5px;
+	padding:5px;
+	background-color:#B2A8A8;
+}
+
+.pertinant_reviews_last  a {
+	text-align:left;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	font-size:11px;
+	text-decoration:underline;
+}
+
+.rated_reviews {
+	text-align:right;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#A9A0A0;
+	font-size:11px;
+	padding:5px;
+}
+.rated_reviews_last{
+	text-align:right;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#FFFFFF;
+	font-size:11px;
+	padding:5px;
+	background-color:#B2A8A8;
+}
+/* products-info reviews-end*/

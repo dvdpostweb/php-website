@@ -1,0 +1,128 @@
+
+
+
+
+#header_relance {
+    height: 60px;
+    position: relative;
+    width: 100%;
+    z-index: 100;
+}
+
+#header_cinefriends h1 a.fr {
+    background: url(../images/ptg/logoptg_fr.jpg)no-repeat scroll 0 0 transparent;
+    height: 65px;
+    width: 970px;
+}
+#header_cinefriends h1 a.nl {
+    background: url(../images/ptg/logoptg_nl.jpg)no-repeat scroll 0 0 transparent;
+    height: 65px;
+    width: 970px;
+}
+#header_cinefriends h1 a.en {
+    background: url(../images/ptg/logoptg_fr.jpg)no-repeat scroll 0 0 transparent;
+    height: 65px;
+    width: 970px;
+}
+#header_relance h1 {
+    float: left;
+    height: 47px;
+    margin: 4px 0 0 0;
+    width: 210px;
+}
+
+html, body {
+    background: #191e24;
+  
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.offre_verslavenir a{
+
+color:#f92b06;
+text-decoration: underline;
+
+}
+
+.offre_verslavenir {font-size:14px;
+padding-bottom:40px;
+
+}
+
+.top-nav a {
+    color: #202020;
+    font-size: 12px;
+}
+
+.top-nav li {
+    float: left;
+    font-size: 10pt;
+    margin-left: -8px;
+    padding: 0 14px 0 9px;
+}
+
+.langues {
+    margin-top: -9px;
+}
+
+.langues a {
+    color:#999999;
+}
+
+
+
+.top-nav {
+     font-size: 12px;
+    line-height: 41px;
+    list-style: none outside none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 3px;
+    top: 2px;
+}
+
+.retractation {
+    border-right: 1px solid #333333;
+    height: 31px;
+    margin-right: 16px;
+    margin-top: -9px;
+	
+}
+
+.retractation a {
+text-decoration:underline;}
+
+
+
+
+.button_ptg {
+    background: url("../images/ptg/button.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: white;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: bold;
+    height: 49px;
+    margin-bottom: 30px;
+    width: 299px;
+}
+
+.offre_ptg .inputs_codes {
+    border: 1px solid #666666;
+    height: 30px;
+}
+
+.offre_ptg a {
+    color: #F92B06;
+    text-decoration: underline;
+}
+.offre_ptg{
+padding-bottom:12px;
+font-size:15px;
+
+
+}

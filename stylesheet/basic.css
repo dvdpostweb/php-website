@@ -1,0 +1,404 @@
+.limiteddvdnumber {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #232121;
+	font-weight: bold;
+}
+.guarantee {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #232121;
+}
+.limitedprice {
+	font-family: Arial;
+	font-size: 32px;
+	font-weight: bold;
+	color: #284390;
+}
+.limitedpricemini {
+	font-family: Arial;
+	font-size: 13px;
+	font-weight: bold;
+	color: #284390;
+}
+.limitedprice_perDVD {
+	font-family: Arial;
+	font-size: 11px;	
+	color: #284390;
+}
+
+.limitedathome {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #282828;
+}
+.limitedexplain {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: #121212;
+}
+.limitedtitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #D71921;	
+}
+.limited_promo_red {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #D71921; }
+
+a.infolink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1B6194;
+}
+.infotitle {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #3E4246;
+}
+.infotext {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #3E4246;
+}
+.limitedblueprice {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #1739D0;
+}
+.limitedgreymonth {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #121212;
+}
+.cv1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+.cv2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+	text-align: left;
+	vertical-align: bottom;
+}
+.cv3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.cv3_padding {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	padding-left: 15px;
+}
+.blink {
+	text-decoration: blink;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #D32F30;
+}
+.step_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #232121;
+	padding-right:15px;
+	text-align:right;
+}
+.step_big_title {
+	font-family: Arial Black;
+	font-size: 15px;
+	color: #232121;	
+}
+
+.step_explain {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #232121;
+}
+
+.step_input {
+     color:#232121;
+     width:190px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+}
+.step2_input {
+     color:#232121;
+     width:280px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+}
+
+.step_input_number {
+     color:#232121;
+     width:45px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+}
+
+.step_input_city {
+     color:#232121;
+     width:140px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+}
+
+.step_select {
+     color:#232121;
+     width:190px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+}
+
+.step2_select {
+     color:#232121;
+     width:280px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+}
+.step_select_date {
+     color:#232121;
+     width:55px;
+     height: 19px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 11px;
+}
+
+.dvdpost_brown{font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;}
+
+.DVDp_catalog3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+TABLE.DVDPost_hardgrey {
+   BACKGROUND-COLOR: #7C7A7A; 
+   width: 159px; color:#FFFFFF ; 
+   font-family:Arial, Helvetica, sans-serif ; 
+   font-size:12px;
+}
+		
+TABLE.DVDPost_softgrey {
+   BACKGROUND-COLOR: #A5A3A3; 
+   width: 159px; color:#FFFFFF ; 
+   font-family:Arial, Helvetica, sans-serif ; 
+   font-size:12px;
+}
+.BORDER_PROMO {	
+	BORDER-TOP: #D71921  1px solid;
+	BORDER-RIGHT: #D71921  1px solid;
+	BORDER-LEFT: #D71921  1px solid;
+	BORDER-BOTTOM: #D71921  1px solid;
+}
+.BORDER_DISCOUNT2 {
+	background-color:#CCC8C8;	
+
+}
+.TYPO_STD_GREY{color: #666666 ; font-family:Arial, Helvetica, sans-serif; font-size: 11px;}
+
+a.dvdpost_recom {font-family: Arial, Helvetica, sans-serif; font-size: 11px;color: #666666;text-decoration: none ; }
+a:hover.dvdpost_recom {text-decoration: underline ; }
+
+.login_input {
+     color:#232121;
+     width:150px;
+     height: 15px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 9px;
+}
+.login_input_pass {
+     color:#232121;
+     width:60px;
+     height: 15px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 9px;
+}
+
+.bottom_line_style {	
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
+}
+
+.TAB_button_try {	
+	background-image: url('/images/www3/orange_menu.gif');
+	BORDER-TOP: 1px solid #C4C4C4;
+	BORDER-LEFT: 1px solid #C4C4C4;
+	text-align: center;
+	height:23;
+	vertical-align:middle;
+	font-size: 9px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFFFFF
+}
+
+.DVDp_catalog1 {
+	font-family: Arial, Helvetica, sans-serif;
+	Color: #333333;
+	font-size: 14px;
+	font-weight: bold;
+}
+.DVDp_catalog2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.DVDp_catalog3 {
+	color: #CC0000;
+	font-weight: bold;
+}
+
+a.DVDp_catalog_link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+a:link.DVDp_catalog_link {
+	text-decoration: none;
+	color: #000000;
+}
+a:visited.DVDp_catalog_link {
+	text-decoration: none;
+	color: #000000;
+}
+a:hover.DVDp_catalog_link {
+	text-decoration: none;
+	color: #000000;
+	text-decoration:underline
+}
+a:active.DVDp_catalog_link {
+	text-decoration: none;
+	color: #000000;
+}
+
+
+.actor_director_name_v4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: #231F20;
+	padding-left: 15px;
+	padding-right: 15px;	
+}
+.actor_director_count_v4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #CC0000;
+	height: 18px;
+}
+.actor_director_count_text_v4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #231F20;
+	padding-left: 15px;
+}
+.dvdpost_bio_titles_v4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #231F20;
+}
+
+.dvdpost_dvd_titles_v4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #231F20;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	text-decoration: none;
+	border-bottom-color: #474444;
+}
+
+a.dvdpost_dvd_titles_v5 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #231F20;
+	text-decoration: none;
+}
+
+.dvdpost_dvd_desc_v4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #231F20;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.dvdpost_dvd_desc_4b {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #231F20;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+td.border_left_v4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #231F20;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #474444;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.dvdpost_dvd_all_titles_v4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #CC0000;
+}
+
+.dvdpost_mention_v4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #231F20;
+}
+
+.dvdpost_mention_v42 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #231F20;
+	padding-left: 15px;
+	padding-right: 15px;	
+}
+
+h1 {color: #000000 ;font-family: Arial, Helvetica, sans-serif; font-size: 18px;}
+
+h2{
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #231F20;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;	
+}
+
+a.dvdpost_left_menu_link1 { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #934431;text-decoration: none ;}
+a:hover.dvdpost_left_menu_link1 {text-decoration: underline ; }
+
+a.dvdpost_left_menu_link_blu { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #0397D7;text-decoration: none ;}
+a:hover.dvdpost_left_menu_link_blu {text-decoration: underline ; }
+
+.DVD_TITLE_BLANK {font-family: Arial, Helvetica, sans-serif; font-size: 11px;font-weight: bold;color: #FFFFFF; background-color: #999999 ;}
+.DVD_TITLE_BLU {font-family: Arial, Helvetica, sans-serif; font-size: 11px;font-weight: bold;color: #FFFFFF; background-color: #0397D7 ;  }
+
+.bluborder {
+	border-bottom-width: 1px;
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	border-color: #0397D7
+}

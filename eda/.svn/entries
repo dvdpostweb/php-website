@@ -1,0 +1,25 @@
+8
+
+dir
+2883
+svn+ssh://dvdpost/data/svn/website/branches/newconnection/eda
+svn+ssh://dvdpost/data/svn
+replace
+
+
+2011-04-06T12:06:06.416693Z
+2883
+gs
+has-props
+has-prop-mods
+svn:special svn:externals svn:needs-lock
+
+jquery
+dir
+
+dossier sans titre
+dir
+
+formular1
+dir
+

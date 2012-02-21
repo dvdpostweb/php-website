@@ -1,0 +1,8 @@
+[general]
+db.adapter = PDO_MYSQL
+db.params.host = matadi
+db.params.username = webuser
+db.params.password = 3gallfir-
+db.params.dbname = dvdpost_test
+
+

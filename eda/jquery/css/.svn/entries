@@ -1,0 +1,84 @@
+8
+
+dir
+2883
+svn+ssh://dvdpost/data/svn/website/branches/newconnection/eda/jquery/css
+svn+ssh://dvdpost/data/svn
+
+
+
+2011-04-06T12:06:06.416693Z
+2883
+gs
+
+
+svn:special svn:externals svn:needs-lock
+
+jquery.ui.autocomplete.css
+file
+
+
+
+
+2010-08-18T15:18:02.000000Z
+a1a1896a3a15b30b0049a569c6c0fff4
+2011-04-06T12:06:06.416693Z
+2883
+gs
+has-props
+
+jquery.ui.theme.css
+file
+
+
+
+
+2010-08-18T15:18:02.000000Z
+0c8eab32709dec4f6015874970a85b70
+2011-04-06T12:06:06.416693Z
+2883
+gs
+has-props
+
+images
+dir
+
+jquery.ui.all.css
+file
+
+
+
+
+2010-08-18T15:18:02.000000Z
+a48a469c1c8d003d072284e7c6bc2d8c
+2011-04-06T12:06:06.416693Z
+2883
+gs
+has-props
+
+jquery.ui.core.css
+file
+
+
+
+
+2010-08-18T15:18:02.000000Z
+6ef6d0cb00571e744de85190c2572160
+2011-04-06T12:06:06.416693Z
+2883
+gs
+has-props
+
+jquery.ui.base.css
+file
+
+
+
+
+2010-08-18T15:18:02.000000Z
+3740392a249d4411ce8bdbf09fdd069f
+2011-04-06T12:06:06.416693Z
+2883
+gs
+has-props
+

@@ -1,0 +1,7 @@
+K 10
+svn:ignore
+V 45
+configure.php
+configure_machine_specific.php
+
+END

@@ -1,0 +1,120 @@
+.yellowlink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #050505;
+}
+a.yellowlink {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #050505;
+	text-decoration: underline;	
+}
+
+.imgseparator {
+	padding-right: 8px;
+	padding-left: 8px;
+}
+
+
+.how_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	color: #2A2A2A;
+}
+a.how_link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #234F91;
+}
+a.how_faq_link{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #234F91;
+	padding-right: 60px;
+	padding-left: 30px;
+	height:30px;
+}
+
+.how_faq_linked{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #234F91;
+	font-weight:bold;
+	padding-right: 60px;
+	padding-left: 30px;
+	height:30px;
+}
+
+.how_explain {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #2A2A2A;
+}
+
+.how_explain2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #2A2A2A;
+}
+
+.how {
+	padding-right: 30px;
+	padding-left: 30px;
+}
+.catalog_title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #3F3F3F;
+	padding-left: 20px;
+}
+
+/* page catalogue public */
+
+
+#catalog_button{
+width:538px;
+text-align:right;
+margin-bottom:10px;
+}
+
+#catalog_explain{
+width:538px;
+margin-bottom:25px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#000000;
+}
+
+#catalog_listing_top{
+width:538px;
+background-image:url(http://www.dvdpost.be/images/www3/canvas/catalog/top_catalog.gif);
+height:17px
+}
+
+#catalog_listing_container{
+width:538px;
+background-image:url(http://www.dvdpost.be/images/www3/canvas/catalog/bckg_catalog.gif);
+background-repeat:repeat-y;
+}
+
+#catalog_listing_bottom{
+width:538px;
+background-image:url(http://www.dvdpost.be/images/www3/canvas/catalog/bottom_catalog.gif);
+height:17px
+}
+
+.category_name {
+	padding-left: 5px;
+	font-weight: bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#000000;
+	
+}
+
+.image_try {
+	padding-right: 20px;
+}
+

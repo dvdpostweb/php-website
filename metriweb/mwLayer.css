@@ -1,0 +1,10 @@
+/* MetriWeb Style Sheet file */
+/* Version 1.0.0 -- 2005-03-25 */
+
+#metriwebLayer
+{
+	position: absolute;
+	left: 40px;
+	top: 40px;
+	z-index: 0;
+}

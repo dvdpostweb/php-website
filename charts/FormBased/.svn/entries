@@ -1,0 +1,53 @@
+8
+
+dir
+2323
+svn+ssh://dvdpost/data/svn/website/branches/newconnection/charts/FormBased
+svn+ssh://dvdpost/data/svn
+
+
+
+2009-06-23T14:14:44.345201Z
+45
+gs
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+bd38e7c8-1997-4f33-b139-e97201227266
+
+Chart.php
+file
+
+
+
+
+2010-09-09T12:05:57.000000Z
+8a4fc67aec9e29c3945fde7792a7864b
+2009-06-23T14:14:44.345201Z
+45
+gs
+has-props
+
+Default.php
+file
+
+
+
+
+2010-09-09T12:05:57.000000Z
+51f318e88a4c22f24724f91601be01f2
+2009-06-23T14:14:44.345201Z
+45
+gs
+

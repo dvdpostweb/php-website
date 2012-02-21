@@ -1,0 +1,48 @@
+<?php  
+require('configure/application_top.php');
+$current_page_name = 'default.php';
+
+switch(WEB_SITE_ID){
+ //case 3: 	
+ //	tep_redirect(tep_href_link('catalog.php', '', 'SSL'));
+ //	break;
+ 
+ //case 4:
+ //	tep_redirect(tep_href_link('catalog.php', '', 'SSL'));
+ //	break;
+ case 14:
+ 	tep_redirect(tep_href_link('dvdpostmap.php', '', 'SSL'));
+ 	break;
+ 
+ case 29:
+ 	tep_redirect(tep_href_link('login.php', '', 'SSL'));
+ 	break;
+ 
+ default :
+ 	
+}
+
+
+
+
+
+
+include(DIR_WS_INCLUDES . 'translation.php');
+
+$breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
+
+$page_body_to_include = $current_page_name;
+if($_SERVER['SERVER_NAME'] == 'ptg.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'groupon.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'cinefriends.dvdpost.be' )
+{
+	include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_light.php',0,$jacob));	
+}
+else
+{
+	include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_2009.php',0,$jacob));
+	
+}
+
+
+require('configure/application_bottom.php');
+
+?>

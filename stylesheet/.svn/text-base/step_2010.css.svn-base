@@ -1,0 +1,681 @@
+@charset "UTF-8";
+/* CSS Document */
+
+td {
+
+padding:0px;
+
+}
+
+ 
+#promo_code .step_input {
+color:#30292A;
+font-family:Arial,Helvetica,sans-serif;
+font-size:16px;
+height:19px;
+text-align:center;
+width:228px;
+background-color:#c9ecfc;
+border:#3ba7d9 solid 2px;
+}
+
+#call_action_step {
+padding-left:45px;
+
+}
+
+.nav {
+	font-size:10pt;
+	margin:6px 0 0;
+	min-height:15px;
+	padding:6px 0 0 25px;
+	width:260px;
+	background-attachment: scroll;
+	background-image: url(http://www.dvdpost.be//images/plus_moins.png);
+	background-repeat: no-repeat;
+	background-position: 0 5px;
+}
+
+.nav_select {
+	font-size:10pt;
+	min-height:15px;
+	margin:6px 0 0;
+	padding:6px 0 0 25px;
+	width:260px;
+	color:#000000;
+	background: url(http://www.dvdpost.be//images/plus_moins.png) no-repeat #F7F3F3;
+	background-position:0 -56px;
+	font-weight: bold;
+}
+
+.text_select {
+
+background:#F7F3F3;
+padding:6px 0 0 11px;
+width:274px;
+
+}
+
+#left-menu {
+border:1px solid #5D5955;
+	width:285px;
+
+
+
+}
+
+#dvdpost_guide {
+	color:#30292A;
+	font-size:13pt;
+	height:22px;
+	width:260px;
+	padding-bottom:10px;
+	font-weight: bold;
+}
+
+
+.text_guide {
+
+font-size:8pt;
+margin:3px 0 0;
+padding:8px 0 15px 14px;
+width:242px;
+
+}
+
+
+.text_guide_important{
+
+font-size:8pt;
+margin:3px 0 0;
+padding:0px 0 15px 14px;
+width:242px;
+color:#FF3300;
+
+}
+
+.step_intro {
+font-family:Arial,Helvetica,sans-serif;
+font-size:15px;
+margin:7px 0;
+
+}
+
+
+#step_container {
+background:#F7F3F3;
+width:560px;
+border:1px solid #DDDDDD;
+font-size:9pt;
+margin:0 0 15px 6px;
+padding:10px 15px 25px;
+}
+
+.step_hello {
+font-family:Arial,Helvetica,sans-serif;
+font-size:22px;
+font-weight:bold;
+padding-top:24px;
+line-height:26px;
+}
+
+.free_trial {background-color:#FFFFFF;
+border:1px solid #DDDDDD; }
+
+.step_macaron2 {
+float:right;
+padding-left:6px;
+margin:0 20px 0 0;
+}
+.step_macaron {
+float:left;
+padding-left:6px;
+margin-top:0px;}
+
+
+.step_text#step1 {
+  float:left;
+  margin:0 0 0 50px;
+  width:215px;
+}
+
+.navcontainer {
+float:left;
+padding:2px 0 15px 15px;
+width:256px;
+}
+
+.content {
+float:right;
+width:620px;
+}
+
+.step_title {
+color:#30292A;
+font-family:Arial,Helvetica,sans-serif;
+font-size:14px;
+line-height:10px;
+padding-bottom:5px;
+padding-left:50px;
+width:300px;
+}
+
+.step1_input .step_input {
+color:#232121;
+font-family:Arial,Helvetica,sans-serif;
+font-size:16px;
+height:19px;
+margin-top:-10px;
+width:228px;
+}
+
+
+.callback_step_input {
+font-size:15px;
+line-height:15px;
+width:120px;
+text-align:center;
+
+}
+
+.or {
+
+font-size:21px;
+padding-left:18px;
+z-index:2;
+
+}
+.action_step {
+	color:#F30;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	
+	}
+	
+.action_step .big_title {
+	color:#F30;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	
+	}	
+	
+.verif_type {
+	padding-bottom:5px;
+	font-size:15px;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align:center;	
+	
+}
+
+.text_lock {
+	font-size:12px;
+	line-height: 17px;
+}
+
+.type_credit {
+font-size:13px;
+
+}
+
+.normal_verif {background:none repeat scroll 0 0 #FFFFFF;
+	border:1px solid #DDDDDD;
+	padding:10px;
+z-index: 1;
+	
+
+	
+
+}
+
+.active_verif {
+	background:none repeat scroll 0 0 #b8b1a9;
+	border:1px solid #5d5955;
+	padding:10px;
+z-index: 1;
+
+}
+
+#header .logo_ogone {
+background-attachment:scroll;
+background-color:transparent;
+background-image:url("../images/ogone-big.gif");
+background-position:0 0;
+background-repeat:no-repeat;
+height:78px;
+left:282px;
+overflow:hidden;
+position:absolute;
+text-indent:-9999px;
+top:30px;
+width:311px;
+}
+
+	
+.step1_input_info {
+background:url("../images/info_new.gif") no-repeat scroll left center transparent;
+color:#574647;
+height:28px;
+margin-left:1px;
+margin-top:-10px;
+width:228px;
+}
+.futur_step .big_title {
+	color:#251f1f;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	
+	}	
+	
+.futur_step {
+	color:#251f1f;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	
+	}
+.last_step .big_title {
+	color:#666;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;	
+	}	
+	
+.last_step {
+	color:#666;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	
+	}	
+	
+	
+	#step_descrition {background:#F7F3F3;
+border:1px solid #DDDDDD;
+font-size:9pt;
+margin:0 0 8px 6px;
+padding:0 15px 0;
+width:560px;}
+
+	
+	#step_descrition h3 {
+	font-size:22px;
+	text-transform:uppercase;
+	line-height: 22px;
+}
+
+	
+.step_color {
+	color: #ff5b00;	
+	
+	
+	}
+	
+	.asterisk_step {
+color:#FF5B00;
+font:10pt Arial,Helvetica,sans-serif;
+padding-right:5px;
+}
+.asterisk_explain_step {
+color:#ff5b00;
+font-family:Helvetica,Arial,Verdana,sans-serif;
+font-size:12px;
+padding-right:10px;
+text-align:left;
+}
+	
+	.content h1 {
+
+color:#30292A;
+
+font-family:Arial,Helvetica,sans-serif;
+font-size:24px;
+font-weight:normal;
+line-height:35px;
+padding-left:10px;
+z-index: 1;
+
+}
+.explain_text {
+color:#30292A;
+font-family:Helvetica,Arial,Verdana,sans-serif;
+font-size:15px;
+line-height:16px;
+text-align:right;
+}
+
+.page {
+padding:29px 0 0;
+}
+
+.step2form .new_step_input {
+font-size:15px;
+line-height:15px;
+width:260px;
+margin-top:8px;
+
+
+}
+
+.step2form .explain_text {
+color:#30292A;
+font-family:Helvetica,Arial,Verdana,sans-serif;
+font-size:14px;
+line-height:16px;
+text-align:right;
+}
+.step2form{
+background:#FFF;
+border:1px solid #DDDDDD;
+font-size:10pt;
+margin:0px 0 15px;
+padding:20px 0 25px;
+width:559px;
+}
+
+.step
+{ 
+background: url(http://www.dvdpost.be//images/steps_all.png);
+height:45px;
+width:340px;
+}
+.step1
+{
+	background-position:0 0px;
+}
+
+.step2
+{
+	background-position:0 -53px;
+}
+
+.step3
+{
+	background-position:0 119px;
+}
+
+.step4
+{
+	background-position:0 50px;
+}
+
+#trait { padding-right:8px;
+ padding-left:8px;
+
+}
+
+.red_slogan { color:#3ba7d9;}
+
+/* ============ FOOTER ============ */
+
+
+
+#footer {
+
+  background: #303030 url(http://www.dvdpost.be//images/footer-bg.jpg) center top no-repeat;
+
+  clear: both;
+
+  height: 236px;
+
+}
+
+
+
+#subfooter {
+
+  margin: 0 auto;
+
+  text-align: left;
+
+  width: 970px;
+
+}
+
+
+
+#subfooter h3 {
+
+  background: #181818;
+
+  clear: both;
+
+  color: #00a3d6;
+
+  display: -moz-inline-box;
+
+  display: inline-block;
+
+  font-size: 1.33em;
+
+  margin-bottom: 19px;
+
+  padding: 4px 40px 2px 11px;
+
+}
+
+
+
+#subfooter #footer-nav {
+
+  float: left;
+
+  margin: 20px 0 0 7px;
+
+  width: 430px;
+
+}
+
+
+
+#subfooter #footer-nav ul {
+
+  float: left;
+
+  padding-left: 10px;
+
+  width: 190px;
+
+}
+
+
+
+* html #subfooter #footer-nav li {
+
+  height: 1px;
+
+}
+
+
+
+#subfooter #footer-nav ul#contacts {
+
+  background: url(http://www.dvdpost.be//images/contacts-bg.gif) 0 0 repeat-y;
+
+  padding-left: 50px;
+
+  width: 150px;
+
+}
+
+
+
+#subfooter #footer-nav h3 {
+
+  float: left;
+
+  margin-right: 200px;
+
+}
+
+
+
+#subfooter #footer-nav ul li h4 {
+
+  color: #00a3d6;
+
+  font-size: 1.08em;
+
+}
+
+
+
+#subfooter #footer-nav ul li h4 a {
+
+  color: #00a3d6;
+
+  font-size: 1.08em;
+
+}
+
+
+
+#subfooter #footer-nav ul li a {
+
+  color: white;
+
+  display: block;
+
+  font-size: 1.08em;
+
+  padding: 2px 0;
+
+}
+
+
+
+#subfooter #partners {
+
+  float: right;
+
+  margin: 20px 14px 0 0;
+
+  width: 393px;
+
+}
+
+
+
+#subfooter #partners h3 {
+
+  margin-left: 4px;
+
+}
+
+
+
+*:first-child + html #subfooter #partners h3 {
+
+  float: left;
+
+}
+
+
+
+* html #subfooter #partners h3 {
+
+  float: left;
+
+}
+
+
+
+#subfooter #partners #partners-box {
+
+  background: url(http://www.dvdpost.be//images/partners.png) 0 0 no-repeat;
+
+  width: 393px;
+
+  height: 121px;
+
+  padding: 1px 4px 1px 5px;
+
+}
+
+
+
+#subfooter #partners #partners-box img {
+
+  float: left;
+  
+ padding-left:3px;
+padding-top:15px;
+
+  
+
+}
+
+
+
+#subfooter #copyr {
+
+  clear: both;
+
+  color: white;
+
+  margin: 25px 0 0 0;
+
+  padding: 0;
+
+  text-align: center;
+
+}
+
+ul, ol, dl, dt, dd {
+list-style:none outside none;
+margin:0;
+padding:0;
+}
+.orange
+{
+  color: #ff5b00;
+}
+#second_title{
+  font-size: 20px;
+  font-weight:bold;
+  margin:0;
+  text-align:center;
+}
+
+.title_left { float:left; }
+
+
+.button_right { float:right; padding-top:21px; padding-right:22px;}
+
+.step31whislist_image {
+	background:url(../images/submit_step31.png) no-repeat scroll 0 0 transparent;
+border:medium none;
+color:white;
+cursor:pointer;
+font-size:13px;
+height:27px;
+padding-bottom:2px;
+width:202px;
+}
+
+.step31whislist_image:hover{
+	background:url(../images/submit_step31.png) no-repeat scroll 0 -38px transparent;
+	}
+  .title_summary { font-size: 18px;}
+
+  .free_trial_summary {
+  	background-color:#FFFFFF;
+  	border:1px solid #DDDDDD;
+  	padding-left:50px;
+  	margin-top:10px;
+  }
+.promo 
+{
+  border: solid 2px #ff3300;
+  margin : 6px 20px 6px 49px;
+  padding: 10px;
+}
+.promo b
+{
+  color: #ff3300;
+}
+.promo b.block
+{
+  display:block;
+}
+.step31_image#step1
+{
+  margin:0 0 20px 20px;
+}
