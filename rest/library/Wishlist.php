@@ -1,5 +1,5 @@
 <?php
-require_once '../authentification/src/authentification.php';
+require_once '../authentification2/src/authentification.php';
 
 class Wishlist
 {

@@ -1,7 +1,7 @@
 <?php
 
   require('configure/application_top.php');
-  require 'authentification/src/authentification.php';
+  require 'authentification2/src/authentification.php';
 
   $authentification= new Authentification(array(
     'client_id'  => HTTPS_CLIENT_ID,

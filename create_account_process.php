@@ -2,7 +2,7 @@
 $logpwd=1;
 
 require('configure/application_top.php');
-require_once 'authentification/src/authentification.php';
+require_once 'authentification2/src/authentification.php';
 $authentification= new Authentification(array(
   'client_id'  => HTTPS_CLIENT_ID,
   'secret' => HTTPS_SECRET,

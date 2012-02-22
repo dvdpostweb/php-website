@@ -1,8 +1,8 @@
 <?php  
 require('configure/application_top.php');
 
-require 'authentification/src/authentification.php';
-require 'authentification/examples/example2.php';
+require 'authentification2/src/authentification.php';
+require 'authentification2/examples/example2.php';
 if (DEFAULT_LANGUAGE !='' || $language_id>0 ){
 	tep_redirect(tep_href_link('default.php', '', 'NONSSL'));	
 }
