@@ -744,8 +744,8 @@ $private_page=array('/mydvdpost.php','/mywishlist.php','/login.php','/holiday_fo
   {
     if($page == $_SERVER['SCRIPT_NAME'])
     {
-      require_once 'auth/src/authentification.php';
-      require_once 'auth/examples/example2.php';
+      require_once 'authentification/src/authentification.php';
+      require_once 'authentification/examples/example2.php';
     }
   }
 // include currencies class and create an instance

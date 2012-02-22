@@ -3,7 +3,7 @@ $page='login_verif.php';
 
 require('configure/application_top.php');
 
-require 'auth/src/authentification.php';
-require 'auth/examples/example2.php';
+require 'authentification/src/authentification.php';
+require 'authentification/examples/example2.php';
 
 ?>
