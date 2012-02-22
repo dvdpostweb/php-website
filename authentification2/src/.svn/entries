@@ -1,0 +1,52 @@
+8
+
+dir
+2323
+svn+ssh://dvdpost/data/svn/website/branches/newconnection/auth/src
+svn+ssh://dvdpost/data/svn
+
+
+
+2010-08-02T12:32:24.678300Z
+2256
+gs
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+bd38e7c8-1997-4f33-b139-e97201227266
+
+facebook.php
+file
+
+
+
+
+2010-09-09T12:05:59.000000Z
+8e2d68b8b04c2e36c7109934a41dad31
+2010-06-02T15:25:10.516061Z
+1959
+gs
+
+authentification.php
+file
+3027
+
+
+
+2011-08-19T12:54:24.000000Z
+3b220ce98e41f356ff931421104de9dc
+2011-05-31T09:22:54.251768Z
+3027
+gs
+
