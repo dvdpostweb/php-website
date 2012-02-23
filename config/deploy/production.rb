@@ -19,7 +19,7 @@ set :scm_verbose, true
 #############################################################
 
 set :user, "phpapp"
-set :domain, "binga"
+set :domain, "pekin"
 #set :port, 22012
 server domain, :app, :web
 role :db, domain, :primary => true
