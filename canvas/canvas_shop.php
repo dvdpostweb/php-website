@@ -1,6 +1,6 @@
 <?php 
-#if($current_page_name!='shop_offline.php')
-	#header('Location: /shop_offline.php');
+if($current_page_name!='shop_offline.php')
+	header('Location: /shop_offline.php');
 if(${"REMOTE_ADDR"}== ADMINIP || $host== 'www' || $host== 'localhost'){
 	echo '<a href="'. $translation_bo_url . '" target=new>edit text</a>';	
 }
