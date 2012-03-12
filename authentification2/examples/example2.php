@@ -179,7 +179,8 @@ function no_access($authentification)
     $_SESSION['access_token']='';
 	  unset($_COOKIE['refresh_token']);
 	  $authentification->logout_old_site();
-		header('Location: '.$authentification->getLogin());
+		$url = $authentification->getLogin();
+		header('Location: '.$url);
 	  die();
 	}
 	

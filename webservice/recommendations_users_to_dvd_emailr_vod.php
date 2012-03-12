@@ -46,11 +46,15 @@ if(!empty($number))
 	fwrite($fp, $recommendation_init);
 	if($_GET['kind']=='normal')
 	{
-		$sql = 'select * from customers where customers_abo = 1 and customers_language = '.$_GET['language'].' and customers_abo_suspended in(0,1) and customers_newsletter = 1';
+		$sql = 'select * from customers c
+			join address_book a on address_book_id = customers_default_address_id and a.customers_id = c.customers_id
+			where customers_abo = 1 and customers_language = '.$_GET['language'].' and customers_abo_suspended in(0,1) and customers_newsletter = 1 and entry_country_id = 21;';
 	}
 	else
 	{
-		$sql = 'select * from customers c	join customer_attributes ca on c.customers_id = customer_id	where customers_abo = 1 and customers_language = '.$_GET['language'].' and customers_abo_suspended in(0,1) and newsletters_x=1';
+		$sql = 'select * from customers c	
+		join address_book a on address_book_id = customers_default_address_id and a.customers_id = c.customers_id
+		join customer_attributes ca on c.customers_id = customer_id	where customers_abo = 1 and customers_language = '.$_GET['language'].' and customers_abo_suspended in(0,1) and newsletters_x=1 and entry_country_id = 21;';
 	}
 	
 	
