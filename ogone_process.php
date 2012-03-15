@@ -521,7 +521,7 @@ case 'dvdsale':
 		default:
 			$lang='fr';
 	}
-	header("location: http://dvdpost.dev/".$lang."/shopping_orders/".$HTTP_GET_VARS['orderID']."?list=".$list_id);
+	header("location: http://private.dvdpost.com/".$lang."/shopping_orders/".$HTTP_GET_VARS['orderID']."?list=".$list_id);
 break;	
 
 case 'dvdsale_adult':
