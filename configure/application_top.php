@@ -424,7 +424,7 @@ else {
 
     include(DIR_WS_CLASSES . 'sessions.php');
   }
-	if($host!='localhost' && $host!='ptg.dvdpost.be' && $host!='ptgil.dvdpost.be' && $host!='groupon.dvdpost.be' && $host!='lavenir.dvdpost.be' && $host!='cinefriends.dvdpost.be'){
+	if($host!='localhost' && $host!='ptg.dvdpost.be' && $host!='ptgil.dvdpost.be' && $host!='groupon.dvdpost.be' && $host!='tryus.dvdpost.be' && $host!='tryusagain.dvdpost.be'){
 
 //memcache class
 	//if($memcache_available===true)

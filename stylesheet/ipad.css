@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.offre_ptg {
+padding-top:40px;
+padding-bottom:40px;
+
+
+}
+
+.offre_ptg a{
+color:#FF3300;
+
+
+}
+body
+{
+	background: url(/images/ptgil/bg_ptg.jpg) !important;
+}
+.button_relance {
+    background: url("../images/tryus_button.png") no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: white;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: bold;
+    height: 49px;
+    margin-bottom: 30px;
+    width: 299px;
+}
+#help_area {
+    padding-right: 20px !important;
+    padding-top: 8px !important;
+}
+
+.inputs_codes {
+    background-color: #FFFFFF;!important;
+
+}
+
+#promo_code {
+    font-size: 14px;
+    width: 400px;
+}
