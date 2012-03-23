@@ -52,8 +52,8 @@
 	    		<td  align="center">
 	    			<table cellspacing="0" cellpadding="0" border="0" width="380">	    				
 	    				<?php  
-							$abo_passive ='SELECT pa.products_id, p.products_price, pa.qty_credit, pa.qty_at_home, pa.most_popular_group FROM products p ';
-							$abo_passive .="LEFT JOIN products_abo pa ON pa.products_id = p.products_id WHERE p.products_type = 'ABO' AND pa.allowed_public_group LIKE '%".GROUP_ID."%' or pa.allowed_private_group LIKE '%".ENTITY_ID."%'  order by pa.qty_credit ASC" ;
+							$abo_passive ='SELECT pa.products_id, p.products_price, pa.qty_credit, pa.qty_at_home, pa.most_popular_group, qty_dvd_max FROM products p ';
+							$abo_passive .="LEFT JOIN products_abo pa ON pa.products_id = p.products_id WHERE p.products_type = 'ABO' AND pa.allowed_public_group = 6 or pa.allowed_private_group = 6 order by pa.qty_credit ASC" ;
 							$abo_passive_query = tep_db_query($abo_passive);		
 							$colspan=0;
 							while ($abo_passive_values = tep_db_fetch_array($abo_passive_query)){
