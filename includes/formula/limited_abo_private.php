@@ -17,7 +17,7 @@ $most_popular_values = tep_db_fetch_array($most_popular_query);
 		$selected="";	
 		}
 ?>
-<td bgcolor="<?php  echo $bgcolor ;?>" class="step90_table_top" width="50" align="center" valign="middle">
+<td bgcolor="<?php  echo $bgcolor ;?>" class="step90_table_top" width="30" align="center" valign="middle">
 	<span class="step90_DVD"><?php  echo $abo_passive_values['qty_credit'] ;?></span>
 </td>
 <td bgcolor="<?php  echo $bgcolor ;?>" class="step90_table_top" width="140">
