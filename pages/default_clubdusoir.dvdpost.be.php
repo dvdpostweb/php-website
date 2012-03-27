@@ -54,9 +54,15 @@ color: #0c9fe4;
 font-size:14px;
 font-family:Arial, Helvetica, sans-serif;
 }
-
+body
+{
+	background:#191E24 !important;
+}
 </style>
-<div class="main-holder">
+<link href="http://private.dvdpost.com/stylesheets/menu.css?1322739542" media="all" rel="stylesheet" type="text/css" />
+<link href="http://www.dvdpost.be/stylesheet/cinefriends.css" media="all" rel="stylesheet" type="text/css" />
+<link href="http://www.dvdpost.be/stylesheet/public_2009.css" media="all" rel="stylesheet" type="text/css" />
+<div>
 	<form name="form1" method="post" action="activation_code_confirm.php">
 	  <div id="cinenews_dvd"><img src="<?php echo DIR_WS_IMAGES_LANGUAGES.$language ;?>/images/header_clubdusoir.jpg"></div>
 	  <div id="promo">
