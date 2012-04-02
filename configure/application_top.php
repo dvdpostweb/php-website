@@ -424,31 +424,7 @@ else {
 
     include(DIR_WS_CLASSES . 'sessions.php');
   }
-	if($host!='localhost' && $host!='ptg.dvdpost.be' && $host!='ptgil.dvdpost.be' && $host!='clubdusoir.dvdpost.be' && $host!='tryus.dvdpost.be' && $host!='tryusagain.dvdpost.be'){
-
-//memcache class
-	//if($memcache_available===true)
-	//{
-		include(DIR_WS_CLASSES . 'MemcachedAggregator.php');
-		$server=array();
-		if(!defined('SERVER_MEMCACHE_HOST'))
-			define('SERVER_MEMCACHE_HOST','matadi');
-		if(!defined('SERVER_MEMCACHE_PORT'))
-			define('SERVER_MEMCACHE_PORT','11211');
-			
-		$server[]=array('host'=>SERVER_MEMCACHE_HOST,'port'=>SERVER_MEMCACHE_PORT);
-		$memcache=new MemcachedAggregator($server);
-		$status_memcache=$memcache->serverStatus();
-		if($_GET['debug']==1)
-		{
-			var_dump($server);
-			echo $status_memcache;
-			 
-		}
-		if($status_memcache===false)
-			unset($memcache);
-	//}
-} 
+ 
 // define how the session functions will be used
   require(DIR_WS_FUNCTIONS . 'sessions.php');
   tep_session_name('osCsid');

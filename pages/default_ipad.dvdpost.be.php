@@ -1,0 +1,94 @@
+<style>
+
+.cinenews {
+background:url(<?php echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/robin/robin.jpg' ;?>);
+background-repeat: no-repeat;
+background-color:#ffffff;
+
+
+
+}
+
+
+.puts_codes_groupon {
+    background-color: #f97e66;
+    border: 1px solid #000000;
+    height: 28px;
+}
+
+#promocode {
+font-size:24px;
+line-height:19px;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+margin-bottom:20px;
+}
+
+#cinenews_dvd { 
+text-align:center;
+}
+
+.footer_actu {
+font-family:Arial, Helvetica, sans-serif;
+padding:5px; 
+font-size: 12px;
+font-weight:bold;
+text-align:center;
+}
+.text_cine {
+font-size:15px;
+font-family:Arial, Helvetica, sans-serif;
+}
+.other-logos
+{
+	display:none;
+}
+
+.cine_help{
+font-size:14px;
+font-family:Arial, Helvetica, sans-serif;
+text-align:center;
+}
+.cine_help a{
+color: #0c9fe4;
+font-size:14px;
+font-family:Arial, Helvetica, sans-serif;
+}
+body
+{
+	background:#191E24 !important;
+}
+.offre_clubsoir {
+    padding-bottom: 30px;
+    padding-top: 0;
+}
+.offre_clubsoir a{
+color:#FF3300;
+
+
+}
+</style>
+<link href="http://private.dvdpost.com/stylesheets/menu.css?1322739542" media="all" rel="stylesheet" type="text/css" />
+<link href="http://www.dvdpost.be/stylesheet/cinefriends.css" media="all" rel="stylesheet" type="text/css" />
+<link href="http://www.dvdpost.be/stylesheet/public_2009.css" media="all" rel="stylesheet" type="text/css" />
+<div>
+	<form name="form1" method="post" action="activation_code_confirm.php">
+		<? $short = $lang_short == 'en' ? 'fr' : $lang_short ;?>
+	  <div id="cinenews_dvd"><img src="/images/ipad/<?= $short ?>/header.jpg"></div>
+	  <div id="promo">
+	    <div id="promo_area">
+	      <p class="text_promo" ><?php echo TEXT_GFC_TITLE ;?></p>
+				<p style="margin:0">
+	      	<input name="code" id="code" class="inputs_codes_groupon" value="" size="20" type="text">
+	      	<input class="no_border_button" name="imageField" src="<?php echo DIR_WS_IMAGES ?>/groupon_button_go.gif" type="image" align="absmiddle" border="0" >
+				</p>
+	    </div>
+	    <div id="help_area" class ='offre_clubsoir' align="center">
+				<img src="<?= DIR_WS_IMAGES_LANGUAGES.$language  ?>/images/help_grey.gif" width="347" height="72" /><br />
+				<a href="/conditions.php"><strong><?= TEXT_CONDITION_SUMMER ?></strong></a>
+			</div>
+	    <div class="clear"></div>
+	   
+	  </div>
+	</form>
+</div>
