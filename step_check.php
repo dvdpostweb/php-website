@@ -256,7 +256,7 @@ if (!tep_session_is_registered('customer_id')) {
 								$product_info = tep_db_query("select p.products_id, pd.products_name, pd.products_description, p.products_model, p.products_quantity, p.products_image, pd.products_image_big, pd.products_url, p.products_price, p.products_tax_class_id, p.products_date_added, p.products_date_available, p.manufacturers_id from " . TABLE_PRODUCTS . " p, " . TABLE_PRODUCTS_DESCRIPTION . " pd where p.products_id = '" . $customers_value['customers_abo_type'] . "' and pd.products_id = '" . $customers_value['customers_abo_type'] . "' and pd.language_id = '".$lang."' ");
 							  	$product_info_values = tep_db_fetch_array($product_info);
 								$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)
-								VALUES (NULL , now(), $customer_id, '556', $lang, '0', NULL , '".$customers_value['customers_email_address']."'	);";
+								VALUES (NULL , now(), $customer_id, '556', '".$lang."', '0', NULL , '".$customers_value['customers_email_address']."'	);";
 								tep_db_query($sql_insert);
 								$mail_id=tep_db_insert_id();
 
