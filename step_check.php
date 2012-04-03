@@ -247,7 +247,7 @@ if (!tep_session_is_registered('customer_id')) {
 								$check_logo_query = tep_db_query("select logo from site where site_id = '" . WEB_SITE_ID . "'");
 								$check_log_values = tep_db_fetch_array($check_logo_query);
 								$logo = $check_log_values['logo'];
-
+								$lang=1;
 								if($languages_id>0)
 									$lang=$languages_id;
 								else
