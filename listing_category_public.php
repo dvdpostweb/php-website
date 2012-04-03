@@ -7,7 +7,6 @@ include(DIR_WS_INCLUDES . 'translation.php');
 
 $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
 $page_body_to_include = $current_page_name;
-
 $meta1 =TEXT_META_TITLE1B ;
 $HTTP_GET_VARS['cPath']=intval($HTTP_GET_VARS['cPath']);
 $cPath=$_GET['cPath']=$HTTP_GET_VARS['cPath'];
