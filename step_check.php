@@ -86,7 +86,7 @@ if (!tep_session_is_registered('customer_id')) {
 			
 			switch ($discount_values['discount_type']) {
 				case 1: // - X%
-					$strdiscount_code_line_explained= ($discount_values['discount_value'] / 100 * $price ) . ' EUR';
+					$strdiscount_code_line_explained = ($discount_values['discount_value'] / 100 * $price ) . ' EUR';
 					$final_price  = round($price  - ($discount_values['discount_value']  / 100 * $price ),2)  ;
 				break;
 				case 2: //tot=x euro 

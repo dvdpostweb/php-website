@@ -424,7 +424,7 @@ else {
 
     include(DIR_WS_CLASSES . 'sessions.php');
   }
-	if($host!='localhost' && $host!='ptg.dvdpost.be' && $host!='ptgil.dvdpost.be' && $host!='clubdusoir.dvdpost.be' && $host!='tryus.dvdpost.be' && $host!='tryusagain.dvdpost.be'){
+	if(gethostbyname($host) != '127.0.0.1'){
 
 	//memcache class
 		//if($memcache_available===true)
