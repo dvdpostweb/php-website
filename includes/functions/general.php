@@ -2764,7 +2764,15 @@ function mail_message($customer_id, $mail_id, $data)
 		$formating = format($email_text, $data);
 		$sql_up = 'update mail_messages_sent_history set lstvariable = "'.addslashes($formating['dico']).'" where mail_messages_sent_history_id = '.$history_id;
 		tep_db_query($sql_up);
-		tep_mail($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $customers['customers_email_address'], $mail_values['messages_title'], $formating['text'], STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+		if(gethostbyname($_SERVER["SERVER_NAME"]) != '127.0.0.1')
+		{
+			$recipient = $customers['customers_email_address'];
+		}
+		else
+		{
+			$recipient = 'gs@dvdpost.be';
+		}
+		tep_mail($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $recipient, $mail_values['messages_title'], $formating['text'], STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
 	}else
 	{
 		$history_id='NULL';
