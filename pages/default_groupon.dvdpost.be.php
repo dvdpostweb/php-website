@@ -3,7 +3,7 @@
 <style>
 	 body{background:none;} 
 </style>
-   <p><img src="./images/relance012012/header_<?= $lang_short ?>.jpg" width="970" height="388" border="0" /></p>
+   <p><img src="./images/groupon/<?= $lang_short ?>/header.jpg" width="970" height="388" border="0" /></p>
   <div class="offre_ptg">
     <div class="main-holder_groupon">
 		<form action="activation_code_confirm.php" method="post" name="form1">
