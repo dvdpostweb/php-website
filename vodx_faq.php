@@ -3,9 +3,6 @@ require('configure/application_top.php');
 
 $current_page_name = 'vodx_faq.php';
 
-if (!tep_session_is_registered('adult_pwd')) {
-	tep_redirect(FILENAME_LOGIN_ADULTPWD);
-}  
 
 
 if (!tep_session_is_registered('customer_id')) {

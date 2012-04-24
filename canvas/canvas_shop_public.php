@@ -1,6 +1,6 @@
 <?php  
-#if($current_page_name!='shop_offline.php')
-	#header('Location: /shop_offline.php');
+if($current_page_name!='shop_offline.php')
+	header('Location: /shop_offline.php');
 
 	$link_freetrial="/step1.php?activation_code=FREETEST2";
 

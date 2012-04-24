@@ -3,9 +3,6 @@ require('configure/application_top.php');
 $google_conversion='ok';
 $current_page_name = 'vod_payment_confirm.php';
 
-if (!tep_session_is_registered('adult_pwd')) {
-	tep_redirect(FILENAME_LOGIN_ADULTPWD);
-}  
 
 
 if (!tep_session_is_registered('customer_id')) {

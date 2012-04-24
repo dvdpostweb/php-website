@@ -1,5 +1,6 @@
 <?php 
-header('Cache-Control: private');
+header('Location: http://private.dvdpost.com/'.$lang_short.'/adult');
+#header('Cache-Control: private');
 if(${"REMOTE_ADDR"}== ADMINIP || $host== 'www' || $host== 'localhost'){
 	echo '<a href="'. $translation_bo_url . '" target=new>edit text</a>';	
 

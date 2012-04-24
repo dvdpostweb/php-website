@@ -11,15 +11,7 @@ if (!tep_session_is_registered('customer_id')) {
 	$link=tep_href_link(FILENAME_LOGIN, ((!empty($_GET['email']))?'email='.$_GET['email']:''), 'SSL');
 	tep_redirect($link);
 }
-if (!tep_session_is_registered('adult_pwd')) {
-	if(!empty($_GET['cat']))
-		$navigation->set_snapshot(array('mode' => 'NONSSL', 'page' => $current_page_name,'get' => array('cat'=>$_GET['cat'])));
-	else
-		$navigation->set_snapshot(array('mode' => 'NONSSL', 'page' => $current_page_name));
-		
-	//echo sizeof($navigation->snapshot) ;
-	tep_redirect(FILENAME_LOGIN_ADULTPWD);
-}  
+  
 
 include(DIR_WS_INCLUDES . 'translation.php');
 
