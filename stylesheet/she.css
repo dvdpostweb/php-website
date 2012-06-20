@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+#promo_content {
+background-image:url(../images/vicky_bg.jpg);
+height:587px;
+
+
+}
+
+.promo-title {
+    padding: 0 0 0 210px;
+}
+#footer_promo {
+
+color:#FFFFFF;
+ margin: 0 auto;
+    padding: 8px 0 0 0 ;
+ 
+    width: 970px;
+}
+
+
+#footer_promo a{
+color:#FFFFFF;
+
+}
+#promo_code {
+    background-color: #FFFFFF;
+    margin: 0 0 20px 280px;
+    padding: 10px;
+    width: 366px;
+}
+
+#applestuffs {
+    background-color: #FFFFFF;
+    margin: 0 0 20px 280px;
+    padding: 10px;
+    width: 366px;
+	color:#4a4a4a;
+	text-align: center;
+	font-size:14px;
+}
+
+#applestuffs a{
+color:#97c300;
+}
+
+.headerpromo {
+  
+    position: relative;
+    width: 100%;
+    z-index: 100;
+}
+
+
+
+#header_cinefriends h1 a {
+    background: url(../images/logoshedeals.jpg) no-repeat scroll 0 0 transparent !important;
+    height: 63px;
+    width: 970px;
+}
+

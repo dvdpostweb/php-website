@@ -32,7 +32,7 @@ include(DIR_WS_INCLUDES . 'translation.php');
 $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
 
 $page_body_to_include = $current_page_name;
-if($_SERVER['SERVER_NAME'] == 'ptg.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'ptgil.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'groupon.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'cinefriends.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'tryus.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'tryusagain.dvdpost.be'|| $_SERVER['SERVER_NAME'] == 'clubdusoir.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'ipad.dvdpost.be' )
+if($_SERVER['SERVER_NAME'] == 'ptg.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'ptgil.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'groupon.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'cinefriends.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'tryus.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'tryusagain.dvdpost.be'|| $_SERVER['SERVER_NAME'] == 'clubdusoir.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'ipad.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'cami.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'nina.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'shedeals.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'fda.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'flair.dvdpost.be' )
 {
 	
 	include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_light.php',0,$jacob));	
