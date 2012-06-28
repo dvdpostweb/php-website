@@ -29,10 +29,11 @@ if (!tep_session_is_registered('customer_id')) {
 	if( $customers_registration_step<33){
     	tep_redirect(tep_href_link('step1.php'));
 	}else{
-			$sql="SELECT customers_telephone, c.customers_abo_type , c.customers_next_discount_code,  c.activation_discount_code_id,  c.activation_discount_code_type,customers_registration_step,customers_default_address_id,site from customers c WHERE customers_id ='".$customer_id. "'";
+			$sql="SELECT customers_telephone, c.customers_abo_type , c.customers_next_discount_code,  c.activation_discount_code_id,  c.activation_discount_code_type,customers_registration_step,customers_default_address_id,site,customers_next_abo_type from customers c WHERE customers_id ='".$customer_id. "'";
 			
 			$customer_query = tep_db_query($sql);
 			$customer_values = tep_db_fetch_array($customer_query);
+			
 			$promotion = promotion($customer_values['customers_abo_type'],$customer_values['customers_next_abo_type'],$customer_values['activation_discount_code_type'],$customer_values['activation_discount_code_id']);
 			$address_sql="select *  from address_book where customers_id= '".$customer_id."' and address_book_id = '" . $customer_values['customers_default_address_id'] . "'";
 			$address_book = tep_db_query($address_sql);  
@@ -286,7 +287,7 @@ if (!tep_session_is_registered('customer_id')) {
 								$data['customers_name'] = $customers_value['customers_firstname'] . ' ' . $customers_value['customers_lastname'];
 								$data['email'] = $customers_value['customers_email_address'];
 								$data['promotion'] = $promotion;
-
+								$data['final_price'] = $final_price;
 /*								if($final_price>0)
 								{
 									$formating['text'] = str_replace('<tr id="promo">', '<tr id="promo" style="display:none">',$formating['text']);

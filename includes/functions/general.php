@@ -1700,7 +1700,6 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	$data['customers_name'] = $customers['customers_firstname'] . ' ' . $customers['customers_lastname'];
 	$data['email'] = $customers['customers_email_address'];
 	$data['promotion'] = $promotion;
-	
 	mail_message($customers_id, $mail_message, $data);
 	if ($customers['site'] == 'lavenir')
 	{
@@ -2654,8 +2653,10 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		$discount_query = tep_db_query($sql);
 		$discount_values = tep_db_fetch_array($discount_query);
 		$abo_dvd_credit= $discount_values['abo_dvd_credit'];
+		
 		if($abo_dvd_credit==0)
 			$abo_dvd_credit=$credits;
+			
 		switch ($discount_values['discount_abo_validityto_type']){
 			case 1:	
 				$duration = '<span class="red_font">'.$discount_values['discount_abo_validityto_value'].' '.TEXT_DAYS.'</span>';
@@ -2687,17 +2688,24 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 	}
 	else
 	{ 
-		if($discount_values['discount_value']>0)
+		if($abo_dvd_credit!=10000)
 		{
-			return "<strong>".TEXT_PAID_PROMO."</strong>: <span class='red_font'>".$period."</span>";
+			if($discount_values['discount_value']>0)
+			{
+				return "<strong>".TEXT_PAID_PROMO."</strong>: <span class='red_font'>".$period."</span>";
+			}
+			else
+			{
+				if ($promo_type != 'unlimited') {
+					return "<strong>".TRIAL."</strong>: <span class='red_font'>".$period.'</span>';
+				}else{ 
+					return sprintf(UNLIMITED, $duration, $abo_dvd_credit);
+				}
+			}			
 		}
 		else
 		{
-			if ($promo_type != 'unlimited') {
-				return "<strong>".TRIAL."</strong>: <span class='red_font'>".$period.'</span>';
-			}else{ 
-				return sprintf(UNLIMITED, $duration, $abo_dvd_credit);
-			}
+			return "";
 		}
 	} 
 

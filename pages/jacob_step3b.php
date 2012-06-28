@@ -84,7 +84,7 @@ if(WEBSITE==101)
 				<div class="banner_step_relance"  id="<?= $lang_short ?>" align="center">
 					<p style="width: 400px;margin: 26px auto;"><?= $promotion ?></p>
 				</div>
-				<? }else {?>
+				<? } else {?>
       <div class="banner_title"><?= HUGE_CATALOG ?></div>
       <div class="banner_step" align="center">
         <p><?= $promotion ?></p>
