@@ -5,7 +5,7 @@
 <link href="stylesheet/cinefriends.css" media="all" rel="stylesheet" type="text/css" />
 
   <div id="promo_content">
-    <p class="promo-title"><img  src="images/<?= $short ?>/shedeals_text.png" width="644" height="223" border="0" /></p>
+    <p class="promo-title"><img  src="images/<?= $short ?>/femmesdaujourdhui_text.png" width="644" height="223" border="0" /></p>
     <div class="offre_ptg">
       <form action="activation_code_confirm.php" method="post" name="form1">
         <div id="promo_code">
