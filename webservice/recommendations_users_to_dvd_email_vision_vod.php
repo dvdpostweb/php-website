@@ -38,11 +38,6 @@ else
 }
 if(!empty($number))
 {
-	$filename_read = 'canvas_'.$kind.'_7_'.$locale.'.html';
-	$filename_write = 'vod_'.$number.'_'.$locale.'.html';
-	$fr = fopen($filename_read, 'r');
-	$content = fread($fr, filesize($filename_read));
-	$fw = fopen($filename_write, 'w');
 	
 	
 	$vod1 = $_GET['vod_id_1'];
@@ -56,6 +51,20 @@ if(!empty($number))
 	$vod9 = $_GET['vod_id_9'];
 	
 	$vod_id = $vod1.','.$vod2.','.$vod3.','.$vod4.','.$vod5.','.$vod6.','.$vod7.','.$vod8.','.$vod9;
+	if ($vod7 = $_GET['vod_id_9']>0)
+	{
+		$nb = 7;
+	}
+	else
+	{
+		$nb = 9;
+	}
+	$filename_read = 'canvas_'.$kind.'_'.$nb._'.$locale.'.html';
+	$filename_write = 'vod_'.$number.'_'.$locale.'.html';
+	$fr = fopen($filename_read, 'r');
+	$content = fread($fr, filesize($filename_read));
+	$fw = fopen($filename_write, 'w');
+	
 	#fwrite($fp, $recommendation_init);
 	/***/
 			
