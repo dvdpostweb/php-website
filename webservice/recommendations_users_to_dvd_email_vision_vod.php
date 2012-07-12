@@ -51,7 +51,7 @@ if(!empty($number))
 	$vod9 = $_GET['vod_id_9'];
 	
 	$vod_id = $vod1.','.$vod2.','.$vod3.','.$vod4.','.$vod5.','.$vod6.','.$vod7.','.$vod8.','.$vod9;
-	if ($vod7>0)
+	if ($vod9>0)
 	{
 		$nb = 7;
 	}
