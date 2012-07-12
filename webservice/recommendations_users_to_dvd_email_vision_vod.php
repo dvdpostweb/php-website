@@ -53,11 +53,11 @@ if(!empty($number))
 	$vod_id = $vod1.','.$vod2.','.$vod3.','.$vod4.','.$vod5.','.$vod6.','.$vod7.','.$vod8.','.$vod9;
 	if ($vod9>0)
 	{
-		$nb = 7;
+		$nb = 9;
 	}
 	else
 	{
-		$nb = 9;
+		$nb = 7;
 	}
 	$filename_read = 'canvas_'.$kind.'_'.$nb.'_'.$locale.'.html';
 	$filename_write = 'vod_'.$number.'_'.$locale.'.html';
