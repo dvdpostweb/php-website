@@ -268,9 +268,15 @@ if($_POST['sent']) {
 	  $partners_id = 0;
 	}
 	if(isset($HTTP_POST_VARS['marketing']))
+	{
 		$marketing='YES';
+		$newsletter = 1;
+	}	
 	else
+	{
 		$marketing='NO';
+		$newsletter = 0;
+	}	
 	$sql="select count(1) as count from " . TABLE_CUSTOMERS . " where customers_email_address = '" . $_POST['email_address'] . "'";
 	$check_count_customer_query = tep_db_query($sql,'db_link',true);
 	$check_count_customer = tep_db_fetch_array($check_count_customer_query);
@@ -290,7 +296,7 @@ if($_POST['sent']) {
 				$site = WEB_SITE;	
 		}
 		}
-		$customers_sql .="values (NULL,'".ENTITY_ID."','".GROUP_ID."', '" . $_POST['email_address']  . "', '" . md5($_POST['password'])  . "', '" . $next_abo_type  . "', NULL , 1 , 1,'". $activation_discount_code_id."' , '".$activation_discount_code_type."' , '".$activation_discount_next."' ,'".$goto_step."', '" . $language_id  . "', 0 , '" . $site . "',now(),now(), '" . $partners_id  . "','".$_POST['dvdpost_heard']." ', '".$marketing."' ) ";
+		$customers_sql .="values (NULL,'".ENTITY_ID."','".GROUP_ID."', '" . $_POST['email_address']  . "', '" . md5($_POST['password'])  . "', '" . $next_abo_type  . "', NULL , ".$newsletter." , ".$newsletter.",'". $activation_discount_code_id."' , '".$activation_discount_code_type."' , '".$activation_discount_next."' ,'".$goto_step."', '" . $language_id  . "', 0 , '" . $site . "',now(),now(), '" . $partners_id  . "','".$_POST['dvdpost_heard']." ', '".$marketing."' ) ";
 		tep_db_query($customers_sql);
 		$cust_id = tep_db_insert_id();
 		if($jacob==1)
