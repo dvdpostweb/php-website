@@ -70,11 +70,12 @@ if(!empty($number))
 			
 	$listing_sql = 'select p.rating_users,p.rating_count,p.products_id, pd.products_name , pd.products_image_big,p.products_media,products_year,p.imdb_id,products_description, products_studio';
 	$listing_sql .= ' from  dvdpost_be_prod.'.TABLE_PRODUCTS . ' p ';
-	$listing_sql .= ' left join dvdpost_be_prod.' . TABLE_PRODUCTS_DESCRIPTION . ' pd on p.products_id = pd.products_id and pd.language_id=' . $language_id ;
+	$listing_sql .= ' left join dvdpost_be_prod.' . TABLE_PRODUCTS_DESCRIPTION . ' pd on p.products_id = pd.products_id and pd.language_id=' . $language ;
 	$listing_sql .= ' where  p.products_id in ('.$vod_id.') order by FIELD(p.products_id, '.$vod_id.')';
 	$query_vod = mysql_query($listing_sql,$links[0]);
 	$vod_data = '';
 	$i=0;
+	#echo $listing_sql;
 	while ($dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC)) 
 	{
 		$i++;
