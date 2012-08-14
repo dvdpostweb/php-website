@@ -56,32 +56,6 @@ else
 ?>
 <div class="jbwrapper">
   <div class="jbcontainer">
-			<? if (strpos(strtoupper($activation_code),'BGC') === 0) { ?> 
-			<div id="header_relance">
-		  <h1> <a href="http://www.dvdpost.be" class="f-btn" style="">DVDPost - Online DVD rental</a> </h1>
-		    <div class="relancetopnav">
-		      <ul class="top-nav">
-		        <li class="retractation"><a href="/conditions.php#article3"><?= TEXT_RETRA ?> </a></li>
-		        <li class="langues <?= ($languages_id == 1 ? "selected" : "") ?> "><a href="?language=fr&activation_code=<?= $activation_code ?>">FR</a></li>
-		        <li class="langues <?= ($languages_id == 2 ? "selected" : "" ) ?>"><a href="?language=nl&activation_code=<?= $activation_code ?>">NL</a></li>
-		        <li class="langues <?= ($languages_id == 3 ? "selected" : "" ) ?>"><a href="?language=en&activation_code=<?= $activation_code ?>">EN</a>		      </ul>
-		      <div style="clear:both;"></div>
-		    </div>
-		  </div>
-		<? }else {?>
-    <div class="jblogo"><a href="/default.php">DVDPost.be</a></div>
-    <div class="jbtopnav">
-      <ul class="top-nav"><li class="retractation"><a href="/conditions.php#article3"><?= TEXT_RETRA ?> </a></li><li class="langues"><a href="/step1.php?language=fr&activation_code=<?= $activation_code ?>">FR</a></li>
-        <li class="langues"><a href="/step1.php?language=nl&activation_code=<?= $activation_code ?>">NL</a></li>
-        <li class="langues"> <a href="/step1.php?language=en&activation_code=<?= $activation_code ?>">EN</a> </li>
-        <li><a class="login" href="/login.php">Login membres</a></li>
-      </ul>
-      <div style="clear:both;"></div>
-    </div>
-	<? } ?>
-    <div style="clear:both;"></div>
-    <div class="breadcrumb"><a href="default.php" class="link_selected">Home &gt;</a> <a href="">Step 1 <?= TEXT_TITLE_JACOB1 ?></a></div>
-    
 		<div id="container">
 		<? if (strpos(strtoupper($activation_code),'BGC') === 0) { ?> 
 			<div class="banner_step_relance" id="<?= $lang_short ?>" align="center">

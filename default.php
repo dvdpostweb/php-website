@@ -1,5 +1,8 @@
-<?php  
+<?php
+
+
 require('configure/application_top.php');
+
 $current_page_name = 'default.php';
 
 switch(WEB_SITE_ID){

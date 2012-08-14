@@ -19,8 +19,11 @@
 <meta name="Revisit-after" content="14 days">
 <meta name="Robots" content="all">
 <LINK REL="SHORTCUT ICON" href="<?php echo DIR_WS_IMAGES;?>/favicon.ico"> 
-<link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/public_2009.css?v=9','.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/ibox.css','.css'); ?>">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/reset.css','.css'); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/main.css','.css'); ?>">
+
 
 <?php 
 $script_available= array(0=>'/domiciliation70_confirmation.php');
@@ -213,7 +216,6 @@ if(1==0){
 	<?php
 	}}}}
 	?>
-<div id="background">
 <?php 
 switch(WEB_SITE_ID)
   {
@@ -237,18 +239,23 @@ switch(WEB_SITE_ID)
 	break;
 }
 ?>
-<?php
-//echo ${"REMOTE_ADDR"}.'< --- >'.ADMINIP;
-if(${"REMOTE_ADDR"}== ADMINIP || $host=='localhost'){
-        echo '<a href="'. $translation_bo_url . '" target=new>edit text</a>';
-}
-?>
-	<div class="wrapper">
-				<?php require(getBestMatchToInclude(DIR_WS_COMMON  . 'pages/' .  $page_body_to_include,0,$jacob)); ?>
-  </div>
+<body id="hp" class="normal" >
+    <!--   ==============   HEADER   ==============   -->
+		<?php require ('menu.php') ?>
+    <div class="container clearfix">
+	
+			<?php require(getBestMatchToInclude(DIR_WS_COMMON  . 'pages/' .  $page_body_to_include,0,$jacob)); ?>
+    </div>
+	</div>
+				
+  </div></div>
 	<!-- footer -->
-	<div id="footer_jb">
-		<a href="privacy.php" class="footer"><?= BOX_INFORMATION_PRIVACY ?></a>
+	<div id="footer">
+		<div class="wrap">
+	   	<ul>
+		  	<li><a href="privacy.php" class="footer"><?= BOX_INFORMATION_PRIVACY ?></a></li>
+			</ul>
+		</div>
 	</div>
 	
 

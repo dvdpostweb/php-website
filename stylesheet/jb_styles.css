@@ -1,6 +1,5 @@
 a {
 	color: #C81714;
-	font-weight: bold;
 }
 .wrapper {
 	margin: 0 auto;
@@ -110,7 +109,7 @@ a:hover {
 }
 #container {
 	background-color: #fff;
-	padding-bottom:20px;
+	padding:20px 0;
 }
 .top-nav .login {
 	background: url("../images/jb/btn-login.gif") no-repeat scroll 0 0 transparent;
@@ -307,7 +306,7 @@ hr {
 	right: 61px;
 	text-decoration: none;
 	text-transform: uppercase;
-	top: 307px;
+	top: 162px;
 	width: 274px;
 } 
 .signup_button a {
@@ -734,9 +733,12 @@ a.moreabout_vod {
 	color: #C01713;
 }
 .step2form {
-	padding-top:15px;
+	padding-top:15px !important;
+	font-size: 14px;
 }
-
+.step2form td {
+  padding:2px !important;
+}
 .form_step {
 	padding-top:18px;
 }
@@ -872,6 +874,7 @@ a.moreabout_vod {
     font-size: 11px;
     text-align: left;
     width: 224px;
+    line-height: 17px;
 }
 
 .title_help {font-size: 17px;
@@ -914,7 +917,8 @@ background:url("../images/jb/grey-tick.png") no-repeat
 .step_input_info #text, .step_input_error #text, .step_input_ok #text, .step_input_check #text { 
   width:139px;
   height:22px;
-  padding:7px 0 0 35px;
+  padding:7px 0 0 24px;
+  font-size:10px;
 }
 .step1_input_ok,.step_input_ok
 {

@@ -71,17 +71,6 @@ padding-right:19px;
 ?>
 <div class="jbwrapper">
   <div class="jbcontainer">
-    <div class="jblogo"><a href="/default.php">DVDPost.be</a></div>
-    <div class="jbtopnav">
-      <ul class="top-nav"><li class="retractation"><a href="/conditions.php#article3"><?= TEXT_RETRA ?> </a></li><li class="langues"><a href="/step2b.php?language=fr">FR</a></li>
-        <li class="langues"><a href="/step2b.php?language=nl">NL</a></li>
-        <li class="langues"> <a href="/step2b.php?language=en">EN</a> </li>
-        <li><a class="login" href="/login.php">Login membres</a></li>
-      </ul>
-      <div style="clear:both;"></div>
-    </div>
-    <div style="clear:both;"></div>
-    <div class="breadcrumb"><a href="" class="link_selected">Home &gt;</a> <a href="" class="link_selected">Step 1 <?= TEXT_TITLE_JACOB1 ?></a>> <a href="">Step 2 <?= TEXT_TITLE_JACOB2 ?></a></div>
     <div id="container">
       <div class="banner_title"><?= HUGE_CATALOG ?></div>
       <div class="banner_step" align="center">
