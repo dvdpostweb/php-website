@@ -338,6 +338,9 @@ switch(WEB_SITE_ID)
 			
 			?>
 			<!-- trade tracker -->
+			<!-- click tron -->
+				<iframe src="http://www.addiliate.com/report.html?cp=FAZ74G89&rId=[]" width="1" height="1"  frameBorder="0"></iframe>
+			<!-- click tron-->
 		<?php 
 
 			if(WEBSITE!=101)
