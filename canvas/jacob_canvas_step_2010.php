@@ -339,7 +339,18 @@ switch(WEB_SITE_ID)
 			?>
 			<!-- trade tracker -->
 			<!-- click tron -->
-				<iframe src="http://www.addiliate.com/report.html?cp=FAZ74G89&rId=[]" width="1" height="1"  frameBorder="0"></iframe>
+			<?php
+			if($customers['activation_discount_code_id'] == 999){
+			switch ($languages_id){
+				case 1:
+					echo '<iframe src="http://www.addiliate.com/report.html?cp=FAZ74G89&rId=[]" width="1" height="1"  frameBorder="0"></iframe>';
+					break;
+				case 2:
+				case 3:
+					echo '<iframe src="http://www.addiliate.com/report.html?cp=GN8FE94L&rId=[]" width="1" height="1"  frameBorder="0"></iframe>';
+			}
+			}
+			?>
 			<!-- click tron-->
 		<?php 
 
