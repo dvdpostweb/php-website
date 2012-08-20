@@ -41,7 +41,7 @@ switch($action)
 function form($email,$language='fr',$pass='',$pass2='',$error=0,$url_back=''){
 	?>
 	
-	<form method="POST">
+	<form method="POST" id="form_login_new">
 		<table border="0" width="700" align="center">
 			<tr>
 				<td>

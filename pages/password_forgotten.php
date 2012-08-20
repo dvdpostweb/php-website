@@ -22,9 +22,9 @@
 	}
 </style>
 <div class="main-holder">
-<table width="950" height="358" align="center" border="0" cellspacing="0" cellpadding="0">
+<table width="970" height="358" align="center" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td height="40" align="center" valign="middle" class="TYPO_ROUGE_ITALIQUE"><?php   echo HEADING_TITLE; ?></td>
+    <td align="center" valign="middle" class="TYPO_ROUGE_ITALIQUE"><?php   echo HEADING_TITLE; ?></td>
   </tr>
   <tr class="vtop">
     <td class="main-removed">
@@ -36,7 +36,7 @@ if ($HTTP_GET_VARS['action'] == 'process' && $error_password_form == 0) {
 else
 {
 ?>
-<form name="password_forgotten" method="post" action="<?php   echo '/'.FILENAME_PASSWORD_FORGOTTEN.'?action=process'; ?>">
+<form name="password_forgotten" id ='form_pass' method="post" action="<?php   echo '/'.FILENAME_PASSWORD_FORGOTTEN.'?action=process'; ?>">
 		<table border="0" width="450" cellspacing="0" cellpadding="3" align="center">
           <tr>
             <td align="right" class="text_mail"><?php   echo ENTRY_EMAIL_ADDRESS; ?></td>

@@ -129,7 +129,8 @@ else
 		$action="error3";
 	}
 }
-include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_step.php'));
+include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_step_2010.php'));
+
 
 require('configure/application_bottom.php');
 

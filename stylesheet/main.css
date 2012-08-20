@@ -751,3 +751,38 @@ background: url(/images/vodbtn.png) no-repeat scroll 0 -35px transparent;
 {
   color:white;
 }
+
+.TYPO_ROUGE_ITALIQUE
+{
+  margin: 15px;
+  background: white;
+  height: 40px;
+  padding: 2px 0;
+  font-size: 32px;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+#form_pass
+{
+margin: 0 auto;
+width: 450px;
+}
+.text_infos
+{
+  padding: 0 55px;
+  font-size: 15px;
+}
+.title h1
+{
+  background:white;
+  text-align:center;
+  padding:5px;
+}
+#form_login_new
+{
+  width:500px;
+  margin: 20px auto;
+}
+.St_black_new
+{
+  margin:15px;
+}
