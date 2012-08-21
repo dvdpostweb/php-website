@@ -9,11 +9,11 @@
 		echo '<META http-equiv="refresh" content="'.$refresh['secondes'].'; URL='.$refresh['link'].'">';
 	}
 ?>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
 <meta name="verify-v1" content="PQdsGfiSvfFZFXwp5ZRxDgw37x89LYLkoOy2X5uD7tY=" /> 
 <meta name="verify-v1" content="Fh6utipb6BPbYsezoaWU0qwP+ODl0ioypAFfh41Qbu0=" />
 <META NAME="description" content="<?php echo $meta_desc1 . $strmeta . TEXT_META_DESC2; ?>">
 <META NAME="keywords" content="<?php echo TEXT_META_KEYWORDS; ?>">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
 <meta http-equiv="Content-Language" content="<?php echo TEXT_META_LANGUAGE; ?>">
 <meta name="author" content ="Home Entertainment Services">
 <meta name="Revisit-after" content="14 days">
@@ -169,7 +169,6 @@ if(scriptAvailable($script_available)){
 <script type="text/javascript" src="js/main.js?v=2"></script>
 	<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="stylesheet/ie6.css" media="screen"/><![endif]-->
 </head>
-<body>
 	<?php
 //if($host!='localhost' && $host!='test'){
 if(1==0){

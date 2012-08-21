@@ -84,8 +84,8 @@ $_POST['activation_code']=strtolower($_POST['activation_code']);
 			setcookie('activation_code', $_POST['activation_code'], time()+2592000, substr(DIR_WS_CATALOG, 0, -1)); 
 		}else{
 			//mauvais code on force a freetest2
-			$activation_code='FREETEST2';
-			$activation_discount_code_id=298;
+			$activation_code='univers';
+			$activation_discount_code_id=1022;
 			$activation_discount_code_type="D";	
 			$activation_discount_next=0;
 			$goto_step=21;
@@ -101,11 +101,11 @@ $_POST['activation_code']=strtolower($_POST['activation_code']);
 }else{
 	//si il y a un probleme de cookies on force au FREETRIAL 	
 
-		$activation_discount_code_id=298;
+		$activation_discount_code_id=1022;
 		$activation_discount_code_type="D";	
 		$activation_discount_next=0;
 		$goto_step=21;
-		$activation_code='FREETEST2';
+		$activation_code='univers';
 		if (!tep_session_is_registered('customer_id')) {
 			$cust_info ="SELECT discount_code_id , next_discount from discount_code where discount_code='". $_POST['activation_code']."'";
 			$cust_info_query = tep_db_query($cust_info);
@@ -473,7 +473,7 @@ else{//REGISTERED CLIENT
 $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
 
  if ($_POST['activation_code']=='0' || $activation_code=='FREETEST2' || $activation_code==''  ){
-	 $activation_code='FREETEST2';
+	 $activation_code='univers';
 	 $show_discount_form=1;
   }
   $disc_explain='';

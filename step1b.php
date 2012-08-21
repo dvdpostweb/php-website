@@ -283,7 +283,7 @@ else{//REGISTERED CLIENT
 $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
 
  if ($_POST['activation_code']=='0' || $activation_code=='FREETEST2' || $activation_code==''  ){
-	 $activation_code='FREETEST2';
+	 $activation_code='univers';
 	 $show_discount_form=1;
   }
   $disc_explain='';

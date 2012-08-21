@@ -3,13 +3,13 @@ require('configure/application_top.php');
 $host=$_SERVER['HTTP_HOST'];
 if(strpos($host,'.be')>0){
 	$site='www.dvdpost.be';
-	$freetest='FREETEST2';}
+	$freetest='univers';}
 else if (strpos($host,'.nl')>0){
 	$site='www.dvdpost.nl';	
 	$freetest='TRIALNL';
 }else{
 	$site= SITE_ID;
-	$freetest='FREETEST2';
+	$freetest='univers';
 	}
 if ($_POST['code']==$_POST['base_code'] || $_POST['code']=='' )
 	$var_post_code=$freetest;

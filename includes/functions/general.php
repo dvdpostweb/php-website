@@ -2653,6 +2653,7 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		$discount_query = tep_db_query($sql);
 		$discount_values = tep_db_fetch_array($discount_query);
 		$abo_dvd_credit= $discount_values['abo_dvd_credit'];
+		$abo_dvd_max = $discount_values['abo_dvd_remain'];
 		
 		if($abo_dvd_credit==0)
 			$abo_dvd_credit=$credits;
@@ -2660,23 +2661,28 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		switch ($discount_values['discount_abo_validityto_type']){
 			case 1:	
 				$duration = '<span class="red_font">'.$discount_values['discount_abo_validityto_value'].' '.TEXT_DAYS.'</span>';
-				$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
 				$nb_days = $discount_values['discount_abo_validityto_value']. ' day';
-				
 			break;
 			case 2:	
 				$duration = '<span class="red_font">'.$discount_values['discount_abo_validityto_value'].' '.TEXT_MONTHS.'</span>';
-				$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
 				$nb_days = $discount_values['discount_abo_validityto_value']. ' month';
 			break;
 			case 3:	
 				$duration = '<span class="red_font">'.$discount_values['discount_abo_validityto_value'].' '.TEXT_YEAR.'</span>';
-				$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
 				$nb_days = $discount_values['discount_abo_validityto_value'].' year';
 				
 			break;
 			
 		}
+		if($abo_dvd_max > 0)
+		{
+			$period = ($abo_dvd_credit-$abo_dvd_max).' DVD/BLU-RAY/VOD & '.$abo_dvd_max.' '.TEXT_FILMS_VOD.' '.TEXT_FOR.' '.$duration;			
+		}
+		else
+		{
+			$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;			
+		}
+		
 		$period_next = $credits.' '.TEXT_FILMS.' '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo;
 	}
 	if ($promo_type == 'pre_paid') {
