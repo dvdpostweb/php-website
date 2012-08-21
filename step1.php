@@ -22,8 +22,8 @@ $_POST['email_address']=trim($_POST['email_address_step']);
 $_POST['password']=trim($_POST['password_step']);
 if($customer_id ==0)
 	unset($_SESSION['customer_id']);
+
 if (!tep_session_is_registered('customer_id')) {
-	
 if (!empty($_COOKIE['activation_code']) && empty($_GET['activation_code']) && empty($_POST['activation_code']))
 		$_POST['activation_code']=$_COOKIE['activation_code'];			
 if (!empty($_GET['activation_code']) && empty($_POST['activation_code']))
@@ -471,9 +471,10 @@ else{//REGISTERED CLIENT
 //include(DIR_WS_INCLUDES . 'translation.php');
 
 $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
-
- if ($_POST['activation_code']=='0' || $activation_code=='FREETEST2' || $activation_code==''  ){
+ if ($_POST['activation_code']=='0' || $activation_code=='FREETEST2' || $activation_code=='univers' || $activation_code==''  ){
 	 $activation_code='univers';
+	 $activation_id=1022;	
+	
 	 $show_discount_form=1;
   }
   $disc_explain='';

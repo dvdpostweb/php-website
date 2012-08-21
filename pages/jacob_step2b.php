@@ -72,12 +72,7 @@ padding-right:19px;
 <div class="jbwrapper">
   <div class="jbcontainer">
     <div id="container">
-      <div class="banner_title"><?= HUGE_CATALOG ?></div>
-      <div class="banner_step" align="center">
-        <p>
-					<?= $promotion ?>
-				</p>
-        <span><a href="catalog.php" class="browse_button"><?= EXPLORER ?></a></span> </div>
+      <? require('partial/default/banner.php') ?>
       <div class="content_step">
 			<? require('partial/default/jacob_questions.php') ?>
 

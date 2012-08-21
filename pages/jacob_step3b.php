@@ -55,16 +55,7 @@ if(WEBSITE==101)
 <div class="jbwrapper">
   <div class="jbcontainer">
 		<div id="container">
-			<? if (strpos(strtoupper($activation_code),'BGC') === 0) { ?> 
-				<div class="banner_step_relance"  id="<?= $lang_short ?>" align="center">
-					<p style="width: 400px;margin: 26px auto;"><?= $promotion ?></p>
-				</div>
-				<? } else {?>
-      <div class="banner_title"><?= HUGE_CATALOG ?></div>
-      <div class="banner_step" align="center">
-        <p><?= $promotion ?></p>
-        <span><a href="catalog.php" class="browse_button"><?= EXPLORER ?></a></span> </div>
-				<? }?>
+			<? require('partial/default/banner.php') ?>
 		      <div class="content_step">
 				<? require('partial/default/jacob_questions.php') ?>
 				</div>
