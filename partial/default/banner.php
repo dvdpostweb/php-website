@@ -1,4 +1,3 @@
-<?= $activation_id ?>
 <? if (strpos(strtoupper($activation_code),'BGC') === 0) { ?> 
 	<div class="banner_step_relance"  id="<?= $lang_short ?>" align="center">
 		<p style="width: 400px;margin: 26px auto;"><?= $promotion ?></p>

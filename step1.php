@@ -196,6 +196,7 @@ if(!$next_abo_type>0)
 			break;
 			
 		}
+		
 		$promotion = promotion($current_products_id, $next_abo_type, 'D', $promo_id,$jacob);
 		$period_next = $credits.' DVDs '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation.' DVDs '.AT_TIME.' &euro; '.$price_abo;
 		
