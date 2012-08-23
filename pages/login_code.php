@@ -113,7 +113,7 @@ margin: 0 auto;
 </style>
 <div class="main-holder">
 
-<table width="930" border="0" cellpadding="0" cellspacing="0" bgcolor="ffffff" align="center">
+<table width="970" border="0" cellpadding="0" cellspacing="0" bgcolor="ffffff" align="center">
 
 <form name="form1" method="post" action="login_code.php?action=<?= ((tep_session_is_registered('customer_id'))?'process':'login').'&email='.$email.'&force='.$force ?>">
 	<tr class="hello">
@@ -133,8 +133,8 @@ if(strtolower($code)=="gfc50"){
 <?php
 }
 ?>
-                    <p><br /><br /><?php echo TEXT_STUDENT_EXPLAIN ;?></p>
-                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="400"> 
+                    <p><br /><br /><br /><br /><?php echo TEXT_STUDENT_EXPLAIN ;?></p>
+                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="400" style="margin:0 auto"> 
 	                
 					<?php 
           if (!tep_session_is_registered('customer_id')){

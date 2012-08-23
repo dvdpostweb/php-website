@@ -147,11 +147,7 @@ $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'SSL'));
 
 $page_body_to_include = $current_page_name;
 
-if (!tep_session_is_registered('customer_id' || $check_customer['customers_registration_step']<100 )) {
-	include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_2009.php'));
-}else{
-	include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_private.php'));
-}
+include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_step_2010.php'));
 
 require('configure/application_bottom.php');
 ?>
