@@ -134,7 +134,7 @@ if(strtolower($code)=="gfc50"){
 }
 ?>
                     <p><br /><br /><br /><br /><?php echo TEXT_STUDENT_EXPLAIN ;?></p>
-                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="400" style="margin:0 auto"> 
+                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="450" style="margin:0 auto"> 
 	                
 					<?php 
           if (!tep_session_is_registered('customer_id')){
