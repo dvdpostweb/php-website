@@ -89,10 +89,16 @@ padding-top:410px;
 	width:630px;
 	margin: 0 auto;
 }
-.univers font,.svod font
+.univers .mdp,.svod .mdp
 {
 	color:white;
 	text-align:right;
+}
+.univers .bl,.svod .bl
+{
+background: black !important;
+border: none;
+color: white;
 }
 .univers,.svod
 {
@@ -135,13 +141,20 @@ margin: 0 auto;
 	border: none;
 	color: white;
 	cursor: pointer;
-	font-size: 21px;
+	font-size: 19px;
 	font-weight: bold;
 	height: 43px;
 	margin-bottom: 30px;
 	width: 202px;
 	line-height: 35px;
 	padding-top: 7px;
+	margin-top:35px;
+}
+.univers .explain, .svod .explain {
+	font-size:0px;
+}
+.univers .up, .svod .up {
+	text-transform: uppercase;
 }
 
 </style>
@@ -167,15 +180,20 @@ if(strtolower($code)=="gfc50"){
 <?php
 }
 ?>
-                    <p><br /><br /><br /><br /><?php echo TEXT_STUDENT_EXPLAIN ;?></p>
-                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="450" style="margin:0 auto"> 
+                    <p class="explain"><br /><br /><br /><br /><?php echo TEXT_STUDENT_EXPLAIN ;?></p>
+                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="450" style="margin:0 auto">
+											<?php if (($step=='90' || $force==1) && !empty($code))
+											{
+												echo '<tr><td align="left"  width="140"  height="35" valign="middle" class="slogan_detail">'.TEXT_CODE.'</td><td align="right" height="35" valign="middle"><input name="code" id="code" type="text" class="inputs_codes bl up" size="30" value="'.(($invisible!=1)?	$code : '' ).'" size="18" ></td></tr>';
+											}
+											?>
 	                
 					<?php 
           if (!tep_session_is_registered('customer_id')){
-          echo '<tr><td align="left" width="150" height="35" valign="middle" class="slogan_detail">'.TEXT_EMAIL.'</td><td width="250" align="right" height="35" valign="middle"><input name="email_address" id="code" type="text" class="inputs_codes" size="30" value="'.$email.'" size="18" ></td></tr>';
+          echo '<tr><td align="left" width="150" height="35" valign="middle" class="slogan_detail">'.TEXT_EMAIL.'</td><td width="250" align="right" height="35" valign="middle"><input name="email_address" id="code" type="text" class="inputs_codes bl" size="30" value="'.$email.'" size="18" ></td></tr>';
           echo '<tr><td align="left" width="150" height="35" valign="middle" class="slogan_detail">'.TEXT_PASSWORD .'</td><td align="right" height="35" valign="middle"><input name="password" maxlength="40" value="'.$_POST['password'].'" type="password" id="code"  class="inputs_codes" size="30" value="" size="18" ></td></tr>';
           }else{
-          echo '<tr><td align="left" width="150" height="35" valign="middle" class="slogan_detail">'.TEXT_EMAIL.'</td><td align="right" height="35" valign="middle"><input name="email_address_disable" id="code" type="text" class="inputs_codes"  value="'.$email.'" disabled size="30" ><input name="email_address" id="code" type="hidden" value="'.$email.'" /></td></tr>';
+          echo '<tr><td align="left" width="150" height="35" valign="middle" class="slogan_detail ">'.TEXT_EMAIL.'</td><td align="right" height="35" valign="middle"><input name="email_address_disable" id="code" type="text" class="inputs_codes"  value="'.$email.'" disabled size="30" ><input name="email_address" id="code" type="hidden" value="'.$email.'" /></td></tr>';
           }
           ?>
 					<tr><td colspan="2" class="slogan_detail" align='right'>
@@ -184,14 +202,14 @@ if(strtolower($code)=="gfc50"){
 		{
 			echo TEXT_ERROR_LOGIN;
 			echo TEXT_LOGIN_ERROR_EMAIL;
-			echo '<a href="password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force='.$force.'&invisible='.$invisible.'"><font color="#ff0000">'.TEXT_CLIC.'</font></a><br />';
+			echo '<a href="password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force='.$force.'&invisible='.$invisible.'"><font color="#ff0000" class="mdp">'.TEXT_CLIC.'</font></a><br />';
 
 		} 
 		else if(!isset($_GET[info]))
 		{
 			if (!tep_session_is_registered('customer_id')){	
 				echo TEXT_LOGIN_ERROR_EMAIL;
-				echo '<a href="password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force='.$force.'&invisible='.$invisible.'"><font color="#ff0000">'.TEXT_CLIC.'</font></a><br />';
+				echo '<a href="password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force='.$force.'&invisible='.$invisible.'"><font color="#ff0000" class="mdp">'.TEXT_CLIC.'</font></a><br />';
 			}
 			
 		}
@@ -207,11 +225,7 @@ if(strtolower($code)=="gfc50"){
 		}
 			?>
           </td></tr>
-	        <?php if (($step=='90' || $force==1) && !empty($code))
-					{
-						echo '<tr><td align="left"  width="140"  height="35" valign="middle" class="slogan_detail">'.TEXT_CODE.'</td><td align="right" height="35" valign="middle"><input name="code" id="code" type="text" class="inputs_codes" size="30" value="'.(($invisible!=1)?	$code : '' ).'" size="18" ></td></tr>';
-					}
-					?>
+	        
 	                
 					<? if (strpos($code,'BGC') === 0) { ?> 
              <tr><td colspan="2" align="center"><p><input type="submit" class="button_relance" value="<?= CONFIRM_CHOICE ?>" name="sent">
