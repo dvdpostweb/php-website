@@ -29,38 +29,6 @@ else
 <style>
 
 .hello {
-<?php
-if($_GET['code']=='code31')
-{
-	echo 'background:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/step31.jpg) center 0 no-repeat; ' ;
-}
-else
-{
-switch(WEB_SITE_ID){
-	case 44:
-		echo 'background:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/hello/home.jpg);' ;
-		break;
-	case 45:
- 		echo 'background:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/welcome/home.jpg);' ;
- 		break;
-
-	default :
-		$query_banner = tep_db_query("SELECT banner from discount_code where discount_code ='".$code."'");
-		$query_banner2 = tep_db_query("SELECT banner from activation_code where activation_code ='".$code."'");
-		
-		if ($query_banner_values = tep_db_fetch_array($query_banner)){
-			$img = explode(".", $query_banner_values['banner']);
-			echo 'background:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/'.$img[0].'.jpg) center 0 no-repeat; ' ;
-		}else if ($query_banner_values = tep_db_fetch_array($query_banner2)){
-			$img = explode(".", $query_banner_values['banner']);
-			echo 'background:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/'.$img[0].'.jpg) center 0 no-repeat; ' ;
-		}else{
-			echo 'background:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/code/home.jpg) center 0 no-repeat; ' ;
-		}
-		
-}}
-?>
-
 background-repeat:no-repeat;
 background-color:#ffffff;
 }
@@ -75,14 +43,65 @@ font-size:14px;
 line-height:19px;
 font-family:Arial, Helvetica, sans-serif;
 text-align:center;
+<?php
+if($_GET['code']=='code31')
+{
+	echo 'background:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/step31.jpg) center 0 no-repeat; ' ;
 }
+else
+{
+switch(WEB_SITE_ID){
+	case 44:
+		echo 'background-image:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/hello/home.jpg);' ;
+		break;
+	case 45:
+ 		echo 'background-image:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/welcome/home.jpg);' ;
+ 		break;
 
+	default :
+		$query_banner = tep_db_query("SELECT banner from discount_code where discount_code ='".$code."'");
+		$query_banner2 = tep_db_query("SELECT banner from activation_code where activation_code ='".$code."'");
+		
+		if ($query_banner_values = tep_db_fetch_array($query_banner)){
+			$img = explode(".", $query_banner_values['banner']);
+			echo 'background-image:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/'.$img[0].'.jpg) ; ' ;
+		}else if ($query_banner_values = tep_db_fetch_array($query_banner2)){
+			$img = explode(".", $query_banner_values['banner']);
+			echo 'background-image:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/'.$img[0].'.jpg); ' ;
+		}else{
+			echo 'background-image:url('.DIR_WS_IMAGES_LANGUAGES.$language.'/images/code/home.jpg); ' ;
+		}
+		
+}}
+?>
+background-repeat:no-repeat;
+background-position: center 0
+}
+#promo_code.univers, #promo_code.svod
+{
+background-color:black;
+width: 950px;
+margin: 10px;
+padding-top:410px;
+}
 .intro_formule {
 	text-align:left;
 	width:630px;
 	margin: 0 auto;
 }
-
+.univers font,.svod font
+{
+	color:white;
+	text-align:right;
+}
+.univers,.svod
+{
+	color:white;
+}
+.univers .contact,.svod .contact
+{
+	display:none;
+}
 .text_formule_hello {
 font-size:20px;
 
@@ -110,6 +129,21 @@ margin: 0 auto;
   margin-bottom: 30px;
   width: 299px;
 }
+.confirm
+{
+	background: url("http://www.dvdpost.be/images/blanck_button.jpg") no-repeat scroll 0 0 transparent;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 21px;
+	font-weight: bold;
+	height: 43px;
+	margin-bottom: 30px;
+	width: 202px;
+	line-height: 35px;
+	padding-top: 7px;
+}
+
 </style>
 <div class="main-holder">
 
@@ -120,7 +154,7 @@ margin: 0 auto;
 		<td width="773"  valign="top"  >
    
      
- 			  	<div id="promo_code" >
+ 			  	<div id="promo_code" class="<?= strtolower($code) ?>" >
 <?php
 if(strtolower($code)=="gfc50"){
 ?>
@@ -144,7 +178,7 @@ if(strtolower($code)=="gfc50"){
           echo '<tr><td align="left" width="150" height="35" valign="middle" class="slogan_detail">'.TEXT_EMAIL.'</td><td align="right" height="35" valign="middle"><input name="email_address_disable" id="code" type="text" class="inputs_codes"  value="'.$email.'" disabled size="30" ><input name="email_address" id="code" type="hidden" value="'.$email.'" /></td></tr>';
           }
           ?>
-					<tr><td colspan="2" class="slogan_detail">
+					<tr><td colspan="2" class="slogan_detail" align='right'>
      <?php
     if ($login == 'fail') 
 		{
@@ -181,6 +215,10 @@ if(strtolower($code)=="gfc50"){
 	                
 					<? if (strpos($code,'BGC') === 0) { ?> 
              <tr><td colspan="2" align="center"><p><input type="submit" class="button_relance" value="<?= CONFIRM_CHOICE ?>" name="sent">
+					<? } else if (strpos($code,'univers') === 0) { ?> 
+		         <tr><td colspan="2" align="center"><p><input type="submit" class="confirm" value="<?= CONFIRM_CHOICE2 ?>" name="sent">
+					<? } else if (strpos($code,'svod') === 0) { ?> 
+		         <tr><td colspan="2" align="center"><p><input type="submit" class="confirm" value="<?= CONFIRM_CHOICE2 ?>" name="sent">
 					<? } else {?>
 						 <tr><td colspan="2" align="right"><p><input class="no_border_button" name="imageField" type="image" src="<?php 
 						echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/buttons/canvas/button_logocode.gif'; ?>" align="absmiddle" border="0">
@@ -200,7 +238,7 @@ if(strtolower($code)=="gfc50"){
                  <?php
 				}
 				?>
-                 <p><a href="contact.php"><img src="<?php echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/hello/phone.gif' ;?>" border="0" /></a></p>
+                 <p class='contact'><a href="contact.php"><img src="<?php echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/hello/phone.gif' ;?>" border="0" /></a></p>
                 </div>
 		</td>
 	</tr>
