@@ -146,7 +146,7 @@ if (tep_session_is_registered('customer_id')){
 $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'SSL'));
 
 $page_body_to_include = $current_page_name;
-
+$nav = true;
 include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_step_2010.php'));
 
 require('configure/application_bottom.php');
