@@ -36,7 +36,7 @@
 									<tr>
 										<?php 
 											if ($phone_available==false)
-												echo '<td></td>';
+												echo '<td width="130"></td>';
 										?>
 										<td width="230" class="<?php echo (($_POST['payment']!='phone' )?'active_verif':'normal_verif') ?>" id="ogone">
 											<div class="verif_type"><?= TITLE_PAYMETHOD ?></div>
@@ -69,6 +69,10 @@
 												</tr>
 											</table>
 										</td>
+										<?php 
+											if ($phone_available==false)
+												echo '<td width="130"></td>';
+										?>
 										<?php if($phone_available==true){?>
 										<td width="23" class="or"><?= TEXT_OR ?></td>
 										<td width="230" class="<?php echo (($_POST['payment']=='phone' )?'active_verif':'normal_verif') ?>" id ='bank' valign="top">	

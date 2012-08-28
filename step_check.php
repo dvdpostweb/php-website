@@ -38,7 +38,7 @@ if (!tep_session_is_registered('customer_id')) {
 			$address_sql="select *  from address_book where customers_id= '".$customer_id."' and address_book_id = '" . $customer_values['customers_default_address_id'] . "'";
 			$address_book = tep_db_query($address_sql);  
 			$address_book_values = tep_db_fetch_array($address_book);
-			if ($address_book_values['entry_country_id']!='124' && $address_book_values['entry_country_id']!='150')
+			if ($address_book_values['entry_country_id']!='124' && $address_book_values['entry_country_id']!='150' && $customer_values['activation_discount_code_id'] !=999)
 			{
 				$phone_available=true;
 			}
