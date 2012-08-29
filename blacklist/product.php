@@ -13,12 +13,12 @@ while($row = tep_db_fetch_array($query))
 	echo '<td><table><tr><td>';
 	echo $row['products_id'];
 	echo '<td></tr><tr><td>';
-	echo "<img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_1.jpg'>";
-	echo "<img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_2.jpg'>";
-	echo "<img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_3.jpg'>";
-	echo "<img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_4.jpg'>";
-	echo "<img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_5.jpg'>";
-	echo "<img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_6.jpg'>";
+	echo "1<a href='http://www.dvdpost.be/images/screenshots/big/".$row['imdb_id']."_1.jpg' target='_blank'><img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_1.jpg'></a>";
+	echo "2<a href='http://www.dvdpost.be/images/screenshots/big/".$row['imdb_id']."_1.jpg' target='_blank'><img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_2.jpg'></a>";
+	echo "3<a href='http://www.dvdpost.be/images/screenshots/big/".$row['imdb_id']."_1.jpg' target='_blank'><img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_3.jpg'></a>";
+	echo "4<a href='http://www.dvdpost.be/images/screenshots/big/".$row['imdb_id']."_1.jpg' target='_blank'><img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_4.jpg'></a>";
+	echo "5<a href='http://www.dvdpost.be/images/screenshots/big/".$row['imdb_id']."_1.jpg' target='_blank'><img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_5.jpg'></a>";
+	echo "6<a href='http://www.dvdpost.be/images/screenshots/big/".$row['imdb_id']."_1.jpg' target='_blank'><img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_6.jpg'></a>";
 	echo '</td/></tr></table></td>';
 		echo '</tr><tr>';
 	
