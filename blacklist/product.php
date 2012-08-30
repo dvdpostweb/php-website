@@ -13,7 +13,7 @@ while($row = tep_db_fetch_array($query))
 {
 	$i++;
 	echo '<td><table><tr><td>';
-	echo $row['products_id'].'.'.$row['imdb_id'].'.'.$row['series_id'];
+	echo $row['products_id'].' imdb_id '.$row['imdb_id'];
 	echo '<td></tr><tr><td>';
 	echo "1<a href='http://www.dvdpost.be/images/screenshots/big/".$row['imdb_id']."_1.jpg' target='_blank'><img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_1.jpg'></a>";
 	echo "2<a href='http://www.dvdpost.be/images/screenshots/big/".$row['imdb_id']."_2.jpg' target='_blank'><img src='http://www.dvdpost.be/images/screenshots/small/".$row['imdb_id']."_2.jpg'></a>";
