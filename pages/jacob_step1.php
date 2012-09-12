@@ -83,7 +83,7 @@ else
 										<input class="step_input" id='password' type="password" name="password_step"  autocomplete="off" value="<?php  echo $_POST['password'] ;?>"  size="26" />
 									</td>
                   <td><div id='check_pass' class='<?= $class_pass ?>'><div id="text"><?= $error_pass ?></div> </div><input  TYPE="hidden" VALUE="1" NAME="sent">
-									<input  TYPE="hidden" VALUE="<?php  echo $activation_code ;?>" NAME="activation_code"></td>
+									<input  TYPE="text" VALUE="<?php  echo $activation_code ;?>" NAME="activation_code"></td>
                 </tr>
                 <tr>
                   <td></td>

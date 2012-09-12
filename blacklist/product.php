@@ -1,10 +1,16 @@
 <?php  
 require('../configure/application_top.php');
 
-
+$page = $_GET['page'];
+if(!isset($page) )
+{
+	$page = 1;
+}
+$limit = 1000;
+$offset = ($page-1) * $limit;
 $sql= "select * from dvdpost_be_prod.products p
 left join dvdpost_be_prod.products_to_categories s on s.products_id = p.`products_id`
-where products_type = 'dvd_norm' and products_status!=-1 and p.products_id > 126154 and categories_id!=55 group by imdb_id order by p.products_id desc  limit 5000";
+where products_type = 'dvd_norm' and products_status!=-1 and p.products_id > 126154 and categories_id!=55 group by imdb_id order by p.products_id desc  limit $offset, $limit";
 $query = tep_db_query($sql);
 
 $i=0;

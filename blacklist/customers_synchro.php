@@ -20,23 +20,23 @@ $servers=array(DB_SERVER,DB_SERVER_RO);
 	mysql_select_db($database);
 
 
-$sql ='select * from dvdpost_be_prod.products where products_type != "abo" and products_id !=0 order by products_id desc';
+$sql ='select * from dvdpost_be_prod.customers';
 $result = @mysql_query($sql, $link1);
 echo '<table>';
 while($data = mysql_fetch_array($result, MYSQL_ASSOC))
 {
-	$sql2 ='select * from dvdpost_be_prod.products where  products_id = '.$data['products_id'];
+	$sql2 ='select * from dvdpost_be_prod.customers where  customers_id = '.$data['customers_id'];
 	$result2 = @mysql_query($sql2, $link0);
 	$data2 = mysql_fetch_array($result2, MYSQL_ASSOC);
 	
 	$res = array_diff($data2,$data);
 	if (count($res)>0)
 	{
-	echo '<tr><td>products_id '.$data['products_id'].'<pre>dump';
+	echo '<tr><td>products_id '.$data['customers_id'].'<pre>dump';
 	$res = array_diff($data2,$data);
 	var_dump($res);
 	echo '</pre></td></tr>';
-	$sql_dublin = 'update products set ';
+	$sql_dublin = 'update customers set ';
 	$i=0;
 	while (list($key, $value) = each($res)) {
 			if ($i==0)
@@ -45,7 +45,7 @@ while($data = mysql_fetch_array($result, MYSQL_ASSOC))
 				$sql_dublin .= ','.$key.' = "'.$value.'"';
 			$i++;
 	}
-	$sql_dublin .=' where products_id = '.$data['products_id'].';';
+	$sql_dublin .=' where customers_id = '.$data['customers_id'].';';
 	echo $sql_dublin.'<br />';
 	#mysql_query($sql_dublin, $link1);
 	}
