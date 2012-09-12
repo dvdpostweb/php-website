@@ -8,7 +8,7 @@ $authentification= new Authentification(array(
   'site' => PRIVATE_SITE,
 ));
 $current_page_name = 'step1.php';
-
+$nav = true;
 include(DIR_WS_INCLUDES . 'translation.php');
 //error counter
 $error_cpt=0;
