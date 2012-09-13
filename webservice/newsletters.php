@@ -84,7 +84,9 @@ else
   if($locale =='fr')
   {
   	$trailer = 'Voir la bande-annonce';
-  	$link1 = 'Als dit bericht onleesbaar is,';
+  	
+  	$link1 = 'Si vous ne visualisez pas correctement ce message,';
+  	$link2 ='rendez-vous sur cette page';
   	$link2 ='ga naar deze pagina';
   	$director = 'R&eacute;alis&eacute; par';
   	$actors_txt = 'Avec';
@@ -95,7 +97,8 @@ else
   else if($locale =='nl')
   {
   	$trailer = 'De trailer bekijken';
-  	$link1 = 'Si vous ne visualisez pas correctement ce message,';
+  	$link1 = 'Als dit bericht onleesbaar is,';
+  	$link2 ='ga naar deze pagina';
   	$link2 ='rendez-vous sur cette page';
   	$director = 'Directed by';
   	$actors_txt = 'Actors';
@@ -212,7 +215,8 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 	}
 	else
 		$content = str_replace( '{%thumbs1%}','',$content);
-	if(!empty($thumbs_id[1]))
+	
+	if(!empty($thumbs_id[5]))
 	{
 		$thumbs = return_output('./thumbs2.html');
 		$list = $thumbs_id[5].','.$thumbs_id[6].','.$thumbs_id[7].','.$thumbs_id[8];
