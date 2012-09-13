@@ -87,7 +87,6 @@ else
   	
   	$link1 = 'Si vous ne visualisez pas correctement ce message,';
   	$link2 ='rendez-vous sur cette page';
-  	$link2 ='ga naar deze pagina';
   	$director = 'R&eacute;alis&eacute; par';
   	$actors_txt = 'Avec';
   	$fan ='Devenez fan de DVDPost sur';
@@ -99,7 +98,6 @@ else
   	$trailer = 'De trailer bekijken';
   	$link1 = 'Als dit bericht onleesbaar is,';
   	$link2 ='ga naar deze pagina';
-  	$link2 ='rendez-vous sur cette page';
   	$director = 'Directed by';
   	$actors_txt = 'Actors';
   	$fan ='Wordt fan van onze DVDPost pagina';
@@ -267,6 +265,8 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 			$top = str_replace( '{%top'.$i.'_name%}',$dvd['products_name'],$top);
 		}
 		$top = str_replace( '{%locale%}',$locale,$top);
+		$top = str_replace( '{%news_id%}',$news_id,$top);
+    
 		
     $content = str_replace( '{%top%}',$top,$content);
   }
