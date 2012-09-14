@@ -149,14 +149,14 @@ if($_GET['hide']!=1)
 						{
 							$path = 'http://private.dvdpost.com/'.$lang_short.'/adult/products/'.$recom['products_id'].'?recommendation=5';
 							$image_path = 'http://www.dvdpost.be/imagesx/'.htmlspecialchars($recom['products_image_big']);
-							$path_add = 'http://private.dvdpost.com/'.$lang_short.'/adult/products/'.$recom['products_id'].'?recommendation=5&add=1';
+							$path_add = 'http://private.dvdpost.com/'.$lang_short.'/adult/products/'.$recom['products_id'].'?recommendation=5&amp;add=1';
 
 						}
 						else
 						{
 							$path = 'http://private.dvdpost.com/'.$lang_short.'/products/'.$recom['products_id'].'?recommendation=5';
 							$image_path = 'http://www.dvdpost.be/images/'.htmlspecialchars($recom['products_image_big']);
-							$path_add = 'http://private.dvdpost.com/'.$lang_short.'/products/'.$recom['products_id'].'?recommendation=5&add=1';
+							$path_add = 'http://private.dvdpost.com/'.$lang_short.'/products/'.$recom['products_id'].'?recommendation=5&amp;add=1';
 
 						}
 						
