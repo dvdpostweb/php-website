@@ -14,6 +14,7 @@ foreach($servers as $server){
 		mysql_select_db($database);
 		@array_push($links,$db_link);
 }
+
 $preview = $_POST['preview'];
 $news_id = $_POST['news_id'];
 $language = $_POST['locale'];
