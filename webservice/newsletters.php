@@ -116,7 +116,7 @@ else
   	$desabo2 = 'please visit this page';  	
   }
 $listing_sql = 'select p.rating_users,p.rating_count,p.products_id, pd.products_name , pd.products_image_big,p.products_media,products_year,p.imdb_id,products_description, products_studio, directors_id,directors_name';
-$listing_sql .= ' from  dvdpost_be_prod.'.TABLE_PRODUCTS . ' p ';
+$listing_sql .= ' from  '.TABLE_PRODUCTS . ' p ';
 $listing_sql .= ' left join dvdpost_be_prod.' . TABLE_PRODUCTS_DESCRIPTION . ' pd on p.products_id = pd.products_id and pd.language_id=' . $language ;
 $listing_sql .= ' join directors d on p.products_directors_id = d.directors_id' ;
 $listing_sql .= ' where  p.products_id in ('.$product_id.')';
@@ -127,10 +127,10 @@ $i=0;
 $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 	$i++;
 	$content = str_replace( '{%director_id%}',$dvd['directors_id'],$content);
-	$content = str_replace( '{%director_name%}',$dvd['directors_name'],$content);
+	$content = str_replace( '{%director_name%}',utf8_encode($dvd['directors_name']),$content);
 	$content = str_replace( '{%imdb_id%}',$dvd['imdb_id'],$content);
 	
-	$desc = sub($dvd['products_description'],250);
+	$desc = utf8_encode(sub($dvd['products_description'],250));
 	if(empty($desc_init))
 		$content = str_replace( '{%description%}',$desc,$content);
 	else
@@ -149,7 +149,7 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 		{
 			$actors_data .= ' , ';
 		}
-		$actors_data .= '<a href="http://private.dvdpost.com/'.$locale.'/actors/'.$actors['actors_id'].'/products" target="_blank" style="color:  rgb(43, 56, 64); text-decoration: none;"><strong>'.$actors['actors_name'].'</strong></a>';
+		$actors_data .= '<a href="http://private.dvdpost.com/'.$locale.'/actors/'.$actors['actors_id'].'/products" target="_blank" style="color:  rgb(43, 56, 64); text-decoration: none;"><strong>'.utf8_encode($actors['actors_name']).'</strong></a>';
 		
 		$i++;
 	}
@@ -170,9 +170,9 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 		{
 			$i++;
 			$focus = str_replace( '{%focus'.$i.'_product_id%}',$dvd['products_id'],$focus);
-			$focus = str_replace( '{%focus'.$i.'_name%}',$dvd['products_name'],$focus);
+			$focus = str_replace( '{%focus'.$i.'_name%}',utf8_encode($dvd['products_name']),$focus);
 			$focus = str_replace( '{%focus'.$i.'_details%}',$focus_details[$i],$focus);
-			$d = empty($focus_desc[$i]) ? sub($dvd['products_description'],250) : $focus_desc[$i];
+			$d = empty($focus_desc[$i]) ? utf8_encode(sub($dvd['products_description'],250)) : $focus_desc[$i];
 			$focus = str_replace( '{%focus'.$i.'_description%}',$d,$focus);
 			$focus = str_replace( '{%focus'.$i.'_stars%}',$focus_rating[$i],$focus);
 			$focus = str_replace( '{%focus'.$i.'_imdb_id%}',$dvd['imdb_id'],$focus);
@@ -203,9 +203,9 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 		{
 			$i++;
 			$thumbs = str_replace( '{%thumbs'.$i.'_product_id%}',$dvd['products_id'],$thumbs);
-			$thumbs = str_replace( '{%thumbs'.$i.'_name%}',$dvd['products_name'],$thumbs);
-			$thumbs = str_replace( '{%thumbs'.$i.'_description%}',sub($dvd['products_description'],250),$thumbs);
-			$thumbs = str_replace( '{%thumbs'.$i.'_category%}',$dvd['categories_name'],$thumbs);
+			$thumbs = str_replace( '{%thumbs'.$i.'_name%}',utf8_encode($dvd['products_name']),$thumbs);
+			$thumbs = str_replace( '{%thumbs'.$i.'_description%}',utf8_encode(sub($dvd['products_description'],250)),$thumbs);
+			$thumbs = str_replace( '{%thumbs'.$i.'_category%}',utf8_encode($dvd['categories_name']),$thumbs);
 			$thumbs = str_replace( '{%locale%}',$locale,$thumbs);
 			
 		}
@@ -232,12 +232,9 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 		{
 			$i++;
 			$thumbs = str_replace( '{%thumbs'.$i.'_product_id%}',$dvd['products_id'],$thumbs);
-			$thumbs = str_replace( '{%thumbs'.$i.'_name%}',$dvd['products_name'],$thumbs);
-			$thumbs = str_replace( '{%thumbs'.$i.'_details%}',$focus_details[$i],$thumbs);
-			$thumbs = str_replace( '{%thumbs'.$i.'_description%}',sub($dvd['products_description'],250),$thumbs);
-			$thumbs = str_replace( '{%thumbs'.$i.'_stars%}','30',$thumbs);
-			$thumbs = str_replace( '{%thumbs'.$i.'_imdb_id%}',$dvd['imdb_id'],$thumbs);
-			$thumbs = str_replace( '{%thumbs'.$i.'_category%}',$dvd['categories_name'],$thumbs);
+			$thumbs = str_replace( '{%thumbs'.$i.'_name%}',utf8_encode($dvd['products_name']),$thumbs);
+			$thumbs = str_replace( '{%thumbs'.$i.'_description%}',utf8_encode(sub($dvd['products_description'],250)),$thumbs);
+			$thumbs = str_replace( '{%thumbs'.$i.'_category%}',utf8_encode($dvd['categories_name']),$thumbs);
 			$thumbs = str_replace( '{%locale%}',$locale,$thumbs);
 			
 		}
@@ -262,7 +259,7 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 		{
 			$i++;
 			$top = str_replace( '{%top'.$i.'_id%}',$dvd['products_id'],$top);
-			$top = str_replace( '{%top'.$i.'_name%}',$dvd['products_name'],$top);
+			$top = str_replace( '{%top'.$i.'_name%}',utf8_encode($dvd['products_name']),$top);
 		}
 		$top = str_replace( '{%locale%}',$locale,$top);
 		$top = str_replace( '{%news_id%}',$news_id,$top);
@@ -312,9 +309,23 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 	
 if($preview==1)
 {
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>news hebdo</title>
+</head>
+<body  bgcolor="#2c3841">
+<?
+
 	include('email_vision_data2.php');
 	echo 'content';
 	echo $content;	
+?>
+</body>
+</html>
+<?
 }
 else
 {
