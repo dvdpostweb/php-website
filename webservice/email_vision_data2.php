@@ -1,3 +1,17 @@
+<?
+if(empty($news_id))
+{
+  ?>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<title>news hebdo</title>
+  </head>
+  <body  bgcolor="#2c3841">
+<?
+}
+?>
 <div style='background:white;padding:10px;margin:0px'>
 <form action='newsletters.php' method="post">
 	news_id* <input type ='text' name="news_id" value = "<?= $news_id?>"><br />
@@ -76,4 +90,12 @@
   link : <input type='text' name="link" value = "<?= $link?>"><br />
 	<input type="submit" value ="go">
 </form>
-
+<?
+if(empty($news_id))
+{
+  ?>
+</body>
+</html>
+<?
+}
+?>
