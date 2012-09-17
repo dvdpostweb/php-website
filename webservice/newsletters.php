@@ -131,6 +131,14 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 	$content = str_replace( '{%director_name%}',htmlspecialchars(utf8_encode($dvd['directors_name'])),$content);
 	$content = str_replace( '{%imdb_id%}',$dvd['imdb_id'],$content);
 	
+	if($streaming=="1")
+  {
+    $content = str_replace( '{%streaming%}','<a href="http://private.dvdpost.com/'.$locale.'/streaming_products/'.$dvd['imdb_id'].'?warning=1" target="_blank">',$content);
+  }
+  else
+  {
+    $content = str_replace( '{%streaming%}','',$content);
+  }
 	$desc = htmlspecialchars(utf8_encode(sub($dvd['products_description'],250)));
 	if(empty($desc_init))
 		$content = str_replace( '{%description%}',$desc,$content);
@@ -177,6 +185,14 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 			$focus = str_replace( '{%focus'.$i.'_description%}',$d,$focus);
 			$focus = str_replace( '{%focus'.$i.'_stars%}',$focus_rating[$i],$focus);
 			$focus = str_replace( '{%focus'.$i.'_imdb_id%}',$dvd['imdb_id'],$focus);
+			if($focus_streaming[$i]=="1")
+      {
+        $focus = str_replace( '{%focus'.$i.'_streaming%}','<a href="http://private.dvdpost.com/'.$locale.'/streaming_products/'.$dvd['imdb_id'].'?warning=1" target="_blank" ><img src="http://www.dvdpost.be/images/newsletters/voir_'.$locale.'.jpg" width="160" height="29" border="0" alt="streaming" /></a>',$focus);//
+      }
+      else
+      {
+        $focus = str_replace( '{%focus'.$i.'_streaming%}','',$focus);
+      }
 			$focus = str_replace( '{%locale%}',$locale,$focus);
 			
 		}
@@ -272,32 +288,10 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
   {
   		$content = str_replace( '{%top%}','',$content);
   }
-  if($streaming=="1")
-  {
-    $content = str_replace( '{%streaming%}','inline',$content);
-  }
-  else
-  {
-    $content = str_replace( '{%streaming%}','none',$content);
-  }
-  if($focus_streaming[1]=="1")
-  {
-    $content = str_replace( '{%focus1_streaming%}','inline',$content);
-  }
-  else
-  {
-    $content = str_replace( '{%focus1_streaming%}','none',$content);
-  }
   
-  if($focus_streaming[2]=="1")
-  {
-    $content = str_replace( '{%focus2_streaming%}','inline',$content);
-  }
-  else
-  {
-    $content = str_replace( '{%focus2_streaming%}','none',$content);
-  }
-
+  
+  
+  
 	$content = str_replace( '{%trailer%}',$trailer,$content);
   $content = str_replace( '{%link1%}',$link1,$content);
   $content = str_replace( '{%link2%}',$link2,$content);
