@@ -99,8 +99,8 @@ else
   	$trailer = 'De trailer bekijken';
   	$link1 = 'Als dit bericht onleesbaar is,';
   	$link2 ='ga naar deze pagina';
-  	$director = 'Directed by';
-  	$actors_txt = 'Actors';
+  	$director = 'Geregisseerd door';
+  	$actors_txt = 'Acteurs';
   	$fan ='Wordt fan van onze DVDPost pagina';
   	$desabo1 = 'Indien u de nieuwsbrief van DVDPost niet meer wenst te ontvangen, '; 
   	$desabo2 = 'ga naar deze pagina'; 	
