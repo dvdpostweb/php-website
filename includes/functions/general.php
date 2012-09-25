@@ -2676,7 +2676,7 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		}
 		if($abo_dvd_max > 0)
 		{
-			$period = ($abo_dvd_credit-$abo_dvd_max).' DVD/BLU-RAY/VOD & '.$abo_dvd_max.' '.TEXT_FILMS_VOD.' '.TEXT_FOR.' '.$duration;			
+			$period = $abo_dvd_max.' DVD/BLU-RAY/VOD & '.($abo_dvd_credit-$abo_dvd_max).' '.TEXT_FILMS_VOD.' '.TEXT_FOR.' '.$duration;			
 		}
 		else
 		{
