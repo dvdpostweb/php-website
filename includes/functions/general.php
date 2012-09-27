@@ -2325,7 +2325,7 @@ function parrainage_classic($son_id)
 
 					
 					
-					tep_db_query("insert into mem_get_mem_used (date, father_id, father_abo_type, son_id , son_abo_type , points, expected_points) values (now(), '" . $query_mgm_value['customers_id'] . "', '" . $father_value['customers_abo_type'] . "', '" . $son_id . "', '" . $products_id. "', '0' ,'300')");	    	    				
+					tep_db_query("insert into mem_get_mem_used (date, father_id, father_abo_type, son_id , son_abo_type , points, expected_points) values (now(), '" . $query_mgm_value['customers_id'] . "', '" . $father_value['customers_abo_type'] . "', '" . $son_id . "', '" . $products_id. "', '0' ,'200')");	    	    				
 					
 					
 					$type_gender = (strtoupper($father_value['customers_gender']) == 'f' ? 'female_gender' : 'male_gender');
