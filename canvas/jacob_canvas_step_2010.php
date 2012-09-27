@@ -252,7 +252,8 @@ switch(WEB_SITE_ID)
 	<div id="footer">
 		<div class="wrap">
 	   	<ul>
-		  	<li><a href="privacy.php" class="footer"><?= BOX_INFORMATION_PRIVACY ?></a></li>
+	   	  <? $url = curPageURL() ?>
+		  	<li><a href="http://public.dvdpost.com/<?= $lang_short ?>/info/privacy?url_promo=<?= urlencode($url) ?>" class="footer"><?= BOX_INFORMATION_PRIVACY ?></a></li>
 			</ul>
 		</div>
 	</div>
