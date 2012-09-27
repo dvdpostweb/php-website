@@ -1,6 +1,6 @@
 <? include(DIR_WS_INCLUDES . 'functions/language_switcher.php'); ?>
 <?
-function curPageURL() {
+function curPageURL2() {
  $pageURL = 'http';
  if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
  $pageURL .= "://";
@@ -13,7 +13,7 @@ function curPageURL() {
 }
 ?>
 ?>
-<? $url = curPageURL() ?>
+<? $url = curPageURL2() ?>
 <div id="top">
 	<div class="wrap">
   	<a href="/login.php" id="login">Log in</a>
