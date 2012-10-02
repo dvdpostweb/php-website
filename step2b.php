@@ -13,24 +13,24 @@ else{
 		$nb_dvd=$_GET['dvd'];
 		switch($nb_dvd)
 		{
-			case 2:
-				$produt_id=17;	
+			case 3:
+				$produt_id=127762;	
 			break;
-			case 4:
-				$produt_id=18;
+			case 5:
+				$produt_id=127764;
 			break;
 			case 8:
-				$produt_id=20;
+				$produt_id=127766;
 			break;
-			case 12:
-				$produt_id=22;
+			case 13:
+				$produt_id=127768;
 			break;
-			case 16:
-				$produt_id=24;
+			case 15:
+				$produt_id=127769;
 			break;
 			default:
-				$produt_id=20;
-    
+				$produt_id=127764;
+
 		}
 		
 	

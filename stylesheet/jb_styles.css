@@ -647,68 +647,68 @@ margin-top: 20px;
 
 .dvd 
 {
-  height: 76px;
+  height: 74px;
   margin-bottom: 10px;
   width: 518px;
   display:block;
   
 }
 .dvd_2.fr {
-    background: url("../images/jb/prices_fr.gif") no-repeat scroll 0 0 transparent;
+    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 0 transparent;
     margin-top: 8px;
 }
 .dvd_2.en {
-    background: url("../images/jb/prices_en.gif") no-repeat scroll 0 0 transparent;
+    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 0 transparent;
     margin-top: 8px;
 }
 .dvd_2.nl {
-    background: url("../images/jb/prices_nl.gif") no-repeat scroll 0 0 transparent;
+    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 0 transparent;
     margin-top: 8px;
 }
 .dvd_4.nl {
-    background: url("../images/jb/prices_nl.gif") no-repeat scroll 0 -80px transparent;
+    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 -73px transparent;
 }
 
 .dvd_8.nl {
-    background: url("../images/jb/prices_nl.gif") no-repeat scroll 0 -160px transparent;
+    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 -146px transparent;
 }
 
 .dvd_12.nl {
-    background: url("../images/jb/prices_nl.gif") no-repeat scroll 0 -240px transparent;
+    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 -219px transparent;
 }
 
 .dvd_16.nl {
-    background: url("../images/jb/prices_nl.gif") no-repeat scroll 0 -318px transparent;
+    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 -292px transparent;
 }
 .dvd_4.en {
-    background: url("../images/jb/prices_en.gif") no-repeat scroll 0 -80px transparent;
+    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 -73px transparent;
 }
 
 .dvd_8.en {
-    background: url("../images/jb/prices_en.gif") no-repeat scroll 0 -160px transparent;
+    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 -146px transparent;
 }
 
 .dvd_12.en {
-    background: url("../images/jb/prices_en.gif") no-repeat scroll 0 -240px transparent;
+    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 -219px transparent;
 }
 
 .dvd_16.en {
-    background: url("../images/jb/prices_en.gif") no-repeat scroll 0 -318px transparent;
+    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 -292px transparent;
 }
 .dvd_4.fr {
-    background: url("../images/jb/prices_fr.gif") no-repeat scroll 0 -80px transparent;
+    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 -73px transparent;
 }
 
 .dvd_8.fr {
-    background: url("../images/jb/prices_fr.gif") no-repeat scroll 0 -160px transparent;
+    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 -146px transparent;
 }
 
 .dvd_12.fr {
-    background: url("../images/jb/prices_fr.gif") no-repeat scroll 0 -240px transparent;
+    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 -219px transparent;
 }
 
 .dvd_16.fr {
-    background: url("../images/jb/prices_fr.gif") no-repeat scroll 0 -318px transparent;
+    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 -292px transparent;
 }
 .type_credit {
 	font-size: 10px;
@@ -855,11 +855,10 @@ margin-top: 20px;
 }
 
 .title_step2{
-	border-bottom: 2px dotted #4D4D4D;
 	font-size: 13pt;
 	font-weight: bold;
 	padding-bottom: 4px;
-	width: 279px;
+	width: 400px;
 	float:left;
 }
 .free_vod {

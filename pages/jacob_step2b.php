@@ -10,29 +10,29 @@ padding-right:19px;
 		echo '<link rel="stylesheet" type="text/css" href="'.getBestMatchToIncludeAny('stylesheet/prices_belgique.css','.css').'">';
 		if(empty($_GET['dvd'])){
 			$nb_dvd=8;
-			$produt_id=20;
+			$produt_id=127766;
 		}	
 		else{
 			$nb_dvd=$_GET['dvd'];
 			switch($nb_dvd)
 			{
-				case 2:
-					$produt_id=17;	
+				case 3:
+					$produt_id=127762;	
 				break;
-				case 4:
-					$produt_id=18;
+				case 5:
+					$produt_id=127764;
 				break;
 				case 8:
-					$produt_id=20;
+					$produt_id=127766;
 				break;
-				case 12:
-					$produt_id=22;
+				case 13:
+					$produt_id=127768;
 				break;
-				case 16:
-					$produt_id=24;
+				case 15:
+					$produt_id=127769;
 				break;
 				default:
-					$produt_id=20;
+					$produt_id=127764;
 
 			}
 		}
@@ -80,13 +80,15 @@ padding-right:19px;
         <div class="content_jb"> <div class="step_2 step <?= $lang_short ?>"></div>
           <div class="page">
             <div class="content">
-              <div class="title_step2">STEP 2 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB2) ?></span></div> <div class="free_vod"> <img src="images/jb/free_vod_en.gif" /></div>
+              <div class="title_step2">STEP 2 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB2) ?></span></div> 
               <div style="clear:both;"></div>
-              <a href ='step2b.php?dvd=2' class="dvd dvd_2  <?= $lang_short; ?>"></a>
-              <a href ='step2b.php?dvd=4' class="dvd dvd_4  <?= $lang_short; ?>"></a>
+              <a href ='step2b.php?dvd=3' class="dvd dvd_2  <?= $lang_short; ?>"></a>
+              <a href ='step2b.php?dvd=5' class="dvd dvd_4  <?= $lang_short; ?>"></a>
               <a href ='step2b.php?dvd=8' class="dvd dvd_8  <?= $lang_short; ?>"></a>
-              <a href ='step2b.php?dvd=12' class="dvd dvd_12 <?= $lang_short; ?>"></a>
-              <a href ='step2b.php?dvd=16' class="dvd dvd_16 <?= $lang_short; ?>"></a>
+              <a href ='step2b.php?dvd=13' class="dvd dvd_12 <?= $lang_short; ?>"></a>
+              <a href ='step2b.php?dvd=15' class="dvd dvd_16 <?= $lang_short; ?>"></a>
+              <font size="1"><?= TEXT_STEP2 ?></font>
+              
             </div>
           </div>
         </div>
