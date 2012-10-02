@@ -23,9 +23,8 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships';
         <div class="content_jb">
           <div class="step_5 step <?= $lang_short ?>"></div>
           <div class="page">
-            <div class="top"></div>
-            <div class="middle_content">
-              <div class="title"><span class="red_font"><?= TITLE_STEP4 ?></span></div>
+            <div class="content">
+              <div class="title"><span class="green_font"><?= TITLE_STEP4 ?></span></div>
               <p><?= COMPLETE ?></p>
               <div>
 								<? if (($discount_type=='D' || $discount_type=='A') && $abo_dvd_credit!=10000) {?>
@@ -119,7 +118,6 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships';
                 <div style="clear: both;"></div>
               </div>
             </div>
-            <div class="end"></div>
           </div>
         </div>
 <div style='clear:both'></div>

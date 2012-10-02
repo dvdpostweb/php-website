@@ -63,9 +63,8 @@ else
 		</div>
         <div class="content_jb"> <div class="step_1 step <?= $lang_short ?>"></div>
           <div class="page">
-            <div class="top"></div>
-            <div class="middle_content">
-              <div class="title">STEP 1 <span class="red_font"><?= mb_strtoupper(TEXT_TITLE_JACOB1) ?></span></div>
+            <div class="content">
+              <div class="title">STEP 1 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB1) ?></span></div>
               <table width="530" border="0" cellspacing="0" cellpadding="0" class="form_step">
 								<form name="verify_form" method="post" action="<?= $_SERVER['REQUEST_URI'] ?>" id="form_step"> 
                 <tr >
@@ -100,7 +99,6 @@ else
 								</form>
               </table>
             </div>
-            <div class="end"></div>
           </div>
         </div>
 				<div style="clear:both"></di>

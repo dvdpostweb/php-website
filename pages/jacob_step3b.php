@@ -61,9 +61,8 @@ if(WEBSITE==101)
 				</div>
         <div class="content_jb"> <div class="step_3 step <?= $lang_short ?>"></div>
           <div class="page">
-            <div class="top"></div>
-            <div class="middle_content">
-              <div class="title">STEP 3 <span class="red_font"><?= mb_strtoupper(TEXT_TITLE_JACOB3) ?></span></div>
+            <div class="content">
+              <div class="title">STEP 3 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB3) ?></span></div>
               							<form name="step3b" method="post" action="step3b.php"> 
 															<input type="hidden" id="language" value="<?= ($language_id == 2 ? 'NL' : 'FR') ?>"/>
 															<input type="hidden" maxlength="6" class="form9" id="housenum"/>
@@ -247,7 +246,7 @@ if(WEBSITE==101)
 												?>               
 											</select>
 										</td>
-										<td align="right" class="explain_text">
+										<td align="left" class="explain_text">
 											<div id='check_birthday' class="<?= $class_birthday ?>"><div id="text"><?= $error_birthday ?></div> </div>
 										</td>
 
@@ -330,7 +329,7 @@ if(WEBSITE==101)
 
 								<input class="new_step_input" type="text" name="city" id="city" value="<?php   echo stripslashes($city) ;?>">
 							</td>
-							<td align="right" class="explain_text">
+							<td align="left" class="explain_text">
 								<div id='check_city' class="<?= $class_cit ?>"><div id="text"><?= $error_cit ?></div> </div>
 							</td>
 							</tr>
@@ -437,7 +436,6 @@ if(WEBSITE==101)
 							</form>
               </p>
             </div>
-            <div class="end"></div>
           </div>
         </div>
 				<div style="clear:both"></div>

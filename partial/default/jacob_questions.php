@@ -1,5 +1,6 @@
-<div class="navcontainer"> <img src="/images/jb/yourguide_<?= $lang_short ?>.png" />
-	<div class="banner_help"><img src="/images/jb/womanguide.jpg" /></div>
+<div class="navcontainer"> 
+  <h3 class="ttl"><?= TEXT_MENU_JACOB ?></h3>
+	<div class="banner_help" align='center'><img src="/images/jb/womanguide.jpg" /></div>
 	<div class="nav_<?= $lang_short ?> question nav" id='question1'><?= HELP_HOW ?></div>
 	<div id="response_color1">
 		<div  class="text_guide" id='response1' style='display:none'><?= RESPONSE1 ?></div>

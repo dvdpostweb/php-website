@@ -105,7 +105,7 @@ $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
 
 $page_body_to_include = $current_page_name;
 
-include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_step.php',0,$jacob));
+include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_step_2010.php',0,$jacob));
 
 require('configure/application_bottom.php');
 

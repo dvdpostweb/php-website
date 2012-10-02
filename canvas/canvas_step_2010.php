@@ -18,7 +18,7 @@
 <meta name="author" content ="Home Entertainment Services">
 <meta name="Revisit-after" content="14 days">
 <meta name="Robots" content="all">
-<LINK REL="SHORTCUT ICON" href="<?php echo DIR_WS_IMAGES;?>/favicon.ico"> 
+<LINK REL="SHORTCUT ICON" href="<?php echo DIR_WS_IMAGES;?>/favicon.ico">
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/public_2009.css?v=9','.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/ibox.css','.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/step_2010.css','.css'); ?>">

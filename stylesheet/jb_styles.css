@@ -108,8 +108,9 @@ a:hover {
 	font-size:9px;
 }
 #container {
-	background-color: #fff;
-	padding:20px 0;
+    background-color: #FFFFFF;
+    padding: 20px 0;
+	color:#212A31;
 }
 .top-nav .login {
 	background: url("../images/jb/btn-login.gif") no-repeat scroll 0 0 transparent;
@@ -148,10 +149,16 @@ a:hover {
 	background-position: left bottom;
 }
 .navcontainer {
-	float: left;
-	padding: 2px 0 0 45px;
-	width: 256px;
+
+background: url("../images/lc-bg.gif") repeat-y scroll 0 0 #C3D1DB;
+    display: block;
+    margin-bottom: 0;
+    float: left;
+	margin-left: 40px;
+    padding: 2px 0 0 0;
+    width: 270px;
 }
+
 .nav_nl, .nav_en {
 	margin: 3px 0px 0px 0px;
 	padding: 8px 0px 0px 14px;
@@ -162,7 +169,7 @@ a:hover {
 	cursor: pointer;
 }
 .nav_fr.navselected {
-	height: 29px;
+	height: 22px;
 }
 .nav_nk.navselected_nl {
 	height: 22px;
@@ -170,24 +177,25 @@ a:hover {
 .nav_en.navselected_en {
 	height: 22px;
 }
-.nav_fr {
-	background: url("../images/jb/nav_fr.png");
-	font-size: 8pt;
-	height: 29px;
-	margin: 3px 0 0;
-	padding: 8px 0 0 13px;
-	width: 236px;
-	cursor: pointer;
+.nav {
+    background: url("http://public.dvdpost.com/images/lc-nav-div.png") repeat-x scroll 0 100% transparent;
+    cursor: pointer;
+    display: block;
+    font-size: 11px;
+    height: 30px;
+    margin: 0;
+     padding: 4px 5px 3px 15px;
+    text-transform: none;
+   width: 250px;
 }
 .navselected {
-	background: #ac1411;
-	font-size: 8pt;
-	height: 22px;
-	margin: 3px 0 0;
-	padding: 8px 0 0 13px;
-	width: 235px;
-	color: #FFFFFF;
-	border:solid 1px #000000;
+    background: none repeat scroll 0 0 #212A31;
+    color: #FFFFFF;
+    font-size: 8pt;
+    height: 24px;
+    margin: -4px 0 0;
+    padding: 8px 0 0 13px;
+    width: 257px;
 }
 .banner_help {
 	margin: 3px 0 0;
@@ -197,9 +205,11 @@ a:hover {
 	padding: 8px 0 0 0px;
 }
 .content_jb {
-	width: 622px;
-	padding-right:32px;
-	float: right;
+    float: right;
+    margin-right: 41px;
+	padding-bottom: 101px;
+      width: 619px;
+	background: url("http://public.dvdpost.com/images/user-info-top-bg.gif")repeat-y scroll 100% 0 #F0F3F5;
 }
 
 
@@ -217,10 +227,10 @@ a:hover {
 	width: 244px;
 }
 .page {
-	width: 513px;
-	font-size: 9pt;
-	margin-left: -3px;
-	padding:0px;
+    font-size: 9pt;
+    margin-left: -3px;
+    padding: 0;
+    width: 513px;
 }
 
 
@@ -539,90 +549,100 @@ a.moreabout_vod {
 	width: 345px;
 }
 .text_select {
-	background: none repeat scroll 0 0 #4D4D4D;
-	width: 250px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    width: 270px;
 }
 .text_guide {
-	color: #FFFFFF;
-	font-size: 8pt;
-	padding: 12px 4px 10px 8px;
-	width: 234px;
+    color: #212A31;
+    font-size: 8pt;
+    padding: 12px 4px 10px 17px;
+    width: 234px;
 }
 .text_guide a, .text_guide a:hover {
-	color: #E19B38;
+	color: #A2C31B;
+	font-size:15px;
 }
 .text_guide font {
 	color: #E19B38;
 }
-
-.step_1.fr
+.step
 {
-  background: url("../images/jb/step_fr.gif") no-repeat scroll 0 0px transparent;
+margin-left: 46px;
+margin-top: 20px;
+}
+.step_1.fr {
+    background: url("../images/jb/step_new_fr.jpg") no-repeat scroll 0 0 transparent;
+    margin-left: 46px;
+    margin-top: 20px;
 }
 .step_1.nl
 {
-  background: url("../images/jb/step_nl.gif") no-repeat scroll 0 0px transparent;
+  background: url("../images/jb/step_new_nl.jpg") no-repeat scroll 0 0px transparent;
 }
 .step_1.en
 {
-  background: url("../images/jb/step_en.gif") no-repeat scroll 0 0px transparent;
+  background: url("../images/jb/step_new_en.jpg") no-repeat scroll 0 0px transparent;
 }
 
 .step_2.fr
 {
-  background: url("../images/jb/step_fr.gif") no-repeat scroll 0 -79px transparent;
+  background: url("../images/jb/step_new_fr.jpg") no-repeat scroll 0 -79px transparent;
 }
 .step_2.nl
 {
-  background: url("../images/jb/step_nl.gif") no-repeat scroll 0 -79px transparent;
+  background: url("../images/jb/step_new_nl.jpg") no-repeat scroll 0 -79px transparent;
 }
 .step_2.en
 {
-  background: url("../images/jb/step_en.gif") no-repeat scroll 0 -79px transparent;
+  background: url("../images/jb/step_new_en.jpg") no-repeat scroll 0 -79px transparent;
 }
 
 .step_3.fr
 {
-  background: url("../images/jb/step_fr.gif") no-repeat scroll 0 -157px transparent;
+  background: url("../images/jb/step_new_fr.jpg") no-repeat scroll 0 -157px transparent;
+   margin-left: 46px;
+    margin-top: 20px;
 }
 .step_3.nl
 {
-  background: url("../images/jb/step_nl.gif") no-repeat scroll 0 -157px transparent;
+  background: url("../images/jb/step_new_nl.jpg") no-repeat scroll 0 -157px transparent;
 }
 .step_3.en
 {
-  background: url("../images/jb/step_en.gif") no-repeat scroll 0 -157px transparent;
+  background: url("../images/jb/step_new_en.jpg") no-repeat scroll 0 -157px transparent;
 }
 
 .step_4.fr
 {
-  background: url("../images/jb/step_fr.gif") no-repeat scroll 0 -239px transparent;
+  background: url("../images/jb/step_new_fr.jpg") no-repeat scroll 0 -239px transparent;
 }
 .step_4.nl
 {
-  background: url("../images/jb/step_nl.gif") no-repeat scroll 0 -239px transparent;
+  background: url("../images/jb/step_new_nl.jpg") no-repeat scroll 0 -239px transparent;
 }
 .step_4.en
 {
-  background: url("../images/jb/step_en.gif") no-repeat scroll 0 -239px transparent;
+  background: url("../images/jb/step_new_en.jpg") no-repeat scroll 0 -239px transparent;
 }
 
 .step_5.fr
 {
-  background: url("../images/jb/step_fr.gif") no-repeat scroll 0 -318px transparent;
+  background: url("../images/jb/step_new_fr.jpg") no-repeat scroll 0 -318px transparent;
 }
 .step_5.nl
 {
-  background: url("../images/jb/step_nl.gif") no-repeat scroll 0 -318px transparent;
+  background: url("../images/jb/step_new_nl.jpg") no-repeat scroll 0 -318px transparent;
 }
 .step_5.en
 {
-  background: url("../images/jb/step_en.gif") no-repeat scroll 0 -318px transparent;
+  background: url("../images/jb/step_new_en.jpg") no-repeat scroll 0 -318px transparent;
 }
 
 .step {
-	height: 75px;
-	width: 546px;
+    height: 75px;
+    width: 546px;
 }
 
 .dvd 
@@ -740,11 +760,22 @@ a.moreabout_vod {
   padding:2px !important;
 }
 .form_step {
-	padding-top:18px;
+    padding-top: 18px;
+	border:1px solid #212A31;
+	background-color:#FFFFFF;
 }
 .content_step {
 	background-color: #fff;
 }
+.green_font {
+    color: #A2C31B;
+}
+
+.page .content {
+    padding: 20px 13px 2px 12px;
+    width: 525px;
+}
+
 
 .page .middle_content {
     background: url("../images/jb/content-middle.png") repeat-y scroll 0 0 transparent;
@@ -760,15 +791,16 @@ a.moreabout_vod {
 }
 
 .button_step {
-	background: url("../images/jb/button_step.gif") no-repeat scroll 0 0 transparent;
-	border: medium none;
-	color: white;
-	cursor: pointer;
-	font-size: 13px;
-	height: 25px;
-	padding-bottom: 2px;
-	width: 205px;
+    background: url(../images/jb/button_step.png) no-repeat scroll 0 0 transparent;
+    border: medium none;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    height: 25px;
+    padding-bottom: 2px;
+    width: 205px;
 }
+
 .bannervod {
 	background: url("../images/jb/background_vod.png") no-repeat scroll 0 0 transparent;
 	font-size: 15px;
@@ -837,12 +869,15 @@ a.moreabout_vod {
 }
 
 .title {
-	border-bottom: 2px dotted #4D4D4D;
-	font-size: 13pt;
-	font-weight: bold;
-	padding-bottom: 4px;
-	width: 512px;
-	
+    font-family: 'Open Sans Condensed',sans-serif;
+     color: #212A31;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 15px;
+    padding-left: 3px;
+  
+
+    width: 512px;
 }
 
 .verif_type {
@@ -904,6 +939,8 @@ background:url("../images/jb/grey-tick.png") no-repeat
 .step1_input_ok,.step_input_ok {
    background: url("../images/jb/green-tick.png") no-repeat scroll left center transparent !important;
 }
+
+
 .step1_input_info, .step1_input_error, .step1_input_ok, .step1_input_check
 {
   height:27px;
@@ -962,6 +999,7 @@ z-index: 1;
   padding:4px 0 0;
   text-align:center;
   text-decoration:none;
+  color: white !important;
 }
 #truc:hover
 {
@@ -1090,4 +1128,70 @@ width:300px;
 {
   margin:3px 0;
   
+}
+
+.jbcontainer #container .offre .explain_offre {
+color:#A2C31B;
+font-size: 22px;
+text-align:center;
+ padding-left: 400px;
+ font-family:'Open Sans Condensed',sans-serif;
+ line-height: 22px;
+
+
+}
+
+.jbcontainer #container .offre .title_offre {
+color:#FFFFFF;
+font-size: 32px;
+line-height: 32px;
+text-align:center;
+ padding-left: 400px;
+ padding-top:30px;
+ font-family:'Open Sans Condensed',sans-serif;
+
+}
+.page .content {
+    background: none repeat scroll 0 0 #F0F3F5;
+    margin: 0 0 0 3px !important;
+    padding-bottom: 2px;
+     padding-left: 57px;
+    width: 549px;
+}
+
+.banner_help {
+    background: url("http://public.dvdpost.com/images/lc-nav-div.png") repeat-x scroll 0 100% transparent;
+    margin: 13px 2px 2px;
+    padding-bottom: 10px;
+}
+
+.jbcontainer #container .offre {
+width: 889px;
+margin: 26px auto; 
+background: url(../images/bg_banner_step.jpg); 
+height:188px;
+
+
+}
+
+h3.ttl {
+    background: url("http://public.dvdpost.com/images/left-nav-ttl-bg.gif") no-repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #91A1AE;
+    font-size: 24px;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 40px;
+    text-transform: uppercase;
+}
+#check_email #text
+{
+  padding : 0 0 0 27px;
+}
+.content_step a
+{
+  color: #4D4D4D;
+}
+.padding_button td,.padding_button  td img
+{
+  vertical-align: middle;
 }

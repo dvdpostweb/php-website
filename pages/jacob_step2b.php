@@ -79,9 +79,8 @@ padding-right:19px;
         </div>
         <div class="content_jb"> <div class="step_2 step <?= $lang_short ?>"></div>
           <div class="page">
-            <div class="top"></div>
-            <div class="middle_content">
-              <div class="title_step2">STEP 2 <span class="red_font"><?= mb_strtoupper(TEXT_TITLE_JACOB2) ?></span></div> <div class="free_vod"> <img src="images/jb/free_vod_en.gif" /></div>
+            <div class="content">
+              <div class="title_step2">STEP 2 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB2) ?></span></div> <div class="free_vod"> <img src="images/jb/free_vod_en.gif" /></div>
               <div style="clear:both;"></div>
               <a href ='step2b.php?dvd=2' class="dvd dvd_2  <?= $lang_short; ?>"></a>
               <a href ='step2b.php?dvd=4' class="dvd dvd_4  <?= $lang_short; ?>"></a>
@@ -89,7 +88,6 @@ padding-right:19px;
               <a href ='step2b.php?dvd=12' class="dvd dvd_12 <?= $lang_short; ?>"></a>
               <a href ='step2b.php?dvd=16' class="dvd dvd_16 <?= $lang_short; ?>"></a>
             </div>
-            <div class="end"></div>
           </div>
         </div>
       </div>

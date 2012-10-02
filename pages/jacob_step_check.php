@@ -12,9 +12,8 @@
         <div class="content_jb">
           <div class="step_4 step <?= $lang_short ?>"></div>
           <div class="page">
-            <div class="top"></div>
-            <div class="middle_content">
-              <div class="title">STEP 4 <span class="red_font"><?= mb_strtoupper(TEXT_TITLE_JACOB4) ?></span></div>
+            <div class="content">
+              <div class="title">STEP 4 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB4) ?></span></div>
               <form action="step_check.php" method="post">
 								<table width="520">
 									<tr>
@@ -126,7 +125,6 @@
 							</form>
 						</div>
               
-            <div class="end"></div>
           </div>
         </div>
       </div>
