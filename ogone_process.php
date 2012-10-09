@@ -124,6 +124,43 @@ case 'ogone_change':
 	
 	header("location: http://private.dvdpost.com/".$lang."/customers/".$ogone_check['customers_id']."/payment_methods?type=credit_card_modification_finish");
 break;
+case 'ogone_for_ppv':
+	$sql_user='SELECT qty_credit ,customers_abo_payment_method_name,customers_firstname,customers_lastname,customers_email_address,customers_abo_type
+	FROM `products_abo` p
+	JOIN customers c ON c.customers_abo_type = p.products_id
+	LEFT JOIN customers_abo_payment_method ca ON c.customers_abo_payment_method = ca.customers_abo_payment_method_id
+	WHERE customers_id ='.$ogone_check['customers_id'];
+	
+	$query_user=tep_db_query($sql_user,'db_link',true);
+	$value_user=tep_db_fetch_array($query_user);
+	$email=$value_user['customers_email_address'];
+	if(!empty($value_user['customers_abo_payment_method_name']))
+	{
+		$payment=strtoupper($value_user['customers_abo_payment_method_name']);
+	}
+	else
+	{
+		$payment='UNDEFINED';
+	}
+	switch($languages_id)
+	{
+		case 2:
+			$lang='nl';
+			break;
+		case 3:
+			$lang='en';
+			break;
+		default:
+			$lang='fr';
+	}
+	$sql_abo='insert into abo(customerid,Action,Date,product_id,payment_method,comment,site) values ('.$ogone_check['customers_id'].',28,now(),'.$value_user['customers_abo_type'].',"'.$payment.'","(site)",'.WEB_SITE_ID.')';
+	tep_db_query($sql_abo);
+	
+	
+	
+	
+	header("location: http://private.dvdpost.com/".$lang."/customers/".$ogone_check['customers_id']."/payment_methods?type=credit_card_for_ppv_finish");
+break;
 case 'gift':	
 	//create_activation_code
 	$intflag_activation_code_unique=0;

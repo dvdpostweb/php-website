@@ -322,9 +322,29 @@ switch(WEB_SITE_ID)
 			(document.URL.substr(0, 8)=="https://")? proto = "https://" : proto = "http://";
 			document.write('<img src="'+proto+'fl01.ct2.comclick.com/vente.ct2?id_regie=2&num_campagne=688&montant=0&num_commande=<?= $customers_id?>&email=<?= $email_address ?>" />');
 			</script>
+			
 			<!-- Lead tag end-->
 
-
+      <!-- Google Code for Conversion Google Adwords Conversion Page -->
+      <script type="text/javascript">
+      /* <![CDATA[ */
+      var google_conversion_id = 1071686481;
+      var google_conversion_language = "en";
+      var google_conversion_format = "1";
+      var google_conversion_color = "ffffff";
+      var google_conversion_label = "DUh-CI3g8gMQ0caC_wM";
+      var google_conversion_value = 0;
+      /* ]]> */
+      </script>
+      <script type="text/javascript" 
+      src="http://www.googleadservices.com/pagead/conversion.js">
+      </script>
+      <noscript>
+      <div style="display:inline;">
+      <img height="1" width="1" style="border-style:none;" alt="" 
+      src="http://www.googleadservices.com/pagead/conversion/1071686481/?value=0&amp;label=DUh-CI3g8gMQ0caC_wM&amp;guid=ON&amp;script=0"/>
+      </div>
+      </noscript>
 			<!-- trade tracker-->
 			<?php
 			$customers_query = tep_db_query("select * from customers where customers_id = '" . $customer_id . "' ");
