@@ -14,6 +14,12 @@ if(empty($news_id))
 ?>
 <div style='background:white;padding:10px;margin:0px'>
 <form action='newsletters.php' method="post">
+  <?
+  if ($_GET['debug']==1)
+  {
+    echo "<input type ='hidden' name='debug' value = '1'>";
+  }
+  ?>
 	news_id* <input type ='text' name="news_id" value = "<?= $news_id?>"><br />
 	coup de coeur* :
 	<select name="choice">
@@ -88,6 +94,7 @@ if(empty($news_id))
 	top9_products_id : <input type='text' name="top9_id" value = "<?= $top9_id?>"><br />
   top10_products_id : <input type='text' name="top10_id" value = "<?= $top10_id?>"><br />
   link : <input type='text' name="link" value = "<?= $link?>"><br />
+  
 	<input type="submit" value ="go">
 </form>
 <?

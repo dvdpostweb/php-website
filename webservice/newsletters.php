@@ -16,6 +16,10 @@ foreach($servers as $server){
 }
 
 $preview = $_POST['preview'];
+if($preview == '1' && $_POST['debug'] == '1')
+{
+  var_dump($_POST);
+}
 $news_id = $_POST['news_id'];
 $language = $_POST['locale'];
 $product_id = $_POST['product_id'];
