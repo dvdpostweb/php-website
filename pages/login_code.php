@@ -24,14 +24,24 @@ if (isset($_GET['force']))
 else
 	$force=$_POST['force'];
 
-
+$color = '#ff0000';
 if($code == 'chef')
 {
+  $color = '#000000';
   ?>
   <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/chef.css','.css'); ?>">
   <?
 }
+if($code == 'shadow')
+{
+  $color = '#fff';
+  ?>
+  <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/shadow.css','.css'); ?>">
+  <?
+}
+
 ?>
+
 
 <style>
 
@@ -207,16 +217,16 @@ if(strtolower($code)=="gfc50"){
      <?php
     if ($login == 'fail') 
 		{
-			echo TEXT_ERROR_LOGIN;
-			echo TEXT_LOGIN_ERROR_EMAIL;
-			echo '<a href="password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force='.$force.'&invisible='.$invisible.'"><font color="#ff0000" class="mdp">'.TEXT_CLIC.'</font></a><br />';
+			echo str_replace('#ff0000', $color,  TEXT_ERROR_LOGIN);
+			echo str_replace('#ff0000', $color, TEXT_LOGIN_ERROR_EMAIL);
+			echo '<a href="password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force='.$force.'&invisible='.$invisible.'"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a><br />';
 
 		} 
 		else if(!isset($_GET[info]))
 		{
 			if (!tep_session_is_registered('customer_id')){	
-				echo TEXT_LOGIN_ERROR_EMAIL;
-				echo '<a href="password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force='.$force.'&invisible='.$invisible.'"><font color="#ff0000" class="mdp">'.TEXT_CLIC.'</font></a><br />';
+				echo str_replace('#ff0000', $color, TEXT_LOGIN_ERROR_EMAIL);
+				echo '<a href="password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force='.$force.'&invisible='.$invisible.'"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a><br />';
 			}
 			
 		}
@@ -241,6 +251,9 @@ if(strtolower($code)=="gfc50"){
 					<? } else if (strpos($code,'svod') === 0) { ?> 
 		         <tr><td colspan="2" align="center"><p><input type="submit" class="confirm" value="<?= CONFIRM_CHOICE2 ?>" name="sent">
  					<? } else if (strpos($code,'chef') === 0) { ?> 
+ 		         <tr><td colspan="2" align="right"><p><input class="no_border_button" name="imageField" type="image" src="<?php 
+ 						echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/chef/button_cmc.png'; ?>" align="absmiddle" border="0">
+ 					<? } else if (strpos($code,'shadow') === 0) { ?> 
  		         <tr><td colspan="2" align="right"><p><input class="no_border_button" name="imageField" type="image" src="<?php 
  						echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/chef/button_cmc.png'; ?>" align="absmiddle" border="0">
 					<? } else {?>

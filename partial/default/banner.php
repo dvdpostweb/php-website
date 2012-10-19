@@ -4,7 +4,7 @@
 	</div>
 <? } else if($customer_values['activation_discount_code_id']==1022 || $activation_id == 1022 || $promo_id == 1022) {?>
 	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_<?= $lang_short ?>.jpg' /></p>
-<? } else if(strpos(strtoupper($activation_code),'CHEF') === 0) {?>
+<? } else if(strpos(strtoupper($activation_code),'CHEF') === 0 || $customer_values['activation_discount_code_id']==1023) {?>
 	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_chef_<?= $lang_short ?>.jpg' /></p>
 <? } else if($customer_values['activation_discount_code_id']==1023 || $activation_id == 1023 || $promo_id == 1023) {?>
 	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_svod_<?= $lang_short ?>.jpg' /></p>
