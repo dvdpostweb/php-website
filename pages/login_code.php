@@ -24,6 +24,13 @@ if (isset($_GET['force']))
 else
 	$force=$_POST['force'];
 
+
+if($code == 'chef')
+{
+  ?>
+  <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/chef.css','.css'); ?>">
+  <?
+}
 ?>
 
 <style>
@@ -181,7 +188,7 @@ if(strtolower($code)=="gfc50"){
 }
 ?>
                     <p class="explain"><br /><br /><br /><br /><?php echo TEXT_STUDENT_EXPLAIN ;?></p>
-                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="450" style="margin:0 auto">
+                    <table cellspacing="0" cellpadding="0" border="0" align="center" width="450" style="margin:0 auto" id ="form_data">
 											<?php if (($step=='90' || $force==1) && !empty($code))
 											{
 												echo '<tr><td align="left"  width="140"  height="35" valign="middle" class="slogan_detail">'.TEXT_CODE.'</td><td align="right" height="35" valign="middle"><input name="code" id="code" type="text" class="inputs_codes bl up" size="30" value="'.(($invisible!=1)?	$code : '' ).'" size="18" ></td></tr>';
@@ -233,6 +240,9 @@ if(strtolower($code)=="gfc50"){
 		         <tr><td colspan="2" align="center"><p><input type="submit" class="confirm" value="<?= CONFIRM_CHOICE2 ?>" name="sent">
 					<? } else if (strpos($code,'svod') === 0) { ?> 
 		         <tr><td colspan="2" align="center"><p><input type="submit" class="confirm" value="<?= CONFIRM_CHOICE2 ?>" name="sent">
+ 					<? } else if (strpos($code,'chef') === 0) { ?> 
+ 		         <tr><td colspan="2" align="right"><p><input class="no_border_button" name="imageField" type="image" src="<?php 
+ 						echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/chef/button_cmc.png'; ?>" align="absmiddle" border="0">
 					<? } else {?>
 						 <tr><td colspan="2" align="right"><p><input class="no_border_button" name="imageField" type="image" src="<?php 
 						echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/buttons/canvas/button_logocode.gif'; ?>" align="absmiddle" border="0">

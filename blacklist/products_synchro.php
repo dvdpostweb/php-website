@@ -23,17 +23,17 @@ $servers=array(DB_SERVER,DB_SERVER_RO);
 $sql ='select * from dvdpost_be_prod.products where products_type != "abo" and products_id !=0 order by products_id desc';
 $result = @mysql_query($sql, $link1);
 echo '<table>';
+
 while($data = mysql_fetch_array($result, MYSQL_ASSOC))
 {
+  #var_dump($data);
 	$sql2 ='select * from dvdpost_be_prod.products where  products_id = '.$data['products_id'];
 	$result2 = @mysql_query($sql2, $link0);
 	$data2 = mysql_fetch_array($result2, MYSQL_ASSOC);
-	
-	$res = array_diff($data2,$data);
+	$res = array_diff_assoc($data2,$data);
 	if (count($res)>0)
 	{
 	echo '<tr><td>products_id '.$data['products_id'].'<pre>dump';
-	$res = array_diff($data2,$data);
 	var_dump($res);
 	echo '</pre></td></tr>';
 	$sql_dublin = 'update products set ';

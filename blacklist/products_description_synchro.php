@@ -29,14 +29,13 @@ while($data = mysql_fetch_array($result, MYSQL_ASSOC))
 	$result2 = @mysql_query($sql2, $link0);
 	$data2 = mysql_fetch_array($result2, MYSQL_ASSOC);
 	
-	$res = array_diff($data2,$data);
+	$res = array_diff_assoc($data2,$data);
 	if (count($res)>0)
 	{
 	echo '<tr><td>products_id '.$data['products_id'].'<pre>dump';
-	$res = array_diff($data2,$data);
 	var_dump($res);
 	echo '</pre></td></tr>';
-	$sql_dublin = 'update _description set ';
+	$sql_dublin = 'update products_description set ';
 	$i=0;
 	while (list($key, $value) = each($res)) {
 			if ($i==0)
@@ -46,7 +45,7 @@ while($data = mysql_fetch_array($result, MYSQL_ASSOC))
 			$i++;
 	}
 	$sql_dublin .=' where products_id = '.$data['products_id'].' and language_id = '.$data['language_id'].';';
-	echo 'sql => '.$sql_dublin.'<br />';
+	echo $sql_dublin.'<br />';
 	#mysql_query($sql_dublin, $link1);
 	}
 	
