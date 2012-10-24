@@ -101,7 +101,7 @@ function email_return(requete)
 	else if(requete.responseText=='error1')
 	{
 		$('check_email').className='step1_input_error step1_input_error_big_h text_big';
-		email_error=$('email_abo').innerHTML;
+		email_error=$('email_not_abo').innerHTML;
 		email_error=email_error.replace('_email_',$F('email'))
 		$('check_email').down('div').innerHTML=email_error;
 		error_email=true;
@@ -110,7 +110,7 @@ function email_return(requete)
 	else if(requete.responseText=='error3')
 	{
 		$('check_email').className='step1_input_error step1_input_error_big_h text_big';
-		email_error=$('email_abo').innerHTML;
+		email_error=$('email_not_abo').innerHTML;
 		email_error=email_error.replace('_email_',$F('email'))
 		$('check_email').down('div').innerHTML=email_error;
 		error_email=true;
