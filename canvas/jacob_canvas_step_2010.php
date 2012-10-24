@@ -49,7 +49,7 @@ if(scriptAvailable($script_available)){
 ?>
 <script type="text/javascript" src="js/prototype-1.6.0.3.js"></script>
 <script type="text/javascript" src="js/question3.js?v=2"></script>
-<script type="text/javascript" src="js/step1.js?v=2"></script>
+<script type="text/javascript" src="js/step1.js?v=3"></script>
 <link rel="stylesheet" href="/stylesheet/facebox.css" type="text/css" />
 <script src="/js/facebox_proto.js" type="text/javascript"></script>
 
