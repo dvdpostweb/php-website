@@ -1701,10 +1701,6 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	$data['email'] = $customers['customers_email_address'];
 	$data['promotion'] = $promotion;
 	mail_message($customers_id, $mail_message, $data);
-	if ($customers['site'] == 'lavenir')
-	{
-		mail_message($customers_id, 560, $data);
-	}
 	
 }
 
@@ -1876,10 +1872,6 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	}
 */
 	mail_message($customers_id, $mail_message, $data );
-	if ($customers['site'] == 'lavenir')
-	{
-		mail_message($customers_id, 560, $data);
-	}
 	
 }
 function products_link($lang,$title,$id)
