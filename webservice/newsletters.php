@@ -125,7 +125,11 @@ $listing_sql .= ' from  '.TABLE_PRODUCTS . ' p ';
 $listing_sql .= ' left join dvdpost_be_prod.' . TABLE_PRODUCTS_DESCRIPTION . ' pd on p.products_id = pd.products_id and pd.language_id=' . $language ;
 $listing_sql .= ' join directors d on p.products_directors_id = d.directors_id' ;
 $listing_sql .= ' where  p.products_id in ('.$product_id.')';
-#echo $listing_sql;
+if($preview == '1' && $_POST['debug'] == '1')
+{
+  echo $listing_sql;  
+}
+
 $query_vod = mysql_query($listing_sql,$links[0]);
 $vod_data = '';
 $i=0;
