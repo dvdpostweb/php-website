@@ -67,7 +67,6 @@ if(WEBSITE==101)
 															<input type="hidden" id="language" value="<?= ($language_id == 2 ? 'NL' : 'FR') ?>"/>
 															<input type="hidden" maxlength="6" class="form9" id="housenum"/>
 															<input type="hidden" id="country2" value="BE"/>
-	
 															<fieldset>
 																<table class='step2form' cellpadding="2" cellspacing="0" border="0" align="center" width="100%">
 																	<tr>
