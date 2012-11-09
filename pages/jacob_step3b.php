@@ -62,7 +62,7 @@ if(WEBSITE==101)
         <div class="content_jb"> <div class="step_3 step <?= $lang_short ?>"></div>
           <div class="page">
             <div class="content">
-              <div class="title">STEP 3 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB3) ?></span></div>
+              <div class="title">STEP 2 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB3) ?></span></div>
               							<form name="step3b" method="post" action="step3b.php"> 
 															<input type="hidden" id="language" value="<?= ($language_id == 2 ? 'NL' : 'FR') ?>"/>
 															<input type="hidden" maxlength="6" class="form9" id="housenum"/>

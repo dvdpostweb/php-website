@@ -13,7 +13,7 @@
           <div class="step_4 step <?= $lang_short ?>"></div>
           <div class="page">
             <div class="content">
-              <div class="title">STEP 4 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB4) ?></span></div>
+              <div class="title">STEP 3 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB4) ?></span></div>
               <form action="step_check.php" method="post">
 								<table width="520">
 									<tr>
