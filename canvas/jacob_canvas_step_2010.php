@@ -242,7 +242,6 @@ switch(WEB_SITE_ID)
     <!--   ==============   HEADER   ==============   -->
 		<?php require ('menu.php') ?>
     <div class="container clearfix">
-	
 			<?php require(getBestMatchToInclude(DIR_WS_COMMON  . 'pages/' .  $page_body_to_include,0,$jacob)); ?>
     </div>
 	</div>

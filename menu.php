@@ -12,7 +12,6 @@ function curPageURL2() {
  return $pageURL;
 }
 ?>
-?>
 <? $url = curPageURL2() ?>
 <div id="top">
 	<div class="wrap">
