@@ -6,10 +6,12 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css' />
 <link rel="stylesheet" type="text/css" href="/stylesheet/reset.css">
 <link rel="stylesheet" type="text/css" href="/stylesheet/main.css">
+<div id="warp">
   <div id="promo_content">
     <div class="offre_ptg">
       <form action="activation_code_confirm.php" method="post" name="form1">
         <div id="promo_code">
+          <p align="center"><?= TEXT_PROMO_TITLE ?></p>
           <div style="float:left; padding-top:10px;padding-left:27px;font-size:15px">CODE</div>
           <div style="float:right;">
             <input type="text" size="20" value="" class="inputs_codes_groupon" id="code" name="code">
@@ -26,6 +28,7 @@
         </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 <p id="footer_promo" align="right">* Via Air Play | <a href="/conditions.php" target="_blank"><strong><?= TEXT_CONDITION_SUMMER ?></strong></a></p>
