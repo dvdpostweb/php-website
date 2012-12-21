@@ -41,7 +41,7 @@
                             <td width="75"><img alt="paypal" src="<?php  echo DIR_DVD_WS_IMAGES ;?>/paypal.png" width="70" height="35"></td>
                             <td width="10">
                               </td>
-                            <td align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt volutpat nibh vel sagittis. Proin dui odio, eleifend sit amet aliquam vel, congue aliquet urna.</td>
+                            <td align="justify"><?= TEXT_PAYPAL ?></td>
                           </tr>
                         </tbody>
                       </table></td>
