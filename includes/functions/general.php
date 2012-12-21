@@ -2791,7 +2791,7 @@ function mail_message($customer_id, $mail_id, $data)
 	
 	if($mail_copy == 1 || $mail_values['force_copy']==1)
 	{
-		$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)	VALUES (NULL , now(), ".$customer_id.", '".$mail_id."', $languages_id, '0', NULL , '".$customers['customers_email_address']."'	);";
+		$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)	VALUES (NULL , now(), ".$customer_id.", '".$mail_id."', ".$customers['customers_language'].", '0', NULL , '".$customers['customers_email_address']."'	);";
 		tep_db_query($sql_insert);
 		$history_id=tep_db_insert_id();
 		$data['mail_messages_sent_history_id'] = $history_id;
