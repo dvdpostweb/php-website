@@ -32,12 +32,13 @@
 									}
 									?>
 									<? if ($_GET['debug_paypal'] == 1 && $paypal_available == true ) { ?>
+									  
                   <tr>
                     <td width="100%" class="<?php echo ($_POST['payment']=='paypal'?'active_verif':'normal_verif') ?>" id="paypal"><div class="verif_type"><?= TEXT_PAYPAL_TITLE ?></div>
                       <table class="type_credit">
                         <tbody>
                           <tr height="50">
-                            <td><input id="paypal_id" name="payment" value="paypal" type="radio"></td>
+                            <td><input id="paypal_id" name="payment" value="paypal" type="radio" <?php echo (($cc_available == false && $phone_available == false )?' checked="checked"':'') ?>></td>
                             <td width="75"><img alt="paypal" src="<?php  echo DIR_DVD_WS_IMAGES ;?>/paypal.png" width="70" height="35"></td>
                             <td width="10">
                               </td>
