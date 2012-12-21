@@ -22,7 +22,7 @@ $API_Signature=API_SIGNATURE;
 
 if(defined('API_ENDPOINT'))
 $API_Endpoint =API_ENDPOINT;
-
+die($API_Endpoint);
 $version=VERSION;
 
 if(defined('SUBJECT'))
@@ -110,6 +110,7 @@ function hash_call($methodName,$nvpStr)
 	$nvpheader=nvpHeader();
 	//setting the curl parameters.
 	$ch = curl_init();
+	
 	curl_setopt($ch, CURLOPT_URL,$API_Endpoint);
 	curl_setopt($ch, CURLOPT_VERBOSE, 1);
 
