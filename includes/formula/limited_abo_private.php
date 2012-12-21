@@ -1,6 +1,7 @@
 <?php   
 
 $most_popular_sql ="SELECT count(products_id) as cpt FROM products_abo WHERE products_id=".$abo_passive_values['products_id']." AND most_popular_entity LIKE '%".ENTITY_ID."%' " ;
+echo $most_popular_sql;
 $most_popular_query = tep_db_query($most_popular_sql);
 $most_popular_values = tep_db_fetch_array($most_popular_query);
 
