@@ -40,7 +40,7 @@ if($_SERVER['SERVER_NAME'] == 'ptg.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'pt
 	
 	include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_light.php',0,$jacob));	
 }
-else if($_SERVER['SERVER_NAME'] == 'paypal.dvdpost.be')
+else if($_SERVER['SERVER_NAME'] == 'paypal.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'jason.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'noel2012.dvdpost.be')
 {
   $nav = true;
   include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_step_2010.php',0,$jacob));

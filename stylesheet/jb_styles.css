@@ -711,7 +711,7 @@ margin-top: 20px;
     background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 -292px transparent;
 }
 .type_credit {
-	font-size: 10px;
+    font-size: 12px;
 }
 .selected_payement {
 	background-color: #FFEFEF;
@@ -880,9 +880,10 @@ margin-top: 20px;
 }
 
 .verif_type {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: bold;
-    padding-left: 12px;
+    padding-bottom: 10px;
+    padding-left: 9px;
     padding-top: 5px;
 }
 
@@ -900,7 +901,8 @@ margin-top: 20px;
 
 .text_lock {
     font-size: 12px;
-    line-height: 17px;
+    line-height: 15px;
+    padding-top: 11px;
 }
 .explain_text{ padding-right:8px;}
 
@@ -963,25 +965,22 @@ background:url("../images/jb/grey-tick.png") no-repeat
 .other_payement_submit {
   width:497px;
 }
-.normal_verif {background:none repeat scroll 0 0 #FFFFFF;
-	border:1px solid #DDDDDD;
-	padding:10px;
-z-index: 1;
-	
-
-	
-
+.normal_verif {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #C3D1DB;
+    padding: 10px;
+    z-index: 1;
 }
 
 .active_verif {
-	background:none repeat scroll 0 0 #b8b1a9;
-	border:1px solid #5d5955;
-	padding:10px;
-z-index: 1;
-
+    background: none repeat scroll 0 0 #C3D1DB;
+    border: 1px solid #212A31;
+    padding: 10px;
+    z-index: 1;
 }
-.or{
-  text-align: center;
+.or {
+    padding: 10px;
+    text-align: center;
 }
 .page .middle_content
 {

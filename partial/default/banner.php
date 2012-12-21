@@ -12,6 +12,10 @@
 	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_shadows_<?= $lang_short ?>.jpg' /></p>
 <? } else if($customer_values['activation_discount_code_id']==1023 || $activation_id == 1023 || $promo_id == 1023) {?>
 	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_svod_<?= $lang_short ?>.jpg' /></p>
+<? } else if($customer_values['activation_discount_code_id']==1041 || $activation_id == 1041 || $promo_id == 1041) {?>
+	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_perenoel_<?= $lang_short ?>.jpg' /></p>
+<? } else if($customer_values['activation_discount_code_id']==1040 || $activation_id == 1040 || $promo_id == 1040) {?>
+	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_jason_<?= $lang_short ?>.jpg' /></p>
 <? } else {?>
 <div class="banner_title"><?= HUGE_CATALOG ?></div>
 <div class="banner_step" align="center">

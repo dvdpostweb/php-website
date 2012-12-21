@@ -1,5 +1,6 @@
 <?php
 require('configure/application_top.php');
+require_once('./paypal/CallerService.php');
 
 $current_page_name = "step_check.php";
 
@@ -13,6 +14,7 @@ include(DIR_WS_INCLUDES . 'translation.php');
 $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
 
 $page_body_to_include = $current_page_name;
+#$customers_registration_step=33;
 if( $customers_registration_step==100){
 	tep_redirect(tep_href_link('mydvdpost.php'));
 }
@@ -46,6 +48,14 @@ if (!tep_session_is_registered('customer_id')) {
 			{
 				$phone_available=false;
 			}
+			$cc_available=true;
+			$paypal_available=true;
+			if($customer_values['activation_discount_code_id'] == 1038)
+			{
+			  $phone_available=false;
+			  $cc_available=false;
+			}
+			
 			$products_id=$customer_values['customers_abo_type'];
 
 
@@ -203,13 +213,26 @@ if (!tep_session_is_registered('customer_id')) {
 				$error_phone=false;
 				switch ($_POST['payment'])
 				{
+				  case 'paypal':
+				                 
+            $nvpstr=
+"&PAYMENTREQUEST_0_PAYMENTACTION=AUTHORIZATION&PAYMENTREQUEST_0_AMT=0&PAYMENTREQUEST_0_CURRENCYCODE=EUR&L_BILLINGTYPE0=MerchantInitiatedBilling&L_BILLINGAGREEMENTDESCRIPTION0=".urlencode(" ")."&cancelUrl=http://$host/step_check.php&returnUrl=http://$host/paypal_process.php";
+            $resArray=hash_call("SetExpressCheckout",$nvpstr);
+            $ack = strtoupper($resArray["ACK"]);
+            if($ack!="SUCCESS")  {
+                $_SESSION['reshash']=$resArray;
+            	  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error', serialize($resArray).'.'.$customer_id, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+            }
+            $url = PAYPAL_URL.$resArray["TOKEN"];
+            tep_redirect($url);
+            break;
 					case 'ogonevisa':
 					case 'ogonemaster':
 					case 'ogoneamex':
 						$ogone_amount = $final_price * 100;
 						$ogone_orderID = $customer_id . date('YmdHis');			
 						tep_db_query("insert into " . TABLE_OGONE_CHECK . " (orderID,amount,customers_id, context, products_id, discount_code_id, activation_code_id ,site) values ('" . $ogone_orderID . "', '" . $ogone_amount . "', '" . $customer_id . "', '".$payment_type."', '" . $products_id . "', '" . $discount_code_id . "','".$activation_code_id."' , '" . WEB_SITE_ID . "')");
-							tep_redirect(tep_href_link('ogone_redirect.php?orderID='.$ogone_orderID.'&payment='.$_POST['payment']));	
+							tep_redirect(tep_href_link('ogone_redirect.php?orderID='.$ogone_orderID.'&payment='.$_POST['payment']));
 					break;
 					case 'phone': 
 							$phone = preg_replace("/([^0-9])/i","",$_POST['phone']);

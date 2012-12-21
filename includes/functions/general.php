@@ -1704,7 +1704,7 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	
 }
 
-function registration_discount($discount_code_id,$customers_id,$products_id,$site,$languages_id,$belgiqueloisirs_id ,$method_payment='OGONE',$mail_message=556,$type_payment=1)
+function registration_discount($discount_code_id,$customers_id,$products_id,$site,$languages_id,$belgiqueloisirs_id ,$method_payment='OGONE',$mail_message=556,$type_payment=1,$reference_id='')
 {
 	$sql="SELECT * FROM discount_code WHERE discount_code_id ='".$discount_code_id. "'";
 	$discount_query = tep_db_query($sql);
@@ -1835,7 +1835,36 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	
 	if($final_price>0)
 	{
-		$sql_insert_ogone="insert into payment (date_added,payment_method, abo_id,customers_id,amount,payment_status,last_modified) values(now(),1,$abo_id,$customers_id,$final_price,2,now());";
+	  if($type_payment == 4)
+	  {
+	    $nvpstr="&AMT=$final_price&CURRENCYCODE=EUR&PAYMENTACTION=SALE&REFERENCEID=$reference_id";
+      /* Make the API call to PayPal, using API signature.
+         The API response is stored in an associative array called $resArray */
+      $resArray=hash_call("DoReferenceTransaction",$nvpstr);
+
+      /* Display the API response back to the browser.
+         If the response from PayPal was a success, display the response parameters'
+         If the response was an error, display the errors received using APIError.php.
+         */
+
+      $ack = strtoupper($resArray["ACK"]);
+      if($ack!="SUCCESS")  {
+          $_SESSION['reshash']=$resArray;
+          $payment_id = 1;
+      	  /*$location = "../APIError.php";
+      		header("Location: $location");*/
+      }
+      else
+      {
+        $payment_id = 2;
+      }
+      tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error', serialize($resArray).'.'.$customer_id, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+	  }
+	  else
+	  {
+	    $payment_id = 2;
+	  }
+		$sql_insert_ogone="insert into payment (date_added,payment_method, abo_id,customers_id,amount,payment_status,last_modified) values(now(),$type_payment,$abo_id,$customers_id,$final_price,$payment_id,now());";
 		tep_db_query($sql_insert_ogone);
 		tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 7, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') "); 
 	}

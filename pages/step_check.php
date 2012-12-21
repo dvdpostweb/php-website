@@ -17,7 +17,7 @@
 							<div style="clear:both"></div>
 						</div>
 						<form action="step_check.php" method="post">
-							<table width="560">
+							<table width="520">
 								<tr>
 									<td colspan="3" height='50'>
 										<p id='second_title'><?php echo SECOND_TITLE ?></p>
@@ -33,7 +33,23 @@
 												</tr>';
 								}
 								?>
-								
+								<tr>
+                  <td width="100%" class="active_verif" id="paypal"><div class="verif_type">Par PayPal </div>
+                    <table class="type_credit">
+                      <tbody>
+                        <tr height="50">
+                          <td><input id="paypal" name="payment" value="paypal" type="radio"></td>
+                          <td><img alt="paypal" src="./step4_files/paypal.png"></td>
+                          <td width="10">
+                            </td>
+                          <td align="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt volutpat nibh vel sagittis. Proin dui odio, eleifend sit amet aliquam vel, congue aliquet urna.</td>
+                        </tr>
+                      </tbody>
+                    </table></td>
+                </tr>
+                <tr>
+                  <td class="or">OU</td>
+                </tr>
 								<tr>
 									<?php 
 										if ($phone_available==false)

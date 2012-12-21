@@ -3,6 +3,7 @@ function start(){
 	Event.observe($('visa'),"click",this.ogone.bind($('visa')));
 	Event.observe($('amex'),"click",this.ogone.bind($('amex')));
 	Event.observe($('master'),"click",this.ogone.bind($('master')));
+	Event.observe($('paypal_id'),"click",this.paypal.bind($('paypal_id')));
 	Event.observe($('phone_confirm'),"click",this.phone.bind($('phone_confirm')));
 	Event.observe($('phone'),"click",this.phone_input.bind($('phone')));
 	
@@ -14,6 +15,9 @@ function start(){
     
   	$('bank').removeClassName('active_verif');
     $('bank').addClassName('normal_verif');
+
+  	$('paypal').removeClassName('active_verif');
+    $('paypal').addClassName('normal_verif');
     try
     {
       $('phone_info').addClassName('grey');
@@ -30,6 +34,8 @@ function start(){
   	$('ogone').removeClassName('active_verif');
     $('ogone').addClassName('normal_verif');
     
+  	$('paypal').removeClassName('active_verif');
+    $('paypal').addClassName('normal_verif');
     try
     {
       $('phone_info').addClassName('grey_select');
@@ -39,6 +45,26 @@ function start(){
     {}
     
   }
+  function paypal()
+  {
+  	$('paypal').addClassName('active_verif');
+    $('paypal').removeClassName('normal_verif');
+    
+  	$('ogone').removeClassName('active_verif');
+    $('ogone').addClassName('normal_verif');
+    
+  	$('bank').removeClassName('active_verif');
+    $('bank').addClassName('normal_verif');
+    try
+    {
+      $('phone_info').addClassName('grey_select');
+      $('phone_info').removeClassName('grey');
+    }
+    catch(e)
+    {}
+    
+  }
+
   function phone_input()
   {
   	phone()
