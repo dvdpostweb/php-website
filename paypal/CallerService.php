@@ -22,7 +22,6 @@ $API_Signature=API_SIGNATURE;
 
 if(defined('API_ENDPOINT'))
 $API_Endpoint =API_ENDPOINT;
-die($API_Endpoint);
 $version=VERSION;
 
 if(defined('SUBJECT'))
