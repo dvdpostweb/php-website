@@ -31,7 +31,7 @@
 													</tr>';
 									}
 									?>
-									<? if ($_GET['debug'] == 1 && $paypal_available == true ) { ?>
+									<? if ($_GET['debug_paypal'] == 1 && $paypal_available == true ) { ?>
                   <tr>
                     <td width="100%" class="<?php echo ($_POST['payment']=='paypal'?'active_verif':'normal_verif') ?>" id="paypal"><div class="verif_type"><?= TEXT_PAYPAL_TITLE ?></div>
                       <table class="type_credit">
@@ -47,7 +47,7 @@
                       </table></td>
                   </tr>
                 <? }
-                if ($_GET['debug'] == 1 && ($cc_available == true or $phone_available == true)){ 
+                if ($_GET['debug_paypal'] == 1 && ($cc_available == true or $phone_available == true)){ 
                 ?>  
                 <tr><td width="23" class="or" colspan="3" ><?= TEXT_OR ?></td></tr>
 								<? } ?>
