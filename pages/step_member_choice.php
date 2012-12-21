@@ -56,6 +56,7 @@
 							$abo_passive .="LEFT JOIN products_abo pa ON pa.products_id = p.products_id WHERE p.products_type = 'ABO' AND pa.allowed_public_group = 6 or pa.allowed_private_group = 6 order by pa.qty_credit ASC" ;
 							$abo_passive_query = tep_db_query($abo_passive);		
 							$colspan=0;
+							
 							while ($abo_passive_values = tep_db_fetch_array($abo_passive_query)){
 								echo '<tr>';
 								include(getBestMatchToInclude(DIR_WS_COMMON . 'includes/formula/limited_abo_private.php'));

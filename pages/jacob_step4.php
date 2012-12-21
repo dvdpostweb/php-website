@@ -3,7 +3,7 @@
 	<link href="http://www.dvdpost.be/images/relance012012/new.css" rel="stylesheet" type="text/css" />
 <? } ?>
 <?php
-$link = PRIVATE_SITE.'/'.$lang_short.'/wishlist_start';
+$link = PRIVATE_SITE.'/'.$lang_short.'/wishlist_start?login=1';
 $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships';
 
 ?>
