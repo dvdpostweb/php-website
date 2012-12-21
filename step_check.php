@@ -216,7 +216,7 @@ if (!tep_session_is_registered('customer_id')) {
 				  case 'paypal':
 				                 
             $nvpstr=
-"&PAYMENTREQUEST_0_PAYMENTACTION=AUTHORIZATION&PAYMENTREQUEST_0_AMT=0&PAYMENTREQUEST_0_CURRENCYCODE=EUR&L_BILLINGTYPE0=MerchantInitiatedBilling&L_BILLINGAGREEMENTDESCRIPTION0=".urlencode(" ")."&cancelUrl=http://$host/step_check.php&returnUrl=http://$host/paypal_process.php";
+"&PAYMENTREQUEST_0_PAYMENTACTION=AUTHORIZATION&PAYMENTREQUEST_0_AMT=0&PAYMENTREQUEST_0_CURRENCYCODE=EUR&L_BILLINGTYPE0=MerchantInitiatedBilling&L_BILLINGAGREEMENTDESCRIPTION0=".urlencode("DVDPost")."&cancelUrl=http://$host/step_check.php&returnUrl=http://$host/paypal_process.php";
             $resArray=hash_call("SetExpressCheckout",$nvpstr);
             $ack = strtoupper($resArray["ACK"]);
             if($ack!="SUCCESS")  {
