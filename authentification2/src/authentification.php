@@ -133,6 +133,7 @@ class Authentification
 		  ,'/address_book.php'=> '/'.$_SESSION['lang_short'].'/customers/'.$_SESSION['customer_id']
 		  ,'/address_book_process.php'=> '/'.$_SESSION['lang_short'].'/customers/'.$_SESSION['customer_id']
 		  ,'/contact.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
+		  ,'/contact_public.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
 			,'/custserv.php' => '/'.$_SESSION['lang_short'].'/messages/new'
 			,'/custserv_detail.php' => '/'.$_SESSION['lang_short'].'/messages/new'
 			,'/custserv_list.php' => '/'.$_SESSION['lang_short'].'/messages/new'
@@ -163,6 +164,7 @@ class Authentification
 			,'/studio_adult.php' => '/'.$_SESSION['lang_short'].'/adult/studios/'.$_GET['studio_id'].'/products'
 			,'/advanced_search_result2_adult.php' => '/'.$_SESSION['lang_short'].'/adult/products?search='.$_GET['keywords']
 			,'/actors_adult.php' => '/'.$_SESSION['lang_short'].'/adult/actors/'.$_GET['actors_id'].'/products'
+			,'/faq_public.php' => '/'.$_SESSION['lang_short'].'/faq'
 		);
 		foreach ($script_availables as $old=>$new) {
 		//strpos(((!empty($page))?$page:$_SERVER['SCRIPT_NAME']),$value)!==false

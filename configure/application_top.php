@@ -507,7 +507,7 @@ require(DIR_WS_FUNCTIONS . 'clean_html_comments.php');
 
   tep_session_start();
 
-$private_page=array('/mydvdpost.php','/mywishlist.php','/login.php','/holiday_form.php','/step4.php','/step3b.php','/step2b.php','/step3c.php','/step3d.php','/step4.php','/abo_google_ogone_conf.php','/abo_google_ogone_conf.php','/mydvdshop.php'	,'/account.php'	,'/account_edit.php','/account_edit_process.php'	,'/actors.php'	,'/address_book.php'	,'/address_book_process.php','/member_get_member.php','/my_profile.php',"/listing_category.php",
+$private_page=array('/mydvdpost.php','/mywishlist.php','/login.php','/holiday_form.php','/step4.php','/step3b.php','/step2b.php','/step3c.php','/step3d.php','/step4.php','/abo_google_ogone_conf.php','/abo_google_ogone_conf.php','/mydvdshop.php'	,'/account.php','/contact_public.php','/faq_public.php'	,'/account_edit.php','/account_edit_process.php'	,'/actors.php'	,'/address_book.php'	,'/address_book_process.php','/member_get_member.php','/my_profile.php',"/listing_category.php",
 		'/contact.php'                    ,
 		'/contest.php'                    ,
 		'/contest2.php'                   ,

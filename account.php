@@ -1,6 +1,5 @@
 <?php
 $logpwd=1;
-
 require('configure/application_top.php');
 
 if (!tep_session_is_registered('customer_id')) {
