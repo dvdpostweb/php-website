@@ -221,7 +221,7 @@ if (!tep_session_is_registered('customer_id')) {
             $ack = strtoupper($resArray["ACK"]);
             if($ack!="SUCCESS")  {
                 $_SESSION['reshash']=$resArray;
-            	  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error', $nvpstr.'.'.serialize($resArray).'.'.$customer_id, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+            	  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error step check', $nvpstr.'.'.serialize($resArray).'.'.$customer_id, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
             	  die('error');
             }
             $url = PAYPAL_URL.$resArray["TOKEN"];

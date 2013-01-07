@@ -6,12 +6,13 @@ $token=urlencode($_REQUEST['token']);
 $nvpStr="&TOKEN=$token";
 $resArray=hash_call("CreateBillingAgreement",$nvpStr);
 $ack = strtoupper($resArray["ACK"]);
-
+$res = serialize($resArray);
 if($ack!="SUCCESS")
 {
 	$_SESSION['reshash']=$resArray;
-	tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error', serialize($resArray).'.'.$customer_id, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
-	die('paypal error');
+	$data = ' customers_id => '.$customer_id.' query => '.$nvpStr.' res => '. $res;
+	tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'paypal process payment error', $data, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+	die('paypal error '.$ack);
 }
 $agreement_id = $resArray['BILLINGAGREEMENTID'];
 

@@ -1706,6 +1706,8 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 
 function registration_discount($discount_code_id,$customers_id,$products_id,$site,$languages_id,$belgiqueloisirs_id ,$method_payment='OGONE',$mail_message=556,$type_payment=1,$reference_id='')
 {
+  #echo 'ici1';
+  
 	$sql="SELECT * FROM discount_code WHERE discount_code_id ='".$discount_code_id. "'";
 	$discount_query = tep_db_query($sql);
 	$discount_values = tep_db_fetch_array($discount_query);
@@ -1739,7 +1741,7 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 		parrainage_classic($customers_id);
 	
 	
-	
+	#echo 'ici2';
 	if ($discount_code_id< 1){
 		//norm
 		tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method, site) values ('" . $customers_id . "', 1 ,now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') "); 
@@ -1835,6 +1837,7 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	
 	if($final_price>0)
 	{
+    
 	  if($type_payment == 4)
 	  {
 	    $nvpstr="&AMT=$final_price&CURRENCYCODE=EUR&PAYMENTACTION=SALE&REFERENCEID=$reference_id";
@@ -1858,7 +1861,10 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
       {
         $payment_id = 2;
       }
-      tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error', serialize($resArray).'.'.$customer_id, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+      
+      $data = serialize($resArray).' customersid => '.$customers_id.' data => '.$nvpstr;
+      tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error discount', $data, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+      
 	  }
 	  else
 	  {
@@ -1866,7 +1872,10 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	  }
 		$sql_insert_ogone="insert into payment (date_added,payment_method, abo_id,customers_id,amount,payment_status,last_modified) values(now(),$type_payment,$abo_id,$customers_id,$final_price,$payment_id,now());";
 		tep_db_query($sql_insert_ogone);
-		tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 7, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') "); 
+		$id = tep_db_insert_id();
+		$sql_paypal_hist = "insert into paypal_payments_history (payment_id, pp_request, pp_response, created_date, message, customer_id) values (".$id.", '".$nvpstr."' , '".serialize($resArray)."', NOW(),'".$resArray["ACK"]."', ".$customers_id.")";
+		tep_db_query($sql_paypal_hist);
+		tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 7, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "', '".$resArray["ACK"]."', ) "); 
 	}
 	else
 	{
