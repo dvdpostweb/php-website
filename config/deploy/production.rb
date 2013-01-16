@@ -20,10 +20,10 @@ set :scm_verbose, true
 
 set :user, "phpapp"
 set :domain, "pekin"
-#set :domain2, "192.168.102.2"
+set :domain2, "192.168.102.2"
 #set :port, 22012
-role :web,  domain
-role :app,  domain
+role :web,  domain,  domain2
+role :app,  domain,  domain2
 role :db, domain, :primary => true
 
 #############################################################

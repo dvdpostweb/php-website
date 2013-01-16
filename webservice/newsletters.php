@@ -141,7 +141,7 @@ $dvd =  mysql_fetch_array($query_vod, MYSQL_ASSOC);
 	if($streaming=="1")
   {
     
-    $content = str_replace( '{%streaming%}','<a href="http://private.dvdpost.com/'.$locale.'/streaming_products/'.$dvd['imdb_id'].'?warning=1" target="_blank"><img src="http://www.dvdpost.be/images/newsletters/voir_{%locale%}.jpg" width="190" height="35" border="0" alt="button streaming"/></a>',$content);
+    $content = str_replace( '{%streaming%}','<a href="http://private.dvdpost.com/'.$locale.'/streaming_products/'.$dvd['imdb_id'].'?warning=1" target="_blank"><img src="http://www.dvdpost.be/images/newsletters/voir_'.$locale.'.jpg" width="190" height="35" border="0" alt="button streaming"/></a>',$content);
   }
   else
   {
