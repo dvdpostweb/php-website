@@ -174,7 +174,7 @@ function login($authentification)
 function no_access($authentification)
 {
 	$page=$_SERVER['SCRIPT_NAME'];
-  if($page !='/index.php' && $page !='/step1.php' && $page !='/login_code.php'
+  if($page !='/index.php' && $page !='/step1.php' && $page !='/login_code.php'){
     $_SESSION['access_token']='';
 	  unset($_COOKIE['refresh_token']);
 	  $authentification->logout_old_site();
