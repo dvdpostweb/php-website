@@ -2,8 +2,11 @@
 if($_SERVER["REQUEST_URI"] != '/password_forgotten.php' && $_SERVER["REQUEST_URI"] != '/tel.php'){
 
 	switch ($_SERVER['SERVER_NAME']){
+		case 'www.dvdpost.nl':
 		case 'www.dvdpost.be':
-			$url = 'http://private.dvdpost.com';
+		case 'dvdpost.nl':
+		case 'dvdpost.be':
+			$url = ($lang_short == 'fr' || $lang_short == 'en' || $lang_short == 'nl') ? 'http://private.dvdpost.com/'.$lang_short : 'http://private.dvdpost.com/';
 			tep_redirect($url);
 		break;
 		case 'test':

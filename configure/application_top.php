@@ -738,8 +738,6 @@ $private_page=array('/mydvdpost.php','/mywishlist.php','/login.php','/holiday_fo
 		'/step_check.php'
 		
 		);                
-
-
   foreach($private_page as $page)
   {
     if($page == $_SERVER['SCRIPT_NAME'])
@@ -909,7 +907,6 @@ tep_session_register('languages_id');
 	{
 		$jacob = $_SESSION['jacob'];
 	}
-	
 /***************************************/
 /****************************************/
 
@@ -982,7 +979,6 @@ if (WHOSONLINE > 0 ){
 
 
 
-
 // infobox
   //require(DIR_WS_CLASSES . 'boxes.php');
   require(getBestMatchToInclude(DIR_WS_CLASSES . 'boxes.php'));
@@ -1049,6 +1045,7 @@ else
 {
 	$cpt_catalog = number_format($cpt_catalog, 0, '.', '.');
 }
+
 // set which precautions should be checked
   define('WARN_INSTALL_EXISTENCE', 'true');
   define('WARN_CONFIG_WRITEABLE', 'true');
