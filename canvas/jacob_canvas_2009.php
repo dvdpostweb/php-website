@@ -1,6 +1,5 @@
 <?
 if($_SERVER["REQUEST_URI"] != '/password_forgotten.php' && $_SERVER["REQUEST_URI"] != '/tel.php'){
-  echo $_SERVER['SERVER_NAME'];
 	switch ($_SERVER['SERVER_NAME']){
 		case 'www.dvdpost.nl':
 		case 'www.dvdpost.be':
