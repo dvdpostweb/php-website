@@ -5,19 +5,19 @@ if($_SERVER["REQUEST_URI"] != '/password_forgotten.php' && $_SERVER["REQUEST_URI
 		case 'dvdpost.com':
 		case 'dvdpost.be':
 			$url = ($lang_short == 'fr' || $lang_short == 'en' || $lang_short == 'nl') ? 'http://private.dvdpost.com/'.$lang_short : 'http://private.dvdpost.com/';
-			tep_redirect($url);
+			tep_redirect_301($url);
 		break;
 		case 'www.dvdpost.nl':
 		case 'dvdpost.nl':
-		  tep_redirect('http://private.dvdpost.com/nl');
+		  tep_redirect_301('http://private.dvdpost.com/nl');
 		break;
 		case 'test':
 			$url = ($lang_short == 'fr' || $lang_short == 'en' || $lang_short == 'nl') ? 'http://staging.private.dvdpost.com/'.$lang_short : 'http://staging.private.dvdpost.com';
-			tep_redirect($url);
+			tep_redirect_301($url);
 		break;
 		case 'localhost':
 			$url = ($lang_short == 'fr' || $lang_short == 'en' || $lang_short == 'nl') ? 'http://private.dvdpost.dev/'.$lang_short : 'http://private.dvdpost.dev';
-			tep_redirect($url);
+			tep_redirect_301($url);
 		break;
 	}
 }

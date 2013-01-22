@@ -130,6 +130,12 @@ function formatAvailability($added_today, $products_next, $products_date_availab
     tep_exit();
   }
 
+  function tep_redirect_301($url)
+  {
+    header("HTTP/1.1 301 Moved Permanently");
+    header('Location: ' . $url);
+    tep_exit();
+  }
 ////
 // Error message wrapper
 // When optional parameters are provided, it closes the application

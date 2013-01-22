@@ -110,6 +110,7 @@ function login($authentification)
   				}
   				else
   				{
+			      header("HTTP/1.1 301 Moved Permanently");
   					header('Location: '.$authentification->getNewSite());
   					die();
   				}
@@ -133,6 +134,7 @@ function login($authentification)
   						}
   						else
   						{
+					      header("HTTP/1.1 301 Moved Permanently");
   							header('Location: '.$authentification->getNewSite());
   							die();
   						}
@@ -142,6 +144,7 @@ function login($authentification)
   					$redirect=$authentification->redirect();
   					if($redirect !==false)
   					{
+				      header("HTTP/1.1 301 Moved Permanently");
   						header('location: '.$redirect);
   						die();
   					}
@@ -179,6 +182,7 @@ function no_access($authentification)
 	  unset($_COOKIE['refresh_token']);
 	  $authentification->logout_old_site();
 		$url = $authentification->getLogin();
+    header("HTTP/1.1 301 Moved Permanently");
 		header('Location: '.$url);
 	  die();
 	}
