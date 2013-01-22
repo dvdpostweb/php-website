@@ -1,25 +1,3 @@
-<?
-if($_SERVER["REQUEST_URI"] != '/password_forgotten.php' && $_SERVER["REQUEST_URI"] != '/tel.php'){
-	switch ($_SERVER['SERVER_NAME']){
-		case 'www.dvdpost.nl':
-		case 'www.dvdpost.be':
-		case 'dvdpost.com':
-		case 'dvdpost.nl':
-		case 'dvdpost.be':
-			$url = ($lang_short == 'fr' || $lang_short == 'en' || $lang_short == 'nl') ? 'http://private.dvdpost.com/'.$lang_short : 'http://private.dvdpost.com/';
-			tep_redirect($url);
-		break;
-		case 'test':
-			$url = ($lang_short == 'fr' || $lang_short == 'en' || $lang_short == 'nl') ? 'http://staging.private.dvdpost.com/'.$lang_short : 'http://staging.private.dvdpost.com';
-			tep_redirect($url);
-		break;
-		case 'localhost':
-			$url = ($lang_short == 'fr' || $lang_short == 'en' || $lang_short == 'nl') ? 'http://private.dvdpost.dev/'.$lang_short : 'http://private.dvdpost.dev';
-			tep_redirect($url);
-		break;
-	}
-}
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  lang="<?= $lang_short ?>" xml:lang="<?= $lang_short ?>">
 <head>

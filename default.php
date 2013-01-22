@@ -48,7 +48,7 @@ else if($_SERVER['SERVER_NAME'] == 'paypal.dvdpost.be' || $_SERVER['SERVER_NAME'
 else
 {
 	
-	include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_2009.php',0,$jacob));
+	include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_2009.php',0,1));
 	
 }
 
