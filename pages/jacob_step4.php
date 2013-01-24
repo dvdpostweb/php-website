@@ -4,7 +4,7 @@
 <? } ?>
 <?php
 $link = PRIVATE_SITE.'/'.$lang_short.'/wishlist_start?login=1';
-$sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships';
+$sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 
 ?>
 <link href="stylesheet/jb_styles.css" rel="stylesheet" type="text/css" />
@@ -66,7 +66,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships';
               <p class="liner_step"></p>
 							<table cellpadding="0" cellspacing="0" width='100%' align='center'>
 								<tr>
-									<td align="right"><strong>Your details &nbsp;</strong></td>
+									<td align="right"><strong><?= TEXT_DETAILS ?> &nbsp;</strong></td>
 									<td align="left"><?= ucfirst(strtolower($customers_value['customers_lastname'])) ?></td>
 								</tr>
 								<tr>

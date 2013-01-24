@@ -1,7 +1,7 @@
 <link href="stylesheet/jb_styles.css" rel="stylesheet" type="text/css" />
 <?php
-$link = PRIVATE_SITE.'/'.$lang_short.'/wishlist_start';
-$sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships';
+$link = PRIVATE_SITE.'/'.$lang_short.'/wishlist_start?login=1';
+$sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 
 ?>
 <link href="stylesheet/jb_styles.css" rel="stylesheet" type="text/css" />

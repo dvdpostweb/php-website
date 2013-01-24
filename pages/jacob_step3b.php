@@ -372,7 +372,7 @@ if(WEBSITE==101)
 									if ($country==$country_values['countries_id'] ){ $selected='selected="selected"';}
 									else if(empty($country) && $country_values['countries_id']==21){ $selected='selected="selected"'; }
 									else{ $selected='';	} 
-									echo '<option value="'.$country_values['countries_id'].'" '.$selected.'>'.$country_values['countries_name'].'</option>';           	            	
+									echo '<option value="'.$country_values['countries_id'].'" '.$selected.'>'.constant(strtoupper("text_".$country_values["countries_name"])).'</option>';       
 								}
 								?>        
 							</select>
@@ -390,7 +390,7 @@ if(WEBSITE==101)
 								<td colspan="2" align="left"><p>
 									<INPUT type="checkbox" <?= (($_POST['sent'] && $error_conditions==0)?'checked="checked"':'')  ?> name="conditions" value='1'>
 
-										<a class="blue_link" href="conditions.php" target="new"><?php  echo TEXT_HAVE_READ_CONDITIONS . '<br />';?></a></p>
+										<a class="blue_link smaller" href="conditions.php" target="new"><?php  echo TEXT_HAVE_READ_CONDITIONS . '<br />';?></a></p>
 									</td>
 								</tr>
 								<?php 
