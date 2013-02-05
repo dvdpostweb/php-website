@@ -17,7 +17,7 @@ online videotheek, dvd verhuur, dvd huren, huurfilms, dvd verhuur Belgie, dvd hu
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
 <link href="http://private.dvdpost.com/stylesheets/style.css?1322739542" media="all" rel="stylesheet" type="text/css" />
 <link href="http://private.dvdpost.com/stylesheets/common.css?1322739542" media="all" rel="stylesheet" type="text/css" />
-<link href="stylesheet/cinefriends.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/stylesheet/cinefriends.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body style="background-color:#191e24;" >
 <div id="wrap">
@@ -35,13 +35,15 @@ online videotheek, dvd verhuur, dvd huren, huurfilms, dvd verhuur Belgie, dvd hu
     </div>
   </div>
   <!--   ==============   END HEADER   ==============   -->
-				<?php 
+				<?php
 					if(!empty($page_body_to_include))
 					{
 						require(getBestMatchToInclude(DIR_WS_COMMON  . 'pages/' .  $page_body_to_include,0,$jacob)); 
 					}	
 					else if(!empty($content))
 						echo $content;
+					else if($canvas == 1)
+					  require "canvas1.php";
 				?>
 				
 			</div>

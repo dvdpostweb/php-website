@@ -87,10 +87,13 @@ else{
 		//	tep_redirect(tep_href_link('activation_code_confirm.php?code='.$code_values['discount_code']));
 		//  }
 		
-		$banner_code ="SELECT banner from discount_code where discount_code_id='".$is_client_values['activation_discount_code_id']."'";
+		$banner_code ="SELECT * from discount_code where discount_code_id='".$is_client_values['activation_discount_code_id']."'";
 		$banner_code_query = tep_db_query($banner_code);			  
 		$banner_code_values = tep_db_fetch_array($banner_code_query);
-		$banner=$banner_code_values['banner'];		
+		$banner=$banner_code_values['banner'];
+		$promo_id = $promo_id = $banner_code_values['discount_code_id'];
+		$discount_type = $banner_code_values['discount_type'];
+		$discount_value =	$banner_code_values['discount_value'];
 		}
 	
 	}

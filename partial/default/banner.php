@@ -16,9 +16,24 @@
 	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_perenoel_<?= $lang_short ?>.jpg' /></p>
 <? } else if($customer_values['activation_discount_code_id']==1040 || $activation_id == 1040 || $promo_id == 1040) {?>
 	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_jason_<?= $lang_short ?>.jpg' /></p>
+
 <? } else {?>
+  <?
+  $test = 0;
+  $list = array(1044); 
+  foreach ($list as $value)
+  {
+    if($customer_values['activation_discount_code_id']==$value || $activation_id == $value || $promo_id == $value)
+    {
+      $test = 1;
+      echo '<p style="width: 889px;margin: 26px auto;"><img src="/images/landing_step/banner_step_'.$value.'_'.$lang_short.'.jpg" /></p>';
+    }
+  }
+  if($test == 0){
+  ?>
+  
 <div class="banner_title"><?= HUGE_CATALOG ?></div>
 <div class="banner_step" align="center">
   <p><?= $promotion ?></p>
   <span><a href="catalog.php" class="browse_button"><?= EXPLORER ?></a></span> </div>
-<? }?>
+<? }} ?>

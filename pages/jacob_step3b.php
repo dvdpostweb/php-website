@@ -183,7 +183,11 @@ if(WEBSITE==101)
 												if($error_birth==1){
 													$error_birthday=TEXT_ERROR_BIRTH;
 													$class_birthday='step_input_error';
-												}else{
+												}elseif($error_minor==1) {
+												  $error_birthday=TEXT_MINOR;
+													$class_birthday='step_input_error';
+													
+												}else {
 													if($_POST['sent'] && $error_birth==0){
 														$error_birthday=' ';
 														$class_birthday='step_input_ok';
@@ -192,7 +196,6 @@ if(WEBSITE==101)
 														$class_birthday='';
 													}	
 												}
-
 												?>
 												<tr height='45'>
 													<td align="right">
@@ -235,7 +238,7 @@ if(WEBSITE==101)
 												if ( $year==0  ){	            
 													echo '<option value="0" selected="1" align="center">'.TEXT_YEAR.'</option>';
 												}            	
-												for($i=date('Y')-17; $i != 1920 ; $i--){	            	
+												for($i=date('Y')-18; $i != 1920 ; $i--){	            	
 													if ($i==$year){
 														echo '<option value="'.$i.'" selected="1">'.$i.'</option>';
 													}else{
@@ -390,7 +393,7 @@ if(WEBSITE==101)
 								<td colspan="2" align="left"><p>
 									<INPUT type="checkbox" <?= (($_POST['sent'] && $error_conditions==0)?'checked="checked"':'')  ?> name="conditions" value='1'>
 
-										<a class="blue_link smaller" href="conditions.php" target="new"><?php  echo TEXT_HAVE_READ_CONDITIONS . '<br />';?></a></p>
+										<a class="blue_link smaller" href="http://public.dvdpost.com/<?= $lang_short ?>/info/conditions" target="new"><?php  echo TEXT_HAVE_READ_CONDITIONS . '<br />';?></a></p>
 									</td>
 								</tr>
 								<?php 
@@ -451,5 +454,7 @@ if(WEBSITE==101)
 	<div id='error_country_text'><?= TEXT_ERROR_COUTRY ?></div>
 	<div id='error_phone_text'><?= TEXT_ERROR_PHONE ?></div>
 	<div id='error_street_number'><?= TEXT_ERROR_STREET_NUMBER ?></div>
+  <div id='error_minor'><?= TEXT_MINOR ?></div>
+  
 
 </div>

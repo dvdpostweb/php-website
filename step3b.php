@@ -89,6 +89,18 @@ if($_POST['sent']) {
 		$error_birth=1;
 		$error_cpt++;	
 	}	
+  if(!checkdate($_POST['month'],$_POST['day'],$_POST['year'])){
+		$error_birth=1;
+		$error_cpt++;	
+	}
+	$birth = $_POST['day'].'/'.$_POST['month'].'/'.$_POST['year'];
+	$age = age($birth);
+	if($age<18)
+	{
+	  
+    $error_minor=1;
+		$error_cpt++;
+	}
 	switch ($_POST['country']){
 		case 21:
 			if (strlen($_POST['postcode'])< 4 ){

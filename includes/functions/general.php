@@ -2731,7 +2731,12 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 	{ 
 		if($abo_dvd_credit!=10000)
 		{
-			if($discount_values['discount_value']>0)
+		  if($discount_values['discount_type']==1)
+		  {
+		    return "<strong>-".round($discount_values['discount_value']).TEXT_PAID_PERCENT.' '.$discount_values['discount_recurring_nbr_of_month'].' '.TEXT_MONTHS."</strong>";
+		    // <span class='red_font'>".$period."</span>";
+		  }
+			else if($discount_values['discount_value']>0)
 			{
 				return "<strong>".TEXT_PAID_PROMO."</strong>: <span class='red_font'>".$period."</span>";
 			}
@@ -2795,15 +2800,15 @@ function mail_message($customer_id, $mail_id, $data)
 	$email_text = $mail_values['messages_html'];
 	$category_id = $mail_values['category_id'];
 	
-	if($data['final_price']>0)
+	/*if($data['final_price']>0)
 	{
 		$data['display']='none';
 	}
 	else
 	{
 		$data['display']='block';
-	}
-	
+	}*/
+	$data['display']='block';
 	if($mail_copy == 1 || $mail_values['force_copy']==1)
 	{
 		$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)	VALUES (NULL , now(), ".$customer_id.", '".$mail_id."', ".$customers['customers_language'].", '0', NULL , '".$customers['customers_email_address']."'	);";
@@ -2848,5 +2853,14 @@ function curPageURL() {
   $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
  }
  return $pageURL;
+}
+function age($date_naissance)
+ {
+$arr1 = explode('/', $date_naissance);
+$arr2 = explode('/', date('d/m/Y'));
+ 
+if(($arr1[1] < $arr2[1]) || (($arr1[1] == $arr2[1]) && ($arr1[0] <= $arr2[0])))
+return $arr2[2] - $arr1[2];
+return $arr2[2] - $arr1[2] - 1;
 }
 ?>

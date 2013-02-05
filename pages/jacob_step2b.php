@@ -79,7 +79,7 @@ padding-right:19px;
         </div>
         <div class="content_jb"> <div class="step_2 step <?= $lang_short ?>"></div>
           <div class="page">
-            <div class="content">
+            <div class="content <?= ($discount_type == 1) ? "promo".round($discount_value) : "" ?>">
               <div class="title_step2">STEP 2 <span class="green_font"><?= mb_strtoupper(TEXT_TITLE_JACOB2) ?></span></div> 
               <div style="clear:both;"></div>
               <a href ='step2b.php?dvd=3' class="dvd dvd_2  <?= $lang_short; ?>"></a>

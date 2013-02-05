@@ -240,9 +240,16 @@ switch(WEB_SITE_ID)
 ?>
 <body id="hp" class="normal" >
     <!--   ==============   HEADER   ==============   -->
-		<?php require ('menu.php') ?>
+		<?php require (getBestMatchToInclude(DIR_WS_COMMON. 'menu.php')) ?>
     <div class="container clearfix">
-			<?php require(getBestMatchToInclude(DIR_WS_COMMON  . 'pages/' .  $page_body_to_include,0,$jacob)); ?>
+      <?
+      	if(!empty($page_body_to_include))
+				{
+			    require(getBestMatchToInclude(DIR_WS_COMMON  . 'pages/' .  $page_body_to_include,0,$jacob));
+			  }
+			  else if($canvas == 1)
+			    require (getBestMatchToInclude(DIR_WS_COMMON. 'promotions/canvas1.php'));
+			  ?>
     </div>
 	</div>
 				

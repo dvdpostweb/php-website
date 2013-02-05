@@ -651,65 +651,50 @@ margin-top: 20px;
   margin-bottom: 10px;
   width: 518px;
   display:block;
-  
 }
-.dvd_2.fr {
-    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 0 transparent;
+.dvd.fr
+{
+  background-image: url("../images/jb/prices_new_fr.gif")
+}
+.dvd.nl
+{
+  background-image: url("../images/jb/prices_new_nl.gif")
+}
+.dvd.en
+{
+  background-image: url("../images/jb/prices_new_en.gif")
+}
+.promo50 .dvd.fr
+{
+  background-image: url("../images/jb/prices_new_fr_50.gif")  
+}
+.promo50 .dvd.nl
+{
+  background-image: url("../images/jb/prices_new_nl_50.gif")  
+}
+.promo50 .dvd.en
+{
+  background-image: url("../images/jb/prices_new_en_50.gif")  
+}
+
+.dvd_2.fr, .dvd_2.en, .dvd_2.nl {
     margin-top: 8px;
 }
-.dvd_2.en {
-    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 0 transparent;
-    margin-top: 8px;
-}
-.dvd_2.nl {
-    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 0 transparent;
-    margin-top: 8px;
-}
-.dvd_4.nl {
-    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 -73px transparent;
-}
-
-.dvd_8.nl {
-    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 -146px transparent;
-}
-
-.dvd_12.nl {
-    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 -219px transparent;
-}
-
-.dvd_16.nl {
-    background: url("../images/jb/prices_new_nl.gif") no-repeat scroll 0 -292px transparent;
-}
-.dvd_4.en {
-    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 -73px transparent;
-}
-
-.dvd_8.en {
-    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 -146px transparent;
-}
-
-.dvd_12.en {
-    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 -219px transparent;
-}
-
-.dvd_16.en {
-    background: url("../images/jb/prices_new_en.gif") no-repeat scroll 0 -292px transparent;
-}
-.dvd_4.fr {
-    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 -73px transparent;
-}
-
-.dvd_8.fr {
-    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 -146px transparent;
-}
-
-.dvd_12.fr {
-    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 -219px transparent;
-}
-
-.dvd_16.fr {
-    background: url("../images/jb/prices_new_fr.gif") no-repeat scroll 0 -292px transparent;
-}
+.dvd_4.nl, .dvd_4.fr .dvd_4.en {
+    background-position: 0 -73px;
+}                        
+                         
+.dvd_8.nl, .dvd_8.fr, .dvd_8.en {              
+    background-position: 0 -146px;
+}                        
+                         
+.dvd_12.nl, .dvd_12.fr, .dvd_12.en {             
+    background-position: 0 -219px;
+}                        
+                         
+.dvd_16.nl, .dvd_16.en, .dvd_16.fr {             
+    background-position: 0 -292px;
+}                        
 .type_credit {
     font-size: 12px;
 }
