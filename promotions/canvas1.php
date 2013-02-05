@@ -35,4 +35,4 @@
 </div>
 </div>
 </div>
-<p id="footer_promo" align="right">* Via Air Play | <a href="/conditions.php" target="_blank"><strong><?= TEXT_CONDITION_SUMMER ?></strong></a></p>
+<p id="footer_promo" align="right">* Via Air Play | <a href="http://private.dvdpost.com/fr/info/conditions" target="_blank"><strong><?= TEXT_CONDITION_SUMMER ?></strong></a></p>

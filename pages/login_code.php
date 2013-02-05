@@ -253,7 +253,7 @@ if(strtolower($code)=="gfc50"){
  					<? } else if (strpos($code,'chef') === 0 || strpos($code,'jason') === 0 || strpos($code,'neol2012') === 0) { ?> 
  		         <tr><td colspan="2" align="right"><p><input class="no_border_button" name="imageField" type="image" src="<?php 
  						echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/chef/button_cmc.png'; ?>" align="absmiddle" border="0">
- 					<? } else if (strpos($code,'shadow') === 0) { ?> 
+ 					<? } else if (strpos($code,'shadow') === 0 || strpos($code,'taken2') >= 0 || strpos($code,'ted') >= 0 || strpos($code,'lorax') >= 0 || strpos($code,'law') >= 0) { ?> 
  		         <tr><td colspan="2" align="right"><p><input class="no_border_button" name="imageField" type="image" src="<?php 
  						echo DIR_WS_IMAGES_LANGUAGES.$language.'/images/login_code/chef/button_cmc.png'; ?>" align="absmiddle" border="0">
 					<? } else {?>
