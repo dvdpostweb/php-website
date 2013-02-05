@@ -242,8 +242,6 @@ if(strtolower($code)=="gfc50"){
 		}
 			?>
           </td></tr>
-	        
-	                
 					<? if (strpos($code,'BGC') === 0) { ?> 
              <tr><td colspan="2" align="center"><p><input type="submit" class="button_relance" value="<?= CONFIRM_CHOICE ?>" name="sent">
 					<? } else if (strpos($code,'univers') === 0) { ?> 
