@@ -7,9 +7,6 @@
     <div id="container">
 			<? require('partial/default/banner.php') ?>
 		      <div class="content_step">
-		        attention kfdlsfkl <br />
-		        
-		        fdsfdsfsd<br />
 				<? require('partial/default/jacob_questions.php') ?>
 				</div>
         <div class="content_jb">

@@ -126,6 +126,8 @@ function formatAvailability($added_today, $products_next, $products_date_availab
 ////
 // Redirect to another page or site
   function tep_redirect($url) {
+    #tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'redirect', $url, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+  	
     header('Location: ' . $url);
     tep_exit();
   }

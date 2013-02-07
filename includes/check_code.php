@@ -42,7 +42,7 @@ if (tep_session_is_registered('customer_id')) {
 	$check_abo="select customers_abo,customers_registration_step from customers where customers_id=".$customer_id;
 	$check_abo_query = tep_db_query($check_abo);
 	$check_abo_values = tep_db_fetch_array($check_abo_query);
-	if ($disc_code_values['listing_products_allowed'] == 21)
+	if ($disc_code_values['goto_step'] == 21)
   {	
   	$step = 21;
 	}
