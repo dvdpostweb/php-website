@@ -42,13 +42,20 @@ if (tep_session_is_registered('customer_id')) {
 	$check_abo="select customers_abo,customers_registration_step from customers where customers_id=".$customer_id;
 	$check_abo_query = tep_db_query($check_abo);
 	$check_abo_values = tep_db_fetch_array($check_abo_query);
-	if ($check_abo_values['customers_registration_step'] == 90 )
-	{
-		$step = 33;
+	if ($disc_code_values['listing_products_allowed'] == 21)
+  {	
+  	$step = 21;
 	}
 	else
 	{
-		$step = $check_abo_values['customers_registration_step'];
+    if ($check_abo_values['customers_registration_step'] == 90 )
+  	{
+  		$step = 33;
+  	}
+  	else
+  	{
+  		$step = $check_abo_values['customers_registration_step'];
+  	}	  
 	}
 	$sql="select CodeDesc2 from generalglobalcode where CodeValue = '" . $step. "' AND  CodeType='STEP'";
 	$check_step_query = tep_db_query($sql);
