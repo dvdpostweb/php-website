@@ -13,7 +13,7 @@
 <div id="warp">
   <div id="promo_content">
     <div class="offre_ptg">
-      <form action="activation_code_confirm.php" method="post" name="form1">
+      <form action="/activation_code_confirm.php" method="post" name="form1">
         <div id="promo_code">
           <p align="center"><?= TEXT_PROMO_TITLE ?></p>
           <div style="float:left; padding-top:10px;padding-left:27px;font-size:15px"><?= TEXT_CODE ?></div>
