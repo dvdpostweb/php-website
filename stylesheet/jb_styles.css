@@ -676,11 +676,10 @@ margin-top: 20px;
 {
   background-image: url("../images/jb/prices_new_en_50.gif")  
 }
-
 .dvd_2.fr, .dvd_2.en, .dvd_2.nl {
     margin-top: 8px;
 }
-.dvd_4.nl, .dvd_4.fr .dvd_4.en {
+.dvd_4.nl, .dvd_4.fr, .dvd_4.en {
     background-position: 0 -73px;
 }                        
                          
