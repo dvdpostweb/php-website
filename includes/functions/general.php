@@ -2735,7 +2735,7 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		{
 		  if($discount_values['discount_type']==1)
 		  {
-		    return "<strong>-".round($discount_values['discount_value']).TEXT_PAID_PERCENT.' '.$discount_values['discount_recurring_nbr_of_month'].' '.TEXT_MONTHS."</strong>";
+		    return "<strong>-".round($discount_values['discount_value']).TEXT_PAID_PERCENT.' '.(intval($discount_values['discount_recurring_nbr_of_month'])+1).' '.TEXT_MONTHS."</strong>";
 		    // <span class='red_font'>".$period."</span>";
 		  }
 			else if($discount_values['discount_value']>0)
