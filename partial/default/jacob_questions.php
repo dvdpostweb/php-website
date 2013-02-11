@@ -1,4 +1,9 @@
-<div class="navcontainer"> 
+<div class="navcontainer">
+  <? if($current_page_name =='step_check.php') { ?>
+  <div style="padding:5px;background:#fff;border:1px solid #333; margin:0 0 10px">
+  <?= TEXT_WARNING ?>
+  </div>
+  <? } ?>
   <h3 class="ttl"><?= TEXT_MENU_JACOB ?></h3>
 	<div class="banner_help" align='center'><img src="/images/jb/womanguide.jpg" /></div>
 	<div class="nav_<?= $lang_short ?> question nav" id='question1'><?= HELP_HOW ?></div>
