@@ -17,8 +17,6 @@ $meta_desc1 = str_replace('xxxcountxxx' ,  $cpt_catalog ,TEXT_META_DESC1);
 ?>
 <html>
 <head>
-<meta name="verify-v1" content="PQdsGfiSvfFZFXwp5ZRxDgw37x89LYLkoOy2X5uD7tY=" /> 
-<meta name="verify-v1" content="Fh6utipb6BPbYsezoaWU0qwP+ODl0ioypAFfh41Qbu0=" />
 <META NAME="description" content="<?php echo $meta_desc1 . $strmeta . TEXT_META_DESC2; ?>">
 <META NAME="keywords" content="<?php echo TEXT_META_KEYWORDS; ?>">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 

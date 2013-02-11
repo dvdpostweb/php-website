@@ -18,8 +18,6 @@ if(${"REMOTE_ADDR"}== ADMINIP){
 	}
 ?>
 <meta name="verify-v1" content="AtMCrSj7lrafTKW+wpFGnxbd0p2bM7Cqbxg71cu3ufk=" />
-<meta name="verify-v1" content="gSM0XOri4SYYklnTtYQf7XMi9VZP9jMHfDL4SAldrIE=" />
-<meta name="verify-v1" content="Fh6utipb6BPbYsezoaWU0qwP+ODl0ioypAFfh41Qbu0=" />
 <META NAME="description" content="<?php  echo TEXT_META_DESC1 . $strmeta . TEXT_META_DESC2; ?>">
 <META NAME="keywords" content="<?php  echo TEXT_META_KEYWORDS; ?>">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 

@@ -7,8 +7,6 @@ if(${"REMOTE_ADDR"}== ADMINIP || $host== 'www' || $host== 'localhost'){
 <html xmlns="http://www.w3.org/1999/xhtml" lang="<?= $lang_short ?>" xml:lang="<?= $lang_short ?>">
 <head>
 <title><?php  echo TEXT_META_TITLE; ?></title>
-<meta name="verify-v1" content="PQdsGfiSvfFZFXwp5ZRxDgw37x89LYLkoOy2X5uD7tY=" /> 
-<meta name="verify-v1" content="Fh6utipb6BPbYsezoaWU0qwP+ODl0ioypAFfh41Qbu0=" />
 <META NAME="description" content="<?php  echo TEXT_META_DESC; ?>">
 <META NAME="keywords" content="<?php  echo TEXT_META_KEYWORDS; ?>">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 

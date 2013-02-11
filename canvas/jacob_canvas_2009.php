@@ -44,8 +44,6 @@ if($_SERVER["REQUEST_URI"] != '/password_forgotten.php' && $_SERVER["REQUEST_URI
 	}
 	?>
 	
-<meta name="verify-v1" content="PQdsGfiSvfFZFXwp5ZRxDgw37x89LYLkoOy2X5uD7tY=" /> 
-<meta name="verify-v1" content="Fh6utipb6BPbYsezoaWU0qwP+ODl0ioypAFfh41Qbu0=" />
 <META NAME="description" content="<?php echo   ((!empty($strdescription))?$strdescription:$strmeta.' - '.$meta_desc1 . TEXT_META_DESC2); ?>">
 <META NAME="keywords" content="<?php echo TEXT_META_KEYWORDS; ?>">
 <META name="y_key" content="6dad1b79d5decc74" >
@@ -54,7 +52,6 @@ if($_SERVER["REQUEST_URI"] != '/password_forgotten.php' && $_SERVER["REQUEST_URI
 <meta name="author" content ="Home Entertainment Services">
 <meta name="Revisit-after" content="14 days">
 <meta name="Robots" content="all">
-<meta name="google-site-verification" content="bVK9E1XaKKd3WZH2L9mVBBRLomFtP0zmex-k8Jzm7Sk" />
 <LINK REL="SHORTCUT ICON" href="<?php echo DIR_WS_IMAGES;?>/favicon.ico"> 
 	
 <?php
