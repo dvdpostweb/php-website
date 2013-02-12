@@ -186,6 +186,7 @@ function login($authentification)
 }
 function no_access($authentification)
 {
+  #die('ici??');
 	$page=$_SERVER['SCRIPT_NAME'];
   if($page !='/index.php' && $page !='/step1.php' && $page !='/login_code.php'){
     $_SESSION['access_token']='';
