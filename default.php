@@ -39,6 +39,10 @@ if($_SERVER['SERVER_NAME'] == 'ptg.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'pt
 {
 	include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_light.php',0,$jacob));	
 }
+else if($_SERVER['SERVER_NAME'] == 'public.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'private.dvdpost.be')
+{
+  tep_redirect_301('http://www.dvdpost.be');
+}
 else if($_SERVER['SERVER_NAME'] == 'paypal.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'jason.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'noel2012.dvdpost.be')
 {
   $nav = true;

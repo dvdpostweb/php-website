@@ -1,4 +1,3 @@
-<? tep_redirect_301('http://wwww.dvdpost.be'); ?>
 
 <style>
 
