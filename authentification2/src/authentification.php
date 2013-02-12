@@ -82,7 +82,7 @@ class Authentification
 
   public function getNewSite()
   {
-    return $this->get_domain();
+    return $this->get_domain().'?login=1';
   }
 
   public function api($url, $method, $params) {
@@ -205,7 +205,7 @@ class Authentification
 		//strpos(((!empty($page))?$page:$_SERVER['SCRIPT_NAME']),$value)!==false
 			if( strpos($_SERVER['SCRIPT_NAME'],$old)!==false)
 			{
-				$url=$this->get_site().$new;
+				$url=$this->get_site().$new."?login=1";
 				return $url;
 			}
 		}	
