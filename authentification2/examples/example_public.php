@@ -7,25 +7,8 @@ $authentification= new Authentification(array(
   'site' => PRIVATE_SITE,
 
 ));
-
 $refresh = 0;
-get_access_token($authentification, $_GET['code']);
-$status=login($authentification);
-if($status!==false)
-{
-  $customer_id = $status['customer_id'];
-	$customer_default_address_id = $status['customer_default_address_id'];
-	$customers_registration_step = $status['customers_registration_step'];
-	$customer_first_name = $status['customer_first_name'];
-	$customer_country_id = "21";
-	$customer_zone_id = "0";
-	tep_session_register('customer_id', $customer_id);
-	tep_session_register('customer_default_address_id', $customer_default_address_id);
-	tep_session_register('customers_registration_step', $customers_registration_step);
-	tep_session_register('customer_first_name', $customer_first_name);
-	tep_session_register('customer_country_id', $customer_country_id);
-	tep_session_register('customer_zone_id', $customer_zone_id);
-}
+$status=redirect_public($authentification);
 function get_access_token($authentification, $code){
   if(empty($_SESSION['access_token']) && !empty($code))
   {
@@ -67,10 +50,9 @@ function get_access_token($authentification, $code){
     }
   }
 }
-function redirect_public()
+function redirect_public($authentification)
 {
   $redirect=$authentification->redirect_public();
-  die($redirect);
 	if($redirect !==false)
 	{
     header("HTTP/1.1 301 Moved Permanently");

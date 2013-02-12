@@ -114,6 +114,31 @@ class Authentification
 	  tep_session_unregister('osCsid');
 	  tep_session_unregister('sessionCookie');
 	}
+	public function redirect_public()
+	{
+	  $script_availables= array(
+      '/how.php' => '/'.$_SESSION['lang_short'].'/info/dvd'
+			,'/how_public.php' => '/'.$_SESSION['lang_short'].'/info/dvd'
+      ,'/faq_public.php' => '/'.$_SESSION['lang_short'].'/faq'
+      ,'/faq.php' => '/'.$_SESSION['lang_short'].'/faq'
+      ,'/privacy.php' => '/'.$_SESSION['lang_short'].'/info/privacy'
+      ,'/privacy_public.php' => '/'.$_SESSION['lang_short'].'/info/privacy'
+      ,'/freetrial_info.php' => '/'.$_SESSION['lang_short']
+      ,'/contact.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
+      ,'/contact_public.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
+      ,'/product_info_public.php' => '/'.$_SESSION['lang_short'].'/products/'.$_GET['products_id']
+      
+		);	
+		foreach ($script_availables as $old=>$new) {
+		//strpos(((!empty($page))?$page:$_SERVER['SCRIPT_NAME']),$value)!==false
+			if( strpos($_SERVER['SCRIPT_NAME'],$old)!==false)
+			{
+				$url=$this->get_site().$new;
+				return $url;
+			}
+		}	
+		return false;
+	}
 	public function redirect()
 	{
 		
@@ -165,6 +190,16 @@ class Authentification
 			,'/advanced_search_result2_adult.php' => '/'.$_SESSION['lang_short'].'/adult/products?search='.$_GET['keywords']
 			,'/actors_adult.php' => '/'.$_SESSION['lang_short'].'/adult/actors/'.$_GET['actors_id'].'/products'
 			,'/faq_public.php' => '/'.$_SESSION['lang_short'].'/faq'
+			,'/how.php' => '/'.$_SESSION['lang_short'].'/info/dvd'
+		  ,'/how_public.php' => '/'.$_SESSION['lang_short'].'/info/dvd'
+      ,'/faq_public.php' => '/'.$_SESSION['lang_short'].'/faq'
+      ,'/faq.php' => '/'.$_SESSION['lang_short'].'/faq'
+      ,'/privacy.php' => '/'.$_SESSION['lang_short'].'/info/privacy'
+      ,'/privacy_public.php' => '/'.$_SESSION['lang_short'].'/info/privacy'
+      ,'/freetrial_info.php' => '/'.$_SESSION['lang_short']
+      ,'/contact.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
+      ,'/contact_public.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
+      ,'/product_info_public.php' => '/'.$_SESSION['lang_short'].'/products/'.$_GET['products_id']
 		);
 		foreach ($script_availables as $old=>$new) {
 		//strpos(((!empty($page))?$page:$_SERVER['SCRIPT_NAME']),$value)!==false

@@ -1,5 +1,7 @@
 <?php 
 header('Cache-Control: private');
+require_once 'authentification2/src/authentification.php';
+require_once 'authentification2/examples/example2.php';
 if(${"REMOTE_ADDR"}== ADMINIP || $host== 'www'|| $host== 'localhost' ){
 	echo '<a href="'. $translation_bo_url . '" target=new>edit text</a>';	
 }

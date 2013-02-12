@@ -1,4 +1,8 @@
 <?
+require_once 'authentification2/src/authentification.php';
+require_once 'authentification2/examples/example_public.php';
+
+
 if($_SERVER["REQUEST_URI"] != '/password_forgotten.php' && $_SERVER["REQUEST_URI"] != '/tel.php'){
 	switch ($_SERVER['SERVER_NAME']){
 		case 'www.dvdpost.be':
