@@ -1,7 +1,7 @@
 <?php 
 require('configure/application_top.php');
 require 'authentification2/src/authentification.php';
-require_once 'authentification2/examples/example2.php';
+require_once 'authentification2/examples/example_public.php';
 $trailer_id=intval($HTTP_GET_VARS['trailers_id']);
 //phpinfo();
 $trailer_query = tep_db_query("select trailer,broadcast from products_trailers where trailers_id=" . $trailer_id);
