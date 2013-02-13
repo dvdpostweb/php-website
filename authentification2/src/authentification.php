@@ -127,6 +127,7 @@ class Authentification
       ,'/contact.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
       ,'/contact_public.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
       ,'/product_info_public.php' => '/'.$_SESSION['lang_short'].'/products/'.$_GET['products_id']
+      ,'/trailer.php' => '/'.$_SESSION['lang_short']
       
 		);	
 		foreach ($script_availables as $old=>$new) {
@@ -200,6 +201,7 @@ class Authentification
       ,'/contact.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
       ,'/contact_public.php' => '/'.$_SESSION['lang_short'].'/phone_requests/new'
       ,'/product_info_public.php' => '/'.$_SESSION['lang_short'].'/products/'.$_GET['products_id']
+      ,'/trailer.php' => '/'.$_SESSION['lang_short']
 		);
 		foreach ($script_availables as $old=>$new) {
 		//strpos(((!empty($page))?$page:$_SERVER['SCRIPT_NAME']),$value)!==false
