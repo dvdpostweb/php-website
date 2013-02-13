@@ -15,7 +15,11 @@
 <meta http-equiv="Content-Language" content="<?php echo TEXT_META_LANGUAGE; ?>">
 <meta name="author" content ="Home Entertainment Services">
 <meta name="Revisit-after" content="14 days">
-<meta name="Robots" content="all">
+<? if ($noindex == true) { ?>
+  <meta name="robots" content="noindex">
+<? } else { ?>
+  <meta name="Robots" content="all">
+<? } ?>
 <LINK REL="SHORTCUT ICON" href="<?php echo DIR_WS_IMAGES;?>/favicon.ico"> 
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/ibox.css','.css'); ?>">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css' />
