@@ -303,7 +303,7 @@ if(WEBSITE==101)
 										<span class="explain_text"><?php   echo TEXT_POST_CODE  ;?> <span class="asterisk_step">*</span></span>
 									</td>
 									<td>
-										<input class="new_step_input" type="text" autocomplete="off" name="postcode" id="postcode" value="<?php echo $postcode ;?>">
+										<input class="new_step_input" type="text" autocomplete="off" name="postcode" id="postcode" maxlength="4" value="<?php echo $postcode ;?>">
 									</td>
 									<td align="left" class="explain_text">
 										<div id='check_zip' class="<?= $class_zip ?>"><div id="text"><?= $error_zip ?></div> </div>
@@ -368,7 +368,7 @@ if(WEBSITE==101)
 									$error_count='';
 									$class_count='';
 								}
-								$country_sql ="SELECT countries_id, countries_name from countries where EntityID= ".ENTITY_ID;
+								$country_sql ="SELECT countries_id, countries_name from countries";
 								$country_query = tep_db_query($country_sql);
 
 								while ($country_values =tep_db_fetch_array($country_query)){
