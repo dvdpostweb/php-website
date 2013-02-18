@@ -355,6 +355,9 @@ switch(WEB_SITE_ID)
       </noscript>
 			<!-- trade tracker-->
 			<?php
+			
+			if($_GET['type']!='phone')
+			{
 			$customers_query = tep_db_query("select * from customers where customers_id = '" . $customer_id . "' ");
 			$customers = tep_db_fetch_array($customers_query);
 
@@ -363,7 +366,7 @@ switch(WEB_SITE_ID)
 			$url = 'http://www.dvdpost.be/belgie/conversion.php?campaignID=2946&productID=4211&conversionType=lead&https=0&transactionID='. $customers_id.'&email='.$email_address.'&descrMerchant='.$_GET['type'].'&descrAffiliate='.$_GET['type'];
 			//tep_mail('gs@dvdpost.be','gs@dvdpost.be','conversion trade tracker',$customer_id.'.'.$url.'.step'.$customers_registration_step.'. ref'.$_SERVER['HTTP_REFERER'],'bugreport@dvdpost.be','bugreport@dvdpost.be');
 			echo '<img src="'.$url.'" width="1" height="1" border="0" alt="" />';   
-			
+		  }
 			?>
 			<!-- trade tracker -->
 			<!-- click tron -->
