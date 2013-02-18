@@ -25,7 +25,21 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css' />
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/reset.css','.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/main.css','.css'); ?>">
+<?
+$script_available= array(0=>'/step1.php');
 
+if(scriptAvailable($script_available)){
+?>
+<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='//cdn.zopim.com/?111flezPlNEERQnAGwPeCrQtqzgCMcTz';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+</script>
+<? } ?>
+<!--End of Zopim Live Chat Script-->
 
 <?php 
 $script_available= array(0=>'/domiciliation70_confirmation.php');
