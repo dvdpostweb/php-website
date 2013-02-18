@@ -363,7 +363,15 @@ switch(WEB_SITE_ID)
 
 			$customers_registration_step = $customers['customers_registration_step'];
 			$email_address =$customers['customers_email_address'];
-			$url = 'http://www.dvdpost.be/belgie/conversion.php?campaignID=2946&productID=4211&conversionType=lead&https=0&transactionID='. $customers_id.'&email='.$email_address.'&descrMerchant='.$_GET['type'].'&descrAffiliate='.$_GET['type'];
+			if($languages_id==1)
+			{
+			  $tracker_id = 15272;
+			}
+			else
+			{
+			  $tracker_id = 4211;
+			}
+			$url = 'http://www.dvdpost.be/belgie/conversion.php?campaignID=2946&productID='.$tracker_id.'&conversionType=lead&https=0&transactionID='. $customer_id.'&email='.$email_address.'&descrMerchant='.$_GET['type'].'&descrAffiliate='.$_GET['type'];
 			//tep_mail('gs@dvdpost.be','gs@dvdpost.be','conversion trade tracker',$customer_id.'.'.$url.'.step'.$customers_registration_step.'. ref'.$_SERVER['HTTP_REFERER'],'bugreport@dvdpost.be','bugreport@dvdpost.be');
 			echo '<img src="'.$url.'" width="1" height="1" border="0" alt="" />';   
 		  }
