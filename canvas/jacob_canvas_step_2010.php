@@ -356,7 +356,7 @@ switch(WEB_SITE_ID)
 			<!-- trade tracker-->
 			<?php
 			
-			if($_GET['type']!='phone')
+			if($_GET['type']!='callback')
 			{
 			$customers_query = tep_db_query("select * from customers where customers_id = '" . $customer_id . "' ");
 			$customers = tep_db_fetch_array($customers_query);
