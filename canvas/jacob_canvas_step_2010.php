@@ -26,9 +26,9 @@
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/reset.css','.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/main.css','.css'); ?>">
 <?
-$script_available= array(0=>'/step1.php');
+$script_available= array(0=>'/step1.php', 1 => '/step2b.php', 2 => '/step3b.php', 3 => '/step_check.php');
 
-if(scriptAvailable($script_available)){
+if(scriptAvailable($script_available) && $languages_id==1){
 ?>
 <!--Start of Zopim Live Chat Script-->
 <script type="text/javascript">
