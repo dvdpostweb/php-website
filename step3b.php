@@ -101,21 +101,27 @@ if($_POST['sent']) {
     $error_minor=1;
 		$error_cpt++;
 	}
+	$test_postcode = preg_match("/[^0-9]/i",$_POST['postcode']);
+	if($test_postcode == true)
+	{
+	  $error_postcode=4;
+		$error_cpt++;
+	}
 	switch ($_POST['country']){
 		case 21:
-			if (strlen($_POST['postcode'])< 4 ){
+			if (strlen($_POST['postcode'])!= 4 ){
 				$error_postcode=1;
 				$error_cpt++;	
 			}
 			break;
 		case 124:
-			if (strlen($_POST['postcode'])< 4 ){
+			if (strlen($_POST['postcode'])!= 4 ){
 				$error_postcode=2;
 				$error_cpt++;	
 			}
 			break;
 		case 150:
-			if (strlen($_POST['postcode']) < 4 ){
+			if (strlen($_POST['postcode'])!= 4 ){
 				$error_postcode=3;
 				$error_cpt++;	
 			}
