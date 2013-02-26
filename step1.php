@@ -500,7 +500,7 @@ if (strpos(strtoupper($activation_code),'BGC') === 0) { ?>
 
     $page_body_to_include = $current_page_name;
     //echo tep_ab_testing_link('step1.php?activation_code=14');
-    include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_step_2010.php',0,$jacob));
+    include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_step_2010.php',0,1));
 
     require('configure/application_bottom.php');
 

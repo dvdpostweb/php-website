@@ -261,7 +261,7 @@ switch(WEB_SITE_ID)
       <?
       	if(!empty($page_body_to_include))
 				{
-			    require(getBestMatchToInclude(DIR_WS_COMMON  . 'pages/' .  $page_body_to_include,0,$jacob));
+			    require(getBestMatchToInclude(DIR_WS_COMMON  . 'pages/' .  $page_body_to_include,0,1));
 			  }
 			  else if($canvas == 1)
 			    require (getBestMatchToInclude(DIR_WS_COMMON. 'promotions/canvas1.php'));

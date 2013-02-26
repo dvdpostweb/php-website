@@ -886,8 +886,8 @@ tep_session_register('languages_id');
 
 	if(strpos($_SERVER['HTTP_HOST'],'www')===false && $host!='localhost' && $host!='test' && $host!='192.168.100.206')
 	{
-		setcookie('jacob',0);
-		$jacob=0;
+		setcookie('jacob',1);
+		$jacob=1;
 	}
 	else if(!isset($_SESSION['jacob']))
 	{
