@@ -5,65 +5,65 @@
 
 
 #promo_content {
-background-image:url(../images/vicky_bg.jpg);
-height:587px;
-
-
-}
-
-.promo-title {
-     padding: 0 0 0 210px;
+  background-image:url(../images/vicky_bg.jpg);
+  height:587px;
+  background-repeat: no-repeat;
+  background-position: center 0;
 }
 #footer_promo {
 
-color:#FFFFFF;
- margin: 0 auto;
-    padding: 8px 0 0 0 ;
- 
-    width: 970px;
+  color:#FFFFFF;
+  margin: 0 auto;
+  padding: 8px 0 0 0 ;
+
+  width: 970px;
 }
 
 
 #footer_promo a{
-color:#FFFFFF;
+  color:#FFFFFF;
 
 }
 #promo_code {
-    background-color: #FFFFFF;
-    margin: 0 0 20px 280px;
-    padding: 10px;
-    width: 366px;
+  background-color: #FFFFFF;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  width: 366px;
 }
 
 #applestuffs {
-    background-color: #FFFFFF;
-    margin: 0 0 20px 280px;
-    padding: 10px;
-    width: 366px;
-	color:#4a4a4a;
-	text-align: center;
-	font-size:14px;
-
+  background-color: #FFFFFF;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  width: 366px;
+  color:#4a4a4a;
+  text-align: center;
+  font-size:14px;
 }
 
 #applestuffs a{
-color:#97c300;
+  color:#97c300;
 }
 
 .headerpromo {
-  
-    position: relative;
-    width: 100%;
-    z-index: 100;
+
+  position: relative;
+  width: 100%;
+  z-index: 100;
 }
 
 
 
 h1 a {
-    background: url(../images/logofemmesdaunjoudhui.jpg) no-repeat scroll 0 0 transparent !important;
-    height: 63px;
-    width: 970px;
+  background: url(../images/logofemmesdaunjoudhui.jpg) no-repeat scroll 0 0 transparent !important;
+  height: 63px;
+  width: 970px;
 }
 h1 .nl{
   background: url(../images/logolibelle.jpg) no-repeat scroll 0 0 transparent !important;  
+}
+.offre_ptg {
+  font-size: 15px;
+  width:400px;
+  margin: 0 auto;
 }

@@ -10,7 +10,6 @@
   background-repeat: no-repeat;
   background-position: center 0;
 }
-
 #footer_promo {
 
   color:#FFFFFF;
@@ -62,7 +61,7 @@
 }
 
 .offre_ptg {
-font-size: 15px;
-width:400px;
-margin: 0 auto;
+  font-size: 15px;
+  width:400px;
+  margin: 0 auto;
 }
