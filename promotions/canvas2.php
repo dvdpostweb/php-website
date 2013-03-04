@@ -135,7 +135,7 @@
         </p>
       </div></form>
       <p align="center"><img src="/images/promotions/fr/info_tel.jpg" /> </p>
-      <div id="promo_footer">*L'offre est valable pour un abonnement de 4 films ( 2 films dans tous les formats + 2 films uniquement en format VOD). Après le mois gratuit, l'abonnement de la formule 4 films est prolongée automatiquement à 9,95&euro; par mois. Vous pouvez modifier la formule de votre abonnement en contactant le service client au numéro gratuit 0800/95 990 ou au numéro payant 0032 2 5036811 pour les appels effectués hors de la Belgique. Si vous ne souhaitez pas prolonger votre abonnement il suffit de contacter notre service client par téléphone, au plus tard un jour ouvrable avant la fin de la période d'essai, et votre compte sera alors clÙturé sans aucun frais. Si vous annulez votre abonnement avant la fin de l'essai gratuit vous ne serez pas facturé.</div>
+      <div id="promo_footer">*Offre uniquement valable pour de nouveaux clients. L'offre est valable pour un abonnement de 4 films ( 2 films dans tous les formats + 2 films uniquement en format VOD). Après le mois gratuit, l'abonnement de la formule 4 films est prolongée automatiquement à 9,95&euro; par mois. Vous pouvez modifier la formule de votre abonnement en contactant le service client au numéro gratuit 0800/95 990 ou au numéro payant 0032 2 5036811 pour les appels effectués hors de la Belgique. Si vous ne souhaitez pas prolonger votre abonnement il suffit de contacter notre service client par téléphone, au plus tard un jour ouvrable avant la fin de la période d'essai, et votre compte sera alors clÙturé sans aucun frais. Si vous annulez votre abonnement avant la fin de l'essai gratuit vous ne serez pas facturé.</div>
     </div>
   </div>
 </div>
