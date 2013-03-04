@@ -1,0 +1,249 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#header {
+	height: 80px!important;
+}
+#promo_date li {
+	color: #FFFFFF;
+	float: left;
+	font-size: 24px;
+	margin-left: 630px;
+	margin-top: -29px;
+	text-transform: uppercase;
+}
+#promo_footer {
+	color: #212A31;
+	font-size: 11px;
+	margin-right: 14px;
+	padding-top: 20px;
+	text-align: justify;
+	padding-bottom:20px;
+}
+#commentcamarche_content {
+	padding-bottom: 30px;
+}
+#commentcamarche_content h2 {
+	font-size:28px;
+	text-transform: uppercase;
+	font-weight:bold;
+}
+#commentcamarche_content h3 {
+	background: url("../images/promotions/square.gif") no-repeat scroll 0 25px transparent;
+	font-size: 24px;
+	padding-left: 20px;
+	padding-top: 15px;
+	text-transform: uppercase;
+}
+#commentcamarche_content #dvd li {
+	float: left;
+	margin-left: 24px;
+	font-size:16px;
+}
+#commentcamarche_content #vod li {
+	float: left;
+	font-size: 16px;
+	margin-left: 15px;
+	margin-right: 44px;
+}
+#commentcamarche_content td.step1 {
+	background: url("../images/promotions/1.gif") no-repeat scroll 0 0 transparent;
+	height: 30px;
+	padding-left: 38px;
+	width: 200px;
+}
+#commentcamarche_content td.step2 {
+	background: url("../images/promotions/2.gif") no-repeat scroll 0 0 transparent;
+	height: 30px;
+	padding-left: 38px;
+	width: 200px;
+}
+#commentcamarche_content td.step3 {
+	background: url("../images/promotions/3.gif") no-repeat scroll 0 0 transparent;
+	height: 30px;
+	padding-left: 38px;
+	width: 200px;
+}
+#commentcamarche_content td.step4 {
+	background: url("../images/promotions/4.gif") no-repeat scroll 0 0 transparent;
+	height: 30px;
+	padding-left: 38px;
+	width: 200px;
+}
+#area_promo {
+	background: url("http://public.dvdpost.com/images/tab-content-bg.png") repeat-x scroll 0 0 transparent;
+	height: 280px;
+	margin-bottom: 20px;
+	margin-right: 14px;
+}
+#area_promo h2 {
+	font-size: 33px;
+	line-height: 33px;
+	padding-bottom: 20px;
+	padding-top: 10px;
+	text-align: center;
+}
+#promo_content {
+	background-repeat: no-repeat;
+	height: 647px!important;
+	margin: 0 auto!important;
+	padding: 0!important;
+	width: 970px;
+}
+#promo_content #promo_form {
+	padding-left: 40px;
+	width: 463px;
+}
+#promo_content h2 {
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 28px;
+	padding-top: 29px;
+	text-align: center;
+}
+#promo_content h3 {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+#promo_content #promo_form {
+	text-align:center;
+}
+#promo_content #promo_form h4 {
+	font-size: 26px;
+	padding-bottom: 5px;
+}
+#promo_content #promo_form .avantages {
+	border-left: 1px solid #000000;
+	color: #212A31;
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin-right: 20px;
+	padding-left: 20px;
+	text-align: left;
+	width: 200px;
+}
+#promo_content #promo_form .garanties {
+	color: #212A31;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin-left: 20px;
+	text-align: left;
+	width: 200px;
+}
+#promo_content h1 {
+	color: #FFFFFF;
+	font-size: 48px;
+	line-height: 49px;
+	padding-top: 20px;
+	text-align: center;
+}
+#warp {
+	background: none repeat-y scroll 100% 0 white !important;
+	padding: 14px 0 1px 14px;
+	margin-top: -40px;
+}
+#promo_content #promo_form .promo_button, #area_promo .promo_button {
+	background-color: #ee8419;
+	background-image: -moz-linear-gradient(center top, #ee8419, #e26417);
+	background-repeat: repeat-x;
+	border: 1px solid #d55023;
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 #d83c14;
+	font-size:30px;
+	padding: 10px;
+}
+.inputs_promo_code {
+	font-size:20px;
+	border: 1px solid #A6AAAD;
+	border-radius: 4px 4px 4px 4px;
+	color: #333;
+	padding: 6px 29px 6px 6px;
+	width: 226px;
+	background: no-repeat center right white;
+}
+#area_promo p {
+	color:#333333;
+	font-size:18px;
+}
+#promo_form .inputs_promo_code {
+	width: 180px;
+}
+#promo_form p {
+	color:#333333;
+	font-size:18px;
+}
+#promo_content #promo_form .garanties .security {
+	background: url("../images/promotions/lock.png") no-repeat scroll 0 18px transparent;
+	padding-left: 30px;
+	padding-top: 23px;
+}
+#promo_content #promo_form .garanties .engagement {
+	background: url("../images/promotions/no_shop.png") no-repeat scroll 0 2px transparent;
+	height: 20px;
+	padding-left: 30px;
+}
+#promo_content #promo_form .garanties .stop {
+	background: url("../images/promotions/noengagement.png") no-repeat scroll 0 12px transparent;
+	height: 20px;
+	padding-top: 10px;
+	padding-left: 30px;
+}
+#promo_content #promo_form .avantages .film {
+	background: url("../images/promotions/film.png") no-repeat scroll 0 2px transparent;
+	height: 20px;
+	line-height: 25px;
+	padding-left: 30px;
+	;
+}
+#promo_content #promo_form .avantages .home {
+	background: url("../images/promotions/house.png") no-repeat scroll 0 10px transparent;
+	height: 20px;
+	padding-left: 30px;
+	padding-top: 10px;
+}
+#promo_content #promo_form .avantages .platform {
+	background: url("../images/promotions/ipad.png") no-repeat scroll 0 19px transparent;
+	height: 20px;
+	padding-left: 30px;
+	padding-top: 23px;
+}
+ #arrow_down {
+    background-image: url("../images/promotions/arrow_down.png");
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+    top: -54px;
+    width: 89px;
+}
+#header h1 a {
+width: 224px;
+background: url(/images/logo.png);
+height: 39px;
+}
+#login_error
+{
+	color:#c01713;
+}
+#login_error a
+{
+  color:#c01713;
+  text-decoration:underline;
+}
+#promo_form p.news
+{
+  font-size: 10px;
+  text-align: left;
+  padding-left: 10px;
+  margin:0 0 10px 0;
+}
+#area_promo p.news
+{
+  font-size:12px;
+  text-align:center;
+}

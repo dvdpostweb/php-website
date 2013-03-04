@@ -53,3 +53,6 @@ function search(search,init)
 		return true;
 	
 }
+function goToByScroll(id){
+  $('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+}

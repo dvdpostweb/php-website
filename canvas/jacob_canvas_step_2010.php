@@ -9,7 +9,11 @@
 		echo '<META http-equiv="refresh" content="'.$refresh['secondes'].'; URL='.$refresh['link'].'">';
 	}
 ?>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<? if($canvas == 2) { ?>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<? } else { ?>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<? }?>
 <META NAME="description" content="<?php echo $meta_desc1 . $strmeta . TEXT_META_DESC2; ?>">
 <META NAME="keywords" content="<?php echo TEXT_META_KEYWORDS; ?>">
 <meta http-equiv="Content-Language" content="<?php echo TEXT_META_LANGUAGE; ?>">
@@ -49,6 +53,7 @@ if(scriptAvailable($script_available)){
 	{
 ?>
 <META HTTP-EQUIV="Refresh" CONTENT="3; URL=<?= '/download_dom.php' ?>">
+  
 <?php
 }}
 $host=$_SERVER["SERVER_NAME"];
@@ -182,7 +187,12 @@ if(scriptAvailable($script_available)){
 <?php
 }
 ?>
-<script type="text/javascript" src="js/main.js?v=2"></script>
+<?php
+  if($css)
+    echo '<link rel="stylesheet" type="text/css" href="/stylesheet/'.$css.'">';
+?>
+
+<script type="text/javascript" src="/js/main.js?v=2"></script>
 	<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="stylesheet/ie6.css" media="screen"/><![endif]-->
 </head>
 	<?php
@@ -256,21 +266,27 @@ switch(WEB_SITE_ID)
 ?>
 <body id="hp" class="normal" >
     <!--   ==============   HEADER   ==============   -->
-		<?php require (getBestMatchToInclude(DIR_WS_COMMON. 'menu.php')) ?>
+		<?php 
+		if (!isset($hide_menu))
+		  require (getBestMatchToInclude(DIR_WS_COMMON. 'menu.php')) 
+		?>
     <div class="container clearfix">
       <?
       	if(!empty($page_body_to_include))
 				{
 			    require(getBestMatchToInclude(DIR_WS_COMMON  . 'pages/' .  $page_body_to_include,0,1));
 			  }
-			  else if($canvas == 1)
-			    require (getBestMatchToInclude(DIR_WS_COMMON. 'promotions/canvas1.php'));
+			  else if($canvas > 0)
+			    require (getBestMatchToInclude(DIR_WS_COMMON. 'promotions/canvas'.$canvas.'.php'));
 			  ?>
     </div>
 	</div>
 				
   </div></div>
 	<!-- footer -->
+	<?
+		if (!isset($hide_menu)){
+	?>
 	<div id="footer">
 		<div class="wrap">
 	   	<ul>
@@ -279,7 +295,7 @@ switch(WEB_SITE_ID)
 			</ul>
 		</div>
 	</div>
-	
+	<? } ?>
 
 
 

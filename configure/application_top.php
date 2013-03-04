@@ -828,8 +828,6 @@ $private_page=array('/mydvdpost.php','/mywishlist.php','/login.php','/holiday_fo
 	break;
 	default:
 		$lang_short='fr';
-	
-	
   }
   if(count($lang_available)>0)
   {
