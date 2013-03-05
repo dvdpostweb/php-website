@@ -9,11 +9,7 @@
 		echo '<META http-equiv="refresh" content="'.$refresh['secondes'].'; URL='.$refresh['link'].'">';
 	}
 ?>
-<? if($canvas == 2) { ?>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-<? } else { ?>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
-<? }?>
 <META NAME="description" content="<?php echo $meta_desc1 . $strmeta . TEXT_META_DESC2; ?>">
 <META NAME="keywords" content="<?php echo TEXT_META_KEYWORDS; ?>">
 <meta http-equiv="Content-Language" content="<?php echo TEXT_META_LANGUAGE; ?>">

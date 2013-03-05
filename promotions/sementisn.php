@@ -1,11 +1,11 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_aboun.jpg';
-$code = 'NDLP13';
+$image = 'bg_promo.jpg';
+$code = 'SEMENTISN';
 $css = 'canvas2.css';
 $hide_menu = true;
-define('DEFAULT_LANGUAGE', 'fr');
+define('DEFAULT_LANGUAGE', 'nl');
 
 require 'header.php'
 ?>

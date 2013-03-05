@@ -1,8 +1,8 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_aboun.jpg';
-$code = 'NDLP13';
+$image = 'bg_promo.jpg';
+$code = 'SEMENTISF';
 $css = 'canvas2.css';
 $hide_menu = true;
 define('DEFAULT_LANGUAGE', 'fr');
