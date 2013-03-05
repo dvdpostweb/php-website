@@ -28,7 +28,7 @@
         <h3><?= TEXT_PROMO_4?></h3>
         <form name="verify_form" method="post" action="/step1.php" id="form_step"> 
 					<input  TYPE="hidden" VALUE="<?php  echo $code ;?>" NAME="activation_code"></td>
-					
+					<input type="hidden" name='language' value='<?= $lang_short ?>'>
 				
         <p style="float:left;  padding-left:10px;margin-bottom: 5px"><?= TEXT_EMAIL_STEP ?><br />
           <input class="inputs_promo_code" id='email' type="text"  name="email_address_step" autocomplete="off" value="<?php  echo $_POST['email_address'] ;?>" size="40" />
@@ -103,6 +103,8 @@
         </p>
         <p class="news">
           <input type='checkbox' checked="checked" name="marketing" class="Input1" value='YES' >
+          <input type="hidden" name='language' value='<?= $lang_short ?>'>
+					
           <?php  echo TEXT_MARKETING_OK ?>
         </p>
         
