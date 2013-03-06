@@ -49,6 +49,10 @@ else if($_SERVER['SERVER_NAME'] == 'paypal.dvdpost.be' || $_SERVER['SERVER_NAME'
 	
   include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_step_2010.php',0,$jacob));
 }
+else if($_SERVER['SERVER_NAME'] == 'm.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'm.dvdpost.nl' )
+{
+  tep_redirect('http://m.private.dvdpost.com');
+}
 else
 {
 	

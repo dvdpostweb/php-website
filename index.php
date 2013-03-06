@@ -1,6 +1,10 @@
 <?php  
-require('configure/application_top.php');
 
+require('configure/application_top.php');
+if($_SERVER['SERVER_NAME'] == 'm.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'm.dvdpost.nl' )
+{
+  tep_redirect('http://m.private.dvdpost.com');
+}
 require 'authentification2/src/authentification.php';
 require 'authentification2/examples/example2.php';
 if (DEFAULT_LANGUAGE !='' || $language_id>0 ){
