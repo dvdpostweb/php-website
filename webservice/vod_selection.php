@@ -92,7 +92,7 @@ require(DIR_WS_INCLUDES . 'translation_root.php');
 					          <td colspan="4"></td>
 					        </tr>
 					        <tr>
-					          <td align="left"> <a target="_blank" href="http://private.dvdpost.com/'.$lang_short.'/products/'.$recom['products_id'].'?recommendation=5"><img height="109" width="74" border="0" src="http://www.dvdpost.be/'.$image_path.'/'.htmlspecialchars($recom['products_image_big']).'" alt="'.($recom['products_name']).'" style="margin:0 0 0 2px "></a> </td>
+					          <td align="left"> <a target="_blank" href="http://private.dvdpost.com/'.$lang_short.'/products/'.$recom['products_id'].'?recommendation=39"><img height="109" width="74" border="0" src="http://www.dvdpost.be/'.$image_path.'/'.htmlspecialchars($recom['products_image_big']).'" alt="'.($recom['products_name']).'" style="margin:0 0 0 2px "></a> </td>
 					        </tr>
 					      </tbody>
 					    </table></td>
@@ -100,7 +100,7 @@ require(DIR_WS_INCLUDES . 'translation_root.php');
 					$btn.='<td valign="top" align="center"> <a target="_blank" href="http://private.dvdpost.com/'.$lang_short.'/streaming_products/'.$recom['imdb_id'].'?warning=1"><img border="0" src="http://www.dvdpost.be/images/newsletters/mailinout/vod_button_'.$lang_short.'.gif"></a> </td>
 					';
 				$title .='
-				  <td valign="top" align="center"> <a target="_blank" style="color: rgb(69, 69, 69); text-decoration: none;" href="http://private.dvdpost.com/'.$lang_short.'/products/'.$recom['products_id'].'?recommendation=5"><font size="2">'.(truncate($recom['products_name'],25)).'</font></a> </td>
+				  <td valign="top" align="center"> <a target="_blank" style="color: rgb(69, 69, 69); text-decoration: none;" href="http://private.dvdpost.com/'.$lang_short.'/products/'.$recom['products_id'].'?recommendation=39"><font size="2">'.(truncate($recom['products_name'],25)).'</font></a> </td>
 				';
 				
 					$rating_product =  $recom['rating_count'] > 0 ? round(($recom['rating_users'] / $recom['rating_count']) * 2) : 0 ;
