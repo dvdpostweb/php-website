@@ -1,5 +1,6 @@
 <?php
 require('../configure/application_top.php');
+tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'suspension', $_GET['customer_id'] , STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
 header ("content-type: text/xml");
 $xml='<?xml version="1.0" encoding="UTF-8"?>
 <root>';
