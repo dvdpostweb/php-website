@@ -382,7 +382,7 @@ switch(WEB_SITE_ID)
 			<!-- trade tracker-->
 			<?php
 			
-			if($_GET['type']!='callback')
+			if($_GET['type']!='callback' && ($customers['activation_discount_code_id'] == 1097 || $customers['activation_discount_code_id'] == 1098))
 			{
 			$customers_query = tep_db_query("select * from customers where customers_id = '" . $customer_id . "' ");
 			$customers = tep_db_fetch_array($customers_query);
