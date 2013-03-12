@@ -2828,7 +2828,7 @@ function mail_message($customer_id, $mail_id, $data)
 		{
 			$recipient = 'gs@dvdpost.be';
 		}
-		#tep_mail($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $recipient, $mail_values['messages_title'], $formating['text'], STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+		tep_mail($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $recipient, $mail_values['messages_title'], $formating['text'], STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
 	}else
 	{
 		$history_id='NULL';
