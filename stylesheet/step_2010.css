@@ -372,7 +372,7 @@ width:559px;
 
 .step
 { 
-background: url(http://www.dvdpost.be//images/steps_all.png);
+background: url(../images/steps_all.png);
 height:45px;
 width:340px;
 }
@@ -409,7 +409,7 @@ width:340px;
 
 #footer {
 
-  background: #303030 url(http://www.dvdpost.be//images/footer-bg.jpg) center top no-repeat;
+  background: #303030 url(../images/footer-bg.jpg) center top no-repeat;
 
   clear: both;
 
@@ -487,7 +487,7 @@ width:340px;
 
 #subfooter #footer-nav ul#contacts {
 
-  background: url(http://www.dvdpost.be//images/contacts-bg.gif) 0 0 repeat-y;
+  background: url(../images/contacts-bg.gif) 0 0 repeat-y;
 
   padding-left: 50px;
 
@@ -579,7 +579,7 @@ width:340px;
 
 #subfooter #partners #partners-box {
 
-  background: url(http://www.dvdpost.be//images/partners.png) 0 0 no-repeat;
+  background: url(../images/partners.png) 0 0 no-repeat;
 
   width: 393px;
 

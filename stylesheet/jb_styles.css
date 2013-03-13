@@ -676,6 +676,18 @@ margin-top: 20px;
 {
   background-image: url("../images/jb/prices_new_en_50.gif")  
 }
+.promo10 .dvd.fr
+{
+  background-image: url("../images/jb/prices_new_fr_10.gif")  
+}
+.promo10 .dvd.nl
+{
+  background-image: url("../images/jb/prices_new_nl_10.gif")  
+}
+.promo10 .dvd.en
+{
+  background-image: url("../images/jb/prices_new_en_10.gif")  
+}
 .dvd_2.fr, .dvd_2.en, .dvd_2.nl {
     margin-top: 8px;
 }
