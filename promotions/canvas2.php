@@ -37,11 +37,12 @@
         <p style="float:right; padding-right:10px;margin-bottom: 5px"><?= TEXT_PASS_STEP ?><br />
           <input class="inputs_promo_code" id='password' type="password" name="password_step" size="40"  autocomplete="off" value="<?php  echo $_POST['password'] ;?>"  />
         </p>
+        <span id='login_error'></span>
+        
         <p class="news">
           <input type='checkbox' checked="checked" name="marketing" class="Input1" value='YES' >
           <?php  echo TEXT_MARKETING_OK ?>
         </p>
-        <span id='login_error'></span>
         <div class="clearfix"></div>
         <div class="garanties">
           <h4><?= TEXT_GUARANTIE ?></h4>
@@ -121,4 +122,5 @@
 <div style='display:none'>
 	<div id ='email_abo'><?= TEXT_ERROR_MAIL ?></div>
 	<div id ='error_emaail2'><? TEXT_ERROR_MAIL2 ?></div>
+	<div id ='email_not_abo'><?= str_replace('_code_', $activation_code, TEXT_NOT_ABO) ?></div>
 </div>
