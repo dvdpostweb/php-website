@@ -122,5 +122,5 @@
 <div style='display:none'>
 	<div id ='email_abo'><?= TEXT_ERROR_MAIL ?></div>
 	<div id ='error_emaail2'><? TEXT_ERROR_MAIL2 ?></div>
-	<div id ='email_not_abo'><?= str_replace('_code_', $activation_code, TEXT_NOT_ABO) ?></div>
+	<div id ='email_not_abo'><?= str_replace('_code_', $code, TEXT_NOT_ABO) ?></div>
 </div>
