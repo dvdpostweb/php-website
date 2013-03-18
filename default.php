@@ -43,13 +43,22 @@ else if($_SERVER['SERVER_NAME'] == 'public.dvdpost.be' || $_SERVER['SERVER_NAME'
 {
   tep_redirect_301('http://www.dvdpost.be');
 }
+else if($_SERVER['SERVER_NAME'] == 'public.dvdpost.nl' || $_SERVER['SERVER_NAME'] == 'private.dvdpost.nl')
+{
+  tep_redirect_301('http://www.dvdpost.nl');
+}
+else if($_SERVER['SERVER_NAME'] == 'public.dvdpost.lu' || $_SERVER['SERVER_NAME'] == 'private.dvdpost.lu')
+{
+  tep_redirect_301('http://www.dvdpost.lu');
+}
+
 else if($_SERVER['SERVER_NAME'] == 'paypal.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'jason.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'noel2012.dvdpost.be')
 {
   $nav = true;
 	
   include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_step_2010.php',0,$jacob));
 }
-else if($_SERVER['SERVER_NAME'] == 'm.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'm.dvdpost.nl' )
+else if($_SERVER['SERVER_NAME'] == 'm.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'm.dvdpost.nl' || $_SERVER['SERVER_NAME'] == 'm.dvdpost.lu' )
 {
   tep_redirect('http://m.private.dvdpost.com');
 }

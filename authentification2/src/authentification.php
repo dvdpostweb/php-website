@@ -229,6 +229,10 @@ class Authentification
 		{
 			$host='www.dvdpost.be';
 		}
+		else if(strpos($host,'dvdpost.lu')!==false)
+		{
+			$host='www.dvdpost.lu';
+		}
 		
     $currentUrl = $protocol . $host . $_SERVER['REQUEST_URI'];
     $parts = parse_url($currentUrl);
