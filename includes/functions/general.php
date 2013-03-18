@@ -1075,7 +1075,7 @@ function formatAvailability($added_today, $products_next, $products_date_availab
 		$mail = new PHPmailer();
 		$mail->IsSMTP();
 		$mail->IsHTML(true);
-		$mail->Host='192.168.100.11';
+		$mail->Host='mail.dvdpost.local';
 		$mail->From=$from_email_address;
 		$mail->FromName='DVDPost';
 		$mail->AddAddress($recipient);
