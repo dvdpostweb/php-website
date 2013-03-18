@@ -23,7 +23,7 @@ tep_session_register('languages_id');
 $current_page_name = 'ogone_process.php';
 
 include(DIR_WS_INCLUDES . 'translation.php');
-$sql_query = "update customers set ogone_owner='".addslashes($customers['customers_firstname'])." ".addslashes($customers['customers_lastname'])."' , ogone_exp_date ='" . $HTTP_GET_VARS['ED'] . "' , ogone_card_no='" . $HTTP_GET_VARS['CARDNO'] . "' , ogone_card_type='" . $HTTP_GET_VARS['BRAND'] . "' where customers_id = '" . $ogone_check['customers_id'] . "' ";
+$sql_query = "update customers set ppv_status_id = 1, ogone_owner='".addslashes($customers['customers_firstname'])." ".addslashes($customers['customers_lastname'])."' , ogone_exp_date ='" . $HTTP_GET_VARS['ED'] . "' , ogone_card_no='" . $HTTP_GET_VARS['CARDNO'] . "' , ogone_card_type='" . $HTTP_GET_VARS['BRAND'] . "' where customers_id = '" . $ogone_check['customers_id'] . "' ";
 tep_db_query($sql_query); 
 $check_logo_query = tep_db_query("select logo from site where site_id = '" . WEB_SITE_ID . "'");
 $check_log_values = tep_db_fetch_array($check_logo_query);
