@@ -1082,7 +1082,7 @@ function formatAvailability($added_today, $products_next, $products_date_availab
 		$mail->AddReplyTo($from_email_address);	
 		$mail->Subject= $email_subject;
 		$mail->Body=$email_text;
-
+echo $mail->Host;
 		if(!$mail->Send()){ //Teste si le return code est ok.
 		  echo $mail->ErrorInfo; //Affiche le message d'erreur (ATTENTION:voir section 7)
 		}else
