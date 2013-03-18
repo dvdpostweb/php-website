@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_URI"] != '/password_forgotten.php' && $_SERVER["REQUEST_URI
 		break;
 		case 'www.dvdpost.lu':
 		case 'dvdpost.lu':
-		  tep_redirect_301('http://private.dvdpost.com/en');
+		  tep_redirect_301('http://private.dvdpost.com/fr');
 		break;
 		case 'test':
 			$url = ($lang_short == 'fr' || $lang_short == 'en' || $lang_short == 'nl') ? 'http://staging.private.dvdpost.com/'.$lang_short : 'http://staging.private.dvdpost.com';
