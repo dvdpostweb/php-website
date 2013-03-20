@@ -226,14 +226,23 @@ width: 224px;
 background: url(/images/logo.png);
 height: 39px;
 }
-#login_error
+#login_error, #login_error2
 {
 	color:#c01713;
 }
-#login_error a
+#login_error a, #login_error2 a
 {
   color:#c01713;
   text-decoration:underline;
+}
+#login_error2
+{
+  clear: both;
+  text-align: center;
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  
 }
 #promo_form p.news
 {

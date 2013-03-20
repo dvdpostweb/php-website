@@ -1,5 +1,12 @@
 <? $url = curPageURL2(); ?>
+<?
+$email = '';
+if(isset($_POST['email_address']))
+  $email = $_POST['email_address'];
+if(isset($_GET['email']))
+  $email = $_GET['email'];
 
+?>
 <style>
 #promo_content {
   background-image:url(/images/canvas/<?= $lang_short ?>/<?= $image ?>);
@@ -31,7 +38,7 @@
 					<input type="hidden" name='language' value='<?= $lang_short ?>'>
 				
         <p style="float:left;  padding-left:10px;margin-bottom: 5px"><?= TEXT_EMAIL_STEP ?><br />
-          <input class="inputs_promo_code" id='email' type="text"  name="email_address_step" autocomplete="off" value="<?php  echo $_POST['email_address'] ;?>" size="40" />
+          <input class="inputs_promo_code" id='email' type="text"  name="email_address_step" autocomplete="off" value="<?php  echo $email ;?>" size="40" />
           
         </p>
         <p style="float:right; padding-right:10px;margin-bottom: 5px"><?= TEXT_PASS_STEP ?><br />
@@ -101,12 +108,13 @@
       <div id="area_promo">
         <h2><?= isset($promo) ? constant("TEXT_FORM_$promo") : TEXT_FORM_AREA_PROMO ?></h2>
         <p style="float:left;  padding-left:200px;"><?= TEXT_EMAIL_STEP ?><br />
-          <input class="inputs_promo_code" id='email2' type="text"  name="email_address_step" autocomplete="off" value="<?php  echo $_POST['email_address'] ;?>" size="40" />
+          <input class="inputs_promo_code" id='email2' type="text"  name="email_address_step" autocomplete="off" value="<?php  echo $email ;?>" size="40" />
         </p>
         <p style="float:right; padding-right:200px;"><?= TEXT_PASS_STEP ?><br />
           <input class="inputs_promo_code" id='password2' type="password" name="password_step" size="40"  autocomplete="off" value="<?php  echo $_POST['password'] ;?>"  />
           
         </p>
+        <span id='login_error2'></span>
         <p class="news">
           <input type='checkbox' checked="checked" name="marketing" class="Input1" value='YES' >
           <input type="hidden" name='language' value='<?= $lang_short ?>'>
