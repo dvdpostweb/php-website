@@ -16,7 +16,7 @@
   <div id="header" >
     <h1> <a href="http://public.dvdpost.com/<?= $lang_short ?>?url_promo=<?= urlencode($url) ?>" class="f-btn" style="">DVDPost.be</a> </h1>
     <ul id="promo_date" class="osc">
-      <li><?= TEXT_UNTIL ?> <?= $maDate = date('d/m/Y', strtotime('+3 day')) ?></li>
+      <li><?= TEXT_UNTIL ?> <?= isset($date_limit) ? $date_limit : date('d/m/Y', strtotime('+3 day')) ?></li>
     </ul>
   </div>
   <!--   ==============   END HEADER   ==============   -->
@@ -25,7 +25,7 @@
       <h1><?= TEXT_DISCOVER ?></h1>
       <div id="promo_form">
         <h2><?= TEXT_VOD_NOW ?></h2>
-        <h3><?= TEXT_PROMO_4?></h3>
+        <h3><?= isset($promo) ? constant("TEXT_$promo") : TEXT_PROMO_4 ?></h3>
         <form name="verify_form" method="post" action="/step1.php" id="form_step"> 
 					<input  TYPE="hidden" VALUE="<?php  echo $code ;?>" NAME="activation_code"></td>
 					<input type="hidden" name='language' value='<?= $lang_short ?>'>
@@ -67,6 +67,7 @@
     <div id="arrow_down"><a href=""></a></div>
     <div id="warp">
       <div id="commentcamarche_content">
+        <? if(!isset($vod_hide)){ ?>
         <?= TEXT_VOD_DESC ?>
         <table cellpadding="0" cellspacing="0" border="0">
           <tr id="vod">
@@ -79,6 +80,9 @@
             <?= TEXT_PROMO_VOD_DESC ?>
           </tr>
         </table>
+        <? } ?>
+        <? if(!isset($dvd_hide)){ ?>
+        
         <?= TEXT_PROMO_DVD_TITLE ?>
         <table cellpadding="0" cellspacing="0" border="0">
           <tr id="dvd">
@@ -91,6 +95,7 @@
             <?= TEXT_PROMO_DVD_DESC ?>
           </tr>
         </table>
+        <? } ?>
       </div>
       <form name="verify_form" method="post" action="/step1.php" id="form_step"> 
       <div id="area_promo">
@@ -115,7 +120,7 @@
         </p>
       </div></form>
       <p align="center"><img src="/images/promotions/<?= $lang_short ?>/info_tel.jpg" /> </p>
-      <div id="promo_footer"><?= TEXT_PROMO_FOOTER ?></div>
+      <div id="promo_footer"><?= isset($promo) ? constant("TEXT_".$promo."_FOOTER") : TEXT_PROMO_FOOTER ?></div>
     </div>
   </div>
 </div>
