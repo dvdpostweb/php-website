@@ -2,7 +2,7 @@
 
 <style>
 #promo_content {
-  background-image:url(/images/canvas/<?= $lang_short ?>/bg_promo.jpg);
+  background-image:url(/images/canvas/<?= $lang_short ?>/<?= $image ?>);
 }
 </style>
 <script type="text/javascript" src="/js/jquery.js"></script>
