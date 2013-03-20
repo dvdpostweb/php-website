@@ -99,7 +99,7 @@
       </div>
       <form name="verify_form" method="post" action="/step1.php" id="form_step"> 
       <div id="area_promo">
-        <h2><?= TEXT_FORM_AREA_PROMO ?></h2>
+        <h2><?= isset($promo) ? constant("TEXT_FORM_$promo") : TEXT_FORM_AREA_PROMO ?></h2>
         <p style="float:left;  padding-left:200px;"><?= TEXT_EMAIL_STEP ?><br />
           <input class="inputs_promo_code" id='email2' type="text"  name="email_address_step" autocomplete="off" value="<?php  echo $_POST['email_address'] ;?>" size="40" />
         </p>
