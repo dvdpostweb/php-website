@@ -235,7 +235,7 @@ height: 39px;
   color:#c01713;
   text-decoration:underline;
 }
-#login_error2, .news_form
+#login_error2, .news_form, .news_form2
 {
   clear: both;
   text-align: center;
@@ -248,6 +248,10 @@ height: 39px;
 {
   width:551px;
   text-align:left;
+}
+.news_form2
+{
+  width:551px;
 }
 #promo_form p.news
 {

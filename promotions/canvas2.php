@@ -34,13 +34,13 @@ if(isset($_GET['email']))
         <h2><?= TEXT_VOD_NOW ?></h2>
         <h3><?= $old == true ? TEXT_OLD : (isset($promo) ? constant("TEXT_$promo") : TEXT_PROMO_4) ?></h3>
         <? if($old == true ){ ?>
-        <form name="form1" method="post" action="login_code.php?action=<?= ((tep_session_is_registered('customer_id'))?'process':'login').'&email='.$email.'&force='.$force ?>">
+        <form name="form1" method="post" action="<?= $_SERVER['PHP_SELF'] ?>?action=<?= ((tep_session_is_registered('customer_id'))?'process':'login').'&email='.$email.'&force='.$force ?>&form=1">
         <? }else {?>
         <form name="verify_form" method="post" action="/step1.php" id="form_step"> 
         <? } ?>
 					<input  TYPE="hidden" VALUE="<?php  echo $code ;?>" NAME="activation_code"></td>
 					<input type="hidden" name='language' value='<?= $lang_short ?>'>
-				
+				<? if ($old != true || !tep_session_is_registered('customer_id')){ ?>
         <p style="float:left;  padding-left:10px;margin-bottom: 5px"><?= TEXT_EMAIL_STEP ?><br />
           <input class="inputs_promo_code" id='email' type="text"  name="email_address_step" autocomplete="off" value="<?php  echo $email ;?>" size="40" />
           
@@ -49,18 +49,32 @@ if(isset($_GET['email']))
           <input class="inputs_promo_code" id='password' type="password" name="password_step" size="40"  autocomplete="off" value="<?php  echo $_POST['password'] ;?>"  />
         </p>
         <span id='login_error'></span>
-        <? if($old == true) { 
-        echo  TEXT_LOGIN_ERROR_EMAIL;
-        if(empty($email))
-        {
-  				echo '<a href="/password_forgotten.php?&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
+        <? }else{?>
+          <p style="padding-left:10px;margin-bottom: 5px"><?= TEXT_EMAIL_STEP ?><br />
+            <input class="inputs_promo_code" id='email' type="text"  name="email_address_step" autocomplete="off" disabled value="<?php  echo $email_address ;?>" size="40" />
+
+          </p>
           
-        }
-        else
-        {
-  				echo '<a href="/password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
-          
-        }
+        <?
+        } 
+        if($old == true )
+        { 
+          if(!tep_session_is_registered('customer_id'))
+          {
+            if ($login == 'fail' && $_GET['form']=="1") 
+          	{
+          		echo str_replace('#ff0000', $color,  TEXT_ERROR_LOGIN);
+          	}
+            echo  TEXT_LOGIN_ERROR_EMAIL;
+            if(empty($email))
+            {
+    				  echo '<a href="/password_forgotten.php?&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
+            }
+            else
+            {
+    				  echo '<a href="/password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
+            }
+          }
 			  }
 			  else
 			  {
@@ -124,9 +138,15 @@ if(isset($_GET['email']))
         </table>
         <? } ?>
       </div>
+      <? if($old == true ){ ?>
+      <form name="form1" method="post" action="<?= $_SERVER['PHP_SELF'] ?>?action=<?= ((tep_session_is_registered('customer_id'))?'process':'login').'&email='.$email.'&force='.$force ?>&form=2#area_promo">
+      <? }else {?>
       <form name="verify_form" method="post" action="/step1.php" id="form_step2"> 
+      <? } ?>
       <div id="area_promo">
+        
         <h2><?= isset($promo) ? constant("TEXT_FORM_$promo") : TEXT_FORM_AREA_PROMO ?></h2>
+        <? if ($old !=true || !tep_session_is_registered('customer_id')){ ?>
         <p style="float:left;  padding-left:200px;"><?= TEXT_EMAIL_STEP ?><br />
           <input class="inputs_promo_code" id='email2' type="text"  name="email_address_step" autocomplete="off" value="<?php  echo $email ;?>" size="40" />
         </p>
@@ -134,20 +154,34 @@ if(isset($_GET['email']))
           <input class="inputs_promo_code" id='password2' type="password" name="password_step" size="40"  autocomplete="off" value="<?php  echo $_POST['password'] ;?>"  />
           
         </p>
+        <? }else{?>
+          <p style="text-align:center;margin-bottom: 5px"><?= TEXT_EMAIL_STEP ?><br />
+            <input class="inputs_promo_code" id='email' type="text"  name="email_address_step" autocomplete="off" disabled value="<?php  echo $email_address ;?>" size="40" />
+
+          </p>
+        <? } ?>
         <span id='login_error2'></span>
-        <? if($old == true) { 
-          
-        echo  '<p class="news_form">'.TEXT_LOGIN_ERROR_EMAIL;
-				if(empty($email))
-        {
-  				echo '<a href="/password_forgotten.php?&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
-          
-        }
-        else
-        {
-  				echo '<a href="/password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
-          
-        }
+        <? 
+        if($old == true)
+        { 
+          if(!tep_session_is_registered('customer_id'))
+          {
+            echo '<p class="news_form2">';
+            if ($login == 'fail' && $_GET['form']=="2") 
+          	{
+          		echo str_replace('#ff0000', $color,  TEXT_ERROR_LOGIN);
+          	}
+            echo  TEXT_LOGIN_ERROR_EMAIL;
+            if(empty($email))
+            {
+    				  echo '<a href="/password_forgotten.php?&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
+            }
+            else
+            {
+    				  echo '<a href="/password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
+            }
+            echo '</p>';
+          }
 			  }
 			  else
 			  {
