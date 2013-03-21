@@ -124,7 +124,7 @@ if(isset($_GET['email']))
         </table>
         <? } ?>
       </div>
-      <form name="verify_form" method="post" action="/step1.php" id="form_step"> 
+      <form name="verify_form" method="post" action="/step1.php" id="form_step2"> 
       <div id="area_promo">
         <h2><?= isset($promo) ? constant("TEXT_FORM_$promo") : TEXT_FORM_AREA_PROMO ?></h2>
         <p style="float:left;  padding-left:200px;"><?= TEXT_EMAIL_STEP ?><br />
