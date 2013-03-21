@@ -3,7 +3,7 @@ $(function() {
     goToByScroll("commentcamarche_content")
   });
   error_email = true;
-  $('.form_step #password, .form_step  #password2').keyup(function() {
+  $('#form_step #password, #form_step  #password2').keyup(function() {
     if($(this).val().length<4)
 		{
 		  $(this).css({'background': 'url(/images/jb/red-tick.png) no-repeat center right white'});
@@ -21,7 +21,7 @@ $(function() {
 			error_pass=false;
 		}
   });
-  $('.form_step #submit_id,.form_step  #submit_id2').click(function() {
+  $('#form_step #submit_id,#form_step  #submit_id2').click(function() {
     if($(this).attr('id')=='submit_id')
     {
       string = '#email'
@@ -46,7 +46,7 @@ $(function() {
   		return false;
   	}
   });
-  $('.form_step #email, .form_step #email2').blur(function() {
+  $('#form_step #email, #form_step #email2').blur(function() {
     if($(this).attr('id')=='email')
     {
       string = '#email'
