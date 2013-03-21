@@ -32,8 +32,12 @@ if(isset($_GET['email']))
       <h1><?= TEXT_DISCOVER ?></h1>
       <div id="promo_form">
         <h2><?= TEXT_VOD_NOW ?></h2>
-        <h3><?= isset($promo) ? constant("TEXT_$promo") : TEXT_PROMO_4 ?></h3>
+        <h3><?= $old == true ? TEXT_OLD : (isset($promo) ? constant("TEXT_$promo") : TEXT_PROMO_4) ?></h3>
+        <? if($old == true ){ ?>
+        <form name="form1" method="post" action="login_code.php?action=<?= ((tep_session_is_registered('customer_id'))?'process':'login').'&email='.$email.'&force='.$force ?>">
+        <? }else {?>
         <form name="verify_form" method="post" action="/step1.php" id="form_step"> 
+        <? } ?>
 					<input  TYPE="hidden" VALUE="<?php  echo $code ;?>" NAME="activation_code"></td>
 					<input type="hidden" name='language' value='<?= $lang_short ?>'>
 				
@@ -45,11 +49,27 @@ if(isset($_GET['email']))
           <input class="inputs_promo_code" id='password' type="password" name="password_step" size="40"  autocomplete="off" value="<?php  echo $_POST['password'] ;?>"  />
         </p>
         <span id='login_error'></span>
-        
+        <? if($old == true) { 
+        echo  TEXT_LOGIN_ERROR_EMAIL;
+        if(empty($email))
+        {
+  				echo '<a href="/password_forgotten.php?&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
+          
+        }
+        else
+        {
+  				echo '<a href="/password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
+          
+        }
+			  }
+			  else
+			  {
+			  ?>
         <p class="news">
           <input type='checkbox' checked="checked" name="marketing" class="Input1" value='YES' >
           <?php  echo TEXT_MARKETING_OK ?>
         </p>
+        <? } ?>
         <div class="clearfix"></div>
         <div class="garanties">
           <h4><?= TEXT_GUARANTIE ?></h4>
@@ -115,13 +135,31 @@ if(isset($_GET['email']))
           
         </p>
         <span id='login_error2'></span>
-        <p class="news">
+        <? if($old == true) { 
+          
+        echo  '<p class="news_form">'.TEXT_LOGIN_ERROR_EMAIL;
+				if(empty($email))
+        {
+  				echo '<a href="/password_forgotten.php?&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
+          
+        }
+        else
+        {
+  				echo '<a href="/password_forgotten2.php?action=process&email='.$email.'&code='.$code.'&force=1"><font color="'.$color.'" class="mdp">'.TEXT_CLIC.'</font></a>';
+          
+        }
+			  }
+			  else
+			  {
+			  ?>
+        
+        <p class="news_form">
           <input type='checkbox' checked="checked" name="marketing" class="Input1" value='YES' >
           <input type="hidden" name='language' value='<?= $lang_short ?>'>
 					
           <?php  echo TEXT_MARKETING_OK ?>
         </p>
-        
+        <? } ?>
         <div class="clearfix"></div>
         <p align="center">
           <input type="submit" border="0" align="absmiddle" class="promo_button" id="submit_id2" name="sent" value="<?= TEXT_PROMO_SUBMIT ?>" />
