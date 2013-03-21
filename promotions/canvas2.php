@@ -32,6 +32,7 @@ if(isset($_GET['email']))
       <h1><?= TEXT_DISCOVER ?></h1>
       <div id="promo_form">
         <h2><?= TEXT_VOD_NOW ?></h2>
+        
         <h3><?= $old == true ? TEXT_OLD : (isset($promo) ? constant("TEXT_$promo") : TEXT_PROMO_4) ?></h3>
         <? if($old == true ){ ?>
         <form name="form1" method="post" action="<?= $_SERVER['PHP_SELF'] ?>?action=<?= ((tep_session_is_registered('customer_id'))?'process':'login').'&email='.$email.'&force='.$force ?>&form=1">
