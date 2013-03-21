@@ -244,6 +244,11 @@ height: 39px;
   margin: 0 auto;
   
 }
+.news_form
+{
+  width:551px;
+  text-align:left;
+}
 #promo_form p.news
 {
   font-size: 10px;
