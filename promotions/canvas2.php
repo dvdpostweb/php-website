@@ -156,7 +156,7 @@ if(isset($_GET['email']))
         <p class="news_form">
           <input type='checkbox' checked="checked" name="marketing" class="Input1" value='YES' >
           <input type="hidden" name='language' value='<?= $lang_short ?>'>
-					
+					<input  TYPE="hidden" VALUE="<?php  echo $code ;?>" NAME="code"></td>
           <?php  echo TEXT_MARKETING_OK ?>
         </p>
         <? } ?>
