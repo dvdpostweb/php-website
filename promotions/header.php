@@ -110,7 +110,7 @@ $authentification= new Authentification(array(
           {
             $host='www.dvdpost.be';
           }
-          $url='http://'.$host.'/'.$_SERVER['PHP_SELF'].'?'.(($_POST['force']==1)?'force=1':'').'&action=process'.(($_POST['force']==1)?'&force=1':'').((!empty($_POST['code']))?'&code='.$_POST['code']:'');
+          $url='http://'.$host.$_SERVER['PHP_SELF'].'?'.(($_POST['force']==1)?'force=1':'').'&action=process'.(($_POST['force']==1)?'&force=1':'').((!empty($_POST['code']))?'&code='.$_POST['code']:'');
           $url=rawurlencode($url);
           $all=$authentification->getRememberMe($data_token['access_token'],$url);
           header('Location: '.$all);
