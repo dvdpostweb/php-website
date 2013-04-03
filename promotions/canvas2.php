@@ -5,7 +5,10 @@ if(isset($_POST['email_address']))
   $email = $_POST['email_address'];
 if(isset($_GET['email']))
   $email = $_GET['email'];
-
+if(empty($email))
+{
+  $email = $_POST['email_address_step'];
+}
 ?>
 <style>
 #promo_content {
