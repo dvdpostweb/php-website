@@ -2732,7 +2732,7 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 	{ 
 		if($abo_dvd_credit!=10000)
 		{
-		  if($discount_values['discount_type']==1)
+		  if($discount_values['discount_type']==1 && $discount_values['discount_value'] > 0)
 		  {
 		    return "<strong>-".round($discount_values['discount_value']).TEXT_PAID_PERCENT.' '.(intval($discount_values['discount_recurring_nbr_of_month'])+1).' '.TEXT_MONTHS."</strong>";
 		    // <span class='red_font'>".$period."</span>";
@@ -2740,6 +2740,10 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 			else if($discount_values['discount_value']>0)
 			{
 				return "<strong>".TEXT_PAID_PROMO."</strong>: <span class='red_font'>".$period."</span>";
+			}
+			else if ($discount_values['discount_type'] == 1 && $discount_values['discount_value'] == 0)
+			{
+			  return $period.' '.TEXT_FOR_EURO.' &euro; '.$price_abo;
 			}
 			else
 			{

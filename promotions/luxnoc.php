@@ -1,11 +1,11 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_ipad.jpg';
+$image = 'bg_promo_ipad4.jpg';
 $code = 'LUXNOC';
 $css = 'canvas2.css';
 $date_limit = '19/04/2013';
-$promo = "2VOD";
+$promo = "4VOD";
 $dvd_hide = 1;
 $hide_menu = true;
 $old = true;
