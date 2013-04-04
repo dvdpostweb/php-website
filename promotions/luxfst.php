@@ -2,7 +2,7 @@
 $canvas = 2;
 $nav=true;
 $image = 'bg_promo_ipad4.jpg';
-$code = 'LUXEST';
+$code = 'LUXFST';
 $css = 'canvas2.css';
 $date_limit = '19/04/2013';
 $promo = "4VOD";
