@@ -33,7 +33,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 								<? if (empty($discount_value) &&  ($discount_type=='D' || $discount_type=='A') ){?>
 								<? if ($promo_type == 'pre_paid' ) {?>
 									<p style="font-size:15px;"><?= $period ?></p>
-								<?}else  if ($promo_type == 'unlimited' ) { ?>
+								<?}else  if ($promo_type != 'unlimited' ) { ?>
 								<p style="font-size:15px;"><strong><?= TRIAL ?></strong>: <?= $period ?></p>
 								<? 
 								}else{ 
