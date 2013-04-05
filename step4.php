@@ -78,7 +78,15 @@ if (!tep_session_is_registered('customer_id')) {
 					
 				break;
 			}
-			$period_next = $credits.' '.TEXT_FILMS.' '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo;
+			if($rotation==0)
+			{
+			  $period_next = '2 VOD '.TEXT_PER.' '.TEXT_MONTH.' '.TEXT_FOR_EURO.' &euro; '.$price_abo;
+			}
+			else
+			{
+			  $period_next = $credits.' '.TEXT_FILMS.' '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo;  
+			}
+			
 		}else{
 			$discount_query = tep_db_query("SELECT * FROM discount_code WHERE discount_code_id ='".$promo_id. "'");
 			$discount_values = tep_db_fetch_array($discount_query);
@@ -112,8 +120,15 @@ if (!tep_session_is_registered('customer_id')) {
 			
 			if ($discount_values['discount_value'] > 0)
 				$price_abo = abo_price($discount_values['discount_type'],$promo_id,$discount_values['discount_value'],$price_abo);
+			if($rotation==0)
+			{
+			  $period_next = '2 VOD '.TEXT_PER.' '.TEXT_MONTH.' '.TEXT_FOR_EURO.' &euro; '.$price_abo;
+			}
+			else
+			{
+				
 			$period_next = $credits.' '.TEXT_FILMS.' '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo;
-			
+		  }
 			$date_now = date("Y-m-d");// current date
 			$date_sub = strtotime ( '+'.$nb_days , strtotime ( $date_now ) ) ;
 			$date_sub = date ( 'd/m/Y' , $date_sub );

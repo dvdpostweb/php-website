@@ -312,10 +312,7 @@ if (!tep_session_is_registered('customer_id')) {
 								$data['email'] = $customers_value['customers_email_address'];
 								$data['promotion'] = $promotion;
 								$data['final_price'] = $final_price;
-/*								if($final_price>0)
-								{
-									$formating['text'] = str_replace('<tr id="promo">', '<tr id="promo" style="display:none">',$formating['text']);
-								}*/
+								$data['price'] = $price;
 								require('includes/classes/activation_code_actions.php');
 								$action=new Activation_code_actions();
 								if($discount_type =='A')

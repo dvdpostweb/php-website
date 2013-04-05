@@ -40,8 +40,7 @@ $authentification= new Authentification(array(
   } 
   if ($_GET['action'] == 'process') {
     if (tep_session_is_registered('customer_id')){ 
-      $customers_registration_step=$_COOKIE['customers_registration_step'];
-
+      $customers_registration_step=$customer_data['customers_registration_step'];
       if($_GET['force']==1 || $_POST['force']==1)
       {
         include(DIR_WS_INCLUDES . 'check_code.php');

@@ -1909,7 +1909,7 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	$data['email'] = $customers['customers_email_address'];
 	$data['promotion'] = $promotion;
 	$data['final_price'] = $final_price;
-	
+	$data['price'] = $price;
 /*	
 	if($final_price>0)
 	{
@@ -2804,15 +2804,13 @@ function mail_message($customer_id, $mail_id, $data)
 	$mail_values = tep_db_fetch_array($mail_query);
 	$email_text = $mail_values['messages_html'];
 	$category_id = $mail_values['category_id'];
-	
-	/*if($data['final_price']>0)
-	{
-		$data['display']='none';
+	if($mail_id==556)
+	{ 
+	  if($data['final_price']==$data['price'])
+		{
+			$email_text = str_replace('<tr id="promo">', '<tr id="promo" style="display:none">',$email_text);
+		}
 	}
-	else
-	{
-		$data['display']='block';
-	}*/
 	$data['display']='block';
 	if($mail_copy == 1 || $mail_values['force_copy']==1)
 	{

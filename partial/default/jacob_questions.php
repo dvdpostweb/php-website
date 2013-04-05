@@ -1,5 +1,5 @@
 <div class="navcontainer">
-  <? if($current_page_name =='step_check.php') { ?>
+  <? if($current_page_name =='step_check.php' && (!($discount_values[discount_type]==1 && $discount_values[discount_value]==0))){  ?>
   <div style="padding:5px;background:#fff;border:1px solid #333; margin:0 0 10px">
   <?= TEXT_WARNING ?>
   </div>
