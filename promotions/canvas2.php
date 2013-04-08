@@ -67,7 +67,7 @@ if(empty($email))
           {
             if ($login == 'fail' && $_GET['form']=="1") 
           	{
-          		echo str_replace('#ff0000', $color,  TEXT_ERROR_LOGIN);
+          		echo '<font color="#C01713">'.TEXT_ERROR_LOGIN2.'</font><br />';
           	}
             echo  TEXT_LOGIN_ERROR_EMAIL;
             if(empty($email))
@@ -173,7 +173,7 @@ if(empty($email))
             echo '<p class="news_form2">';
             if ($login == 'fail' && $_GET['form']=="2") 
           	{
-          		echo str_replace('#ff0000', $color,  TEXT_ERROR_LOGIN);
+          		echo '<font color="#C01713">'.TEXT_ERROR_LOGIN2.'</font><br />';
           	}
             echo  TEXT_LOGIN_ERROR_EMAIL;
             if(empty($email))

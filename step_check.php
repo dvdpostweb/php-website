@@ -256,7 +256,9 @@ if (!tep_session_is_registered('customer_id')) {
 									$auto_stop_next_reconduction=0;
 								} 
 
-
+                $sql_abo='insert into abo(customerid,Action,Date,product_id,payment_method,comment,site) values ('.$customer_id.',29,now(),'.$customers_value['customers_abo_type'].',"VIREMENT","call me",'.WEB_SITE_ID.')';
+              	tep_db_query($sql_abo);
+              	
 
 								$sql_phone='update customers set customers_abo_auto_stop_next_reconduction = "'.$auto_stop_next_reconduction.'",customers_telephone="'.$_POST['phone'].'" , customers_abo_payment_method=3,customers_registration_step=100 where customers_id = '.$customer_id;
 								setcookie('customers_registration_step', 100, time()+2592000, substr(DIR_WS_CATALOG, 0, -1));

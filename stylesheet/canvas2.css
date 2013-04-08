@@ -75,6 +75,7 @@
 	height: 280px;
 	margin-bottom: 20px;
 	margin-right: 14px;
+	height: 310px;
 }
 #area_promo h2 {
 	font-size: 33px;
@@ -218,7 +219,7 @@
     height: 40px;
     margin: 0 auto;
     position: relative;
-    top: -54px;
+    top: -44px;
     width: 89px;
 }
 #header h1 a {
@@ -229,6 +230,7 @@ height: 39px;
 #login_error, #login_error2
 {
 	color:#c01713;
+	padding-bottom: 5px;
 }
 #login_error a, #login_error2 a
 {
@@ -248,6 +250,7 @@ height: 39px;
 {
   width:551px;
   text-align:left;
+  padding-bottom: 5px;
 }
 .news_form2
 {
@@ -265,3 +268,7 @@ height: 39px;
   font-size:12px;
   text-align:center;
 }
+
+
+
+
