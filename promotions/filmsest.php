@@ -9,7 +9,7 @@ $date_limit = '19/04/2013';
 #$dvd_hide = 1;
 $hide_menu = true;
 $old = true;
-define('DEFAULT_LANGUAGE', 'EN');
+define('DEFAULT_LANGUAGE', 'en');
 
 require 'header.php'
 ?>

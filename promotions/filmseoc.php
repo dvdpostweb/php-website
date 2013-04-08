@@ -9,7 +9,7 @@ $promo = "70";
 #$dvd_hide = 1;
 $hide_menu = true;
 $old = true;
-define('DEFAULT_LANGUAGE', 'EN');
+define('DEFAULT_LANGUAGE', 'en');
 
 require 'header.php'
 ?>
