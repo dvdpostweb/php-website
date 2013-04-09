@@ -32,7 +32,7 @@ if(empty($email))
   <!--   ==============   END HEADER   ==============   -->
   <div class="container clearfix">
     <div id="promo_content">
-      <h1><?= TEXT_DISCOVER ?></h1>
+      <h1><?= (isset($t) ? constant("TEXT_DISCOVER_$t") : TEXT_DISCOVER)  ?></h1>
       <div id="promo_form">
         <h2><?= TEXT_VOD_NOW ?></h2>
         
