@@ -55,7 +55,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 								<? } else { 
 									echo '<p style="font-size:15px;"><strong>'.ROLLER_PAYED.' </strong>: '.TEXT_VOD_UNLIMITED.' '.TEXT_FOR_PRICE.' &euro; '.$price_abo;
 								 }} ?>	
-								<? if ($nb_recurring > 0) echo TEXT_CONFIRM_4.' '.$nb_recurring.' '.TEXT_MONTHS ?>
+								<? if ($nb_recurring > 0) echo TEXT_CONFIRM_4.' '.($nb_recurring+1).' '.TEXT_MONTHS ?>
 								</p>
 							</div>
 							<? if ((empty($discount_value) && !($discount_values[discount_type]==1 && $discount_values[discount_value]==0))  && $reconduction==0 &&  ($discount_type=='D' || $discount_type=='A')){?>
