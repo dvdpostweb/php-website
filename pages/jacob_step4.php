@@ -46,7 +46,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 								  <? 
 								  } 
 								?>
-							<? } 
+							<? }
 								$nb=3;?>
 
 								<? if ($reconduction == 0){ ?>
@@ -64,7 +64,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 								<p class="title_summary"><strong><?= FIRST_PAYMENT ?></strong></p>
 								<?php 
 									$price = PRICE;
-									$price = str_replace('{{price}}',$price_abo,$price);
+									$price = str_replace('{{price}}',$price_abo_next,$price);
 									$price = str_replace('{{date}}',$date,$price);
 									
 								?>
