@@ -2806,7 +2806,7 @@ function mail_message($customer_id, $mail_id, $data)
 	$category_id = $mail_values['category_id'];
 	if($mail_id==556)
 	{ 
-	  if($data['final_price']===$data['price'])
+	  if($data['final_price']===$data['price'] && $data['final_price'] !=0)
 		{
 			$email_text = preg_replace('/<tr id="promo">(.*)<\/ tr>/s', '',$email_text);
 		}

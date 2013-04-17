@@ -7,13 +7,10 @@ $nvpStr="&TOKEN=$token";
 $resArray=hash_call("CreateBillingAgreement",$nvpStr);
 $ack = strtoupper($resArray["ACK"]);
 $res = serialize($resArray);
-if($ack!="SUCCESS")
-{
 	$_SESSION['reshash']=$resArray;
 	$data = ' customers_id => '.$customer_id.' query => '.$nvpStr.' res => '. $res;
 	tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'paypal process payment error', $data, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
-	die('paypal error '.$ack);
-}
+
 $agreement_id = $resArray['BILLINGAGREEMENTID'];
 
 $sql_update = "update customers set paypal_agreement_id = '".$agreement_id."' where customers_id = ".$customer_id;
@@ -35,10 +32,9 @@ if($customer_values['activation_discount_code_type']=='A')
   registration_discount($customer_values['activation_discount_code_id'],$customer_id,$customer_values['customers_abo_type'],'www', $languages_id,0,'PAYPAL',556,4,$agreement_id);
 }
 setcookie('customers_registration_step', 100 , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
-setcookie('customers_id', $ogone_check['customers_id'] , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
-setcookie('email_address', $customers['customers_email_address'] , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
-setcookie('first_name', $customers['customers_firstname'], time()+2592000, substr(DIR_WS_CATALOG, 0, -1));	
-$customer_id = $ogone_check['customers_id'];
+setcookie('customers_id', $customer_values['customers_id'] , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
+setcookie('email_address', $customer_values['customers_email_address'] , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
+setcookie('first_name', $customer_values['customers_firstname'], time()+2592000, substr(DIR_WS_CATALOG, 0, -1));	
 tep_session_register('customer_id');
 
 header("location: http://" . $_SERVER["SERVER_NAME"] . "/step4.php?type=paypal");

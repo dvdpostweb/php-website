@@ -219,11 +219,10 @@ if (!tep_session_is_registered('customer_id')) {
 "&PAYMENTREQUEST_0_PAYMENTACTION=AUTHORIZATION&PAYMENTREQUEST_0_AMT=0&PAYMENTREQUEST_0_CURRENCYCODE=EUR&L_BILLINGTYPE0=MerchantInitiatedBilling&L_BILLINGAGREEMENTDESCRIPTION0=".urlencode("DVDPost")."&cancelUrl=".urlencode('http://'.$host.'/step_check.php')."&returnUrl=".urlencode('http://'.$host.'/paypal_process.php');
             $resArray=hash_call("SetExpressCheckout",$nvpstr);
             $ack = strtoupper($resArray["ACK"]);
-            if($ack!="SUCCESS")  {
+            
                 $_SESSION['reshash']=$resArray;
             	  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error step check', $nvpstr.'.'.serialize($resArray).'.'.$customer_id, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
-            	  die('error');
-            }
+            
             $url = PAYPAL_URL.$resArray["TOKEN"];
             tep_redirect($url);
             break;
