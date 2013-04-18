@@ -11,6 +11,6 @@ $hide_menu = true;
 $old = true;
 $t = "70";
 define('DEFAULT_LANGUAGE', 'nl');
-
+$btn = "70";
 require 'header.php'
 ?>
