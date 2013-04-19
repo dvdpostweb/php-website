@@ -1,4 +1,4 @@
-<?
+<?php
 $canvas = 2;
 $nav=true;
 $image = 'bg_promo_70.jpg';

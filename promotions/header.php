@@ -146,6 +146,5 @@ $authentification= new Authentification(array(
     }
   }
 }
-
 include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/jacob_canvas_step_2010.php',0,1));
 ?>
