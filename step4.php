@@ -105,9 +105,14 @@ if (!tep_session_is_registered('customer_id')) {
 					$nb_days = $nb. ' day';
 					
 				break;
-				case 2:	
+				case 2:
 					$duration = $nb.' '.TEXT_MONTHS;
 					$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
+					if ($customers_value['customers_next_discount_code']>0)
+      		{
+      		  $nb = $nb + 1;
+      		}
+					
 					$nb_days = $nb. ' month';
 				break;
 				case 3:	
@@ -132,6 +137,7 @@ if (!tep_session_is_registered('customer_id')) {
 			$period_next = $credits_next.' '.TEXT_FILMS.' '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation_next.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo_next;
 		  }
 		}
+		
 		$date_now = date("Y-m-d");// current date
 		$date_sub = strtotime ( '+'.$nb_days , strtotime ( $date_now ) ) ;
 		$date_sub = date ( 'd/m/Y' , $date_sub );
