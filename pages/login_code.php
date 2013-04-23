@@ -94,7 +94,7 @@ switch(WEB_SITE_ID){
 background-repeat:no-repeat;
 background-position: center 0
 }
-#promo_code.univers, #promo_code.svod
+#promo_code.univers, #promo_code.svod, #promo_code.moisfocb, #promo_code.moisnocb, #promo_code.moisfstb, #promo_code.moisnstb
 {
 background-color:black;
 width: 950px;
@@ -106,22 +106,22 @@ padding-top:410px;
 	width:630px;
 	margin: 0 auto;
 }
-.univers .mdp,.svod .mdp
+.univers .mdp,.svod .mdp, .moisfocb .mdp, .moisnocb .mdp, .moisfstb .mdp, .moisnstb .mdp
 {
 	color:white;
 	text-align:right;
 }
-.univers .bl,.svod .bl
+.univers .bl,.svod .bl, .moisfocb .bl, .moisnocb .bl, .moisfstb .bl, .moisnstb .bl
 {
 background: black !important;
 border: none;
 color: white;
 }
-.univers,.svod
+.univers,.svod, .moisfocb, .moisnocb, .moisfstb, .moisnstb
 {
 	color:white;
 }
-.univers .contact,.svod .contact
+.univers .contact,.svod .contact, .moisfocb .contact, .moisnocb .contact, .moisfstb .contact, .moisnstb .contact
 {
 	display:none;
 }
@@ -167,10 +167,10 @@ margin: 0 auto;
 	padding-top: 7px;
 	margin-top:35px;
 }
-.univers .explain, .svod .explain {
+.univers .explain, .svod .explain, .moisfocb .explain {
 	font-size:0px;
 }
-.univers .up, .svod .up {
+.univers .up, .svod .up, .moisfocb .up {
 	text-transform: uppercase;
 }
 
@@ -184,7 +184,7 @@ margin: 0 auto;
 		<td width="773"  valign="top"  >
    
      
- 			  	<div id="promo_code" class="<?= strtolower($code) ?>" >
+ 			  	<div id="promo_code" class="<?= strtolower(preg_replace("/^[0-9]*/", "", $code)) ?>" >
 <?php
 if(strtolower($code)=="gfc50"){
 ?>
@@ -244,7 +244,7 @@ if(strtolower($code)=="gfc50"){
           </td></tr>
 					<? if (strpos($code,'BGC') === 0) { ?> 
              <tr><td colspan="2" align="center"><p><input type="submit" class="button_relance" value="<?= CONFIRM_CHOICE ?>" name="sent">
-					<? } else if (strpos($code,'univers') === 0) { ?> 
+					<? } else if (strpos($code,'univers') === 0 || strpos($code,'2moisfstb') === 0 || strpos($code,'2moisfocb') === 0 || strpos($code,'2moisnstb') === 0 || strpos($code,'2moisnocb') === 0) { ?>      
 		         <tr><td colspan="2" align="center"><p><input type="submit" class="confirm" value="<?= CONFIRM_CHOICE2 ?>" name="sent">
 					<? } else if (strpos($code,'svod') === 0) { ?> 
 		         <tr><td colspan="2" align="center"><p><input type="submit" class="confirm" value="<?= CONFIRM_CHOICE2 ?>" name="sent">
