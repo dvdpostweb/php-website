@@ -59,6 +59,7 @@ if (!tep_session_is_registered('customer_id')) {
 			{
 				$credits=$abo_dvd_credit;
 			}
+			
 			switch ($activation_values['validity_type']){
 				case 1:	
 					$duration = $activation_values['validity_value'].' '.TEXT_DAYS;
@@ -96,22 +97,23 @@ if (!tep_session_is_registered('customer_id')) {
 			$nb_recurring = $discount_values['discount_recurring_nbr_of_month'];
 			if($abo_dvd_credit==0)
 				$abo_dvd_credit=$credits;
+					$nb = $discount_values['discount_recurring_nbr_of_month']> 0 ? ($discount_values['discount_recurring_nbr_of_month'] +1)  : $discount_values['discount_abo_validityto_value'];
 			switch ($discount_values['discount_abo_validityto_type']){
 				case 1:	
-					$duration = $discount_values['discount_abo_validityto_value'].' '.TEXT_DAYS;
+					$duration = $nb.' '.TEXT_DAYS;
 					$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-					$nb_days = $discount_values['discount_abo_validityto_value']. ' day';
+					$nb_days = $nb. ' day';
 					
 				break;
 				case 2:	
-					$duration = $discount_values['discount_abo_validityto_value'].' '.TEXT_MONTHS;
+					$duration = $nb.' '.TEXT_MONTHS;
 					$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-					$nb_days = $discount_values['discount_abo_validityto_value']. ' month';
+					$nb_days = $nb. ' month';
 				break;
 				case 3:	
-					$duration = $discount_values['discount_abo_validityto_value'].' '.TEXT_YEAR;
+					$duration = $nb.' '.TEXT_YEAR;
 					$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-					$nb_days = $discount_values['discount_abo_validityto_value'].' year';
+					$nb_days = $nb.' year';
 					
 				break;
 				

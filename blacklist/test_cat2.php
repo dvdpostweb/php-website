@@ -47,7 +47,7 @@ while($row = mysql_fetch_array($query, MYSQL_ASSOC)){
 			{
 				$short ='en';
 			}
-			$desc .= '<language name="'.$short.'"><field name="title">'.htmlspecialchars($row_description['products_name']).'</field><field name="description">'.htmlspecialchars($row_description['products_description']).'</field><field name="image">http://www.dvdpost.be/images/'.htmlspecialchars($row_description['products_image_big']).'</field></language>';
+			$desc .= '<language name="'.$short.'"><title>'.htmlspecialchars($row_description['products_name']).'</title><description>'.htmlspecialchars($row_description['products_description']).'</description><image>http://www.dvdpost.be/images/'.htmlspecialchars($row_description['products_image_big']).'</image></language>';
 		}
 		$actor=substr($actor,0,-1);
 		//subtitle
@@ -89,7 +89,7 @@ while($row = mysql_fetch_array($query, MYSQL_ASSOC)){
 			$vod='1';
 		else
 			$vod='0';
-	$row= utf8_encode('<row><field name="catalogid">'.$row['products_id'].'</field><field name="active">'.$row['products_status'].'</field><field name="publicage">'.$row['public_name'].'</field>'.$desc.'<field name="year" xsi:nil="true" >'.((empty($row['products_year']))?'':$row['products_year']).'</field><field name="genre">'.$row['products_type'].'</field><field name="sub-genre"/><categories>'.($category).'</categories><field name="country" xsi:nil="true" id="'.$row['countries_id'].'">'.$row['countries_name'].'<field name="mediaType">'.$row['products_media'].'</field><field name="certificate"/><field name="audioLanguage" xsi:nil="true" >'.$lang.'</field><field name="subTitleLanguage" xsi:nil="true" >'.$undertitles.'</field><field name="director" xsi:nil="true" id="'.$row['directors_id'].'" >'.htmlspecialchars($row['directors_name']).'</field><actors>'.$actors.'</actors><field name="availableDate">'.$row['products_date_available'].'</field><field name="locales"/><field name="restrictions"/><field name="vod">'.$vod.'</field><field name="availability">'.$row['ratio'].'</field><field name="imdb_id">'.$row['imdb_id'].'</field><field name="imdb_id">'.$row['imdb_id'].'</field><field name="studio" id="'.$row['studio_id'].'">'.$row['studio_name'].'</field></row>');
+	$row= utf8_encode('<row><catalogid>'.$row['products_id'].'</catalogid><active>'.$row['products_status'].'</active><publicage>'.$row['public_name'].'</publicage><languages>'.$desc.'</languages><year xsi:nil="true" >'.((empty($row['products_year']))?'':$row['products_year']).'</year><genre>'.$row['products_type'].'</genre><categories>'.($category).'</categories><country xsi:nil="true" id="'.$row['countries_id'].'">'.$row['countries_name'].'</countries><mediaType>'.$row['products_media'].'</mediaType><certificate/><audioLanguage xsi:nil="true" >'.$lang.'</audioLanguage><subTitleLanguage xsi:nil="true" >'.$undertitles.'</subTitleLanguage><director xsi:nil="true" id="'.$row['directors_id'].'" >'.htmlspecialchars($row['directors_name']).'</director><actors>'.$actors.'</actors><availableDate>'.$row['products_date_available'].'</availableDate><locales/><restrictions /><vod>'.$vod.'</vod><availability>'.$row['ratio'].'</availability><imdb_id>'.$row['imdb_id'].'</imdb_id><studio id="'.$row['studio_id'].'">'.$row['studio_name'].'</studio></row>');
 		//fwrite($fp, $row);
 echo $row;
 	}

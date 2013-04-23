@@ -874,6 +874,7 @@ if(WEB_SITE_ID==101)
 }
 $languages_id=intval($languages_id);
   setcookie('language_id', $languages_id, time()+2592000, '/');
+  define("SHORT", $lang_short);
 tep_session_register('lang_short',$lang_short);
 tep_session_register('language');
 tep_session_register('languages_id');

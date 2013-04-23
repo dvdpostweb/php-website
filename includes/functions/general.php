@@ -2669,18 +2669,15 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 			case 1:	
 				$duration = '<span class="red_font">'.$activation_values['validity_value'].' '.TEXT_DAYS.'</span>';
 				$period =  $credits.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-				$nb_days = $activation_values['validity_value']. ' day';
 				
 			break;
 			case 2:	
 				$duration = '<span class="red_font">'.$activation_values['validity_value'].' '.TEXT_MONTHS.'</span>';
 				$period = $credits.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-				$nb_days = $activation_values['validity_value']. ' month';
 			break;
 			case 3:	
 				$duration = '<span class="red_font">'.$activation_values['validity_value'].' '.TEXT_YEAR.'</span>';
 				$period = $credits.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-				$nb_days = $activation_values['validity_value'].' year';
 				
 			break;
 		}
@@ -2690,22 +2687,19 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		$discount_values = tep_db_fetch_array($discount_query);
 		$abo_dvd_credit= $discount_values['abo_dvd_credit'];
 		$abo_dvd_max = $discount_values['abo_dvd_remain'];
-		
+		$discount_text = discount_text($discount_values, SHORT);
 		if($abo_dvd_credit==0)
 			$abo_dvd_credit=$credits;
-			
+		$nb = $discount_values['discount_recurring_nbr_of_month']> 0 ? ($discount_values['discount_recurring_nbr_of_month'] +1)  : $discount_values['discount_abo_validityto_value'];
 		switch ($discount_values['discount_abo_validityto_type']){
 			case 1:	
-				$duration = '<span class="red_font">'.$discount_values['discount_abo_validityto_value'].' '.TEXT_DAYS.'</span>';
-				$nb_days = $discount_values['discount_abo_validityto_value']. ' day';
+				$duration = '<span class="red_font">'.$nb.' '.TEXT_DAYS.'</span>';
 			break;
 			case 2:	
-				$duration = '<span class="red_font">'.$discount_values['discount_abo_validityto_value'].' '.TEXT_MONTHS.'</span>';
-				$nb_days = $discount_values['discount_abo_validityto_value']. ' month';
+				$duration = '<span class="red_font">'.$nb.' '.TEXT_MONTHS.'</span>';
 			break;
 			case 3:	
-				$duration = '<span class="red_font">'.$discount_values['discount_abo_validityto_value'].' '.TEXT_YEAR.'</span>';
-				$nb_days = $discount_values['discount_abo_validityto_value'].' year';
+				$duration = '<span class="red_font">'.$nb.' '.TEXT_YEAR.'</span>';
 				
 			break;
 			
@@ -2720,7 +2714,9 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		}
 		
 		$period_next = $credits.' '.TEXT_FILMS.' '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo;
+		
 	}
+	
 	if ($promo_type == 'pre_paid') {
 		if ($title == 1)
 			return TEXT_ACTIVE_PROMO." :<br/> ".$period;
@@ -2734,12 +2730,12 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		{
 		  if($discount_values['discount_type']==1 && $discount_values['discount_value'] > 0)
 		  {
-		    return "<strong>-".round($discount_values['discount_value']).TEXT_PAID_PERCENT.' '.(intval($discount_values['discount_recurring_nbr_of_month'])+1).' '.TEXT_MONTHS."</strong>";
+		    return !empty($discount_text)? $discount_text : "<strong>-".round($discount_values['discount_value']).TEXT_PAID_PERCENT.' '.(intval($discount_values['discount_recurring_nbr_of_month'])+1).' '.TEXT_MONTHS."</strong>";
 		    // <span class='red_font'>".$period."</span>";
 		  }
 			else if($discount_values['discount_value']>0)
 			{
-				return "<strong>".TEXT_PAID_PROMO."</strong>: <span class='red_font'>".$period."</span>";
+				return "<strong>".TEXT_PAID_PROMO."</strong>: <span class='red_font'>".!empty($discount_text)? $discount_text : $period."</span>";
 			}
 			else if ($discount_values['discount_type'] == 1 && $discount_values['discount_value'] == 0)
 			{
@@ -2748,7 +2744,7 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 			else
 			{
 				if ($promo_type != 'unlimited') {
-					return "<strong>".TRIAL."</strong>: <span class='red_font'>".$period.'</span>';
+					return "<strong>".TRIAL."</strong>: <span class='red_font'>".!empty($discount_text)? $discount_text :$period.'</span>';
 				}else{ 
 					return sprintf(UNLIMITED, $duration, $abo_dvd_credit);
 				}
@@ -2877,6 +2873,22 @@ function curPageURL2() {
   $pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
  }
  return $pageURL;
+}
+function discount_text($discount_values, $locale)
+{
+  switch($locale)
+  {
+    case 'fr':
+      $text = $discount_values['discount_text_fr'];
+      break;
+    case 'nl':
+      $text = $discount_values['discount_text_nl'];
+      break;
+    case 'en':
+      $text = $discount_values['discount_text_en'];
+      break;
+  }
+  return $text;
 }
 
 ?>

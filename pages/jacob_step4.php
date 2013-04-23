@@ -19,7 +19,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 
 
 
-
+ <? $discount_code_text = discount_text($discount_values, $lang_short) ?>
         <div class="content_jb">
           <div class="step_5 step <?= $lang_short ?>"></div>
           <div class="page">
@@ -38,7 +38,9 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 								  <?
 								    }else  if ($promo_type != 'unlimited' ) { 
 								  ?>
-								    <p style="font-size:15px;"><strong><?= TRIAL ?></strong>: <?= $period ?></p>
+								    
+								 
+								    <p style="font-size:15px;"><?= !empty($discount_code_text) ? TRIAL.' '.$discount_code_text : "<strong>".TRIAL."</strong>: ".$period ?></p>
 								  <? 
 								    }else{ 
 								  ?>
@@ -47,15 +49,14 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 								  } 
 								?>
 							<? }
+							if ($discount_values[discount_value] > 0) { echo '<p style="font-size:15px;">'.(!empty($discount_code_text) ? $discount_code_text : $promotion).'</p>'; }
 								$nb=3;?>
-
 								<? if ($reconduction == 0){ ?>
 								<? if ($abo_dvd_credit != 10000) { ?>	
 								<p style="font-size:15px;"><strong><?= (($discount_values['discount_value'] > 0 || $discount_type=='' || ($discount_values[discount_type]==1 && $discount_values[discount_value]==0)) ? ROLLER_PAYED : ROLLER) ?></strong>: <?= $period_next ?>
 								<? } else { 
 									echo '<p style="font-size:15px;"><strong>'.ROLLER_PAYED.' </strong>: '.TEXT_VOD_UNLIMITED.' '.TEXT_FOR_PRICE.' &euro; '.$price_abo;
-								 }} ?>	
-								<? if ($nb_recurring > 0) echo TEXT_CONFIRM_4.' '.($nb_recurring+1).' '.TEXT_MONTHS ?>
+								 }} ?>
 								</p>
 							</div>
 							<? if ((empty($discount_value) && !($discount_values[discount_type]==1 && $discount_values[discount_value]==0))  && $reconduction==0 &&  ($discount_type=='D' || $discount_type=='A')){?>
