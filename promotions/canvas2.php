@@ -1,5 +1,6 @@
 <? $url = curPageURL2(); ?>
 <?
+
 $email = '';
 if(isset($_POST['email_address']))
   $email = $_POST['email_address'];
