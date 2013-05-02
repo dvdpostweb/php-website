@@ -19,7 +19,8 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 
 
 
- <? $discount_code_text = discount_text($discount_values, $lang_short) ?>
+        <? $discount_code_text = discount_text($discount_values, $lang_short) ?>
+        <? $activation_code_text = activation_text($activation_values, $lang_short) ?>
         <div class="content_jb">
           <div class="step_5 step <?= $lang_short ?>"></div>
           <div class="page">
@@ -40,7 +41,23 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 								  ?>
 								    
 								 
-								    <p style="font-size:15px;"><?= !empty($discount_code_text) ? TRIAL.' '.$discount_code_text : "<strong>".TRIAL."</strong>: ".$period ?></p>
+								    <p style="font-size:15px;">
+								    <?php 
+								    if (!empty($discount_code_text))
+								    {
+								      echo TRIAL.' '.$discount_code_text;
+								    }
+								    else if(!empty($activation_code_text))
+								    {
+								      echo TRIAL.' '.$activation_code_text;
+								    }
+								    else
+								    {
+								      echo "<strong>".TRIAL."</strong>: ".$period ;
+								    }
+								            
+								    ?>
+								    </p>
 								  <? 
 								    }else{ 
 								  ?>

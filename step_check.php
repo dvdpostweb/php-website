@@ -246,7 +246,14 @@ if (!tep_session_is_registered('customer_id')) {
 								$sql='select * from customers where customers_id='.$customer_id;
 								$sql_query=tep_db_query($sql,'db_link',true);
 								$customers_value=tep_db_fetch_array($sql_query);
-								$sql= "select abo_auto_stop_next_reconduction as cpt from discount_code where discount_code_id = '" . $customers_value['activation_discount_code_id'] . "' ";
+								if ($discount_type=='A')
+								{
+								   $sql= "select abo_auto_stop_next_reconduction as cpt from activation_code where activation_id = '" . $customers_value['activation_discount_code_id'] . "' ";
+								}
+								else
+								{
+								  $sql= "select abo_auto_stop_next_reconduction as cpt from discount_code where discount_code_id = '" . $customers_value['activation_discount_code_id'] . "' ";
+							  }
 								$discount_query = tep_db_query($sql);
 								$discount_query_value = tep_db_fetch_array($discount_query);
 								if ($discount_query_value['cpt']>0){

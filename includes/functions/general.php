@@ -2653,6 +2653,7 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 	$price_abo=$products_values['products_price'];
 	$rotation = $products_values['qty_at_home'];
 	if ($discount_type=='A'){
+	  
 		//ACTIVATION VIA OGONE
 		$activation_query = tep_db_query("SELECT * FROM activation_code WHERE activation_id ='".$promo_id. "'");
 		$activation_values = tep_db_fetch_array($activation_query);
@@ -2665,6 +2666,7 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		{
 			$credits=$abo_dvd_credit;
 		}
+		$activation_text = activation_text($activation_values, SHORT);
 		switch ($activation_values['validity_type']){
 			case 1:	
 				$duration = '<span class="red_font">'.$activation_values['validity_value'].' '.TEXT_DAYS.'</span>';
@@ -2744,7 +2746,19 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 			else
 			{
 				if ($promo_type != 'unlimited') {
-					return "<strong>".TRIAL."</strong>: <span class='red_font'>".!empty($discount_text)? $discount_text :$period.'</span>';
+				  if(!empty($discount_text))
+				  {
+				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$discount_text.'</span>';
+				  }
+				  else if(!empty($activation_text))
+				  {
+				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$activation_text.'</span>';
+				  }
+				  else
+				  {
+				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$period.'</span>';
+				  }
+					
 				}else{ 
 					return sprintf(UNLIMITED, $duration, $abo_dvd_credit);
 				}
@@ -2890,5 +2904,20 @@ function discount_text($discount_values, $locale)
   }
   return $text;
 }
-
+function activation_text($values, $locale)
+{
+  switch($locale)
+  {
+    case 'fr':
+      $text = $values['activation_text_fr'];
+      break;
+    case 'nl':
+      $text = $values['activation_text_fr'];
+      break;
+    case 'en':
+      $text = $values['activation_text_fr'];
+      break;
+  }
+  return $text;
+}
 ?>
