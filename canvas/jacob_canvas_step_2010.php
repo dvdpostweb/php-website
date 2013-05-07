@@ -404,7 +404,7 @@ switch(WEB_SITE_ID)
 			<!-- trade tracker -->
 			<!-- click tron -->
 			<?php
-			if($customers['activation_discount_code_id'] == 999 || $customers['activation_discount_code_id'] == 1099 || $customers['activation_discount_code_id'] == 1100){
+			if($customers_value['activation_discount_code_id'] == 999 || $customers_value['activation_discount_code_id'] == 1099 || $customers_value['activation_discount_code_id'] == 1100){
 			switch ($languages_id){
 				case 1:
 					echo '<iframe src="http://www.addiliate.com/report.html?cp=FAZ74G89&rId='.$customer_id.'" width="1" height="1"  frameBorder="0"></iframe>';

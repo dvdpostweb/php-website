@@ -3,9 +3,8 @@ header('Content-Type: text/html; charset=utf-8');
 $_SERVER['DOCUMENT_ROOT']='/data/sites/benelux/www3test/';
 $doc= '<?xml version="1.0" encoding="UTF-8" ?>
 <ROOT xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">';
-echo '<pre>';
-/*$fp = fopen('catalogue_test.xml', 'w+');
-fwrite($fp, $doc);*/
+$fp = fopen('catalogue_test.xml', 'w+');
+fwrite($fp, $doc);
 //require('../configure/application_top.php');
 
 $server='192.168.100.204';
@@ -16,7 +15,7 @@ $db_link = mysql_connect($server, $username, $password);
 mysql_select_db($database);
 
 
-$sql="SELECT * FROM products p  left join products_description pd on p.products_id=pd.products_id join products_availability pa on p.products_id = pa.products_id left JOIN `directors` d ON d.directors_id = p.products_directors_id left join studio s on s.studio_id = products_studio left join products_countries pc on products_countries_id = countries_id left join public on products_public = public_id and public.language_id = 3 where (products_type= 'DVD_NORM' or products_type='DVD_ADULT') and pd.language_id=3 and p.products_status !=-1 order by p.products_id limit 1;";
+$sql="SELECT * FROM products p  left join products_description pd on p.products_id=pd.products_id join products_availability pa on p.products_id = pa.products_id left JOIN `directors` d ON d.directors_id = p.products_directors_id left join studio s on s.studio_id = products_studio left join products_countries pc on products_countries_id = countries_id left join public on products_public = public_id and public.language_id = 3 where (products_type= 'DVD_NORM' or products_type='DVD_ADULT') and pd.language_id=3 and p.products_status !=-1 order by p.products_id;";
 $query =  mysql_query($sql,$db_link);
 
 while($row = mysql_fetch_array($query, MYSQL_ASSOC)){
@@ -49,7 +48,6 @@ while($row = mysql_fetch_array($query, MYSQL_ASSOC)){
 			}
 			$desc .= '<language name="'.$short.'"><title>'.htmlspecialchars($row_description['products_name']).'</title><description>'.htmlspecialchars($row_description['products_description']).'</description><image>http://www.dvdpost.be/images/'.htmlspecialchars($row_description['products_image_big']).'</image></language>';
 		}
-		$actor=substr($actor,0,-1);
 		//subtitle
 		$sql_undertitles='SELECT * FROM products_to_undertitles ptu
 		join products_undertitles pu on ptu.products_undertitles_id = pu.undertitles_id  where ptu.products_id ='.$row['products_id'].' and pu.language_id=3';
@@ -68,7 +66,6 @@ while($row = mysql_fetch_array($query, MYSQL_ASSOC)){
 		while($row_category= mysql_fetch_array($query_category,MYSQL_ASSOC)){
 			$category.='<category id="'.$row_category['categories_id'].'">'.htmlspecialchars($row_category['categories_name']).'</category>';
 		}
-		$category=substr($category,0,-1);
 		//language
 		$sql_lang='select languages_description from products_to_languages ptl 
 		join products_languages pl on pl.languages_id = ptl.products_languages_id
@@ -89,14 +86,14 @@ while($row = mysql_fetch_array($query, MYSQL_ASSOC)){
 			$vod='1';
 		else
 			$vod='0';
-	$row= utf8_encode('<row><catalogid>'.$row['products_id'].'</catalogid><active>'.$row['products_status'].'</active><publicage>'.$row['public_name'].'</publicage><languages>'.$desc.'</languages><year xsi:nil="true" >'.((empty($row['products_year']))?'':$row['products_year']).'</year><genre>'.$row['products_type'].'</genre><categories>'.($category).'</categories><country xsi:nil="true" id="'.$row['countries_id'].'">'.$row['countries_name'].'</countries><mediaType>'.$row['products_media'].'</mediaType><certificate/><audioLanguage xsi:nil="true" >'.$lang.'</audioLanguage><subTitleLanguage xsi:nil="true" >'.$undertitles.'</subTitleLanguage><director xsi:nil="true" id="'.$row['directors_id'].'" >'.htmlspecialchars($row['directors_name']).'</director><actors>'.$actors.'</actors><availableDate>'.$row['products_date_available'].'</availableDate><locales/><restrictions /><vod>'.$vod.'</vod><availability>'.$row['ratio'].'</availability><imdb_id>'.$row['imdb_id'].'</imdb_id><studio id="'.$row['studio_id'].'">'.$row['studio_name'].'</studio></row>');
-		//fwrite($fp, $row);
-echo $row;
+	$row= utf8_encode('<row><catalogid>'.$row['products_id'].'</catalogid><active>'.$row['products_status'].'</active><publicage>'.$row['public_name'].'</publicage><languages>'.$desc.'</languages><year xsi:nil="true" >'.((empty($row['products_year']))?'':$row['products_year']).'</year><genre>'.$row['products_type'].'</genre><categories>'.$category.'</categories><country xsi:nil="true" id="'.$row['countries_id'].'">'.$row['countries_name'].'</country><mediaType>'.$row['products_media'].'</mediaType><certificate/><audioLanguage xsi:nil="true" >'.$lang.'</audioLanguage><subTitleLanguage xsi:nil="true" >'.$undertitles.'</subTitleLanguage><director xsi:nil="true" id="'.$row['directors_id'].'" >'.htmlspecialchars($row['directors_name']).'</director><actors>'.$actors.'</actors><availableDate>'.$row['products_date_available'].'</availableDate><locales/><restrictions /><vod>'.$vod.'</vod><availability>'.$row['ratio'].'</availability><imdb_id>'.$row['imdb_id'].'</imdb_id><studio id="'.$row['studio_id'].'">'.$row['studio_name'].'</studio></row>');
+		fwrite($fp, $row);
+#echo $row;
 	}
 }
 $doc='</ROOT>';
-/*fwrite($fp, $doc);
-fclose($fp);*/
+fwrite($fp, $doc);
+fclose($fp);
 
 mysql_close($db_link);
 ?>

@@ -40,7 +40,7 @@
 		$data.='query string -> '.$_SERVER['QUERY_STRING'].'<br />';
 		if(!empty($_COOKIE['customers_id']))
 			$data.=$_COOKIE['customers_id'].'<br />';
-    	tep_mail('gs@dvdpost.be','gs@dvdpost.be','sql error prod','<font color="#000000"><b>Unable to determine connection method on a link!<br><br>Known methods: NONSSL SSL<br><br></b><br />'.$data.'</font>','gs@dvdpost.be','gs@dvdpost.be');
+    	#tep_mail('gs@dvdpost.be','gs@dvdpost.be','sql error prod','<font color="#000000"><b>Unable to determine connection method on a link!<br><br>Known methods: NONSSL SSL<br><br></b><br />'.$data.'</font>','gs@dvdpost.be','gs@dvdpost.be');
       //die('</td></tr></table></td></tr></table><br><br><font color="#ff0000"><b>Error!</b></font><br><br><b>Unable to determine connection method on a link!<br><br>Known methods: NONSSL SSL</b><br><br>');
     }
     if ($parameters == '') {
