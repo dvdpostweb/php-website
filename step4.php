@@ -94,6 +94,7 @@ if (!tep_session_is_registered('customer_id')) {
 			$reconduction=$discount_values['abo_auto_stop_next_reconduction'];
 			
 			$abo_dvd_credit= $discount_values['abo_dvd_credit'];
+      $next_discount= $discount_values['next_discount'];
 			$nb_recurring = $discount_values['discount_recurring_nbr_of_month'];
 			if($abo_dvd_credit==0)
 				$abo_dvd_credit=$credits;
@@ -108,7 +109,7 @@ if (!tep_session_is_registered('customer_id')) {
 				case 2:
 					$duration = $nb.' '.TEXT_MONTHS;
 					$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-					if ($customers_value['customers_next_discount_code']>0)
+					if ($customers_value['customers_next_discount_code']>0 || $next_discount > 0)
       		{
       		  $nb = $nb + 1;
       		}
