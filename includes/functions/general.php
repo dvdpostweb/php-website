@@ -1880,9 +1880,12 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 		$sql_insert_ogone="insert into payment (date_added,payment_method, abo_id,customers_id,amount,payment_status,last_modified) values(now(),$type_payment,$abo_id,$customers_id,$final_price,$payment_id,now());";
 		tep_db_query($sql_insert_ogone);
 		$id = tep_db_insert_id();
-		$sql_paypal_hist = "insert into paypal_payments_history (payment_id, pp_request, pp_response, created_date, message, customer_id) values (".$id.", '".$nvpstr."' , '".serialize($resArray)."', NOW(),'".$resArray["ACK"]."', ".$customers_id.")";
-		tep_db_query($sql_paypal_hist);
-		tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 7, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "', '".$resArray["ACK"]."', ) "); 
+		if($type_payment == 4){
+		  $sql_paypal_hist = "insert into paypal_payments_history (payment_id, pp_request, pp_response, created_date, message, customer_id) values (".$id.", '".$nvpstr."' , '".serialize($resArray)."', NOW(),'".$resArray["ACK"]."', ".$customers_id.")";
+		  tep_db_query($sql_paypal_hist);
+	  }
+		
+		tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 7, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "' ) "); 
 	}
 	else
 	{
@@ -2808,8 +2811,12 @@ function mail_message($customer_id, $mail_id, $data)
 	$sql2 = 'select * from customers where customers_id = '.$customer_id;
 	$query2 = tep_db_query($sql2);
 	$customers = tep_db_fetch_array($query2);
-		
-	$sql='SELECT * FROM mail_messages m where mail_messages_id ='.$mail_id.' and language_id = '.$customers['customers_language'];
+	$l = $customers['customers_language'];
+	if(empty($l))
+	{
+	  $l = 1;
+	}
+	$sql='SELECT * FROM mail_messages m where mail_messages_id ='.$mail_id.' and language_id = '.$l;
 	$mail_query = tep_db_query($sql);
 	$mail_values = tep_db_fetch_array($mail_query);
 	$email_text = $mail_values['messages_html'];

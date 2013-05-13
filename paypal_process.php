@@ -7,6 +7,7 @@ $nvpStr="&TOKEN=$token";
 $resArray=hash_call("CreateBillingAgreement",$nvpStr);
 $ack = strtoupper($resArray["ACK"]);
 $res = serialize($resArray);
+tep_session_register('customer_id');
 	$_SESSION['reshash']=$resArray;
 	$data = ' customers_id => '.$customer_id.' query => '.$nvpStr.' res => '. $res;
 	tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'paypal process payment error', $data, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
@@ -23,6 +24,10 @@ $products_abo_query = tep_db_query($sql_product,'db',true);
 $products_abo = tep_db_fetch_array($products_abo_query);
 if($languages_id<1){
 	$languages_id=1;
+}
+if(empty($languages_id))
+{
+  $languages_id=1;
 }
 if($customer_values['activation_discount_code_type']=='A')
 {
