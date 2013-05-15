@@ -94,7 +94,7 @@
 													<td ><strong><?= TEXT_PHONE ?></strong></td>
 												</tr>
 											</table>
-											<p id="mf46"><strong id="mf47"><?= TEXT_PHONEINTRO ?></strong></p>
+											<p id="mf46"><?= TEXT_PHONEINTRO ?></p>
 											<p align="center">
 											<input class="callback_step_input" type="text" autocomplete="off" name="phone" value='<?= $customer_values['customers_telephone'] ?>' id="phone" value=""><br /> 
 											<?php
