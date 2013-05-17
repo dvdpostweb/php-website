@@ -50,7 +50,7 @@ if (tep_session_is_registered('customer_id')) {
 	{
     if ($check_abo_values['customers_registration_step'] == 90 )
   	{
-  		$step = 33;
+  		$step = 31;
   	}
   	else
   	{
