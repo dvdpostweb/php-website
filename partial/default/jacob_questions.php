@@ -16,7 +16,7 @@
 	<div class="nav_<?= $lang_short ?> question nav" id='question2'><?= HELP_SECURE ?></div>
 	<div id="response_color2"><div  class="text_guide" id='response2' style='display:none'><?= RESPONSE3 ?></div></div>
 	<div class="nav_<?= $lang_short ?> question nav" id='question10'><?= QUESTION10 ?></div>
-	<div id="response_color10"><div  class="text_guide" id='response10' style='display:none'><?= RESPONSE10 ?></div></div>
+	<div id="response_color10"><div  class="text_guide" id='response10' style='display:none'><a href ="http://public.dvdpost.com/<?= $lang_short ?>/info/price"><?= CLICK_HERE ?></a></div></div>
 	<div class="nav_<?= $lang_short ?> question nav" id='question3'><?= HELP_PAIMENT ?></div>
 	<div id="response_color3"><div  class="text_guide" id='response3' style='display:none'><?= RESPONSE6 ?></div></div>
 	<div class="nav_<?= $lang_short ?> question nav" id='question4'><?= HELP_UNSUB ?></div>
