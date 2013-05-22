@@ -1,0 +1,91 @@
+#arrow_down {
+
+  top: -44px!important;
+
+}
+
+#login_error, #login_error2 {
+
+  padding-bottom: 5px;
+}
+
+.news_form {
+  padding-bottom: 5px;
+
+}
+
+
+#area_promo {
+  height: 310px!important;
+
+}
+
+
+#commentcamarche_content h2 {
+  text-transform: none!important;
+}
+
+
+.inputs_promo_code {
+
+  margin-bottom: -10px;
+
+}
+
+
+.philips #promo_content h1 {
+  color: #0088d7;
+
+}
+
+.philips #header h2 a {
+  background: url(../images/promotions/logo_philips.png) repeat scroll 0 0 transparent;
+  height: 39px;
+  width: 224px;
+}
+
+.philips #header h2 {
+  float: left;
+  height: 39px;
+  margin: 21px 0 0 20px;
+}
+
+
+.philips #header {
+  height: 80px !important;
+  background: none repeat scroll 0 0 #fff;
+
+  position: relative;
+  width: 100%;
+}
+
+
+.philips #header h1 a {
+  background: url(../images/promotions/logo_dvdpost.png) repeat scroll 0 0 transparent;
+  height: 39px;
+  width: 224px;
+}
+
+.philips .promo_customers {
+  min-height: 90px;
+  line-height:45px;
+  width: 970px;
+  color:#0d1843;
+  font-size:24px;
+  font-family: 'Open Sans Condensed',sans-serif;
+  text-align: center;
+}
+
+.philips .promo_customers span{
+
+
+  color:#FFFFFF;
+  font-size:28px;
+
+}
+
+.promo_info {
+  border: 1px solid #9B9999;
+  margin: 5px 15px 15px 0;
+  padding: 8px 0 24px 8px;
+}

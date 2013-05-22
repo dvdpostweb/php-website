@@ -11,6 +11,7 @@ else if (strpos($host,'.nl')>0){
 	$site= SITE_ID;
 	$freetest='univers';
 	}
+$allisok=0;
 if ($_POST['code']==$_POST['base_code'] || $_POST['code']=='' )
 	$var_post_code=$freetest;
 else
@@ -233,7 +234,11 @@ if (tep_session_is_registered('customer_id')) {
 	}
 	
 	
-	
+	echo 'ici';
+}
+if(!empty($_POST['url']))
+{
+  tep_redirect($_POST['url']);
 }
 
 $current_page_name = FILENAME_ACTIVATION_CODE_CONFIRM;
