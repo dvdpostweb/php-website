@@ -260,7 +260,7 @@ switch(WEB_SITE_ID)
 	break;
 }
 ?>
-<body id="hp" class="<?= $canvas == 3 ? 'philips' : 'normal' ?>">
+<body id="hp" class="<?= $canvas == 3 || $canvas == 4 ? 'philips' : 'normal' ?>">
     <!--   ==============   HEADER   ==============   -->
 		<?php 
 		if (!isset($hide_menu))

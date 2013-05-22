@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.philips #header h2 a {
+  background: url(../images/promotions/logo_philips.png) repeat scroll 0 0 transparent;
+  height: 39px;
+  width: 224px;
+}
+
+.philips #header h2 {
+  float: left;
+  height: 39px;
+  margin: 21px 0 0 20px;
+}
+
+
+.philips #header {
+  height: 80px !important;
+  background: none repeat scroll 0 0 #fff;
+
+  position: relative;
+  width: 100%;
+}
+
+
+.philips #header h1 a {
+  background: url(../images/promotions/logo_dvdpost.png) repeat scroll 0 0 transparent;
+  height: 39px;
+  width: 224px;
+}
+
+
+
+.philips .choice_language {
+  background: url(../images/promotions/bg_l_philips.jpg) no-repeat scroll 0 0 transparent;
+  height: 537px;
+
+
+}
+
+.philips .choice_language h3 {
+  padding-top:20px;
+  text-align:center;
+  font-size: 28px;
+
+}
+
+
+
+
+.philips .choice_language .right {
+  padding-right: 55px;
+
+
+}
+
+
+.philips .choice_language .button_languages {
+
+  background: #ee8419; /* Old browsers */
+
+  background: -moz-linear-gradient(top,  #ee8419 1%, #e26417 100%); /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ee8419), color-stop(100%,#e26417)); /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top,  #ee8419 1%,#e26417 100%); /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top,  #ee8419 1%,#e26417 100%); /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top,  #ee8419 1%,#e26417 100%); /* IE10+ */
+
+  background: linear-gradient(to bottom,  #ee8419 1%,#e26417 100%); /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee8419', endColorstr='#e26417',GradientType=0 ); /* IE6-9 */
+
+  ;
+  border: 1px solid #D55023;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+  color: white;
+  font-size: 25px;
+  height: 29px;
+  line-height: 20px;
+  margin-left: 65px;
+  margin-top: 120px;
+  text-shadow: 0 -1px 0 #D83C14;
+  padding: 7px 0 0px;
+  display: inline-block;
+  text-align: center;
+  width: 179px;
+
+}
+
+
+

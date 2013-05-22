@@ -1,17 +1,12 @@
 <?
-$canvas = 3;
-$nav=true;
-$image = 'bg-philips.jpg';
-$brand_logo = 'logo_philips.png';
-$brand_url ='http://www.philips.be/';
-$brand_code = 'RGT';
-$date_limit = '25/04/2013';
-$text_color = '#0088D7';
-$btn_color ='#EE8419';
-#$promo = "2VOD";
-#$dvd_hide = 1;
+$canvas = 4;
 $hide_menu = true;
-define('DEFAULT_LANGUAGE', 'fr');
+$brand_logo = 'logo_philips.png';
+$image = 'bg_l_philips.jpg';
+$brand_url ='http://www.philips.be/';
+$link_fr= 'philips_fr';
+$link_nl= 'philips_nl';
+
 
 require 'header.php'
 ?>
