@@ -9,7 +9,7 @@ $date_limit = '25/04/2013';
 $text_color = '#0088D7';
 $btn_color ='#EE8419';
 $t = 'RGT';
-#$promo = "2VOD";
+$promo = "RGT";
 #$dvd_hide = 1;
 $hide_menu = true;
 define('DEFAULT_LANGUAGE', 'fr');
