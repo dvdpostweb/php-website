@@ -4,7 +4,7 @@
 //exit();
 //working prrocess
 header('P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"'); 
-
+date_default_timezone_set('Europe/Paris');
 
 
 function getBestMatchToInclude($pathname,$debug=0,$jacob=0) {
