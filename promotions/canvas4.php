@@ -9,7 +9,7 @@
       </h1>
       <h2> <a href="<?= $brand_url ?>" class="f-btn" style="background:url(../images/canvas/<?= $brand_logo ?>) "><?= $brand_url ?></a> </h2>
     </div>
-	<div class="choice_language" style="background: url(../images/canvas/<%= $image ?>) no-repeat scroll 0 0 transparent;">
+	<div class="choice_language" style="background: url(../images/canvas/<?= $image ?>) no-repeat scroll 0 0 transparent;">
 	<h3>Choisissez votre langue - Kies uw taal</h3>
 <div class="left" >
     <a href="<?= $link_fr ?>" class="button_languages">Fran&ccedil;ais</a>
