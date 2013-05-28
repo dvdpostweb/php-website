@@ -29,7 +29,7 @@ if(empty($email))
     <h1> 
       <a href="http://public.dvdpost.com/<?= $lang_short ?>?url_promo=<?= urlencode($url) ?>" class="f-btn" style="">DVDPost.be</a> 
     </h1>
-    <h2> <a href="<?= $brand_url ?>" class="f-btn" style="background:url(../images/canvas/<?= $lang_short.'/'.$brand_logo ?>) "><?= $brand_url ?></a> </h2>
+
 
   </div>
   <!--   ==============   END HEADER   ==============   -->
@@ -88,10 +88,10 @@ if(empty($email))
 
             <table cellpadding="0" cellspacing="0" border="0">
               <tr id="promotions">
-                <td><img src="/images/promotions/codepromo_philips.jpg" /></td>
-                <td><img src="/images/promotions/promo20vod.jpg"  style="padding-top:28px;" /></td>
-                <td><img src="/images/promotions/calendar.jpg" style="padding-top:28px;" /></td>
-                <td><img src="/images/promotions/poste2.jpg" style="padding-top:14px;"/></td>
+                <td><img src="/images/promotions/<?= $lang_short ?>/codepromo_<?= $brand_code ?>.jpg" /></td>
+                <td><img src="/images/promotions/promo_<?= $brand_code ?>.jpg"  style="padding-top:28px;" /></td>
+                <td><img src="/images/promotions/step3_<?= $brand_code ?>.jpg" style="padding-top:28px;" /></td>
+                <td><img src="/images/promotions/step4_<?= $brand_code ?>.jpg" style="padding-top:14px;"/></td>
               </tr>
               <tr id="dvd">
                 <td class="step1"><?= constant("TEXT_P_STEP1_$brand_code") ?></td>
