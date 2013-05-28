@@ -10,8 +10,9 @@ $res = serialize($resArray);
 tep_session_register('customer_id');
 	$_SESSION['reshash']=$resArray;
 	$data = ' customers_id => '.$customer_id.' query => '.$nvpStr.' res => '. $res;
-	tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'paypal process payment error', $data, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
-
+	if($ack!="SUCCESS"){
+	  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'paypal process payment error', $data, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+  }
 $agreement_id = $resArray['BILLINGAGREEMENTID'];
 
 $sql_update = "update customers set paypal_agreement_id = '".$agreement_id."' where customers_id = ".$customer_id;

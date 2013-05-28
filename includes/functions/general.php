@@ -1861,6 +1861,8 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
       if($ack!="SUCCESS")  {
           $_SESSION['reshash']=$resArray;
           $payment_id = 1;
+          $data = serialize($resArray).' customersid => '.$customers_id.' data => '.$nvpstr;
+          tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error discount', $data, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
       	  /*$location = "../APIError.php";
       		header("Location: $location");*/
       }
@@ -1869,8 +1871,7 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
         $payment_id = 2;
       }
       
-      $data = serialize($resArray).' customersid => '.$customers_id.' data => '.$nvpstr;
-      tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'payment error discount', $data, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+      
       
 	  }
 	  else
