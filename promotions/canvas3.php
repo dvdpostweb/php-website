@@ -88,10 +88,10 @@ if(empty($email))
 
             <table cellpadding="0" cellspacing="0" border="0">
               <tr id="promotions">
-                <td><img src="/images/promotions/<?= $lang_short ?>/codepromo_<?= $brand_code ?>.jpg" /></td>
-                <td><img src="/images/promotions/promo_<?= $brand_code ?>.jpg"  style="padding-top:28px;" /></td>
-                <td><img src="/images/promotions/step3_<?= $brand_code ?>.jpg" style="padding-top:28px;" /></td>
-                <td><img src="/images/promotions/step4_<?= $brand_code ?>.jpg" style="padding-top:14px;"/></td>
+                <td><img src="/images/promotions/<?= $image_promotion1 ?>" /></td>
+                <td><img src="/images/promotions/<?= $image_promotion2 ?>"  style="padding-top:28px;" /></td>
+                <td><img src="/images/promotions/<?= $image_promotion3 ?>" style="padding-top:28px;" /></td>
+                <td><img src="/images/promotions/<?= $image_promotion4 ?>" style="padding-top:14px;"/></td>
               </tr>
               <tr id="dvd">
                 <td class="step1"><?= constant("TEXT_P_STEP1_$brand_code") ?></td>
