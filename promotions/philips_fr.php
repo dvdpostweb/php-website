@@ -5,6 +5,7 @@ $image = 'bg-philips.jpg';
 $brand_logo = 'logo_philips.png';
 $brand_url ='http://www.philips.be/';
 $brand_code = 'RGT';
+$lienoldcust = '/phone_requests/new';
 $date_limit = '25/04/2013';
 $text_color = '#0088D7';
 $btn_color ='#EE8419';

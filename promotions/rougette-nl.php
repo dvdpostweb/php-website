@@ -1,8 +1,8 @@
 <?
 $canvas = 3;
 $nav=true;
-$image = 'fr/bg-rougette.jpg';
-$brand_logo = 'logo_logo_rougette.png';
+$image = 'bg-rougette.jpg';
+$brand_logo = 'fr/logo_logo_rougette.png';
 $brand_url ='http://www.rougette.be/';
 $brand_code = 'rougette';
 $date_limit = '25/04/2013';
