@@ -75,8 +75,16 @@ if(empty($email))
         </form>
       </div>
     </div>
-    <div class="promo_customers" style="background: url(../images/canvas/bg_banner_<?= $brand_code ?>.jpg) scroll 0 0 transparent;"><span><?= TEXT_OLD_CUST ?></span>
-      <a href="http://public.dvdpost.com/<?= $lang_short ?>/phone_requests/new" target="_blank"><?= TEXT_CONTACT_PHILIPS ?></a> <?= TEXT_CONTACT_PHILIPS2 ?> </div>
+      <? if(empty($banner_url)){?>
+        <div class="promo_customers" style="background: url(../images/canvas/bg_banner_<?= $brand_code ?>.jpg) scroll 0 0 transparent;"><span><?= TEXT_OLD_CUST ?></span>
+        
+        <a href="http://public.dvdpost.com/<?= $lang_short ?>/phone_requests/new" target="_blank"><?= TEXT_CONTACT_PHILIPS ?></a> <?= TEXT_CONTACT_PHILIPS2 ?>
+      <?} else {?>
+        <div class="promo_customers" style="background: url(../images/canvas/bg_banner_<?= $brand_code ?>.jpg) scroll 0 0 transparent;"><span><?= constant("TEXT_OLD_CUST_$brand_code") ?></span>
+        
+        <a href="http://public.dvdpost.com/<?= $lang_short ?>/<?= $banner_url ?>" target="_blank"><?= constant("TEXT_CONTACT_$brand_code") ?></a> <?= constant("TEXT_CONTACT2_$brand_code") ?>
+      <? } ?>
+       </div>
 
       <div id="warp">
 

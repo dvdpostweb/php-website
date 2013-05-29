@@ -67,13 +67,17 @@
 }
 
 .philips .promo_customers {
-  min-height: 90px;
-  line-height:45px;
+  min-height: 48px;
+  line-height: 30px;
   width: 970px;
-  color:#0d1843;
-  font-size:24px;
+  color: #0D1843;
+  font-size: 24px;
   font-family: 'Open Sans Condensed',sans-serif;
   text-align: center;
+  padding: 6px 0;
+}
+#warp {
+  margin-top:0;
 }
 
 .philips .promo_customers span{
