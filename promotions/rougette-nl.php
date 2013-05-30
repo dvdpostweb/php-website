@@ -5,6 +5,7 @@ $image = 'bg-rougette.jpg';
 $brand_logo = 'fr/logo_rougette.png';
 $brand_url ='http://www.rougette.be/';
 $brand_code = 'rougette';
+$banner_url = '/phone_requests/new';
 $lienoldcust = '/phone_requests/new';
 $date_limit = '25/04/2013';
 $text_color = '#ae0a14';
