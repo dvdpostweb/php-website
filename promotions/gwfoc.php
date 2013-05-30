@@ -1,7 +1,7 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_1_month.jpg';
+$image = 'bg_promo_1_month1.jpg';
 $date_limit = '03/07/2013';
 $code = 'GWFOC';
 $css = 'canvas2.css';
