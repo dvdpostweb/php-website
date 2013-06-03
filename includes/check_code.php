@@ -81,12 +81,12 @@ if (tep_session_is_registered('customer_id')) {
 				} 
 		}
 		if($activation_discount_code_type=="D"){
-			$sql= "select *, gc.CodeDesc2 from discount_code dc LEFT JOIN generalglobalcode gc on gc.CodeValue=dc.goto_step where discount_status=1 AND discount_code = '" . strtoupper($code) . "' ";
+			$sql= "select *, gc.CodeDesc2, ifnull(now()<= discount_validityto,1) valid from discount_code dc LEFT JOIN generalglobalcode gc on gc.CodeValue=dc.goto_step where discount_status=1 AND discount_code = '" . strtoupper($code) . "' ";
 			$code_query = tep_db_query($sql);
 			$code_data = tep_db_fetch_array($code_query);
-			if($code_data['discount_status'] < 1 or $code_data['discount_limit'] < 1){
+			if($code_data['discount_status'] < 1 or $code_data['discount_limit'] < 1 or $code_data['valid']==0){
 				$allisok = 0;
-				$strreason= TEXT_DISCOUNT_EXPIRED;				
+				$strreason= TEXT_DISCOUNT_EXPIRED;	
 			}
 			if($code_data['bypass_discountuse'] < 1){									
 				$use_query = tep_db_query("select * from discount_use where customers_id  = '" . $customer_id . "' and discount_use_date > DATE_sub(now(), INTERVAL " . $code_data['discount_nbr_month_before_reuse'] . " MONTH)");
@@ -106,8 +106,8 @@ if (tep_session_is_registered('customer_id')) {
 						tep_db_query("update customers set customers_next_abo_type='".$next."', customers_abo_type='".$code_data['listing_products_allowed']."'  where customers_id = '" . $customer_id . "'");
 					}
 					tep_db_query("update customers set activation_discount_code_id='".$activation_discount_code_id."',activation_discount_code_type='".$activation_discount_code_type."',customers_next_discount_code='".$activation_discount_next."' where customers_id = '" . $customer_id . "'");
-					
-					tep_redirect(tep_href_link($check_step_values['CodeDesc2']));
+					if($allisok != 0)
+					  tep_redirect(tep_href_link($check_step_values['CodeDesc2']));
 					
 				}
 			}else{
@@ -124,7 +124,8 @@ if (tep_session_is_registered('customer_id')) {
 					}
 					$sql="update customers set activation_discount_code_id='".$activation_discount_code_id."',activation_discount_code_type='".$activation_discount_code_type."',customers_next_discount_code='".$activation_discount_next."' where customers_id = '" . $customer_id . "'";
 					tep_db_query($sql);
-					tep_redirect(tep_href_link($check_step_values['CodeDesc2']));
+					if($allisok != 0)
+					  tep_redirect(tep_href_link($check_step_values['CodeDesc2']));
 					
 				}
 		}else{

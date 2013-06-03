@@ -64,9 +64,13 @@ if(empty($email))
         } 
         if($old == true )
         { 
+          if(!empty($strreason) && ($_GET['form']=="1" || empty($_GET['form'])))
+          {
+            echo $strreason;
+          }
           if(!tep_session_is_registered('customer_id'))
           {
-            if ($login == 'fail' && $_GET['form']=="1") 
+            if ($login == 'fail' && ($_GET['form']=="1" || empty($_GET['form']))) 
           	{
           		echo '<font color="#C01713">'.TEXT_ERROR_LOGIN2.'</font><br />';
           	}
@@ -83,7 +87,7 @@ if(empty($email))
 			  }
 			  else
 			  {
-			  ?>
+			  ?>ici
         <p class="news">
           <input type='checkbox' checked="checked" name="marketing" class="Input1" value='YES' >
           <?php  echo TEXT_MARKETING_OK ?>
@@ -167,12 +171,17 @@ if(empty($email))
         <? } ?>
         <span id='login_error2'></span>
         <? 
+        
         if($old == true)
         { 
+          if(!empty($strreason) && ($_GET['form']=="2" || empty($_GET['form'])))
+          {
+            echo '<p align="center">'.$strreason.'</p>';
+          }
           if(!tep_session_is_registered('customer_id'))
           {
             echo '<p class="news_form2">';
-            if ($login == 'fail' && $_GET['form']=="2") 
+            if ($login == 'fail' && ($_GET['form']=="2" || empty($_GET['form'])) )
           	{
           		echo '<font color="#C01713">'.TEXT_ERROR_LOGIN2.'</font><br />';
           	}
@@ -191,7 +200,6 @@ if(empty($email))
 			  else
 			  {
 			  ?>
-        
         <p class="news_form">
           <input type='checkbox' checked="checked" name="marketing" class="Input1" value='YES' >
           <input type="hidden" name='language' value='<?= $lang_short ?>'>
