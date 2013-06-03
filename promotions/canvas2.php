@@ -87,7 +87,7 @@ if(empty($email))
 			  }
 			  else
 			  {
-			  ?>ici
+			  ?>
         <p class="news">
           <input type='checkbox' checked="checked" name="marketing" class="Input1" value='YES' >
           <?php  echo TEXT_MARKETING_OK ?>
