@@ -15,7 +15,7 @@ $db_link = mysql_connect($server, $username, $password);
 mysql_select_db($database);
 
 
-$sql="SELECT *, DATE_FORMAT(products_date_available,'%Y-%m-%dT%T.000Z') products_date_available_formated FROM products p  left join products_description pd on p.products_id=pd.products_id join products_availability pa on p.products_id = pa.products_id left JOIN `directors` d ON d.directors_id = p.products_directors_id left join studio s on s.studio_id = products_studio left join products_countries pc on products_countries_id = countries_id left join public on products_public = public_id and public.language_id = 3 where (products_type= 'DVD_NORM' or products_type='DVD_ADULT') and pd.language_id=3 and p.products_status !=-1 order by p.products_id limit 10;";
+$sql="SELECT *, DATE_FORMAT(products_date_available,'%Y-%m-%dT%T.000Z') products_date_available_formated FROM products p  left join products_description pd on p.products_id=pd.products_id join products_availability pa on p.products_id = pa.products_id left JOIN `directors` d ON d.directors_id = p.products_directors_id left join studio s on s.studio_id = products_studio left join products_countries pc on products_countries_id = countries_id left join public on products_public = public_id and public.language_id = 3 where (products_type= 'DVD_NORM' or products_type='DVD_ADULT') and pd.language_id=3 and p.products_status !=-1 order by p.products_id;";
 $query =  mysql_query($sql,$db_link);
 
 while($row = mysql_fetch_array($query, MYSQL_ASSOC)){
