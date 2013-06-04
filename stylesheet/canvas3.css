@@ -17,7 +17,7 @@
 
 #area_promo {
   height: 310px!important;
-
+  margin-top: 30px;
 }
 
 
@@ -67,7 +67,6 @@
 }
 
 .philips .promo_customers {
-  min-height: 48px;
   line-height: 30px;
   width: 970px;
   color: #0D1843;
@@ -90,6 +89,6 @@
 
 .promo_info {
   border: 1px solid #9B9999;
-  margin: 5px 15px 15px 0;
+  margin: 5px 15px 5px 0;
   padding: 8px 0 24px 8px;
 }
