@@ -1,7 +1,7 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_1_month.jpg';
+$image = 'bg_promo_1_month_avenir.jpg';
 $code = 'VAVENIR';
 $promo = "6films";
 $t = "avenir";
