@@ -51,6 +51,8 @@ if (!tep_session_is_registered('customer_id')) {
 			$activation_values = tep_db_fetch_array($activation_query);
 			$abo_dvd_credit= $activation_values['abo_dvd_credit'];
 			$reconduction=$activation_values['abo_auto_stop_next_reconduction'];
+      $next_discount=$activation_values['next_discount'];
+      
 			if ($activation_values['activation_waranty'] == 2)
 			{
 				$promo_type = 'pre_paid';
@@ -59,7 +61,7 @@ if (!tep_session_is_registered('customer_id')) {
 			{
 				$credits=$abo_dvd_credit;
 			}
-			
+			$nb=1;
 			switch ($activation_values['validity_type']){
 				case 1:	
 					$duration = $activation_values['validity_value'].' '.TEXT_DAYS;
@@ -70,7 +72,13 @@ if (!tep_session_is_registered('customer_id')) {
 				case 2:	
 					$duration = $activation_values['validity_value'].' '.TEXT_MONTHS;
 					$period = $credits.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-					$nb_days = $activation_values['validity_value']. ' month';
+					
+					$nb = $activation_values['validity_value'];
+					if ($customers_value['customers_next_discount_code']>0 || $next_discount > 0)
+      		{
+      		  $nb = $nb + 1;
+      		}
+      		$nb_days = $nb. ' month';
 				break;
 				case 3:	
 					$duration = $activation_values['validity_value'].' '.TEXT_YEAR;
@@ -138,7 +146,6 @@ if (!tep_session_is_registered('customer_id')) {
 			$period_next = $credits_next.' '.TEXT_FILMS.' '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation_next.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo_next;
 		  }
 		}
-		
 		$date_now = date("Y-m-d");// current date
 		$date_sub = strtotime ( '+'.$nb_days , strtotime ( $date_now ) ) ;
 		$date_sub = date ( 'd/m/Y' , $date_sub );
