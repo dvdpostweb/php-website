@@ -733,6 +733,7 @@ $private_page=array('/mydvdpost.php','/mywishlist.php','/login.php','/holiday_fo
 		'/custservaddtitles_process.php'              ,
 		'/addtowishlist_adult.php'              			,
 		'/ogone_change.php'														,
+		'/quizz_check_2.php'													,
 		'/step_check.php'
 		
 		);                

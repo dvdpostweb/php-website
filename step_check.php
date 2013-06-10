@@ -268,7 +268,7 @@ if (!tep_session_is_registered('customer_id')) {
                 $sql_abo='insert into abo(customerid,Action,Date,product_id,payment_method,comment,site) values ('.$customer_id.',29,now(),'.$customers_value['customers_abo_type'].',"VIREMENT","call me",'.WEB_SITE_ID.')';
               	tep_db_query($sql_abo);
               	$host=$_SERVER['HTTP_HOST'];
-                if(strpos($host,'dvdpost')>0){
+                if(strpos($host,'dvdpost')>0)
               	{
                	 tep_mail('info@dvdpost.be', 'info@dvdpost.be', 'demande d\'activation (client :'.$lang_short.')', 'Ce client '.$customer_id.' veut activer son compte. Merci de bien vouloir le rappeler au plus vite.', STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
               	  

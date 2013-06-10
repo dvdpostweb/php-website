@@ -130,6 +130,8 @@ class Authentification
       ,'/price.php' => '/'.$_SESSION['lang_short'].'/info/price'
       ,'/trailer.php' => '/'.$_SESSION['lang_short']
       ,'/contest_public.php' => '/'.$_SESSION['lang_short'].'/contests/new'
+      ,'/quizz_check_2.php' => '/'.$_SESSION['lang_short'].'/quizzes/'
+			
 		);	
 		foreach ($script_availables as $old=>$new) {
 		//strpos(((!empty($page))?$page:$_SERVER['SCRIPT_NAME']),$value)!==false
@@ -175,6 +177,7 @@ class Authentification
 			,'/contest_process.php' => '/'.$_SESSION['lang_short'].'/contests/new'
 			,'/quizz.php' => '/'.$_SESSION['lang_short'].'/quizzes/'
 			,'/quizz2.php' => '/'.$_SESSION['lang_short'].'/quizzes/'
+			,'/quizz_check_2.php' => '/'.$_SESSION['lang_short'].'/quizzes/'
 			,'/holiday_form.php' => '/'.$_SESSION['lang_short'].'/customers/'.$_SESSION['customer_id']
 			,'/holiday_process.php' => '/'.$_SESSION['lang_short'].'/customers/'.$_SESSION['customer_id']
 			,'/member_get_member.php' => '/'.$_SESSION['lang_short'].'/sponsorships'
