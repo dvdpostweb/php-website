@@ -12,7 +12,9 @@ require(DIR_WS_FUNCTIONS . 'database.php');
 tep_db_connect() or die('Unable to connect to database server!');
 
 $customer_id = $_GET['customer_id'];
-$sql= 'select * from customers where customers_id = '.$customer_id;
+$sql= 'select * from customers c
+join address_book a on a.customers_id = c.customers_id and a.address_book_id = c.customers_default_address_id
+ where c.customers_id = '.$customer_id;
 $query = tep_db_query($sql);			
 $customer_value = tep_db_fetch_array($query);
 $languages_id = $customer_value['customers_language'];
@@ -21,7 +23,12 @@ define('WEBSITE',1);
 require(DIR_WS_INCLUDES . 'translation_root.php');
 
 
-						$listing_sql = "select * from (select count(distinct t.id)nb , t.imdb_id,pd.* from  products p join products_description pd on p.products_id = pd.products_id and pd.language_id=".$customer_value['customers_language']." join streaming_products sp on p.imdb_id = sp.imdb_id join tokens t on t.`imdb_id` = p.imdb_id where available = 1 and status='online_test_ok' and source ='alphanetworks' and ((available_from < now() and expire_at > now()) or (available_backcatalogue_from < now() and expire_backcatalogue_at > now())) and products_type='".($_GET['kind']=='adult' ? 'dvd_adult': 'dvd_norm')."' group by t.imdb_id  order by nb desc limit 30) t ";
+						$listing_sql = "select * from (select count(distinct t.id)nb , t.imdb_id,pd.* 
+						from  products p 
+						join products_description pd on p.products_id = pd.products_id and pd.language_id=".$customer_value['customers_language']." 
+						join streaming_products sp on p.imdb_id = sp.imdb_id 
+						join tokens t on t.`imdb_id` = p.imdb_id
+						where available = 1 and status='online_test_ok' and source ='alphanetworks' and ((available_from < now() and expire_at > date_add(now(), interval 10 DAY)) or (available_backcatalogue_from < now() and expire_backcatalogue_at > date_add(now(), interval 10 DAY))) and products_type='".($_GET['kind']=='adult' ? 'dvd_adult': 'dvd_norm')."'  group by t.imdb_id  order by nb desc limit 30) t ";
 						if($_GET['kind']=='adult')
 						{
 							$image_path= 'imagesx';
@@ -57,7 +64,7 @@ require(DIR_WS_INCLUDES . 'translation_root.php');
 							
 							$structure = '<table border="0"><tr valign="top">$$$rating$$$</tr><tr>$$$image$$$</tr><tr>$$$btn$$$</tr><tr>$$$title$$$</tr></table>';
 							
-						$listing_recom_sql = $listing_sql . ' order by rand() limit '.$_GET['limit'];
+						$listing_recom_sql = $listing_sql . '  limit '.$_GET['limit'];
 						
 						echo $listing_recom_sql;
 						$recom_query = tep_db_query($listing_recom_sql);
