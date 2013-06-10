@@ -54,7 +54,9 @@ if(empty($email))
               <span id="login_error"><?= TEXT_CODE_ERROR ?></span>
               <? } ?>
             </div>
+            <? if(!isset($hide_image)) {?>
             <div style="float:right; padding-right:10px; width:200px; padding-top:7px;color:#212A31;"> <img src="/images/canvas/<?= $lang_short ?>/enveloppe_<?= $brand_code ?>.jpg" /></div>
+            <? } ?>
             <div class="clearfix"></div>
             <p class="news">
               <input type="checkbox"  name="marketing" class="marketing3" value="YES">
