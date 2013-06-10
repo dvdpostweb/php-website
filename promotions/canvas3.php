@@ -30,7 +30,11 @@ if(empty($email))
       <a href="http://public.dvdpost.com/<?= $lang_short ?>?url_promo=<?= urlencode($url) ?>" class="f-btn" style="">DVDPost.be</a> 
     </h1>
     <h2> <a href="<?= $brand_url ?>" class="f-btn" style="background:url(../images/canvas/<?= $brand_logo ?>) "><?= $brand_url ?></a> </h2>
-
+    <? if (isset($show_date)){?>
+    <ul id="promo_date" class="osc">
+      <li><?= TEXT_UNTIL ?> <?= isset($date_limit) ? $date_limit : date('d/m/Y', strtotime('+3 day')) ?></li>
+    </ul>
+    <? } ?>
   </div>
   <!--   ==============   END HEADER   ==============   -->
   <div class="container clearfix">
@@ -38,7 +42,7 @@ if(empty($email))
       <h1 style="color: <?= $text_color ?>;"><?= (isset($t) ? constant("TEXT_DISCOVER_$t") : TEXT_DISCOVER)  ?></h1>
       <div id="promo_form">
         <h2><?= TEXT_VOD_NOW ?></h2>
-        <h3><?= constant("TEXT_CODE_$brand_code") ?></h3>
+        <h3><?= isset($brand_code) ? constant("TEXT_CODE_$brand_code") : TEXT_PROMO_4 ?></h3>
         <form name="verify_form" method="post" action="/activation_code_confirm.php" id="form_step">
           <div style="float:left;  padding-left:10px;width:200px;">
             <input type='hidden' name='url' value='<?= curPageURL2().'?error=1' ?>'>
@@ -149,7 +153,7 @@ if(empty($email))
                         </div>
                         <form name="verify_form" method="post" action="/activation_code_confirm.php" id="form_step2">
                           <div id="area_promo">
-                            <h2><?= constant('TEXT_FORM_'.$brand_code)?></h2>
+                            <h2><?= isset($brand_code) ? constant('TEXT_FORM_'.$brand_code) : TEXT_FORM_AREA_PROMO ?></h2>
 
                             <p align="center"><?= PROMO_CODE ?> :<br>
                               <input type='hidden' name='url' value='<?= curPageURL2().'?error=1' ?>'>
