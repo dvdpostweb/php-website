@@ -6,6 +6,7 @@ $date_limit = '19/06/2013';
 $code = 'SMTEST';
 $css = 'canvas2.css';
 $hide_menu = true;
+$old = true;
 define('DEFAULT_LANGUAGE', 'en');
 
 require 'header.php'
