@@ -2,6 +2,8 @@
 $canvas = 3;
 $nav=true;
 $image = 'bg_promo_1_month.jpg';
+$show_date = true;
+$hide_image = true;
 #$brand_logo = 'logo_philips.png';
 #$brand_url ='http://www.philips.be/';
 #$brand_code = 'RGT';
