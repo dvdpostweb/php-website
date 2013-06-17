@@ -2,6 +2,7 @@
 $canvas = 3;
 $nav=true;
 $image = 'bg-zalando.jpg';
+$hide_image = true;
 $show_date = true;
 #$brand_logo = 'logo_philips.png';
 #$brand_url ='http://www.philips.be/';
