@@ -109,10 +109,10 @@ if(empty($email))
                           <td><img src="/images/promotions/<?= $image_promotion4 ?>" style="padding-top:14px;"/></td>
                         </tr>
                         <tr id="dvd">
-                          <td class="step1"><?= isset($brand_code) ? constant("TEXT_P_STEP1_$brand_code") : TEXT_P_STEP1 ?></td>
-                          <td class="step2"><?= isset($brand_code) ? constant("TEXT_P_STEP2_$brand_code") : TEXT_P_STEP2 ?></td>
-                          <td class="step3"><?= isset($brand_code) ? constant("TEXT_P_STEP3_$brand_code") : TEXT_P_STEP3 ?></td>
-                          <td class="step4"><?= isset($brand_code) ? constant("TEXT_P_STEP4_$brand_code") : TEXT_P_STEP4 ?></td>
+                          <td class="step1"><?=  TEXT_P_STEP1 ?></td>
+                          <td class="step2"><?=  TEXT_P_STEP2 ?></td>
+                          <td class="step3"><?=  TEXT_P_STEP3 ?></td>
+                          <td class="step4"><?=  TEXT_P_STEP4 ?></td>
                         </tr>
                       </table>
                     </div> 
