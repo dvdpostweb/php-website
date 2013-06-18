@@ -117,8 +117,6 @@ if(empty($email))
                       </table>
                     </div> 
 
-
-
                   </div>
                   <? } ?>
                   <div id="warp">
