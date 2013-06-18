@@ -97,7 +97,7 @@ if(empty($email))
 
 <? if (!isset($hide_explain)) {?>
                   <div id="commentcamarche_content">
-                    <h2><?= constant("TEXT_HOW_$brand_code") ?></h2>
+                    <h2><?= isset($brand_code) ? constant("TEXT_HOW_$brand_code") : TEXT_HOW ?></h2>
                     <div class="promo_info">
 
 
@@ -109,10 +109,10 @@ if(empty($email))
                           <td><img src="/images/promotions/<?= $image_promotion4 ?>" style="padding-top:14px;"/></td>
                         </tr>
                         <tr id="dvd">
-                          <td class="step1"><?= constant("TEXT_P_STEP1_$brand_code") ?></td>
-                          <td class="step2"><?= constant("TEXT_P_STEP2_$brand_code") ?></td>
-                          <td class="step3"><?= constant("TEXT_P_STEP3_$brand_code") ?></td>
-                          <td class="step4"><?= constant("TEXT_P_STEP4_$brand_code") ?></td>
+                          <td class="step1"><?= isset($brand_code) ? constant("TEXT_P_STEP1_$brand_code") : TEXT_P_STEP1 ?><?= constant("TEXT_P_STEP1_$brand_code") ?></td>
+                          <td class="step2"><?= isset($brand_code) ? constant("TEXT_P_STEP2_$brand_code") : TEXT_P_STEP2 ?><?= constant("TEXT_P_STEP1_$brand_code") ?></td>
+                          <td class="step3"><?= isset($brand_code) ? constant("TEXT_P_STEP3_$brand_code") : TEXT_P_STEP3 ?><?= constant("TEXT_P_STEP1_$brand_code") ?></td>
+                          <td class="step4"><?= isset($brand_code) ? constant("TEXT_P_STEP4_$brand_code") : TEXT_P_STEP4 ?><?= constant("TEXT_P_STEP1_$brand_code") ?></td>
                         </tr>
                       </table>
                     </div> 
