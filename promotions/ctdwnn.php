@@ -9,7 +9,7 @@ $promo = "50PC";
 $t = "70";
 #$dvd_hide = 1;
 $hide_menu = true;
-$old = true;
+#$old = true;
 define('DEFAULT_LANGUAGE', 'nl');
 
 require 'header.php'
