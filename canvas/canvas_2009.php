@@ -154,7 +154,7 @@ if(${"REMOTE_ADDR"}== ADMINIP || $host== 'www'|| $host== 'localhost'){
 		    <h1> <a href="http://www.dvdpost.be" class="f-btn" style="">DVDPost - Online DVD rental</a> </h1>
 		    <div class="relancetopnav">
 		      <ul class="top-nav">
-		        <li class="retractation"><a href="/conditions.php#article3">'.TEXT_RETRA.'</a></li>
+		        <li class="retractation"><a href="/conditions.php">'.TEXT_RETRA.'</a></li>
 		        <li class="langues '.($languages_id == 1 ? "selected" : "") .'"><a href="?language=fr&email='.$email.'&code='.$code.'&force='.$force.'">FR</a></li>
 		        <li class="langues '.($languages_id == 2 ? "selected" : "" ).'"><a href="?language=nl&email='.$email.'&code='.$code.'&force='.$force.'">NL</a></li>
 		        <li class="langues '.($languages_id == 3 ? "selected" : "" ).'"><a href="?language=en&email='.$email.'&code='.$code.'&force='.$force.'">EN</a> </li>

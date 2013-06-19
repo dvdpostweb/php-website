@@ -700,6 +700,18 @@ margin-top: 20px;
 {
   background-image: url("../images/jb/prices_new_en_70.gif")  
 }
+.promo90 .dvd.fr
+{
+  background-image: url("../images/jb/prices_new_fr_90.gif")  
+}
+.promo90 .dvd.nl
+{
+  background-image: url("../images/jb/prices_new_nl_90.gif")  
+}
+.promo90 .dvd.en
+{
+  background-image: url("../images/jb/prices_new_en_90.gif")  
+}
 .promo40 .dvd.fr
 {
   background-image: url("../images/jb/prices_new_fr_40.gif")  

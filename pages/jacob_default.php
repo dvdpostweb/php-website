@@ -7,7 +7,7 @@
 
         <div class="jbtopnav">
           <ul class="top-nav">
-						<li class="retractation"><a href="/conditions.php#article3"><?= TEXT_RETRA ?> </a></li>
+						<li class="retractation"><a href="/conditions.php"><?= TEXT_RETRA ?> </a></li>
             <li class="langues"><a href="/default.php?language=fr">FR</a></li>
             <li class="langues"><a href="/default.php?language=nl">NL</a></li>
             <li class="langues"> <a href="/default.php?language=en">EN</a> </li>

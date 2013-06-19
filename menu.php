@@ -7,9 +7,9 @@
 </div>
 <ul id="lang">
 	<? if ($nav == true) { ?>
-	<li><a href="http://public.dvdpost.com/<?= $lang_short ?>/info/conditions#article3?url_promo=<?= urlencode($url) ?>"><?= TEXT_RETRA ?> </a></li>
+	<li><a href="http://public.dvdpost.com/<?= $lang_short ?>/info/conditions?url_promo=<?= urlencode($url) ?>"><?= TEXT_RETRA ?> </a></li>
 	<? }else{?>
-		<li><a href="http://public.dvdpost.com/<?= $lang_short ?>/info/conditions#article3"><?= TEXT_RETRA ?> </a></li>
+		<li><a href="http://public.dvdpost.com/<?= $lang_short ?>/info/conditions"><?= TEXT_RETRA ?> </a></li>
 	<? }?>
   <li><a href="<?= language_switcher($PHP_SELF,$QUERY_STRING, 'language=en') ?>" class="<?= $lang_short == 'en'? 'active': 'nothing' ?>">EN</a></li>
   <li><a href="<?= language_switcher($PHP_SELF,$QUERY_STRING, 'language=fr') ?>" class="<?= $lang_short == 'fr'? 'active': 'nothing' ?>">FR</a></li>

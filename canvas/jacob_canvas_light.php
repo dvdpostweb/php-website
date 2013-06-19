@@ -23,7 +23,7 @@ online videotheek, dvd verhuur, dvd huren, huurfilms, dvd verhuur Belgie, dvd hu
     <h1> <a href="/default.php" class="f-btn <?= $lang_short ?>" style="">DVDPost - Online DVD rental</a> </h1>
     <div class="relancetopnav">
       <ul class="top-nav">
-        <li class="retractation"><a href="/conditions.php#article3"><?= TEXT_RETRA ?> </a></li>
+        <li class="retractation"><a href="/conditions.php"><?= TEXT_RETRA ?> </a></li>
         <li class="langues <?= $languages_id == 1 ? 'selected' : '' ?>"><a href="?language=fr">FR</a></li>
         <li class="langues <?= $languages_id == 2 ? 'selected' : '' ?>"><a href="?language=nl">NL</a></li>
         <li class="langues <?= $languages_id == 3 ? 'selected' : '' ?>"> <a href="?language=en">EN</a> </li>

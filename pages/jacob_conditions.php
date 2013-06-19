@@ -9,7 +9,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
   <div class="jbcontainer">
     <div class="jblogo"><a href="/default.php">DVDPost.be</a></div>
     <div class="jbtopnav">
-      <ul class="top-nav"><li class="retractation"><a href="/conditions.php#article3"><?= TEXT_RETRA ?> </a></li><li class="langues"><a href="/step4.php?language=fr">FR</a></li>
+      <ul class="top-nav"><li class="retractation"><a href="/conditions.php"><?= TEXT_RETRA ?> </a></li><li class="langues"><a href="/step4.php?language=fr">FR</a></li>
         <li class="langues"><a href="/step4.php?language=nl">NL</a></li>
         <li class="langues"><a href="/step4.php?language=en">EN</a> </li>
         <li><a class="login" href="/login.php">Login membres</a></li>
