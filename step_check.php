@@ -271,7 +271,9 @@ if (!tep_session_is_registered('customer_id')) {
                 if(strpos($host,'dvdpost')>0)
               	{
                	 tep_mail('info@dvdpost.be', 'info@dvdpost.be', 'demande d\'activation (client :'.$lang_short.')', 'Ce client '.$customer_id.' veut activer son compte. Merci de bien vouloir le rappeler au plus vite.', STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
-              	  
+               	$data = array();
+       					$data['customers_name'] = ucwords($customers_value['customers_firstname']) . ' ' . ucwords($customers_value['customers_lastname']);
+       					mail_message($customers_value['customers_id'], 601, $data);
               	}
 
 								$sql_phone='update customers set customers_abo_auto_stop_next_reconduction = "'.$auto_stop_next_reconduction.'",customers_telephone="'.$_POST['phone'].'" , customers_abo_payment_method=3,customers_registration_step=100 where customers_id = '.$customer_id;

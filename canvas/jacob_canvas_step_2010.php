@@ -381,7 +381,7 @@ switch(WEB_SITE_ID)
       </noscript>
 			<!-- trade tracker-->
 			<?php
-			if($customers_value['activation_discount_code_id'] == 1097 || $customers_value['activation_discount_code_id'] == 1098)
+			if($customers_value['activation_discount_code_id'] == 1097 || $customers_value['activation_discount_code_id'] == 1098 || $customers_value['activation_discount_code_id'] == 1233)
 			{
 			$customers_query = tep_db_query("select * from customers where customers_id = '" . $customer_id . "' ");
 			$customers = tep_db_fetch_array($customers_query);
