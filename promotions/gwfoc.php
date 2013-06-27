@@ -9,6 +9,7 @@ $t = "1";
 $css = 'canvas2.css';
 $hide_menu = true;
 $old = true;
+$btn = '1euro';
 define('DEFAULT_LANGUAGE', 'fr');
 
 require 'header.php'
