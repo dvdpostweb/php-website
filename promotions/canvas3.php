@@ -76,7 +76,7 @@ if(empty($email))
               </div>
               <div class="clearfix"></div>
               <p style="padding-top:5px;">
-                <input type="submit" border="0" align="absmiddle" id="submit_id3" class="promo_button" name="sent" value="<?= TEXT_PROMO_SUBMIT ?>" style="background-color: <?= $color_btn ?>;" />
+                <input type="submit" border="0" align="absmiddle" id="submit_id3" class="promo_button" name="sent" value="<?= isset($btn_txt) ? constant("TEXT_PROMO_SUBMIT_$btn_txt") : TEXT_PROMO_SUBMIT ?>" style="background-color: <?= $color_btn ?>;" />
               </p>
             </form>
           </div>
@@ -169,7 +169,7 @@ if(empty($email))
                               </p>
                               <div class="clearfix"></div>
                               <p align="center">
-                                <input type="submit" border="0" align="absmiddle" class="promo_button" id="submit_id4" name="sent" value="<?= TEXT_PROMO_SUBMIT ?>">
+                                <input type="submit" border="0" align="absmiddle" class="promo_button" id="submit_id4" name="sent" value="<?= isset($btn_txt) ? constant("TEXT_PROMO_SUBMIT_$btn_txt") : TEXT_PROMO_SUBMIT ?>">
                               </p>
                             </div>
                           </form>
