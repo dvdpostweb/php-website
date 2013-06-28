@@ -382,6 +382,12 @@ switch(WEB_SITE_ID)
       </noscript>
 			<!-- trade tracker-->
 			<?php
+				if($customers_value['activation_discount_code_id'] == 1204 || $customers_value['activation_discount_code_id'] == 1203)
+				{
+				  echo '<img src="https://action.metaffiliation.com/suivi.php?mclic=S4914B1013&argann='.$customer_id.'" width="1" height="1" border="0">';
+				}
+			?>
+			<?php
 			if($customers_value['activation_discount_code_id'] == 1097 || $customers_value['activation_discount_code_id'] == 1098 || $customers_value['activation_discount_code_id'] == 1233)
 			{
 			$customers_query = tep_db_query("select * from customers where customers_id = '" . $customer_id . "' ");
