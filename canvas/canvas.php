@@ -86,7 +86,7 @@ if(${"REMOTE_ADDR"}== ADMINIP){
 
 </head>
 <body class="public">
-<? require_once 'abondonaid.php' ?>
+<? require_once DIR_WS_COMMON  . 'abondonaid.php' ?>
 <br>
 <table name="layout" width="773" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 

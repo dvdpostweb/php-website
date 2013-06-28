@@ -261,7 +261,7 @@ switch(WEB_SITE_ID)
 }
 ?>
 <body id="hp" class="<?= $canvas == 3 || $canvas == 4 ? 'philips' : 'normal' ?>">
-  <? require_once 'abondonaid.php' ?>
+  <? require_once DIR_WS_COMMON  . 'abondonaid.php' ?>
     <!--   ==============   HEADER   ==============   -->
 		<?php 
 		if (!isset($hide_menu))
@@ -380,13 +380,14 @@ switch(WEB_SITE_ID)
       src="http://www.googleadservices.com/pagead/conversion/1071686481/?value=0&amp;label=DUh-CI3g8gMQ0caC_wM&amp;guid=ON&amp;script=0"/>
       </div>
       </noscript>
-			<!-- trade tracker-->
+			
 			<?php
 				if($customers_value['activation_discount_code_id'] == 1204 || $customers_value['activation_discount_code_id'] == 1203)
 				{
 				  echo '<img src="https://action.metaffiliation.com/suivi.php?mclic=S4914B1013&argann='.$customer_id.'" width="1" height="1" border="0">';
 				}
 			?>
+			<!-- trade tracker-->
 			<?php
 			if($customers_value['activation_discount_code_id'] == 1097 || $customers_value['activation_discount_code_id'] == 1098 || $customers_value['activation_discount_code_id'] == 1233)
 			{
