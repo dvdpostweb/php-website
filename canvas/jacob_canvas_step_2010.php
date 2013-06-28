@@ -261,6 +261,7 @@ switch(WEB_SITE_ID)
 }
 ?>
 <body id="hp" class="<?= $canvas == 3 || $canvas == 4 ? 'philips' : 'normal' ?>">
+  <? require_once 'abondonaid.php' ?>
     <!--   ==============   HEADER   ==============   -->
 		<?php 
 		if (!isset($hide_menu))

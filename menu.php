@@ -30,7 +30,7 @@
 	    <li><a href="http://public.dvdpost.com/<?= $lang_short ?>/phone_requests/new?url_promo=<?= urlencode($url) ?>" class="" id="nav5"><?= CONTACT_TEXT ?></a></li>
       <li><a href="http://public.dvdpost.com/<?= $lang_short ?>/adult?url_promo=<?= urlencode($url) ?>" id="nav7"><?= ADULT_TEXT ?></a></li>
 		</ul>
-		<? }else{?>
+		<? } else {?>
 			<h1>
 	      <a href="http://public.dvdpost.com/<?= $lang_short ?>" class="f-btn" style="">DVDPost.be</a>
 	    </h1>
