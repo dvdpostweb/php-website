@@ -26,6 +26,20 @@
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/reset.css','.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo getBestMatchToIncludeAny('/stylesheet/main.css','.css'); ?>">
 <?
+
+
+if($canvas == 5){
+?>
+<link href="/stylesheet/streaming.css" media="all" rel="stylesheet" type="text/css" />
+<link href="/stylesheet/facebox.css" media="all" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="/js/canvas5.js"></script>
+<?
+}
+?>
+<?
 $script_available= array(0=>'/step1.php', 1 => '/step2b.php', 2 => '/step3b.php', 3 => '/step_check.php');
 
 if(scriptAvailable($script_available) && $languages_id==1){

@@ -11,9 +11,11 @@
 	<? }else{?>
 		<li><a href="http://public.dvdpost.com/<?= $lang_short ?>/info/conditions"><?= TEXT_RETRA ?> </a></li>
 	<? }?>
+	<? if(!isset($hide_lang)){ ?>
   <li><a href="<?= language_switcher($PHP_SELF,$QUERY_STRING, 'language=en') ?>" class="<?= $lang_short == 'en'? 'active': 'nothing' ?>">EN</a></li>
   <li><a href="<?= language_switcher($PHP_SELF,$QUERY_STRING, 'language=fr') ?>" class="<?= $lang_short == 'fr'? 'active': 'nothing' ?>">FR</a></li>
   <li><a href="<?= language_switcher($PHP_SELF,$QUERY_STRING, 'language=nl') ?>" class="<?= $lang_short == 'nl'? 'active': 'nothing' ?>">NL</a></li>
+  <? } ?>
 </ul>
 <div id="wrap">
   <!--   ==============   HEADER   ==============   -->
