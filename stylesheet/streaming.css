@@ -584,3 +584,9 @@ a#vod_title_id:hover
   margin: 20px 0 0 0;
   color: #900;
 }
+#facebox_center
+{
+  position:relative;
+  margin: 0 230px;
+  width:100%;
+}

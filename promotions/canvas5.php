@@ -15,6 +15,25 @@ $data=tep_db_fetch_array($query_p)
 <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
 <script type="text/javascript" src="/js/jquery.cycle.all.min.js"></script>
 <script type="text/javascript" src="/js/canvas5.js"></script>
+<div id='facebox_center'>
+<div id="facebox" style="top: 72.7px; margin:auto 0; ">   <div class="popup">       <table>         <tbody>           <tr>             <td class="tl"></td><td class="b"></td><td class="tr"></td>           </tr>           <tr>             <td class="b"><div class="ten"></div></td>             <td class="body">               <div class="content" style="display: block; ">
+  <br><br>
+  <div style="width:400px;margin:25px">
+    <h2>Tape ton email pour bénéficier du film gratuit</h2>
+    <br><br>
+    <form id="sub_email">
+      email : <input name="email" id="input_email" type="text">
+      <input type='hidden' name='source' value='<?= $source ?>'>
+      <input type='hidden' name='imdb_id' value='<?= $imdb_id ?>'>
+      <input type="submit" id="sub">
+      <div class='error' id='error3' style='display:none'>Email incorrect</div>
+      <div class='error' id='error2' style='display:none'>vous ne pouvez plus regarder des films avec cette email</div>
+      <div class='error' id='error1' style='display:none'>Vous êtes deja client</div>
+      </form>
+      <br><br>
+  </div>
+</div>             </td>             <td class="b"><div class="ten"></div></td>           </tr>           <tr>             <td class="bl"></td><td class="b"></td><td class="br"></td>           </tr>         </tbody>       </table>     </div>   </div>
+</div>
 
 <div id="wrap">
     <div id="maincontent">
@@ -44,21 +63,4 @@ $data=tep_db_fetch_array($query_p)
       </div>
     </div>
 </div>
-<div id="facebox" style="top: 72.7px; left: 322.5px; ">   <div class="popup">       <table>         <tbody>           <tr>             <td class="tl"></td><td class="b"></td><td class="tr"></td>           </tr>           <tr>             <td class="b"><div class="ten"></div></td>             <td class="body">               <div class="content" style="display: block; ">
-  <br><br>
-  <div style="width:400px;margin:25px">
-    <h2>Tape ton email pour bénéficier du film gratuit</h2>
-    <br><br>
-    <form id="sub_email">
-      email : <input name="email" id="input_email" type="text">
-      <input type='hidden' name='source' value='<?= $source ?>'>
-      <input type='hidden' name='imdb_id' value='<?= $imdb_id ?>'>
-      <input type="submit" id="sub">
-      <div class='error' id='error3' style='display:none'>Email incorrect</div>
-      <div class='error' id='error2' style='display:none'>vous ne pouvez plus regarder des films avec cette email</div>
-      <div class='error' id='error1' style='display:none'>Vous êtes deja client</div>
-      </form>
-      <br><br>
-  </div>
-</div>             </td>             <td class="b"><div class="ten"></div></td>           </tr>           <tr>             <td class="bl"></td><td class="b"></td><td class="br"></td>           </tr>         </tbody>       </table>     </div>   </div>
 <div id="facebox_overlay" class="facebox_hide facebox_overlayBG" style="display: block; opacity: 0.4; "></div>
