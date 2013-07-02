@@ -10,6 +10,7 @@ $promo = "40PC";
 $t = "70";
 $hide_menu = true;
 $old = true;
+$btn = 'PC';
 define('DEFAULT_LANGUAGE', 'nl');
 
 require 'header.php'
