@@ -1,6 +1,6 @@
 <link href="/stylesheet/canvas2.css" media="all" rel="stylesheet" type="text/css" />
 <link href="/stylesheet/canvas4.css" media="all" rel="stylesheet" type="text/css" />
-
+<script type="text/javascript" src="/js/jquery.js"></script>
   <div id="wrap">
     <!--   ==============   HEADER   ==============   -->
     <div id="header" >

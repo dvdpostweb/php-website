@@ -74,15 +74,31 @@
   /*
    * Public, $.facebox methods
    */
-
-  $.extend($.facebox, {
-    settings: {
-      opacity      : 0,
-      overlay      : true,
-      loadingImage : '/images/loading.gif',
-      closeImage   : '/images/closelabel.gif',
-      imageTypes   : [ 'png', 'jpg', 'jpeg', 'gif' ],
-      faceboxHtml  : '\
+   
+    html2 = '\
+  <div id="facebox" style="display:none;"> \
+    <div class="popup"> \
+      <table> \
+        <tbody> \
+          <tr> \
+            <td class="tl"/><td class="b"/><td class="tr"/> \
+          </tr> \
+          <tr> \
+            <td class="b"><div class="ten"></div></td> \
+            <td class="body"> \
+              <div class="content"> \
+              </div> \
+            </td> \
+            <td class="b"><div class="ten"></div></td> \
+          </tr> \
+          <tr> \
+            <td class="bl"/><td class="b"/><td class="br"/> \
+          </tr> \
+        </tbody> \
+      </table> \
+    </div> \
+  </div>'
+  html = '\
     <div id="facebox" style="display:none;"> \
       <div class="popup"> \
         <table> \
@@ -91,17 +107,17 @@
               <td class="tl"/><td class="b"/><td class="tr"/> \
             </tr> \
             <tr> \
-              <td class="b"/> \
+              <td class="b"><div class="ten"></div></td> \
               <td class="body"> \
                 <div class="content"> \
                 </div> \
                 <div class="footer"> \
                   <a href="#" class="close"> \
-                    <img src="/images/closelabel.gif" title="close" class="close_image" /> \
+                    CLOSE \
                   </a> \
                 </div> \
               </td> \
-              <td class="b"/> \
+              <td class="b"><div class="ten"></div></td> \
             </tr> \
             <tr> \
               <td class="bl"/><td class="b"/><td class="br"/> \
@@ -110,8 +126,20 @@
         </table> \
       </div> \
     </div>'
-    },
+    
+  
 
+  $.extend($.facebox, {
+    settings: {
+      opacity      : 0,
+      overlay      : true,
+      loadingImage : '/images/loading.gif',
+      closeImage   : '/images/closelabel.gif',
+      imageTypes   : [ 'png', 'jpg', 'jpeg', 'gif' ],
+      faceboxHtml  : html,
+      faceboxHtml2 : html2
+    },
+    
     loading: function() {
       init()
       if ($('#facebox .loading').length == 1) return true
@@ -127,7 +155,9 @@
       }).show()
 
       $(document).bind('keydown.facebox', function(e) {
-        if (e.keyCode == 27) $.facebox.close()
+        if ($.facebox.settings.modal != true)
+        {if (e.keyCode == 27) $.facebox.close()}
+        
         return true
       })
       $(document).trigger('loading.facebox')
@@ -179,7 +209,11 @@
   function init(settings) {
     if ($.facebox.settings.inited) return true
     else $.facebox.settings.inited = true
-
+    if($.facebox.settings.hide_close_btn == true)
+    {
+      $.facebox.settings.faceboxHtml = $.facebox.settings.faceboxHtml2
+    }
+    
     $(document).trigger('init.facebox')
     makeCompatible()
 
@@ -286,7 +320,10 @@
 
     $('#facebox_overlay').hide().addClass("facebox_overlayBG")
       .css('opacity', $.facebox.settings.opacity)
-      .click(function() { $(document).trigger('close.facebox') })
+      .click(function() { 
+        if ($.facebox.settings.modal != true)
+           $(document).trigger('close.facebox')
+        })
       .fadeIn(200)
     return false
   }
@@ -313,6 +350,7 @@
       $('#facebox .content').removeClass().addClass('content')
       hideOverlay()
       $('#facebox .loading').remove()
+      $('#facebox .content').empty()
     })
   })
 

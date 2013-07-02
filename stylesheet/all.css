@@ -1,0 +1,69 @@
+body
+{
+  font-family: Arial, Helvetica, sans-serif;  
+  color: #454545;
+  font-size: 0.8em;
+}
+.container ul, .container ol, .container dl {
+  margin-bottom: 0px;
+}
+td
+{
+  font-weight: inherit;
+  
+}
+table
+{
+  border-spacing: 8px;
+}
+p
+{
+  margin: 1em 0;
+}
+#addwishlist_title {
+color: #454545;
+font-family: Arial,Helvetica,sans-serif;
+font-size: 24px;
+font-weight: bold;
+left: 0;
+text-align: center;
+text-decoration: none;
+top: 0;
+}
+#facebox td.body {
+background-color: #EEE;
+}
+
+table {border-collapse: collapse; border-spacing: 2px;}
+th {font-weight: bold; vertical-align: middle;}
+
+td, td img {vertical-align: middle;} 
+
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: middle;
+}
+#add_to_wishlist .item:hover {
+background: url("../images/ajouterbtn.png") no-repeat scroll 0 -42px transparent;
+}
+#add_to_wishlist .item {
+background: url("../images/ajouterbtn.png") no-repeat scroll 0 -3px transparent;
+border-style: hidden;
+color: white;
+cursor: pointer;
+height: 37px;
+line-height: 35px;
+margin: 0 0 0 3px;
+padding: 0 7px 5px 31px;
+text-align: center;
+text-decoration: none;
+text-shadow: 1px 1px 1px #999;
+width: 164px;
+}
+img,
+object,
+embed {max-width: none;}

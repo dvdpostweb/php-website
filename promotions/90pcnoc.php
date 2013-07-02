@@ -10,7 +10,7 @@ $t = "70";
 #$dvd_hide = 1;
 $hide_menu = true;
 $old = true;
-$btn_txt = '90';
+$btn = '90';
 define('DEFAULT_LANGUAGE', 'nl');
 
 require 'header.php'

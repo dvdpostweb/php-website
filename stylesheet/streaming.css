@@ -1,4 +1,7 @@
-#mywhishlist #maincontent, #one-col #maincontent, #info #maincontent, #sponsorships #maincontent {
+#hp.normal #wrap {
+  background:white;
+}
+#maincontent {
   background:none;
   float: none;
   margin: 24px 0 24px 24px !important;
@@ -34,7 +37,8 @@
     font-size: 2em;
     text-align: left;
 	color: #21282f;
-	padding-left:112px;
+	padding-left:132px;
+	
 }
 #time {
     /*height: 30px;*/
@@ -45,7 +49,7 @@
     margin: 0 auto;
 }
 #vodtime {
-    background: url("../images/icon_time.gif") no-repeat scroll 0 1px transparent;
+    background: url("../images/promotions/icon_time.gif") no-repeat scroll 0 1px transparent;
     font-size: 1.6em;
     height: 30px;
     margin: 5px auto 1px;
@@ -55,7 +59,7 @@
     width: 370px;
 }
 .adult #vodtime {
-    background: url("../images/icon_time_adult.gif") no-repeat scroll 0 1px transparent;
+    background: url("../images/promotions/icon_time_adult.gif") no-repeat scroll 0 1px transparent;
 }
 .connect_linkpc {
     color: #21282F;
@@ -105,7 +109,7 @@
     width: 32px;
 }
 .attention_vod {
-    background: url("../images/attention_vod.gif") no-repeat scroll 12px 9px transparent;
+    background: url("../images/promotions/attention_vod.gif") no-repeat scroll 12px 9px transparent;
     border: 1px solid #FF4B00;
     font-size: 14px;
     margin: 15px auto;
@@ -119,7 +123,7 @@
     text-decoration: underline;
 }
 #image_vod {
-    background: url(../images/vod.jpg) repeat scroll 0 0 transparent;
+    background: url(../images/promotions/vod2.jpg) repeat scroll 0 0 transparent;
     height: 329px;
     padding: 60px 0 0;
     width: 696px;
@@ -198,7 +202,7 @@ padding-left:112px;
     padding-right: 5px;
 }
 #submit_report {
-    background: url("../images/account_modify.png") no-repeat scroll 4px -1px transparent;
+    background: url("../images/promotions/account_modify.png") no-repeat scroll 4px -1px transparent;
     border: medium none;
     color: white;
     cursor: pointer;
@@ -207,7 +211,7 @@ padding-left:112px;
     width: 173px;
 }
 #submit_report:hover {
-    background: url("../images/account_modify.png") no-repeat scroll 4px -40px transparent;
+    background: url("../images/promotions/account_modify.png") no-repeat scroll 4px -40px transparent;
 }
 a#cancel {
     color: #505050;
@@ -226,7 +230,7 @@ a#cancel {
     width: 662px;
 }
 #vod-wrap .quality a.btn {
-    background: url("../images/button_qualityvod.png") no-repeat scroll 0 -90px transparent;
+    background: url("../images/promotions/button_qualityvod.png") no-repeat scroll 0 -90px transparent;
     color: white;
     display: block;
     font-size: 1em;
@@ -238,11 +242,11 @@ a#cancel {
     width: 96px;
 }
 #vod-wrap .quality a.btn:hover {
-    background: url("../images/button_qualityvod.png") no-repeat scroll 0 -46px transparent;
+    background: url("../images/promotions/button_qualityvod.png") no-repeat scroll 0 -46px transparent;
     text-decoration: none;
 }
 #vod-wrap .quality a.btnselect {
-    background: url("../images/button_qualityvod.png") no-repeat scroll 0 0 transparent;
+    background: url("../images/promotions/button_qualityvod.png") no-repeat scroll 0 0 transparent;
     color: white;
     display: block;
     font-size: 1em;
@@ -253,7 +257,7 @@ a#cancel {
     width: 97px;
 }
 #vod-wrap .quality a.btnselect:hover {
-    background: url("../images/button_qualityvod.png") no-repeat scroll 0 -46px transparent;
+    background: url("../images/promotions/button_qualityvod.png") no-repeat scroll 0 -46px transparent;
     text-decoration: none;
 }
 .linkpc {
@@ -275,19 +279,23 @@ a#cancel {
     font-size: 12px;
     text-decoration: underline;
 }
-.choice_language a.btn_play {
-    background: url("../images/vod-slider-btn-bg-end_play.png") no-repeat scroll 0 -36px transparent;
+.choice_language .btn
+{
+  cursor: pointer;
+}
+.choice_language .btn_play {
+    background: url("../images/promotions/vod-slider-btn-bg-end_play.png") no-repeat scroll 0 -36px transparent;
     display: inline-block;
     height: 37px;
     padding-left: 32px;
     text-decoration: none;
     width: auto;
 }
-.adult .choice_language a.btn_play {
-    background: url("../images/vod-slider-btn-bg-end_play_adult.png") no-repeat scroll 0 -36px transparent;
+.adult .choice_language .btn_play {
+    background: url("../images/promotions/vod-slider-btn-bg-end_play_adult.png") no-repeat scroll 0 -36px transparent;
 }
-.choice_language a.btn_play strong {
-    background: url("../images/vod-slider-btn-bg.png") no-repeat scroll 100% -36px transparent;
+.choice_language .btn_play strong {
+    background: url("../images/promotions/vod-slider-btn-bg.png") no-repeat scroll 100% -36px transparent;
     color:#FFFFFF;
     display: inline-block;
     font-size: 1.17em;
@@ -295,11 +303,11 @@ a#cancel {
     padding-right: 20px;
     text-transform: uppercase;
 }
-.adult .choice_language a.btn_play strong {
-    background: url("../images/vod-slider-btn-bg_adult.png") no-repeat scroll 100% -36px transparent;
+.adult .choice_language .btn_play strong {
+    background: url("../images/promotions/vod-slider-btn-bg_adult.png") no-repeat scroll 100% -36px transparent;
 }
-.choice_language a.btn strong {
-    background: url("../images/vod-slider-btn-bg.png") no-repeat scroll 100% 0 transparent;
+.choice_language .btn strong {
+    background: url("../images/promotions/vod-slider-btn-bg.png") no-repeat scroll 100% 0 transparent;
     color: #191E23;
     display: inline-block;
     font-size: 1.17em;
@@ -307,11 +315,11 @@ a#cancel {
     padding-right: 20px;
     text-transform: uppercase;
 }
-.adult .choice_language a.btn strong {
-  background: url("../images/vod-slider-btn-bg_adult.png") no-repeat scroll 100% 0 transparent;
+.adult .choice_language .btn strong {
+  background: url("../images/promotions/vod-slider-btn-bg_adult.png") no-repeat scroll 100% 0 transparent;
 }
 .subs a.btn strong {
-    background: url("../images/vod-slider-btn-bg.png") no-repeat scroll 100% 0 transparent;
+    background: url("../images/promotions/vod-slider-btn-bg.png") no-repeat scroll 100% 0 transparent;
     color: #191E23;
     display: inline-block;
     font-size: 1.17em;
@@ -319,11 +327,11 @@ a#cancel {
     padding-right: 20px;
     text-transform: uppercase;
 }
-.adult .subs a.btn strong {
-    background: url("../images/vod-slider-btn-bg_adult.png") no-repeat scroll 100% 0 transparent;
+.adult .subs .btn strong {
+    background: url("../images/promotions/vod-slider-btn-bg_adult.png") no-repeat scroll 100% 0 transparent;
 }
-.choice_language a.btn {
-    background: url(../images/vod-slider-btn-bg-end.png) no-repeat scroll 0 0 transparent;
+.choice_language .btn {
+    background: url(../images/promotions/vod-slider-btn-bg-end.png) no-repeat scroll 0 0 transparent;
     display: inline-block;
     height: 37px;
     padding-left: 32px;
@@ -332,35 +340,35 @@ a#cancel {
     text-shadow: none !important;
     
 }
-.adult .choice_language a.btn {
-    background: url(../images/vod-slider-btn-bg-end_adult.png) no-repeat scroll 0 0 transparent;
+.adult .choice_language .btn {
+    background: url(../images/promotions/vod-slider-btn-bg-end_adult.png) no-repeat scroll 0 0 transparent;
 }
-.subs a.btn {
-    background: url(../images/slider-btn-bg-end_st.png) no-repeat scroll 0 0 transparent;
+.subs .btn {
+    background: url(../images/promotions/slider-btn-bg-end_st.png) no-repeat scroll 0 0 transparent;
     display: inline-block;
     height: 37px;
     padding-left: 32px;
     text-decoration: none;
     width: auto;
 }
-.adult .subs a.btn {
-    background: url(../images/vod-slider-btn-bg-end_st_adult.png) no-repeat scroll 0 0 transparent;
+.adult .subs .btn {
+    background: url(../images/promotions/vod-slider-btn-bg-end_st_adult.png) no-repeat scroll 0 0 transparent;
 }
-.subs a.btn:hover strong {
+.subs .btn:hover strong {
    background-position:100% -36px; 
    color:#FFFFFF;
 
 }
-.subs a.btn:hover{
+.subs .btn:hover{
    background-position:0 -36px; 
 
 }
-.choice_language a.btn:hover strong {
+.choice_language .btn:hover strong {
    background-position:100% -36px; 
    color:#FFFFFF;
 
 }
- .choice_language a.btn:hover{
+ .choice_language .btn:hover{
    background-position:0 -36px; 
 
 }
@@ -430,7 +438,7 @@ text-decoration:underline;
 
 
 .linkallversions a.btn_play {
-  background: url("../images/vodslider-btn-bg-end-play-allversions.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/promotions/vodslider-btn-bg-end-play-allversions.png") no-repeat scroll 0 0 transparent;
   display: inline-block;
   height: 27px;
   padding-left: 21px;
@@ -439,7 +447,7 @@ text-decoration:underline;
 }
 
 .linkallversions a.btn_play strong {
-  background: url("../images/vod-slider-btn-bg-allversions.png ") no-repeat scroll 100% 0 transparent;
+  background: url("../images/promotions/vod-slider-btn-bg-allversions.png ") no-repeat scroll 100% 0 transparent;
   color: #FFFFFF;
   display: inline-block;
   font-size: 1.17em;
@@ -448,10 +456,10 @@ text-decoration:underline;
   text-transform: uppercase;
 }
 .adult .linkallversions a.btn_play {
-  background: url("../images/vodslider-btn-bg-end-play-allversions_adult.png") no-repeat scroll 0 0 transparent;
+  background: url("../images/promotions/vodslider-btn-bg-end-play-allversions_adult.png") no-repeat scroll 0 0 transparent;
 }
 .adult .linkallversions a.btn_play strong {
-  background: url("../images/vod-slider-btn-bg-allversions_adult.png ") no-repeat scroll 100% 0 transparent;
+  background: url("../images/promotions/vod-slider-btn-bg-allversions_adult.png ") no-repeat scroll 100% 0 transparent;
 }
 
 .linkallversions  .select_version {
@@ -514,29 +522,29 @@ a#retour
 }
 #faq #col1 {
 	margin-left: 0;
-	background-image: url(../images/ordi-icon.jpg);
+	background-image: url(../images/promotions/ordi-icon.jpg);
 }
 #faq #col2 {
-	background-image: url(../images/time-icon.jpg);
+	background-image: url(../images/promotions/time-icon.jpg);
 }
 #faq #col3 {
-	background-image: url(../images/info-icon.jpg);
+	background-image: url(../images/promotions/info-icon.jpg);
 }
 #faq #col4 {
-	background-image: url(../images/icon-problem.jpg);
+	background-image: url(../images/promotions/icon-problem.jpg);
 }
 .adult #faq #col1 {
 	margin-left: 0;
-	background-image: url(../images/ordi-icon_adult.jpg);
+	background-image: url(../images/promotions/ordi-icon_adult.jpg);
 }
 .adult #faq #col2 {
-	background-image: url(../images/time-icon_adult.jpg);
+	background-image: url(../images/promotions/time-icon_adult.jpg);
 }
 .adult #faq #col3 {
-	background-image: url(../images/info-icon_adult.jpg);
+	background-image: url(../images/promotions/info-icon_adult.jpg);
 }
 .adult #faq #col4 {
-	background-image: url(../images/icon-problem_adult.jpg);
+	background-image: url(../images/promotions/icon-problem_adult.jpg);
 }
 #faq h3 {
 	font-size: 1.33em;
@@ -568,4 +576,11 @@ a#vod_title_id:hover
 .adult a#vod_title_id:hover
 {
   color: #E2007C;
+}
+#error
+{
+  width: 260px;
+  text-align: center;
+  margin: 20px 0 0 0;
+  color: #900;
 }
