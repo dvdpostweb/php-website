@@ -51,8 +51,12 @@ $data=tep_db_fetch_array($query_p)
     <br><br>
     <form id="sub_email">
       email : <input name="email" id="input_email" type="text">
+      <input type='hidden' name='source' value='<?= $source ?>'>
+      <input type='hidden' name='imdb_id' value='<?= $imdb_id ?>'>
       <input type="submit" id="sub">
-      <div id='error' style='display:none'>Email incorrect</div>
+      <div class='error' id='error3' style='display:none'>Email incorrect</div>
+      <div class='error' id='error2' style='display:none'>vous ne pouvez plus regarder des films avec cette email</div>
+      <div class='error' id='error1' style='display:none'>Vous êtes deja client</div>
       </form>
       <br><br>
   </div>

@@ -3,6 +3,10 @@
 require('../configure/application_top.php');
 $current_page_name ='language.php';
 include(DIR_WS_INCLUDES . 'translation.php');
+if(empty($_COOKIE['email_vod_free']))
+{
+  die('error');
+}
 $sql_l = 'select * from products_languages where languages_id = '.$_GET['language_id'].' and languagenav_id= '.$languages_id;
 $query_l = tep_db_query($sql_l);
 $lang = tep_db_fetch_array($query_l);

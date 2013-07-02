@@ -577,9 +577,9 @@ a#vod_title_id:hover
 {
   color: #E2007C;
 }
-#error
+.error
 {
-  width: 260px;
+  width: 400px;
   text-align: center;
   margin: 20px 0 0 0;
   color: #900;

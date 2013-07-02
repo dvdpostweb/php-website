@@ -62,7 +62,7 @@ $(function() {
     var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if(regex.test(email))
     {
-      $('#error').hide();
+      $('.error').hide();
       
       var url = "/promotions/email.php"; // the script where you handle the form input.
 
@@ -72,14 +72,24 @@ $(function() {
                  data: $("#sub_email").serialize(), // serializes the form's elements.
                  success: function(data)
                  {
+                   console.log(data)
+                   if(data=='ok')
+                   {
                      $('#facebox').hide(); // show response from the php script.
                      $('#facebox_overlay').hide();
+                   }
+                   else
+                   {
+                     console.log('#'+data)
+                     $('#'+data).show()
+                   }
                  }
                });
     }
     else
     {
-      $('#error').show();
+      $('.error').hide();
+      $('#error3').show();
       $('#input_email').focus()
     }
     return false
