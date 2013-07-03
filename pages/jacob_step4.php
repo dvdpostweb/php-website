@@ -4,11 +4,13 @@
 <? } ?>
 <?php
 $link = PRIVATE_SITE.'/'.$lang_short.'/wishlist_start?login=1';
+$link_smt = PRIVATE_SITE.'/'.$lang_short.'?login=1';
+
 $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
 
 ?>
 <link href="stylesheet/jb_styles.css" rel="stylesheet" type="text/css" />
-<form name="verify_form" method="get" action="<?= $link ?>" id="form_step">
+<form name="verify_form" method="get" action="<?= strpos(strtoupper($activation_values['activation_code']),'SMT') === 0 ? $link_smt : $link ?>" id="form_step">
 <div class="jbwrapper">
   <div class="jbcontainer">
     <div id="container">
@@ -139,7 +141,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
                   <a href='<?= $sponsorship_link ?>' name="sent" class="button_step" id="truc"><?= TEXT_REFERER ?> </a>
                 </p>
                 <p style="float: right;">
-                  <input type="submit" name="sent" value="<?= FILL_UP ?>" class="button_step" id="step1">
+                  <input type="submit" name="sent" value="<?= strpos(strtoupper($activation_values['activation_code']),'SMT') === 0 ? TEXT_GO_SITE : FILL_UP ?>" class="button_step" id="step1">
                 </p>
                 <div style="clear: both;"></div>
               </div>
