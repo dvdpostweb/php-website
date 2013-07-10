@@ -2,7 +2,7 @@
 require('../configure/application_top.php');
 
 
-$sql= "select * from dvdpost_be_prod.actors where actors_type = 'dvd_norm' and actors_id > 24832 order by desc limit 10";
+$sql= "select * from dvdpost_be_prod.actors where actors_type = 'dvd_norm' and actors_id > 24832 order by 1 desc";
 $query = tep_db_query($sql);
 $i=0;
 echo '<table><tr>';
