@@ -1,8 +1,8 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_1_month.jpg';
-$code = 'CLICKF';
+$image = 'bg_promo_4_films.jpg';
+$code = 'CLICKFB';
 $css = 'canvas2.css';
 $hide_menu = true;
 define('DEFAULT_LANGUAGE', 'fr');
