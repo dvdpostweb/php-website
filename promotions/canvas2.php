@@ -137,7 +137,7 @@ if(empty($email))
         <table cellpadding="0" cellspacing="0" border="0">
           <tr id="dvd">
             <td><img src="/images/promotions/<?= $lang_short ?>/dvd.jpg" /></td>
-            <td><img src="/images/promotions/letter.jpg"  style="padding-top:28px;" /></td>
+            <td><img src="/images/promotions/<?= $lang_short ?>/letter.jpg"  style="padding-top:28px;" /></td>
             <td><img src="/images/promotions/tv_dvd.jpg" style="padding-top:28px;" /></td>
             <td><img src="/images/promotions/poste.jpg" style="padding-top:14px;"/></td>
           </tr>
