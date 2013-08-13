@@ -55,7 +55,7 @@ if (!tep_session_is_registered('customer_id')) {
 			  $phone_available=false;
 			  $cc_available=false;
 			}
-			if($customer_values['activation_discount_code_id'] == 1099 || $customer_values['activation_discount_code_id'] == 1100 || $customer_values['activation_discount_code_id'] == 999)
+			if($customer_values['activation_discount_code_id'] == 1099 || $customer_values['activation_discount_code_id'] == 1100 || $customer_values['activation_discount_code_id'] == 999 || $customer_values['activation_discount_code_id'] == 1262 || $customer_values['activation_discount_code_id'] == 1263)
 			{
 			  $phone_available=false;
 			}
