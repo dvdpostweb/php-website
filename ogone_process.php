@@ -2,48 +2,13 @@
 require('configure/application_top.php');
 
 
-function do_post_request($url, $data, $optional_headers = null)
-{
-  $params = array('http' => array(
-              'method' => 'POST',
-              'content' => $data
-            ));
-  if ($optional_headers !== null) {
-    $params['http']['header'] = $optional_headers;
-  }
-  $ctx = stream_context_create($params);
-  $fp = @fopen($url, 'rb', false, $ctx);
-  if (!$fp) {
-    throw new Exception("Problem with $url, $php_errormsg");
-  }
-  $response = @stream_get_contents($fp);
-  if ($response === false) {
-    throw new Exception("Problem reading data from $url, $php_errormsg");
-  }
-  return $response;
-}
-if ( substr($HTTP_GET_VARS['orderID'], 0, 1) == 'p')
-{
-  $urltopost = "http://staging.plush.be/ogone";
-  #$urltopost = "http://localhost:3000/ogone";
-  #$datatopost = $HTTP_GET_VARS;
+
   $querystring = '';
   foreach($HTTP_GET_VARS as $k=>$v) {
       $querystring .= $k.'='.$v.'&';
   }
   substr($querystring, 0, -1);
-  #$ch = curl_init ($urltopost);
-  #curl_setopt ($ch, CURLOPT_POST, true);
-  #curl_setopt ($ch, CURLOPT_POSTFIELDS, $datatopost);
-  #curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
-  #$returndata = curl_exec ($ch);
-  //var_dump($returndata);
-  $returndata= do_post_request($urltopost, $querystring);
-  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'ogone test', $returndata.$querystring, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
-	echo 'ok';
-	die();
-}
-
+  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'ogone test', $querystring, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
 $sql="select * from ogone_check where orderid = '" . $HTTP_GET_VARS['orderID'] . "' ";
 $ogone_check_query = tep_db_query($sql,'db',true);
 $ogone_check = tep_db_fetch_array($ogone_check_query);
