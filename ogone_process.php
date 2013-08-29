@@ -2,7 +2,7 @@
 require('configure/application_top.php');
 if ( substr($HTTP_GET_VARS['orderID'], 0, 1) == 'p')
 {
-  $urltopost = "http://staging.dvdpot.com/ogone";
+  $urltopost = "http://staging.plush.be/ogone";
   $datatopost = $_GET;
   $ch = curl_init ($urltopost);
   curl_setopt ($ch, CURLOPT_POST, true);
