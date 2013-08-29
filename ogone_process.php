@@ -1,5 +1,21 @@
 <?php
 require('configure/application_top.php');
+if ( substr($HTTP_GET_VARS['orderID'], 0, 1) == 'p')
+{
+?>
+  <form action='http://staging.plush.be/ogone' method='post' name='frm'>
+  <?php
+  foreach ($_GET as $a => $b) {
+  echo "<input type='hidden' name='".htmlentities($a)."' value='".htmlentities($b)."'>";
+  }
+  ?>
+  </form>
+  <script language="JavaScript">
+  document.frm.submit();
+  </script>
+<?
+}
+
 $sql="select * from ogone_check where orderid = '" . $HTTP_GET_VARS['orderID'] . "' ";
 $ogone_check_query = tep_db_query($sql,'db',true);
 $ogone_check = tep_db_fetch_array($ogone_check_query);
