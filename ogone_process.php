@@ -25,7 +25,7 @@ function do_post_request($url, $data, $optional_headers = null)
 if ( substr($HTTP_GET_VARS['orderID'], 0, 1) == 'p')
 {
   $urltopost = "http://staging.plush.be/ogone";
-  $urltopost = "http://localhost:3000/ogone";
+  #$urltopost = "http://localhost:3000/ogone";
   #$datatopost = $HTTP_GET_VARS;
   $querystring = '';
   foreach($HTTP_GET_VARS as $k=>$v) {
