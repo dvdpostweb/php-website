@@ -3,14 +3,18 @@ require('configure/application_top.php');
 if ( substr($HTTP_GET_VARS['orderID'], 0, 1) == 'p')
 {
   $urltopost = "http://staging.plush.be/ogone";
-  $datatopost = $_GET;
+  $datatopost = $HTTP_GET_VARS;
+  $querystring = '?';
+  foreach($HTTP_GET_VARS as $k=>$v) {
+      $querystring .= $k.'='.$v.'&';
+  }
   $ch = curl_init ($urltopost);
   curl_setopt ($ch, CURLOPT_POST, true);
   curl_setopt ($ch, CURLOPT_POSTFIELDS, $datatopost);
   curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
   $returndata = curl_exec ($ch);
   //var_dump($returndata);
-  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'ogone test', $returndata, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'ogone test', $returndata.$querystring, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
 	header("location: http://staging.plush.be/");
 }
 
