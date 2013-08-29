@@ -2,18 +2,15 @@
 require('configure/application_top.php');
 if ( substr($HTTP_GET_VARS['orderID'], 0, 1) == 'p')
 {
-?>
-  <form action='http://staging.plush.be/ogone' method='post' name='frm'>
-  <?php
-  foreach ($_GET as $a => $b) {
-  echo "<input type='hidden' name='".htmlentities($a)."' value='".htmlentities($b)."'>";
-  }
-  ?>
-  </form>
-  <script language="JavaScript">
-  document.frm.submit();
-  </script>
-<?
+  $urltopost = "http://staging.dvdpot.com/ogone";
+  $datatopost = $_GET;
+  $ch = curl_init ($urltopost);
+  curl_setopt ($ch, CURLOPT_POST, true);
+  curl_setopt ($ch, CURLOPT_POSTFIELDS, $datatopost);
+  curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+  $returndata = curl_exec ($ch);
+  //var_dump($returndata);
+  die();
 }
 
 $sql="select * from ogone_check where orderid = '" . $HTTP_GET_VARS['orderID'] . "' ";
