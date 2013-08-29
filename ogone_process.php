@@ -10,7 +10,7 @@ if ( substr($HTTP_GET_VARS['orderID'], 0, 1) == 'p')
   curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
   $returndata = curl_exec ($ch);
   //var_dump($returndata);
-  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'ogone test', STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'ogone test', $returndata, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
 	header("location: http://staging.plush.be/");
 }
 
