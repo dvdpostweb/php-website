@@ -1,14 +1,12 @@
 <?php
 require('configure/application_top.php');
+/*plush*/
+if ( substr($HTTP_GET_VARS['orderID'], 0, 1) == 'p')
+{
+  include('ogone_plush.php');
+	die('ok');
+}
 
-
-
-  $querystring = '';
-  foreach($HTTP_GET_VARS as $k=>$v) {
-      $querystring .= $k.'='.$v.'&';
-  }
-  substr($querystring, 0, -1);
-  tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'ogone test', $querystring, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
 $sql="select * from ogone_check where orderid = '" . $HTTP_GET_VARS['orderID'] . "' ";
 $ogone_check_query = tep_db_query($sql,'db',true);
 $ogone_check = tep_db_fetch_array($ogone_check_query);
