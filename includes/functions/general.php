@@ -2827,10 +2827,17 @@ function format($text,$data,$set_dico = true)
 }
 function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 {
-	$sql = 'select * from customer_attributes where customer_id = '.$customer_id;
-	$query = tep_db_query($sql);
-	$row = tep_db_fetch_array($query);
-	$mail_copy = $row['mail_copy'];
+  if($site == 'plush')
+  {
+  	$mail_copy = 1;
+  }
+  else
+  {
+  	$sql = 'select * from customer_attributes where customer_id = '.$customer_id;
+  	$query = tep_db_query($sql);
+  	$row = tep_db_fetch_array($query);
+  	$mail_copy = $row['mail_copy'];
+  }
 	$sql2 = 'select * from customers where customers_id = '.$customer_id;
 	$query2 = tep_db_query($sql2);
 	$customers = tep_db_fetch_array($query2);
