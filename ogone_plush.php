@@ -121,6 +121,6 @@ break;
 			}
 		*/
 		
-		mail_message($ogone_check['customers_id'], 606, $data );	
+		mail_message($ogone_check['customers_id'], 606, $data, 'plush' );	
 
 ?>

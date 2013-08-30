@@ -1091,7 +1091,29 @@ function formatAvailability($added_today, $products_next, $products_date_availab
 		$mail->SmtpClose();
 		unset($mail);
   }
-
+  function tep_mail_plush($to_name, $to_email_address, $email_subject, $email_text, $from_email_name, $from_email_address) {
+    #if (SEND_EMAILS != 'true') return false;
+		
+		$recipient = $to_email_address;
+		$mail = new PHPmailer();
+		$mail->IsSMTP();
+		$mail->IsHTML(true);
+		$mail->Host='mail.dvdpost.local';
+		$mail->From='info@plush.be';
+		$mail->FromName='Plush';
+		$mail->AddAddress($recipient);
+		$mail->AddReplyTo('info@plush.be');	
+		$mail->Subject= $email_subject;
+		$mail->Body=$email_text;
+		if(!$mail->Send()){ //Teste si le return code est ok.
+		  echo $mail->ErrorInfo; //Affiche le message d'erreur (ATTENTION:voir section 7)
+		}else
+		{
+			//echo 'ok';
+		}
+		$mail->SmtpClose();
+		unset($mail);
+  }
 ////
 // Check if product has attributes
   function tep_has_product_attributes($products_id) {
@@ -2803,7 +2825,7 @@ function format($text,$data,$set_dico = true)
 	}
 	return array('text' => $text, 'dico' => $dico);
 }
-function mail_message($customer_id, $mail_id, $data)
+function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 {
 	$sql = 'select * from customer_attributes where customer_id = '.$customer_id;
 	$query = tep_db_query($sql);
@@ -2822,6 +2844,15 @@ function mail_message($customer_id, $mail_id, $data)
 	$mail_values = tep_db_fetch_array($mail_query);
 	$email_text = $mail_values['messages_html'];
 	$category_id = $mail_values['category_id'];
+	if($site == 'plush')
+	{
+	  $email = $customers['email'];  
+	}
+	else
+	{
+	  $email = $customers['customers_email_address'];
+	}
+	
 	if($mail_id==556)
 	{ 
 	  if($data['final_price']===$data['price'] && $data['final_price'] !=0)
@@ -2832,7 +2863,7 @@ function mail_message($customer_id, $mail_id, $data)
 	$data['display']='block';
 	if($mail_copy == 1 || $mail_values['force_copy']==1)
 	{
-		$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)	VALUES (NULL , now(), ".$customer_id.", '".$mail_id."', ".$customers['customers_language'].", '0', NULL , '".$customers['customers_email_address']."'	);";
+		$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)	VALUES (NULL , now(), ".$customer_id.", '".$mail_id."', ".$customers['customers_language'].", '0', NULL , '".$email."'	);";
 		tep_db_query($sql_insert);
 		$history_id=tep_db_insert_id();
 		$data['mail_messages_sent_history_id'] = $history_id;
@@ -2841,13 +2872,21 @@ function mail_message($customer_id, $mail_id, $data)
 		tep_db_query($sql_up);
 		if(gethostbyname($_SERVER["SERVER_NAME"]) != '127.0.0.1')
 		{
-			$recipient = $customers['customers_email_address'];
+			$recipient = $email;
 		}
 		else
 		{
 			$recipient = 'gs@dvdpost.be';
 		}
-		tep_mail($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $recipient, $mail_values['messages_title'], $formating['text'], STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+		if($site == 'plush')
+		{
+  		tep_mail_plush($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $recipient, $mail_values['messages_title'], $formating['text'], STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+		  
+		}
+		else
+		{
+  		tep_mail($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $recipient, $mail_values['messages_title'], $formating['text'], STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
+		}
 	}else
 	{
 		$history_id='NULL';
