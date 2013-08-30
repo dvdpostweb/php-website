@@ -1,5 +1,5 @@
 <? 
-mysql_select_db('plush_staging');
+mysql_select_db('plush_production');
 $sql="select * from ogone_check where orderid = '" . $HTTP_GET_VARS['orderID'] . "' ";
 $ogone_check_query = tep_db_query($sql,'db',true);
 $ogone_check = tep_db_fetch_array($ogone_check_query);
