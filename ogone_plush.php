@@ -105,8 +105,18 @@ case 'new_activation':
 break;
 }
 		tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "',".$abo_action." ,now(), '" . $products_id. "' , '1') "); 
-
-		tep_db_query("update customers set customers_abo  = 1 , customers_registration_step=100 , customers_abo_auto_stop_next_reconduction = ".$auto_stop." where customers_id = '" . $ogone_check['customers_id'] . "'");
+                $sam_sql = 'SELECT COUNT(*)nb FROM `samsung_codes` WHERE `samsung_codes`.`customer_id` = '.$ogone_check['customers_id'].' AND (validated_at is null)';
+                $sam_query = tep_db_query($sam_sql);
+		$sam = tep_db_fetch_array($sam_query);
+		if($sam['nb'] >= 1)
+		{
+		  $cust_abo == 0;
+		}
+		else
+		{
+		  $cust_abo == 1;
+		}
+		tep_db_query("update customers set customers_abo  = ".$cust_abo." , customers_registration_step=100 , customers_abo_auto_stop_next_reconduction = ".$auto_stop." where customers_id = '" . $ogone_check['customers_id'] . "'");
 		$data= array();
 		$data['customers_name'] = $customers['customers_firstname'] . ' ' . $customers['customers_lastname'];
 		$data['email'] = $customers['email'];
