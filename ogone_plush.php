@@ -77,7 +77,8 @@ case 'new_discount':
 
 break;
 case 'new_activation':
-  $activation_query = "SELECT `activation_code`.* FROM `activation_code` WHERE `activation_code`.`activation_id` = ".$customers['activation_discount_code_id']." LIMIT 1";
+  $activation_sql = "SELECT `activation_code`.* FROM `activation_code` WHERE `activation_code`.`activation_id` = ".$customers['activation_discount_code_id']." LIMIT 1";
+  $activation_query = tep_db_query($activation_sql);
 	$promo = tep_db_fetch_array($activation_query);
 
   $action = 8;
@@ -86,7 +87,7 @@ case 'new_activation':
 	$promo_text = activation_text($promo, $lang_short);
 
   $final_price = 0;
-	switch ($code['validity_type']){
+	switch ($promo['validity_type']){
 	    case 1: //day
 			tep_db_query("update customers set customers_abo_validityto   = DATE_ADD(now(), INTERVAL '" . $promo['validity_value'] . "' DAY)  where customers_id = '" . $ogone_check['customers_id'] . "'");
 	    break;
@@ -94,7 +95,7 @@ case 'new_activation':
 			tep_db_query("update customers set customers_abo_validityto   = DATE_ADD(now(), INTERVAL '" . $promo['validity_value'] . "' MONTH)  where customers_id = '" . $ogone_check['customers_id'] . "'");
 	    break;
 	    case 3: //year
-			tep_db_query("update customers set customers_abo_validityto   = DATE_ADD(now(), INTERVAL '" . $code['validity_value'] . "' YEAR)  where customers_id = '" . $ogone_check['customers_id'] . "'");
+			tep_db_query("update customers set customers_abo_validityto   = DATE_ADD(now(), INTERVAL '" . $promo['validity_value'] . "' YEAR)  where customers_id = '" . $ogone_check['customers_id'] . "'");
 	    break;
 	}
 	tep_db_query("update activation_code set activation_date  = now() , customers_id = '" . $ogone_check['customers_id'] . "' where activation_id  = '" . $promo['activation_id'] . "' ");
@@ -105,25 +106,15 @@ case 'new_activation':
 break;
 }
 		tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "',".$abo_action." ,now(), '" . $products_id. "' , '1') "); 
-                $sam_sql = 'SELECT COUNT(*)nb FROM `samsung_codes` WHERE `samsung_codes`.`customer_id` = '.$ogone_check['customers_id'].' AND (validated_at is null)';
-                $sam_query = tep_db_query($sam_sql);
-		$sam = tep_db_fetch_array($sam_query);
-		if($sam['nb'] >= 1)
-		{
-		  $cust_abo == 0;
-		}
-		else
-		{
-		  $cust_abo == 1;
-		}
-		tep_db_query("update customers set customers_abo  = ".$cust_abo." , customers_registration_step=100 , customers_abo_auto_stop_next_reconduction = ".$auto_stop." where customers_id = '" . $ogone_check['customers_id'] . "'");
+    
+    tep_db_query("update customers set customers_abo  = 1 , customers_registration_step=100 , customers_abo_auto_stop_next_reconduction = ".$auto_stop." where customers_id = '" . $ogone_check['customers_id'] . "'");
 		$data= array();
 		$data['customers_name'] = $customers['customers_firstname'] . ' ' . $customers['customers_lastname'];
 		$data['email'] = $customers['email'];
 		$data['promotion'] = $promo_text;
 		$data['final_price'] = $final_price;
 		$data['subscription'] = $products_abo['description'];
-     $data['root_url'] = 'http://www.plush.be';
+    $data['root_url'] = 'http://www.plush.be';
 		/*	
 			if($final_price>0)
 			{
