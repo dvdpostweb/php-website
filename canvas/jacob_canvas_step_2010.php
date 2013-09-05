@@ -417,7 +417,19 @@ switch(WEB_SITE_ID)
 			echo '<img src="'.$url.'" width="1" height="1" border="0" alt="" />';   
 		  }
 			?>
-			<!-- trade tracker -->
+			
+			<!-- NetAffiliation -->
+			<?php
+			if($customers_value['activation_discount_code_id'] == 1275){
+			?>
+			  <script type="text/javascript" src="http://action.metaffiliation.com/trk.php?mclic=S496471011&argann={<?= $customer_id ?>}" ></script>
+        <noscript>
+            <img src="http://action.metaffiliation.com/trk.php?mclic=N496471011&argann={<?= $customer_id ?>}" width="1" height="1" border="0" />
+        </noscript>
+			<?php
+			}
+			?>
+			<!-- NetAffiliation-->
 			<!-- click tron -->
 			<?php
 			if($customers_value['activation_discount_code_id'] == 999 || $customers_value['activation_discount_code_id'] == 1099 || $customers_value['activation_discount_code_id'] == 1100){
