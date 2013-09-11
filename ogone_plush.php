@@ -58,7 +58,7 @@ case 'new_discount':
 	{
 		$final_price=abo_price($promo['discount_type'],$customers['activation_discount_code_id'],$promo['discount_value'],$price);	
 	}
-	$sql_action = "insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "', ".$action." ,now(), '" . $products_id. "' , '1')";
+	$sql_action = "insert into abo (Customerid, Action , Date , product_id, payment_method, code_id) values ('" . $ogone_check['customers_id'] . "', ".$action." ,now(), '" . $products_id. "' , 'OGONE', ".$customers['activation_discount_code_id'].")";
 	tep_db_query($sql_action); 
 	$abo_id=tep_db_insert_id();
 	
@@ -82,7 +82,7 @@ case 'new_activation':
 	$promo = tep_db_fetch_array($activation_query);
 
   $action = 8;
-	tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "', ".$action." ,now(), '" . $products_id. "' , '1') "); 
+	tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method, code_id) values ('" . $ogone_check['customers_id'] . "', ".$action." ,now(), '" . $products_id. "' , 'OGONE', ".$customers['activation_discount_code_id'].") "); 
 	$abo_id=tep_db_insert_id();
 	$promo_text = activation_text($promo, $lang_short);
 
@@ -105,7 +105,7 @@ case 'new_activation':
 	//to do abo action
 break;
 }
-		tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "',".$abo_action." ,now(), '" . $products_id. "' , '1') "); 
+		tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "',".$abo_action." ,now(), '" . $products_id. "' , 'OGONE') "); 
     
     tep_db_query("update customers set customers_abo  = 1 , customers_registration_step=100 , customers_abo_auto_stop_next_reconduction = ".$auto_stop." where customers_id = '" . $ogone_check['customers_id'] . "'");
 		$data= array();
