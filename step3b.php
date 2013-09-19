@@ -275,7 +275,7 @@ if (!tep_session_is_registered('customer_id')) {
 	$street_address =str_replace('   ',' ',$street_address);
 	$street_address =str_replace('  ',' ',$street_address);
 	
-	$sql_address_book="UPDATE address_book set entry_gender='".$gender."', entry_firstname='".$firstname."', entry_lastname='".$lastname."',entry_street_address='".$street_address."',entry_postcode='".$postcode."',entry_city='".$city."', entry_country_id='".$country ."' WHERE customers_id='".$customers_id."' and address_book_id =1 ";
+	$sql_address_book="UPDATE address_book set entry_gender='".$gender."', entry_firstname='".$firstname."', entry_lastname='".$lastname."',entry_street_address='".$street_address."',entry_postcode='".$postcode."',entry_city='".$city."', entry_country_id='".$country ."' WHERE customers_id='".$customer_id."' and address_book_id =1 ";
 	tep_db_query($sql_address_book);
     
     //REGISTER CUSTOMER SESSION
@@ -292,16 +292,16 @@ if (!tep_session_is_registered('customer_id')) {
 			{
 				if ($customers['customers_abo'] == 0)
 				{
-					registration_activation($activation_code_id,$customers_id,$customer_values['customers_abo_type'],1,$languages_id );
-					$sql_up="UPDATE customers set customers_abo_payment_method = 3 WHERE customers_id=".$customers_id;
+					registration_activation($activation_code_id,$customer_id,$customer_values['customers_abo_type'],1,$languages_id );
+					$sql_up="UPDATE customers set customers_abo_payment_method = 3 WHERE customers_id=".$customer_id;
 					tep_db_query($sql_up);
 				}
 				setcookie('customers_registration_step', 100 , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
 				setcookie('customers_id', $ogone_check['customers_id'] , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
 				setcookie('email_address', $customers['customers_email_address'] , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
 				setcookie('first_name', $customers['customers_firstname'], time()+2592000, substr(DIR_WS_CATALOG, 0, -1));	
-				$customer_id = $customers_id;
-				tep_session_register('customer_id',$customers_id);
+				#$customer_id = $customers_id;
+				tep_session_register('customer_id',$customer_id);
 
 
 			  header("location: http://" . $_SERVER["SERVER_NAME"] . "/step4.php?type=ogone");
