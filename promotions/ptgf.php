@@ -15,10 +15,10 @@ $text_color = '#FFF';
 $promo = "5FILMS";
 $hide_old = true;
 $hide_explain = true;
-$image_promotion1 ="fr/codepromo_RGT.jpg";
-$image_promotion2 ="promo_RGT.jpg";
-$image_promotion3 ="step3_RGT.jpg";
-$image_promotion4 ="step4_RGT.jpg";
+#$image_promotion1 ="fr/codepromo_RGT.jpg";
+#$image_promotion2 ="promo_RGT.jpg";
+#$image_promotion3 ="step3_RGT.jpg";
+#$image_promotion4 ="step4_RGT.jpg";
 #$dvd_hide = 1;
 $hide_menu = true;
 
