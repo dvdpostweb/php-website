@@ -111,7 +111,7 @@ if(empty($email))
                         <tr id="dvd">
                           <td class="step1"><?= isset($brand_code) && defined("TEXT_P_STEP1_$brand_code") ? constant("TEXT_P_STEP1_$brand_code") : TEXT_P_STEP1 ?></td>
                           <td class="step2"><?= isset($brand_code) && defined("TEXT_P_STEP2_$brand_code") ? constant("TEXT_P_STEP2_$brand_code") : TEXT_P_STEP2 ?></td>
-                          <td class="step3"><?= isset($brand_code) && defined("TEXT_P_STEP3_$brand_code") ? '54'.constant("TEXT_P_STEP3_$brand_code") : TEXT_P_STEP3 ?></td>
+                          <td class="step3"><?= isset($brand_code) && defined("TEXT_P_STEP3_$brand_code") ? constant("TEXT_P_STEP3_$brand_code") : TEXT_P_STEP3 ?></td>
                           <td class="step4"><?= isset($brand_code) && defined("TEXT_P_STEP4_$brand_code") ? constant("TEXT_P_STEP4_$brand_code") : TEXT_P_STEP4 ?></td>
                         </tr>
                       </table>
