@@ -2,9 +2,9 @@
 $canvas = 2;
 $nav=true;
 $image = 'bg_2dvdfree.jpg';
-$code = 'SMTFOC';
+$code = '2DVDFOC';
 $css = 'canvas2.css';
-$date_limit = '31/07/2013';
+$date_limit = '10/10/2013';
 $promo = "2DVD";
 $vod_hide = 1;
 $hide_menu = true;
