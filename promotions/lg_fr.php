@@ -16,7 +16,7 @@ $image_promotion1 ="fr/codepromo_lg.jpg";
 $image_promotion2 ="promo8vod.jpg";
 $image_promotion3 ="step3_RGT.jpg";
 $image_promotion4 ="step4_RGT.jpg";
-#$dvd_hide = 1;
+$dvd_hide = 1;
 $hide_menu = true;
 $hide_old = true;
 define('DEFAULT_LANGUAGE', 'fr');
