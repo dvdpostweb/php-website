@@ -8,7 +8,7 @@ $date_limit = '10/10/2013';
 $promo = "2DVD";
 $vod_hide = 1;
 $hide_menu = true;
-#$old = true;
+$old = true;
 define('DEFAULT_LANGUAGE', 'fr');
 
 require 'header.php'
