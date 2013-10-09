@@ -39,14 +39,14 @@
 }
 
 .philips #header h2 a {
-  background: url(../images/promotions/logo_philips.png) repeat scroll 0 0 transparent;
-  height: 39px;
+  background: url(../images/promotions/logo_philips.png) no-repeat scroll 0 0 transparent;
+  height: 58px;
   width: 224px;
 }
 
 .philips #header h2 {
   float: left;
-  height: 39px;
+  height: 58px;
   margin: 21px 0 0 20px;
 }
 

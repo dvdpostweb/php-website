@@ -29,7 +29,7 @@ if(empty($email))
     <h1> 
       <a href="http://public.dvdpost.com/<?= $lang_short ?>?url_promo=<?= urlencode($url) ?>" class="f-btn" style="">DVDPost.be</a> 
     </h1>
-    <h2> <a href="<?= $brand_url ?>" class="f-btn" style="background:url(../images/canvas/<?= $brand_logo ?>) "><?= $brand_url ?></a> </h2>
+    <h2> <a href="<?= $brand_url ?>" class="f-btn" style="background:url(../images/canvas/<?= $brand_logo ?>) no-repeat "><?= $brand_url ?></a> </h2>
     <? if (isset($show_date)){?>
     <ul id="promo_date" class="osc">
       <li><?= TEXT_UNTIL ?> <?= isset($date_limit) ? $date_limit : date('d/m/Y', strtotime('+3 day')) ?></li>
