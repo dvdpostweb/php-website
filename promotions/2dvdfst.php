@@ -2,7 +2,7 @@
 $canvas = 2;
 $nav=true;
 $image = 'bg_2dvdfree.jpg';
-$code = '2DVDFOC';
+$code = '2DVDFST';
 $css = 'canvas2.css';
 $date_limit = '10/10/2013';
 $promo = "2DVD";

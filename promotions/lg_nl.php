@@ -19,7 +19,7 @@ $image_promotion4 ="step4_RGT.jpg";
 $dvd_hide = 1;
 $hide_menu = true;
 $hide_old = true;
-define('DEFAULT_LANGUAGE', 'fr');
+define('DEFAULT_LANGUAGE', 'nl');
 
 require 'header.php'
 ?>
