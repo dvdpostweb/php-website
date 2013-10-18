@@ -93,7 +93,7 @@ if(${"REMOTE_ADDR"}== ADMINIP){
   <div id="wrap"> 
     <div id="header" >
       <h1>
-        <a href="/fr?logo=1" class="f-btn">DVDPost - VOD streaming & online DVD rental</a>
+        <a href="http://public.dvdpost.com/fr" class="f-btn">DVDPost - VOD streaming & online DVD rental</a>
       </h1>
 
 
