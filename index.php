@@ -1,7 +1,7 @@
 <?php  
 
 require('configure/application_top.php');
-if($_SERVER['SERVER_NAME'] == 'm.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'm.dvdpost.nl' )
+if($_SERVER['SERVER_NAME'] == 'm.dvdpost.be' || $_SERVER['SERVER_NAME'] == 'm.dvdpost.nl' || $_SERVER['SERVER_NAME'] == 'm.dvdpost.lu' )
 {
   tep_redirect('http://m.private.dvdpost.com');
 }

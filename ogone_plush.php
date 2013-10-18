@@ -85,8 +85,19 @@ case 'new_activation':
 	tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method, code_id) values ('" . $ogone_check['customers_id'] . "', ".$action." ,now(), '" . $products_id. "' , 'OGONE', ".$customers['activation_discount_code_id'].") "); 
 	$abo_id=tep_db_insert_id();
 	$promo_text = activation_text($promo, $lang_short);
-
-  $final_price = 0;
+  $price=$products_abo['products_price'];
+  $final_price=abo_price($promo['activation_type'],$customers['activation_discount_code_id'],$promo['activation_value'],$price);
+  if($final_price > 0)
+	{
+		$abo_action = 7;
+		$sql_insert_ogone="insert into payment (date_added,payment_method, abo_id,customers_id,amount,payment_status,last_modified) values(now(),1,$abo_id,".$ogone_check['customers_id'].",$final_price,2,now());";
+		tep_db_query($sql_insert_ogone);
+		
+	}
+	else
+  {	
+		$abo_action = 17;
+	}
 	switch ($promo['validity_type']){
 	    case 1: //day
 			tep_db_query("update customers set customers_abo_validityto   = DATE_ADD(now(), INTERVAL '" . $promo['validity_value'] . "' DAY)  where customers_id = '" . $ogone_check['customers_id'] . "'");
@@ -101,7 +112,6 @@ case 'new_activation':
 	tep_db_query("update activation_code set activation_date  = now() , customers_id = '" . $ogone_check['customers_id'] . "' where activation_id  = '" . $promo['activation_id'] . "' ");
 	
   $auto_stop = $promo['abo_auto_stop_next_reconduction'];
-	$abo_action = 17;
 	//to do abo action
 break;
 }

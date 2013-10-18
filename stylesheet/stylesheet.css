@@ -265,3 +265,41 @@ TABLE.promo_freetrial
 	a.dvdpost_left_menu_link1_shop { font-size: 11px;font-family: Arial, Helvetica, sans-serif;color: #0072B6;text-decoration: none ; text-align:left;}
 	a:hover.dvdpost_left_menu_link1_shop {text-decoration: underline ; text-align:left; }
 	
+  /* CSS Document */
+
+  .country {
+      border: 1px solid #212A31;
+      margin: 18px 18px 0 0;
+      overflow: hidden;
+      padding: 10px;
+  }
+
+  .flag {
+      float: left;
+      height: 15px;
+      margin-right: 5px;
+      width: 24px;
+  }
+
+  .country li {
+      float: left;
+      margin-bottom: 5px;
+      width: 160px;
+  }
+
+  .belg.flag {
+  background-image:url(../images/belgique.gif);
+
+  }
+
+
+  .lux.flag {
+  background-image:url(../images/luxembourg.gif);
+
+  }
+
+  .neder.flag {
+  background-image:url(../images/nederland.gif);
+
+  }
+
