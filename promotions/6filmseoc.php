@@ -1,12 +1,12 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_2dvdfree.jpg';
-$code = '2DVDEOC';
+$image = 'bg_promo_6films.jpg';
+$code = 'REACEOC';
 $css = 'canvas2.css';
-$date_limit = '17/10/2013';
-$promo = "2DVD";
-$vod_hide = 1;
+$date_limit = '24/10/2013';
+$promo = "6FILMS";
+#$dvd_hide = 1;
 $hide_menu = true;
 $old = true;
 define('DEFAULT_LANGUAGE', 'en');
