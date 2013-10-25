@@ -10,7 +10,7 @@ $t = '2VODH';
 $dvd_hide = 1;
 $hide_menu = true;
 $old = true;
-define('DEFAULT_LANGUAGE', 'fr');
+define('DEFAULT_LANGUAGE', 'en');
 
 require 'header.php'
 ?>
