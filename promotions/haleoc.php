@@ -2,7 +2,7 @@
 $canvas = 2;
 $nav=true;
 $image = 'bg_halloween_2vod.jpg';
-$code = 'HALFOC';
+$code = 'HALEOC';
 $css = 'canvas2.css';
 $date_limit = '7/11/2013';
 $promo = "2VOD";
