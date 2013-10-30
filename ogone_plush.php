@@ -8,12 +8,56 @@ $customers = tep_db_fetch_array($customers_query);
 $products_id = $customers['customers_abo_type'];
 $products_abo_query = tep_db_query("select * from products_abo where products_id = " . $products_id);
 $products_abo = tep_db_fetch_array($products_abo_query);
-
+$languages_id = $ogone_check['language_id'];
 
 $update = "update customers set customers_abo_payment_method = 1, ogone_owner='".$HTTP_GET_VARS['CN']."' , ogone_exp_date ='" . $HTTP_GET_VARS['ED'] . "' , ogone_card_no='" . $HTTP_GET_VARS['CARDNO'] . "' , ogone_card_type='" . $HTTP_GET_VARS['BRAND'] . "' where customers_id = '" . $ogone_check['customers_id'] . "' ";
 tep_db_query($update);
-
 switch ($ogone_check['context']){
+case 'credit_card':
+case 'credit_card_modification':
+  $sql_user='SELECT *
+	FROM `products_abo` p
+	JOIN customers c ON c.customers_abo_type = p.products_id
+	LEFT JOIN customers_abo_payment_method ca ON c.customers_abo_payment_method = ca.customers_abo_payment_method_id
+	WHERE customers_id ='.$ogone_check['customers_id'];
+	$query_user=tep_db_query($sql_user,'db_link',true);
+	$value_user=tep_db_fetch_array($query_user);
+	if($ogone_check['context'] == 'credit_card_modification')
+	{
+	  $action = 18;
+	}
+	else
+	{
+	  $action = 16;
+	}
+  $sql_abo='insert into abo(customerid,Action,Date,product_id,payment_method,comment,site) values ('.$ogone_check['customers_id'].','.$action.',now(),'.$value_user['customers_abo_type'].',"OGONE","'.$ogone_check['context'].'",'.WEB_SITE_ID.')';
+	tep_db_query($sql_abo);
+	
+	#$mail_id=430;
+	#$sql='SELECT * FROM mail_messages m where mail_messages_id ='.$mail_id.' and language_id = '.$languages_id;
+	#$mail_query = tep_db_query($sql);
+	#$mail_values = tep_db_fetch_array($mail_query);
+	#$email_text = $mail_values['messages_html'];
+	#//	$email_text = str_replace('µµµmail_messages_sent_history_idµµµ', $mail_id, $email_text);
+  #
+	#$name=ucfirst($value_user['customers_firstname']).' '.ucfirst($value_user['customers_lastname']);
+	#$email_text=str_replace('$$$name$$$',$name,$email_text);
+	#$email_text = str_replace('$$$site_link$$$',  'http://'.$host , $email_text);
+
+	switch($languages_id)
+	{
+		case 2:
+			$lang='nl';
+			break;
+		case 3:
+			$lang='en';
+			break;
+		default:
+			$lang='fr';
+	}
+	#tep_mail($email, $email, $mail_values['messages_title'], $email_text, 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
+	header("location: http://www.plush.be/".$lang."/customers/".$ogone_check['customers_id']."/payment_methods?type=".$ogone_check['context']."_finish");
+	break;
 case 'new_discount':
 	if($customers['activation_discount_code_id'] > 0)
 	{		
@@ -115,6 +159,8 @@ case 'new_activation':
 	//to do abo action
 break;
 }
+if($ogone_check['context'] == 'new_discount' || $ogone_check['context'] == 'new_activation')
+{
 		tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "',".$abo_action." ,now(), '" . $products_id. "' , 'OGONE') "); 
     
     tep_db_query("update customers set customers_abo  = 1 , customers_registration_step=100 , customers_abo_auto_stop_next_reconduction = ".$auto_stop." where customers_id = '" . $ogone_check['customers_id'] . "'");
@@ -133,5 +179,5 @@ break;
 		*/
 		
 		mail_message($ogone_check['customers_id'], 606, $data, 'plush' );	
-
+}
 ?>
