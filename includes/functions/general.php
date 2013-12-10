@@ -2966,10 +2966,10 @@ function activation_text($values, $locale)
       $text = $values['activation_text_fr'];
       break;
     case 'nl':
-      $text = $values['activation_text_fr'];
+      $text = $values['activation_text_nl'];
       break;
     case 'en':
-      $text = $values['activation_text_fr'];
+      $text = $values['activation_text_en'];
       break;
   }
   return $text;

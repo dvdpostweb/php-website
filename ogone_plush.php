@@ -8,10 +8,25 @@ $customers = tep_db_fetch_array($customers_query);
 $products_id = $customers['customers_abo_type'];
 $products_abo_query = tep_db_query("select * from products_abo where products_id = " . $products_id);
 $products_abo = tep_db_fetch_array($products_abo_query);
-$languages_id = $ogone_check['language_id'];
+$languages_id = $customers['customers_language'];
 
 $update = "update customers set customers_abo_payment_method = 1, ogone_owner='".$HTTP_GET_VARS['CN']."' , ogone_exp_date ='" . $HTTP_GET_VARS['ED'] . "' , ogone_card_no='" . $HTTP_GET_VARS['CARDNO'] . "' , ogone_card_type='" . $HTTP_GET_VARS['BRAND'] . "' where customers_id = '" . $ogone_check['customers_id'] . "' ";
 tep_db_query($update);
+switch($languages_id)
+{
+	case 2:
+		$lang='nl';
+		break;
+	case 3:
+		$lang='en';
+		break;
+	default:
+		$lang='fr';
+}
+$sql_cond = "select * from translations where `key` = 'info.index.conditions.info' and locale ='".$lang."'";
+$query_cond=tep_db_query($sql_cond,'db_link',true);
+$cond=tep_db_fetch_array($query_cond);
+$conditions = $cond['value'];
 switch ($ogone_check['context']){
 case 'credit_card':
 case 'credit_card_modification':
@@ -44,17 +59,7 @@ case 'credit_card_modification':
 	#$email_text=str_replace('$$$name$$$',$name,$email_text);
 	#$email_text = str_replace('$$$site_link$$$',  'http://'.$host , $email_text);
 
-	switch($languages_id)
-	{
-		case 2:
-			$lang='nl';
-			break;
-		case 3:
-			$lang='en';
-			break;
-		default:
-			$lang='fr';
-	}
+	
 	#tep_mail($email, $email, $mail_values['messages_title'], $email_text, 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
 	header("location: http://www.plush.be/".$lang."/customers/".$ogone_check['customers_id']."/payment_methods?type=".$ogone_check['context']."_finish");
 	break;
@@ -79,7 +84,7 @@ case 'new_discount':
 			break;		
 		}
 
-  	$promo_text = discount_text($promo, $lang_short);
+  	$promo_text = discount_text($promo, $lang);
 	  $auto_stop = $promo['abo_auto_stop_next_reconduction'];
 	  if ($promo['discount_recurring_nbr_of_month'] > 0 ){
 			tep_db_query("update customers set customers_abo_discount_recurring_to_date  = DATE_ADD(now(), INTERVAL " . $promo['discount_recurring_nbr_of_month'] . " MONTH)  where customers_id = '" . $ogone_check['customers_id'] . "'");		
@@ -93,7 +98,7 @@ case 'new_discount':
 	  $auto_stop = 0;
 		$promo_text = '';
 	}
-	$price=$products_abo['products_price'];
+	$price=$products_abo['price'];
 	if($action == 1)
 	{
 		$final_price = $price;
@@ -128,8 +133,9 @@ case 'new_activation':
   $action = 8;
 	tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method, code_id) values ('" . $ogone_check['customers_id'] . "', ".$action." ,now(), '" . $products_id. "' , 'OGONE', ".$customers['activation_discount_code_id'].") "); 
 	$abo_id=tep_db_insert_id();
-	$promo_text = activation_text($promo, $lang_short);
-  $price=$products_abo['products_price'];
+	
+	$promo_text = activation_text($promo, $lang);
+  $price=$products_abo['price'];
   $final_price=abo_price($promo['activation_type'],$customers['activation_discount_code_id'],$promo['activation_value'],$price);
   if($final_price > 0)
 	{
@@ -171,6 +177,8 @@ if($ogone_check['context'] == 'new_discount' || $ogone_check['context'] == 'new_
 		$data['final_price'] = $final_price;
 		$data['subscription'] = $products_abo['description'];
     $data['root_url'] = 'http://www.plush.be';
+    $data['abo_price'] = $price;
+    $data['general_conditions'] = $conditions;
 		/*	
 			if($final_price>0)
 			{
@@ -178,6 +186,6 @@ if($ogone_check['context'] == 'new_discount' || $ogone_check['context'] == 'new_
 			}
 		*/
 		
-		mail_message($ogone_check['customers_id'], 606, $data, 'plush' );	
+		mail_message($ogone_check['customers_id'], 625, $data, 'plush' );	
 }
 ?>
