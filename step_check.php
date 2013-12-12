@@ -62,11 +62,12 @@ if (!tep_session_is_registered('customer_id')) {
 			$products_id=$customer_values['customers_abo_type'];
 
 
-			$products_query = tep_db_query("SELECT p.products_price, pa.qty_credit from products p LEFT JOIN products_abo pa on pa.products_id=p.products_id  WHERE p.products_id='".$products_id. "'");
+			$products_query = tep_db_query("SELECT p.products_price, pa.qty_credit, p.products_model from products p LEFT JOIN products_abo pa on pa.products_id=p.products_id  WHERE p.products_id='".$products_id. "'");
 			$products_values = tep_db_fetch_array($products_query);
 			$credits=$products_values['qty_credit'];
+			
 			$price=$products_values['products_price'];
-
+      $full_price = $price;
 			$promo_id=$customer_values['activation_discount_code_id'];
 			$discount_type=$customer_values['activation_discount_code_type'];
 			$next_discount=$customer_values['customers_next_discount_code'];
@@ -299,11 +300,11 @@ if (!tep_session_is_registered('customer_id')) {
 								$product_info = tep_db_query("select p.products_id, pd.products_name, pd.products_description, p.products_model, p.products_quantity, p.products_image, pd.products_image_big, pd.products_url, p.products_price, p.products_tax_class_id, p.products_date_added, p.products_date_available, p.manufacturers_id from " . TABLE_PRODUCTS . " p, " . TABLE_PRODUCTS_DESCRIPTION . " pd where p.products_id = '" . $customers_value['customers_abo_type'] . "' and pd.products_id = '" . $customers_value['customers_abo_type'] . "' and pd.language_id = '".$lang."' ");
 							  	$product_info_values = tep_db_fetch_array($product_info);
 								$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)
-								VALUES (NULL , now(), $customer_id, '556', '".$lang."', '0', NULL , '".$customers_value['customers_email_address']."'	);";
+								VALUES (NULL , now(), $customer_id, '626', '".$lang."', '0', NULL , '".$customers_value['customers_email_address']."'	);";
 								tep_db_query($sql_insert);
 								$mail_id=tep_db_insert_id();
 
-								$sql='SELECT * FROM mail_messages m where mail_messages_id =556 and language_id = '.$lang;
+								$sql='SELECT * FROM mail_messages m where mail_messages_id =626 and language_id = '.$lang;
 
 								$mail_query = tep_db_query($sql);
 								$mail_values = tep_db_fetch_array($mail_query);
@@ -322,8 +323,22 @@ if (!tep_session_is_registered('customer_id')) {
 								$gender_value = tep_db_fetch_array($gender_query);
 
 								$data['gender_simple'] = $gender_value['translation_value'];
-								
-								
+								if($languages_id==1)
+              	{
+              	  $locale_id = 2;
+              	}
+              	elseif($languages_id==2)
+              	{
+              	  $locale_id = 3;
+              	}
+              	else
+              	{
+              	  $locale_id = 1;
+              	}
+								$dom = "select * from `i18n_db_translations` where tr_key = 'info'  and namespace = 'info.conditions' and locale_id = ".$locale_id;
+                $dom_query = tep_db_query($dom);
+                $dom_values = tep_db_fetch_array($dom_query);
+                $conditions = $dom_values['text'];
 								
 								
 								$data['customers_name'] = $customers_value['customers_firstname'] . ' ' . $customers_value['customers_lastname'];
@@ -331,6 +346,10 @@ if (!tep_session_is_registered('customer_id')) {
 								$data['promotion'] = $promotion;
 								$data['final_price'] = $final_price;
 								$data['price'] = $price;
+								$data['abo_price'] = $full_price;
+                $data['general_conditions'] = $conditions;
+                $data['subscription'] = $products_values['products_model'];
+                
 								require('includes/classes/activation_code_actions.php');
 								$action=new Activation_code_actions();
 								if($discount_type =='A')
@@ -342,7 +361,7 @@ if (!tep_session_is_registered('customer_id')) {
 								if ($error == 7)
 									parrainage_classic($customer_id);
 									
-								mail_message($customer_id, 556, $data);
+								mail_message($customer_id, 626, $data);
 								
 								
 								if ($customer_values['site'] == 'lavenir')

@@ -32,10 +32,10 @@ if(empty($languages_id))
 }
 if($customer_values['activation_discount_code_type']=='A')
 {
-  registration_activation($customer_values['activation_discount_code_id'], $customer_id,$customer_values['customers_abo_type'], 'wwww',$languages_id ,'PAYPAL',556,4);
+  registration_activation($customer_values['activation_discount_code_id'], $customer_id,$customer_values['customers_abo_type'], 'wwww',$languages_id ,'PAYPAL',626,4);
 } else
 {
-  registration_discount($customer_values['activation_discount_code_id'],$customer_id,$customer_values['customers_abo_type'],'www', $languages_id,0,'PAYPAL',556,4,$agreement_id);
+  registration_discount($customer_values['activation_discount_code_id'],$customer_id,$customer_values['customers_abo_type'],'www', $languages_id,0,'PAYPAL',626,4,$agreement_id);
 }
 setcookie('customers_registration_step', 100 , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
 setcookie('customers_id', $customer_values['customers_id'] , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));

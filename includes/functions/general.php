@@ -1572,7 +1572,7 @@ function create_code_droselia()
 	}
 	return $droselia_codes;
 }
-function registration_activation($activation_code,$customers_id,$products_id,$site,$languages_id,$method_payment='OGONE',$mail_message=556,$type_payment=1)
+function registration_activation($activation_code,$customers_id,$products_id,$site,$languages_id,$method_payment='OGONE',$mail_message=626,$type_payment=1)
 {
 	$sql="select a.*,ac.droselia from activation_code a left join activation_campaign ac on a.campaign_id = ac.id where a.activation_id= " . $activation_code;
 	$code_query = tep_db_query($sql,'db_link',true);
@@ -1583,7 +1583,25 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	$customers_query = tep_db_query("select * from customers where customers_id = '" . $customers_id . "' ",'db_link',true);
 	$customers = tep_db_fetch_array($customers_query);
 	$first_time = tep_db_query("select * from abo where customerid = '" . $customers_id . "' ",'db_link',true);
-	$first_time_value = tep_db_fetch_array($first_time);	
+	$first_time_value = tep_db_fetch_array($first_time);
+	if($languages_id==1)
+	{
+	  $locale_id = 2;
+	}
+	elseif($languages_id==2)
+	{
+	  $locale_id = 3;
+	}
+	else
+	{
+	  $locale_id = 1;
+	}
+	
+	$dom = "select * from `i18n_db_translations` where tr_key = 'info'  and namespace = 'info.conditions' and locale_id = ".$locale_id;
+  $dom_query = tep_db_query($dom);
+  $dom_values = tep_db_fetch_array($dom_query);
+  $conditions = $dom_values['text'];
+  
 	if ($code['next_abo_type'] > 0)
 	{
 		$next = $code['next_abo_type'];
@@ -1717,7 +1735,6 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	
 	$product_info = tep_db_query("select p.products_id, pd.products_name, pd.products_description, p.products_model, p.products_quantity, p.products_image, pd.products_image_big, pd.products_url, p.products_price, p.products_tax_class_id, p.products_date_added, p.products_date_available, p.manufacturers_id from " . TABLE_PRODUCTS . " p, " . TABLE_PRODUCTS_DESCRIPTION . " pd where p.products_id = '" . $products_id . "' and pd.products_id = '" . $products_id . "' and pd.language_id = '".$languages_id."' ",'db_link',true);
   	$product_info_values = tep_db_fetch_array($product_info);
-	
 	$promotion = promotion($products_id, $next, 'A', $activation_code);
 	$data= array();
 	$type_gender = (strtoupper($customers['customers_gender']) == 'f' ? 'female_gender' : 'male_gender');
@@ -1729,11 +1746,16 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	$data['customers_name'] = $customers['customers_firstname'] . ' ' . $customers['customers_lastname'];
 	$data['email'] = $customers['customers_email_address'];
 	$data['promotion'] = $promotion;
+	
+  $data['abo_price'] = $product_info_values['products_price'];
+  $data['general_conditions'] = $conditions;
+  $data['subscription'] = $product_info_values['products_model'];
+  
 	mail_message($customers_id, $mail_message, $data);
 	
 }
 
-function registration_discount($discount_code_id,$customers_id,$products_id,$site,$languages_id,$belgiqueloisirs_id ,$method_payment='OGONE',$mail_message=556,$type_payment=1,$reference_id='')
+function registration_discount($discount_code_id,$customers_id,$products_id,$site,$languages_id,$belgiqueloisirs_id ,$method_payment='OGONE',$mail_message=626,$type_payment=1,$reference_id='')
 {
   #echo 'ici1';
   
@@ -1753,7 +1775,22 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	
 	$customers_query = tep_db_query("select * from customers where customers_id = '" . $customers_id . "' ",'db_link',true);
 	$customers = tep_db_fetch_array($customers_query);
-	
+	if($languages_id==1)
+	{
+	  $locale_id = 2;
+	}
+	elseif($languages_id==2)
+	{
+	  $locale_id = 3;
+	}
+	else
+	{
+	  $locale_id = 1;
+	}
+	$dom = "select * from `i18n_db_translations` where tr_key = 'info'  and namespace = 'info.conditions' and locale_id = ".$locale_id;
+  $dom_query = tep_db_query($dom);
+  $dom_values = tep_db_fetch_array($dom_query);
+  $conditions = $dom_values['text'];
 	$first_time = tep_db_query("select * from abo where customerid = '" . $customers_id . "' ",'db_link',true);
 	$first_time_value = tep_db_fetch_array($first_time);	
 	if ($first_time_value['abo_id']>0){
@@ -1818,7 +1855,6 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	tep_db_query("update customers set customers_abo  = 1 , customers_registration_step=100 , customers_abo_payment_method  = ".$type_payment." , customers_abo_rank  = 10 , customers_abo_type  = '" . $products_id. "',  customers_next_abo_type = '" . $next_abo_type. "' , customers_abo_start_rentthismonth  =0 where customers_id = '" . $customers_id . "'");
 	
 	//RALPH-001 START
-	
 	//ogone payment
 	$price=$products_abo['products_price'];
 	
@@ -1919,7 +1955,6 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	if (strlen($belgiqueloisirs_id > 0 )){		
 		tep_db_query("update customers set belgiqueloisirs_id = '" . $belgiqueloisirs_id . "' where customers_id = '" . $customers_id . "'");		
 	}
-
   	$product_info = tep_db_query("select p.products_id, pd.products_name, pd.products_description, p.products_model, p.products_quantity, p.products_image, pd.products_image_big, pd.products_url, p.products_price, p.products_tax_class_id, p.products_date_added, p.products_date_available, p.manufacturers_id from " . TABLE_PRODUCTS . " p, " . TABLE_PRODUCTS_DESCRIPTION . " pd where p.products_id = '" . $products_id. "' and pd.products_id = '" . $products_id. "' and pd.language_id = '".$languages_id."' ",'db_link',true);
   	$product_info_values = tep_db_fetch_array($product_info);					  		
 	
@@ -1936,6 +1971,9 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	$data['promotion'] = $promotion;
 	$data['final_price'] = $final_price;
 	$data['price'] = $price;
+	$data['abo_price'] = $price;
+	$data['subscription'] = $products_abo['products_model'];
+	$data['general_conditions'] = $conditions;
 /*	
 	if($final_price>0)
 	{
@@ -2847,6 +2885,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 	  $l = 1;
 	}
 	$sql='SELECT * FROM mail_messages m where mail_messages_id ='.$mail_id.' and language_id = '.$l;
+	/*echo $sql;*/
 	$mail_query = tep_db_query($sql);
 	$mail_values = tep_db_fetch_array($mail_query);
 	$email_text = $mail_values['messages_html'];
@@ -2860,7 +2899,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 	  $email = $customers['customers_email_address'];
 	}
 	
-	if($mail_id==556)
+	if($mail_id==626)
 	{ 
 	  if($data['final_price']===$data['price'] && $data['final_price'] !=0)
 		{
