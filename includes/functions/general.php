@@ -1732,8 +1732,8 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	$status=$data2['status'];
 	if ($error == 7)
 		parrainage_classic($customers_id);
-	
-	$product_info = tep_db_query("select p.products_id, pd.products_name, pd.products_description, p.products_model, p.products_quantity, p.products_image, pd.products_image_big, pd.products_url, p.products_price, p.products_tax_class_id, p.products_date_added, p.products_date_available, p.manufacturers_id from " . TABLE_PRODUCTS . " p, " . TABLE_PRODUCTS_DESCRIPTION . " pd where p.products_id = '" . $products_id . "' and pd.products_id = '" . $products_id . "' and pd.language_id = '".$languages_id."' ",'db_link',true);
+	$sql_p = "select p.products_id, p.products_model, p.products_quantity, p.products_image, p.products_price, p.products_tax_class_id, p.products_date_added, p.products_date_available, p.manufacturers_id from " . TABLE_PRODUCTS . " p where p.products_id = " . $products_id;
+	$product_info = tep_db_query($sql_p,'db_link',true);
   	$product_info_values = tep_db_fetch_array($product_info);
 	$promotion = promotion($products_id, $next, 'A', $activation_code);
 	$data= array();
@@ -1750,7 +1750,6 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
   $data['abo_price'] = $product_info_values['products_price'];
   $data['general_conditions'] = $conditions;
   $data['subscription'] = $product_info_values['products_model'];
-  
 	mail_message($customers_id, $mail_message, $data);
 	
 }
@@ -2912,6 +2911,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 		$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)	VALUES (NULL , now(), ".$customer_id.", '".$mail_id."', ".$customers['customers_language'].", '0', NULL , '".$email."'	);";
 		tep_db_query($sql_insert);
 		$history_id=tep_db_insert_id();
+    
 		$data['mail_messages_sent_history_id'] = $history_id;
 		$formating = format($email_text, $data);
 		$sql_up = 'update mail_messages_sent_history set lstvariable = "'.addslashes($formating['dico']).'" where mail_messages_sent_history_id = '.$history_id;
@@ -2933,7 +2933,8 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 		{
   		tep_mail($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $recipient, $mail_values['messages_title'], $formating['text'], STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
 		}
-	}else
+	}
+	else
 	{
 		$history_id='NULL';
 	}

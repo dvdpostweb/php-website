@@ -299,18 +299,14 @@ if (!tep_session_is_registered('customer_id')) {
 
 								$product_info = tep_db_query("select p.products_id, pd.products_name, pd.products_description, p.products_model, p.products_quantity, p.products_image, pd.products_image_big, pd.products_url, p.products_price, p.products_tax_class_id, p.products_date_added, p.products_date_available, p.manufacturers_id from " . TABLE_PRODUCTS . " p, " . TABLE_PRODUCTS_DESCRIPTION . " pd where p.products_id = '" . $customers_value['customers_abo_type'] . "' and pd.products_id = '" . $customers_value['customers_abo_type'] . "' and pd.language_id = '".$lang."' ");
 							  	$product_info_values = tep_db_fetch_array($product_info);
-								$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)
-								VALUES (NULL , now(), $customer_id, '626', '".$lang."', '0', NULL , '".$customers_value['customers_email_address']."'	);";
-								tep_db_query($sql_insert);
-								$mail_id=tep_db_insert_id();
+								
 
 								$sql='SELECT * FROM mail_messages m where mail_messages_id =626 and language_id = '.$lang;
 
 								$mail_query = tep_db_query($sql);
 								$mail_values = tep_db_fetch_array($mail_query);
 								$email_text = $mail_values['messages_html']; 
-								//$email_text = str_replace('$$$mail_messages_sent_history_id$$$', $mail_id, $email_text);
-								//$email_text = str_replace('$$$customers_name$$$', $customers_value['customers_firstname'] . ' ' . $customers_value['customers_lastname'] , $email_text);
+								
 								//$email_text = str_replace('$$$email$$$',  $customers_value['customers_email_address'] , $email_text);
 								$promotion = promotion($customers_value['customers_abo_type'], $customers_value['customers_next_abo_type'], $discount_type, $promo_id);
 								//$email_text = str_replace('$$$promotion$$$', $promotion, $email_text);
