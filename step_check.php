@@ -336,10 +336,10 @@ if (!tep_session_is_registered('customer_id')) {
                 $dom_values = tep_db_fetch_array($dom_query);
                 $conditions = $dom_values['text'];
 								
-								
+								$promotion2 = promotion($customers_value['customers_abo_type'], $customers_value['customers_next_abo_type'], $discount_type, $promo_id,2,$languages_id);
 								$data['customers_name'] = $customers_value['customers_firstname'] . ' ' . $customers_value['customers_lastname'];
 								$data['email'] = $customers_value['customers_email_address'];
-								$data['promotion'] = $promotion;
+								$data['promotion'] = $promotion2;
 								$data['final_price'] = $final_price;
 								$data['price'] = $price;
 								$data['abo_price'] = $full_price;

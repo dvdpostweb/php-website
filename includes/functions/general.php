@@ -1741,11 +1741,12 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	$gender_sql = "select * from  dvdpost_common.translation2 where translation_key = '".$type_gender."' and language_id = ".$languages_id;
 	$gender_query = tep_db_query($gender_sql);
 	$gender_value = tep_db_fetch_array($gender_query);
+	$promotion2 = promotion($products_id, $next, 'A', $activation_code, 2,$languages_id);
 	
 	$data['gender_simple'] = $gender_value['translation_value'];
 	$data['customers_name'] = $customers['customers_firstname'] . ' ' . $customers['customers_lastname'];
 	$data['email'] = $customers['customers_email_address'];
-	$data['promotion'] = $promotion;
+	$data['promotion'] = $promotion2;
 	
   $data['abo_price'] = $product_info_values['products_price'];
   $data['general_conditions'] = $conditions;
@@ -1958,6 +1959,7 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
   	$product_info_values = tep_db_fetch_array($product_info);					  		
 	
 	$promotion = promotion($products_id, $next_abo_type, 'D', $discount_code_id);
+	$promotion2 = promotion($products_id, $next_abo_type, 'D', $discount_code_id,2,$languages_id);
 	$data=array();
 	$type_gender = (strtoupper($customers['customers_gender']) == 'f' ? 'female_gender' : 'male_gender');
 	$gender_sql = "select * from  dvdpost_common.translation2 where translation_key = '".$type_gender."' and language_id = ".$languages_id;
@@ -1967,7 +1969,7 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	$data['gender_simple'] = $gender_value['translation_value'];
 	$data['customers_name'] = $customers['customers_firstname'] . ' ' . $customers['customers_lastname'];
 	$data['email'] = $customers['customers_email_address'];
-	$data['promotion'] = $promotion;
+	$data['promotion'] = $promotion2;
 	$data['final_price'] = $final_price;
 	$data['price'] = $price;
 	$data['abo_price'] = $price;
@@ -2701,8 +2703,20 @@ function last_login($customer_id)
 	return tep_db_query($sql_change);
 }
 
-function promotion($current_products_id, $next_abo_type, $discount_type, $promo_id,$title = 0)
+function promotion($current_products_id, $next_abo_type, $discount_type, $promo_id,$title = 0,$lang=1)
 {
+  if($title ==2)
+  {
+    
+  $sql= 'select translation_key as cfgKey, translation_value as cfgValue from dvdpost_common.translation2 where language_id = ' . intval($lang) . ' and translation_page="root" and (site_host_id  = ' . SITE_HOST_ID . ' or site_host_id  = ' . WEBSITE . ' or site_host_id =0 )  order by FIELD(site_host_id,'.SITE_HOST_ID.','.WEBSITE.',0 )';
+  #echo $sql;
+  $translation_query = tep_db_query($sql);
+  while ($translation = tep_db_fetch_array($translation_query)) {
+    unset($translation['cfgKey']);
+  	define($translation['cfgKey'], $translation['cfgValue']);
+  }
+  }
+  
 	$sql = "SELECT p.products_price, pa.qty_credit,qty_at_home from products p LEFT JOIN products_abo pa on pa.products_id=p.products_id  WHERE p.products_id='".$current_products_id. "'";
 	$current_products_query = tep_db_query($sql);
 	$current_products_values = tep_db_fetch_array($current_products_query);
@@ -2809,19 +2823,36 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 			else
 			{
 				if ($promo_type != 'unlimited') {
-				  if(!empty($discount_text))
+				  if($title == 2)
 				  {
-				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$discount_text.'</span>';
-				  }
-				  else if(!empty($activation_text))
-				  {
-				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$activation_text.'</span>';
+				    if(!empty($discount_text))
+  				  {
+  				    return "<span class='red_font'>".$discount_text.'</span>';
+  				  }
+  				  else if(!empty($activation_text))
+  				  {
+  				    return "<span class='red_font'>".$activation_text.'</span>';
+  				  }
+  				  else
+  				  {
+  				    return "<span class='red_font'>".$period.'</span>';
+  				  }
 				  }
 				  else
 				  {
-				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$period.'</span>';
+				    if(!empty($discount_text))
+  				  {
+  				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$discount_text.'</span>';
+  				  }
+  				  else if(!empty($activation_text))
+  				  {
+  				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$activation_text.'</span>';
+  				  }
+  				  else
+  				  {
+  				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$period.'</span>';
+  				  }
 				  }
-					
 				}else{ 
 					return sprintf(UNLIMITED, $duration, $abo_dvd_credit);
 				}
