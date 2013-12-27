@@ -273,8 +273,20 @@ switch(WEB_SITE_ID)
 	$banner='banner_trial.gif';
 	break;
 }
+if ($canvas == 3 || $canvas == 4)
+{
+  $class = 'philips';
+}
+else if($canvas == 6)
+{
+  $class = 'normal vp';
+}
+else
+{
+ $class = 'normal';
+}
 ?>
-<body id="hp" class="<?= $canvas == 3 || $canvas == 4 ? 'philips' : 'normal' ?>">
+<body id="hp" class="<?= $class ?>">
   <? require_once DIR_WS_COMMON  . 'abondonaid.php' ?>
     <!--   ==============   HEADER   ==============   -->
 		<?php 
