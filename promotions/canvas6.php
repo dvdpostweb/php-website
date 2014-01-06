@@ -1,7 +1,7 @@
 
 <script type="text/javascript">
 function cdtd() {
-var xmas = new Date("January 09, 2014 23:59:00")
+var xmas = new Date("January 16, 2014 23:59:00")
 var now = new Date();
 var timeDiff = xmas.getTime() - now.getTime();
 if (timeDiff <= 0) {        
