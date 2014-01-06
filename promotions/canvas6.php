@@ -54,10 +54,10 @@ var timer = setTimeout('cdtd()',1000);
         <table id="countInfos">
           <tbody>
             <tr>
-              <td><?= PRIVATE_DAY ?>JRS</td>
-              <td><?= PRIVATE_HOUR ?>HRS</td>
-              <td><?= PRIVATE_MIN ?>MIN</td>
-              <td><?= PRIVATE_SEC ?>SEC</td>
+              <td><?= PRIVATE_DAY ?></td>
+              <td><?= PRIVATE_HOUR ?></td>
+              <td><?= PRIVATE_MIN ?></td>
+              <td><?= PRIVATE_SEC ?></td>
             </tr>
             <tr>
               <td ><div id='daysBox'></div></td>
@@ -74,54 +74,54 @@ var timer = setTimeout('cdtd()',1000);
     <!--products-->
     <div style="display: block;" class="pbx_clearFix" id="vp_products">
       <!--line 1-->
-      <div class="column grid8 first_item"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPPL3&language=<?= $lang_short ?>"  class="title"> <span class="table"><span class="row"><span class="cell">
+      <div class="column grid8 first_item"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPDVD4&language=<?= $lang_short ?>"  class="title"> <span class="table"><span class="row"><span class="cell">
         <h2><?= PRIVATE_PROMO1_H2 ?></h2>
         <h3><?= PRIVATE_PROMO1_H3 ?></h3>
-        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPPL3&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/bronze_star.jpg" height="157" width="281" /> </span></span></span> </a>
+        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPDVD4&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/bronze_star.jpg" height="157" width="281" /> </span></span></span> </a>
         <div class="infos"><?= PRIVATE_PROMO1_DIV ?></div>
         <p class="show"><i class="maxDiscount">-10<sup>%</sup></i></p>
-        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPPL3&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?> </a></div>
+        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPDVD4&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?> </a></div>
       </div>
-      <div class="column grid8"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPPL4&language=<?= $lang_short ?>" class="title"> <span class="table"><span class="row"><span class="cell">
+      <div class="column grid8"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPVOD4&language=<?= $lang_short ?>" class="title"> <span class="table"><span class="row"><span class="cell">
         <h2><?= PRIVATE_PROMO2_H2 ?></h2>
         <h3><?= PRIVATE_PROMO2_H3 ?></h3>
-        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPPL4&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/bronze_star.jpg" height="157" width="281" /> </span></span></span> </a>
+        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPVOD4&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/bronze_star.jpg" height="157" width="281" /> </span></span></span> </a>
         <div class="infos"><?= PRIVATE_PROMO2_DIV ?></div>
         <p class="show"><i class="maxDiscount">-20<sup>%</sup></i></p>
-        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPPL4&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
+        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPVOD4&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
       </div>
-      <div class="column grid8 silver"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPPL5&language=<?= $lang_short ?>" class="title"> <span class="table"><span class="row"><span class="cell">
+      <div class="column grid8 silver"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPDVD6&language=<?= $lang_short ?>" class="title"> <span class="table"><span class="row"><span class="cell">
         <h2><?= PRIVATE_PROMO3_H2 ?></h2>
         <h3><?= PRIVATE_PROMO3_H3 ?></h3>
-        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPPL5&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/silver_star.jpg" height="157" width="281" /> </span></span></span> </a>
+        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPDVD6&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/silver_star.jpg" height="157" width="281" /> </span></span></span> </a>
         <div class="infos"><?= PRIVATE_PROMO3_DIV ?></div>
         <p class="show"><i class="maxDiscount">-30<sup>%</sup></i></p>
-        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPPL5&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
+        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPDVD6&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
       </div>
       <!--line 2-->
-      <div class="column grid8 first_item silver"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPPL6&language=<?= $lang_short ?>"  class="title"> <span class="table"><span class="row"><span class="cell">
+      <div class="column grid8 first_item silver"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPVOD6&language=<?= $lang_short ?>"  class="title"> <span class="table"><span class="row"><span class="cell">
         <h2><?= PRIVATE_PROMO4_H2 ?></h2>
         <h3><?= PRIVATE_PROMO4_H3 ?></h3>
-        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPPL6&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/silver_star.jpg" height="157" width="281" /> </span></span></span> </a>
+        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPVOD6&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/silver_star.jpg" height="157" width="281" /> </span></span></span> </a>
         <div class="infos"><?= PRIVATE_PROMO4_DIV ?></div>
         <p class="show"><i class="maxDiscount">-40<sup>%</sup></i></p>
-        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPPL6&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
+        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPVOD6&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
       </div>
-      <div class="column grid8 gold"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPPL8&language=<?= $lang_short ?>"  class="title"> <span class="table"><span class="row"><span class="cell">
+      <div class="column grid8 gold"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPDVD12&language=<?= $lang_short ?>"  class="title"> <span class="table"><span class="row"><span class="cell">
         <h2><?= PRIVATE_PROMO5_H2 ?></h2>
         <h3><?= PRIVATE_PROMO5_H3 ?></h3>
-        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPPL8&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/gold_star.jpg" height="157" width="281" /> </span></span></span> </a>
+        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPDVD12&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/gold_star.jpg" height="157" width="281" /> </span></span></span> </a>
         <div class="infos"><?= PRIVATE_PROMO5_DIV ?></div>
         <p class="show"><i class="maxDiscount">-50<sup>%</sup></i></p>
-        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPPL8&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
+        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPDVD12&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
       </div>
-      <div class="column grid8 gold"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPPL12&language=<?= $lang_short ?>" class="title"> <span class="table"><span class="row"><span class="cell">
+      <div class="column grid8 gold"> <a href="http://www.dvdpost.be/step1.php?activation_code=VPVOD12&language=<?= $lang_short ?>" class="title"> <span class="table"><span class="row"><span class="cell">
         <h2><?= PRIVATE_PROMO6_H2 ?></h2>
         <h3><?= PRIVATE_PROMO6_H3 ?></h3>
-        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPPL12&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/gold_star.jpg" height="157" width="281" /> </span></span></span> </a>
+        </span></span></span> </a> <a class=" picture img_popup_link" href="http://www.dvdpost.be/step1.php?activation_code=VPVOD12&language=<?= $lang_short ?>"> <span class="table"><span class="row"><span class="cell"> <img src="/images/promotions/gold_star.jpg" height="157" width="281" /> </span></span></span> </a>
         <div class="infos"><?= PRIVATE_PROMO6_DIV ?></div>
         <p class="show"><i class="maxDiscount">-60<sup>%</sup></i></p>
-        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPPL12&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
+        <div align="center"><a href="http://www.dvdpost.be/step1.php?activation_code=VPVOD12&language=<?= $lang_short ?>" class="btn_credits btn_credits_options"><?= PRIVATE_SIGNUP ?></a></div>
       </div>
       <div style='clear:both'></div>
     </div>
