@@ -1,12 +1,12 @@
 
 <script type="text/javascript">
 function cdtd() {
-var xmas = new Date("January 16, 2014 23:59:00")
+var xmas = new Date("January 19, 2014 23:59:00")
 var now = new Date();
 var timeDiff = xmas.getTime() - now.getTime();
 if (timeDiff <= 0) {        
     clearInterval(timer);
-    /*document.getElementById('einde').innerHTML = '<span style="color:#FF0000;">Volgende woensdag een nieuwe aanbieding!</span>';*/
+    /*document.getElementById('einde').innerHTML = '<span style="color:#FF0000;"></span>';*/
 		return;
       // Run any code needed for countdown completion here
 }
