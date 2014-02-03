@@ -1,10 +1,10 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_ipad.jpg';
-$code = 'SMTFOC';
+$image = 'bg_eone.jpg';
+$code = 'E1DFOC';
 $css = 'canvas2.css';
-$date_limit = '21/11/2013';
+$date_limit = '13/02/2014';
 $promo = "2VOD";
 $dvd_hide = 1;
 $hide_menu = true;
