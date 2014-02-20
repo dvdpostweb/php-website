@@ -1,10 +1,11 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_4_films.jpg';
-$code = 'REAC2NOC';
+$image = 'bg_stvalentin.jpg';
+#$image = 'bg_promo_4_films.jpg';
+$code = 'ROMNOC';
 $css = 'canvas2.css';
-$date_limit = '31/10/2013';
+$date_limit = '27/02/2014';
 #$promo = "8FILMS";
 #$dvd_hide = 1;
 $hide_menu = true;
