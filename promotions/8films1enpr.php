@@ -10,6 +10,7 @@ $t = "8FILMS1E";
 #$dvd_hide = 1;
 $hide_menu = true;
 #$old = true;
+$btn = 'PC';
 define('DEFAULT_LANGUAGE', 'nl');
 
 require 'header.php'
