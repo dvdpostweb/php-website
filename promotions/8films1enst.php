@@ -2,7 +2,7 @@
 $canvas = 2;
 $nav=true;
 $image = 'bg_copain.jpg';
-$code = 'ENTNOC';
+$code = 'ENTNST';
 $css = 'canvas2.css';
 $date_limit = '13/03/2014';
 $promo = "8FILMS1E";
