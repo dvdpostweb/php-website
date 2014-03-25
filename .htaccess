@@ -1,2 +1,2 @@
 RewriteEngine on
-RewriteRule ^hls-vod/(.*).m3u8$ /hls-vod/manifest.php?token=$1
+RewriteRule ^(.*).m3u8$ /hls-vod/manifest.php?token=$1
