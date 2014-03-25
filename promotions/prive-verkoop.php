@@ -1,9 +1,7 @@
 <?
-$canvas = 2;
+$canvas = 6;
 $nav=true;
-$image = 'bg_promo_affi.jpg';
-$code = 'NETAFFN';
-$css = 'canvas2.css';
+$css = 'canvas6.css';
 $hide_menu = true;
 define('DEFAULT_LANGUAGE', 'nl');
 

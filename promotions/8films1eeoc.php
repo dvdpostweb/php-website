@@ -1,15 +1,16 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_affi.jpg';
-#$image = 'bg_promo_4_films.jpg';
-$code = 'AFMEST';
+$image = 'bg_copain.jpg';
+$code = 'ENTEOC';
 $css = 'canvas2.css';
-$date_limit = '27/03/2014';
-#$promo = "8FILMS";
+$date_limit = '20/03/2014';
+$promo = "8FILMS1E";
+$t = "8FILMS1E";
 #$dvd_hide = 1;
 $hide_menu = true;
 $old = true;
+$btn = 'PC';
 define('DEFAULT_LANGUAGE', 'en');
 
 require 'header.php'
