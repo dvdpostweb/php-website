@@ -2,7 +2,7 @@
 header("Content-type: application/text");
 header("Content-Disposition: attachment; filename=".$token.".m3u8");
 ?>
-#EXTM3U
+#EXTM3UTEST
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=800000
 http://akamai.dvdpost.be/hls-vod/<? echo $token; ?>_800k.f4v.m3u8
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=3000000
