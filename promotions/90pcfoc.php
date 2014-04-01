@@ -1,7 +1,7 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_thor2';
+$image = 'bg_thor2.jpg';
 $code = 'THORFOC';
 $css = 'canvas2.css';
 $date_limit = '10/04/2014';
