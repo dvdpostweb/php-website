@@ -62,7 +62,7 @@ else{
 
 	}else{
 	
-	$is_client ="SELECT customers_id, customers_abo, customers_email_address,  activation_discount_code_id, activation_discount_code_type,customers_next_abo_type ,customers_abo_type from customers where customers_id='".$customers_id."'";
+	$is_client ="SELECT customers_id, customers_abo, customers_email_address,  activation_discount_code_id, activation_discount_code_type,customers_next_abo_type ,customers_abo_type from customers where customers_id='".$customer_id."'";
 	$is_client_query = tep_db_query($is_client);			  
 	$is_client_values = tep_db_fetch_array($is_client_query);
 	$promotion = promotion($is_client_values['customers_abo_type'],$is_client_values['customers_next_abo_type'],$is_client_values['activation_discount_code_type'],$is_client_values['activation_discount_code_id']);
