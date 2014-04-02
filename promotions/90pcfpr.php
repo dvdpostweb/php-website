@@ -1,15 +1,16 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_affi.jpg';
-$code = 'AFMFOC';
+$image = 'bg_thor2.jpg';
+$code = 'THORFPR';
 $css = 'canvas2.css';
-$date_limit = '03/04/2014';
-$promo = "4VOD";
-#$t = 'eone';
+$date_limit = '10/04/2014';
+$promo = "90PC";
+$t = "70";
 #$dvd_hide = 1;
 $hide_menu = true;
-$old = true;
+#$old = true;
+$btn = 'PC';
 define('DEFAULT_LANGUAGE', 'fr');
 
 require 'header.php'
