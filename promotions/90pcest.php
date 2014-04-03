@@ -2,7 +2,7 @@
 $canvas = 2;
 $nav=true;
 $image = 'bg_thor2.jpg';
-$code = 'THOREOC';
+$code = 'THOREST';
 $css = 'canvas2.css';
 $date_limit = '10/04/2014';
 $promo = "90PC";
