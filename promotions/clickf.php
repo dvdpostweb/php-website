@@ -1,7 +1,7 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_4_films.jpg';
+$image = 'bg_promo_affi.jpg';
 $code = 'CLICKFB';
 $css = 'canvas2.css';
 $hide_menu = true;
