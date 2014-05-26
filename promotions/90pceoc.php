@@ -1,10 +1,10 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_90pc2.jpg';
-$code = 'OFEOC';
+$image = 'bg_thor2.jpg';
+$code = 'THOREOC';
 $css = 'canvas2.css';
-$date_limit = '23/06/2013';
+$date_limit = '17/04/2014';
 $promo = "90PC";
 $t = "70";
 #$dvd_hide = 1;

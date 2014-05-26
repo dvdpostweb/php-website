@@ -1,10 +1,10 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_promo_6films.jpg';
-$code = 'REACEOC';
+$image = 'bg_fatherday.jpg';
+$code = 'PAPEOC';
 $css = 'canvas2.css';
-$date_limit = '24/10/2013';
+$date_limit = '05/06/2014';
 $promo = "6FILMS";
 #$dvd_hide = 1;
 $hide_menu = true;
