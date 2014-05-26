@@ -2879,7 +2879,8 @@ function format($text,$data,$set_dico = true)
 		if(!isset($data[$item]))
 		{
 			$key_missing=$item;
-			echo 'missing key'.$key_missing."<br />";
+			echo 'missing key'.$key_missing;
+			var_dump($data);
 			return false;
 		}
 		$text = str_replace('$$$'.$item.'$$$',$data[$item],$text);

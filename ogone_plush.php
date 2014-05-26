@@ -1,5 +1,12 @@
 <? 
-mysql_select_db('plush_production');
+if($HTTP_GET_VARS['test'] == '1' )
+{
+  mysql_select_db('plush_staging');  
+}
+else
+{
+  mysql_select_db('plush_production');  
+}
 $sql="select * from ogone_check where orderid = '" . $HTTP_GET_VARS['orderID'] . "' ";
 $ogone_check_query = tep_db_query($sql,'db',true);
 $ogone_check = tep_db_fetch_array($ogone_check_query);
@@ -9,7 +16,6 @@ $products_id = $customers['customers_abo_type'];
 $products_abo_query = tep_db_query("select * from products_abo where products_id = " . $products_id);
 $products_abo = tep_db_fetch_array($products_abo_query);
 $languages_id = $customers['customers_language'];
-
 $update = "update customers set customers_abo_payment_method = 1, ogone_owner='".$HTTP_GET_VARS['CN']."' , ogone_exp_date ='" . $HTTP_GET_VARS['ED'] . "' , ogone_card_no='" . $HTTP_GET_VARS['CARDNO'] . "' , ogone_card_type='" . $HTTP_GET_VARS['BRAND'] . "' where customers_id = '" . $ogone_check['customers_id'] . "' ";
 tep_db_query($update);
 switch($languages_id)
@@ -63,6 +69,66 @@ case 'credit_card_modification':
 	#tep_mail($email, $email, $mail_values['messages_title'], $email_text, 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
 	header("location: http://www.plush.be/".$lang."/customers/".$ogone_check['customers_id']."/payment_methods?type=".$ogone_check['context']."_finish");
 	break;
+case 'tvod':
+  $time = 172800;
+  $product_sql = 'select * from products where imdb_id = '.$ogone_check['products_id'];
+  $query_product=tep_db_query($product_sql,'db_link',true);
+	$product=tep_db_fetch_array($query_product);
+	$stream_sql = "select * from streaming_products where imdb_id = ".$ogone_check['products_id']." and available = 1 and status = 'online_test_ok' order by id desc limit 1";
+	$query_stream = tep_db_query($stream_sql,'db_link',true);
+	$streaming=tep_db_fetch_array($query_stream);
+	$filename = $streaming['filename'];
+  $url = "http://wesecure.alphanetworks.be/Webservice?method=createToken&key=acac0d12ed9061049880bf68f20519e65aa8ecb7&filename=".$filename."&lifetime=".$time."&simultIp=1&test=true";
+  $ch = curl_init();
+  
+  
+  curl_setopt($ch, CURLOPT_URL,$url);
+	curl_setopt($ch, CURLOPT_FAILONERROR,0);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+	curl_setopt($ch, CURLOPT_USERPWD, 'dvdpost:sup3rnov4$$');
+    
+	/*curl_setopt($process, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));*/
+  $return = curl_exec($ch);
+  curl_close($ch);
+  if (!($return == false || $return == 'NULL' || empty($return) || is_null($return) ))
+  {
+    $xml = simplexml_load_string($return) or die('die');
+    $token_string = $xml->xpath('//createToken/response');
+    $status = $xml->xpath('//createToken/status');
+    if ($status[0] == 'success')
+    {
+      tep_begin();
+      $price = intval($ogone_check['amount'])/100;
+	    $sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['products_id'].",1, ".$price.", 'BE', 'TVOD_ONLY')";
+  	  $i1 = tep_db_query($sql_token);
+      $sql_action = "insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "', 37 ,now(), 6 , 'OGONE')";
+  	  $i2 = tep_db_query($sql_action); 
+  	  $abo_id=tep_db_insert_id();
+      
+  	  $sql_insert_ogone="insert into payment (date_added,payment_method, abo_id,customers_id,amount,payment_status,last_modified) values(now(),1,$abo_id,".$ogone_check['customers_id'].", ".$price.",2,now());";
+  	  $i3 = tep_db_query($sql_insert_ogone);
+  	  if($i1 == true && $i2 == true && $i3 == true )
+  	  {
+  	    tep_commit();  
+  	  }
+  	  else
+  	  {
+  	    tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'tvod only token error rollback', $url.'.'.$i1.'.'.$i2.'.'.$i3.'.'.$sql_token.'.'.$sql_action.'.'.$sql_insert_ogone.'.'.serialize($token_string).'.'.$ogone_check['customers_id'].'.'.$ogone_check['products_id'], 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
+  	    tep_rollback();  
+	    }
+    }
+    else
+    {
+      tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'tvod only token error', $url.'.'.serialize($token_string).'.'.$ogone_check['customers_id'].'.'.$ogone_check['products_id'], 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
+    }
+  }
+  else
+  {
+    tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'tvod only token 404 wrong url', $url.'.'.$ogone_check['customers_id'].'.'.$ogone_check['products_id'], 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
+  }
+break;
 case 'new_discount':
 	if($customers['activation_discount_code_id'] > 0)
 	{		
