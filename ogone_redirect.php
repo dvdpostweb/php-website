@@ -1,5 +1,5 @@
 <?php  
-
+$current_page_name = 'ogone_redirect.php';
 require('configure/application_top.php');
 include(DIR_WS_INCLUDES . 'translation.php');
 
@@ -13,8 +13,80 @@ $customers_firstname=$cust_info_values['customers_firstname'];
 $customers_lastname=$cust_info_values['customers_lastname'];
 $ogone_amount=$cust_info_values['amount'];
 $ogone_orderID=$cust_info_values['orderid'];
-
- 
+include(DIR_WS_CLASSES . 'sha.php');
+$sha = new SHA;
+$alias = $customer_id;
+$pspid = OGONE_PSPID;			
+switch ($languages_id) {
+	case '1':
+		$textaliasusage = 'Confirmation';
+		$ogonelanguage = 'fr_FR';
+		$template_ogone = 'Template_standard2FR.htm';
+		break;
+	case '2':
+		$textaliasusage = 'Bevestiging';
+		$ogonelanguage = 'nl_NL';
+		$template_ogone = 'Template_standard2NL.htm';
+		break;
+	case '3':
+		$textaliasusage = 'Confirm';
+		$ogonelanguage = 'en_US';
+		$template_ogone = 'Template_standard2EN.htm';
+		break;
+}
+function generateShasign($fields) {
+    unset($fields['SHASIGN']);
+    #var_dump($fields);
+    ksort($fields);
+    $phrase ='';
+    foreach($fields as $key => $field){
+        if(empty($field) && $field !== '0') continue;
+        $phrase .= strtoupper($key) . '=' . $field . MODULE_PAYMENT_OGONE_SHA_STRING;
+    }
+    #var_dump($phrase);
+    
+    $sha = new SHA;
+    return $sha->hash_string($phrase);
+}
+if($host== 'localhost')
+{ 
+  if ($cust_info_values['orderid']=='A'){$COM = 'activation code' ;}else{$COM = TEXT_OGONE_COM ;}
+  $customers_name = $customers_firstname . ' ' . $customers_lastname;
+  $fields['ORDERID'] = $ogone_orderID;
+	$fields['PSPID'] = OGONE_PSPID;
+	#$fields['RL'] = "ncol-2.0";
+	$fields['CURRENCY'] = "EUR";
+	$fields['LANGUAGE']  = $ogonelanguage;
+	$fields['AMOUNT'] = $ogone_amount;
+	$fields['DECLINEURL'] = "http://".SITE_ID."/step_check.php";
+	$fields['EXCEPTIONURL'] = "http://".SITE_ID."/step_check.php";
+	$fields['CANCELURL'] = "http://".SITE_ID."/step_check.php";
+	$fields['CN'] = $customers_name;
+	$fields['CATALOGURL'] ="http://".SITE_ID."/catalog.php";
+	$fields['ACCEPTURL'] ="http://".SITE_ID."/abo_google_ogone_conf.php";
+	$fields['PM'] ="CreditCard";
+	switch ($HTTP_GET_VARS['payment']){				
+		case 'ogonevisa' :
+		  $brand = "VISA";
+		break;
+		case 'ogonemaster' :
+		  $brand = "Mastercard";
+		break;
+		case 'ogoneamex' :
+		  $brand = "American Express";
+		break;
+	}
+	$fields['BRAND'] = $brand;
+	$fields['COM'] = $COM;
+	$fields['TP'] ="http://".SITE_ID."/".$template_ogone;
+	$fields['ALIAS'] = $alias;
+	$fields['ALIASUSAGE'] = $textaliasusage ;
+	$hasharray = generateShasign($fields);
+}
+else
+{
+  $hasharray = $sha->hash_string($ogone_orderID . $ogone_amount . 'EUR' . OGONE_PSPID . $alias . $textaliasusage . MODULE_PAYMENT_OGONE_SHA_STRING);
+}
 
 if ($cust_info_values['orderid']=='A'){$COM = 'activation code' ;}else{$COM = TEXT_OGONE_COM ;}
 
@@ -39,12 +111,9 @@ switch ($HTTP_GET_VARS['payment']){
 					break;
 			}				
 			$customers_name = $customers_firstname . ' ' . $customers_lastname;
-			$alias = $customer_id;
-			include(DIR_WS_CLASSES . 'sha.php');
-			$sha = new SHA;
-			$hasharray = $sha->hash_string($ogone_orderID . $ogone_amount . 'EUR' . OGONE_PSPID . $alias . $textaliasusage . MODULE_PAYMENT_OGONE_SHA_STRING);
+			
 			?>
-			<form name="checkout_confirmation" method="post" action="<?php   echo OGONE_FORM_ACTION;?>">                                                                         
+			<form name="checkout_confirmation" method="post" action="<?php   echo OGONE_FORM_ACTION;?>">                                                             
 			<input type="hidden" name="prod" value="">
 			<input type="hidden" name="orderID" value="<?php   echo $ogone_orderID;?>">
 			<input type="hidden" name="pspid" value="<?php   echo OGONE_PSPID;?>">
@@ -66,6 +135,7 @@ switch ($HTTP_GET_VARS['payment']){
 			<input type="hidden" name="ALIASUSAGE" value="<?php   echo $textaliasusage ; ?>">
 			<input type="hidden" name="SHASign" value="<?php   echo $sha->hash_to_string($hasharray);?>">			
 			</form>
+			
 			<?php  
 		break;
 		
@@ -93,7 +163,7 @@ switch ($HTTP_GET_VARS['payment']){
 			$alias = $customer_id;
 			include(DIR_WS_CLASSES . 'sha.php');
 			$sha = new SHA;
-			$hasharray = $sha->hash_string($ogone_orderID . $ogone_amount . 'EUR' . OGONE_PSPID . $alias . $textaliasusage . MODULE_PAYMENT_OGONE_SHA_STRING);
+			#$hasharray = $sha->hash_string($ogone_orderID . $ogone_amount . 'EUR' . OGONE_PSPID . $alias . $textaliasusage . MODULE_PAYMENT_OGONE_SHA_STRING);
 			?>
 			<form name="checkout_confirmation" method="post" action="<?php   echo OGONE_FORM_ACTION;?>">                                                                         
 			<input type="hidden" name="prod" value="">
@@ -145,7 +215,7 @@ switch ($HTTP_GET_VARS['payment']){
 			$alias = $customer_id;
 			include(DIR_WS_CLASSES . 'sha.php');
 			$sha = new SHA;
-			$hasharray = $sha->hash_string($ogone_orderID . $ogone_amount . 'EUR' . OGONE_PSPID . $alias . $textaliasusage . MODULE_PAYMENT_OGONE_SHA_STRING);
+			#$hasharray = $sha->hash_string($ogone_orderID . $ogone_amount . 'EUR' . OGONE_PSPID . $alias . $textaliasusage . MODULE_PAYMENT_OGONE_SHA_STRING);
 			?>
 			<form name="checkout_confirmation" method="post" action="<?php   echo OGONE_FORM_ACTION;?>">                                                                         
 			<input type="hidden" name="prod" value="">

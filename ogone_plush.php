@@ -71,7 +71,7 @@ case 'credit_card_modification':
 	break;
 case 'tvod':
   $time = 172800;
-  $product_sql = 'select * from products where imdb_id = '.$ogone_check['products_id'];
+  $product_sql = 'select * from products p join products_description pd on p.products_id = pd.products_id and language_id = '.$customers['customers_language'].' where imdb_id = '.$ogone_check['products_id'];
   $query_product=tep_db_query($product_sql,'db_link',true);
 	$product=tep_db_fetch_array($query_product);
 	$stream_sql = "select * from streaming_products where imdb_id = ".$ogone_check['products_id']." and available = 1 and status = 'online_test_ok' order by id desc limit 1";
@@ -106,7 +106,122 @@ case 'tvod':
       $sql_action = "insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "', 37 ,now(), 6 , 'OGONE')";
   	  $i2 = tep_db_query($sql_action); 
   	  $abo_id=tep_db_insert_id();
+  	  $data= array();
+  	  $type_gender = (strtoupper($customers['customers_gender']) == 'f' ? 'female_gender' : 'male_gender');
+    	$gender_sql = "select * from  dvdpost_common.translation2 where translation_key = '".$type_gender."' and language_id = ".$languages_id;
+    	$gender_query = tep_db_query($gender_sql);
+    	$gender_value = tep_db_fetch_array($gender_query);
+      if ($product['products_type'] == 'DVD_NORM'){
+      	
+      	$mail_id = 637;
+        $data['products_id'] = $product['products_id'];
+        $data['products_name'] = $product['products_name'];
+        $data['imdb_id'] = $product['imdb_id'];
+        $data['products_year'] = $product['products_year'];
+        $data['products_image'] = $product['products_image_big'];
+        $rating_product =  $product['rating_count'] > 0 ? round(($product['rating_users'] / $product['rating_count']) * 2) : 0 ;
+
+        $rating= '';
+        for($i = 1 ; $i <= 5 ; $i++)
+        {
+        	if($rating_product>=2)
+        	{
+        		$type='on';
+        	}
+        	elseif($rating_product==1)
+        	{
+        		$type='half';
+        	}
+        	else
+        	{
+        		$type='off';
+        	}
+        	$rating_product -= 2;
+          $data['image'.$i] = 'star-'.$type.'.png';
+        }
+
+        if($customers['customers_language'] == '1')
+        {
+          $list_lang = 'fr'; 
+        }
+        else if($customers['customers_language'] == '2')
+        {
+          $list_lang = 'nl';
+        }
+        else
+        {
+          $list_lang = 'en';
+        }
+
+
+        $sql_list = "SELECT * FROM `products` p
+        JOIN `lists` l ON l.product_id = p.`products_id` 
+        join streaming_products sp on p.imdb_id = sp.imdb_id 
+        join `products_description` pd on p.products_id = pd.products_id and pd.language_id = ".$customers['customers_language']."
+        WHERE (l.".$list_lang." = 1) and available =1 and source = 'alphanetworks' and status = 'online_test_ok' and ( (available_from < now() and expire_at > now()) or (available_backcatalogue_from < now() and expire_backcatalogue_at > now())) and country = 'BE' group by p.products_id limit 4";
+        $query_list=tep_db_query($sql_list,'db_link',true);
+        $i=1;
+        
+      	while($p=tep_db_fetch_array($query_list))
+        {
+          $data['products_id'.$i] = $p['products_id'];
+          $data['products_id'.$i.'_name'] = $p['products_name'];
+          $data['products_id'.$i.'_img'] = $p['products_image_big'];
+          $i++;
+        }
+        
+      }
+      else
+      {
+        $mail_id = 618;
+        $data['product_id'] = $product['products_id'];
+        $data['name'] = $product['products_name'];
+        $data['imdb_id'] = $product['imdb_id'];
+        $data['year'] = $product['products_year'];
+        $data['image'] = $product['products_image_big'];
+        $data['description'] = $product['products_description'];
+        
+        $query_a=tep_db_query('select group_concat(actors_name) name from products_to_actors pa left join actors a on pa.actors_id = a.actors_id where pa.products_id ='.$product['products_id'],'db_link',true);
+        $a=tep_db_fetch_array($query_a);
+        $data['actors'] = isset($a['name']) && !empty($a['name']) ? $a['name'] : '';
+        $sql_studio ='select * from studio where studio_id = '.$product['products_studio'];
+        $query_s = tep_db_query($sql_studio, 'db_link',true);
+        $s=tep_db_fetch_array($query_s);
+        if(isset($s['studio_name']) && !empty($s['studio_name']))
+        {
+          $data['studio_name']= $s['studio_name']; 
+          $data['studio_slug'] = $s['studio_id'];
+        }
+        else
+        {
+          $data['studio_name']= ''; 
+          $data['studio_slug'] = '';
+        }
+        $rating_product =  $product['rating_count'] > 0 ? round(($product['rating_users'] / $product['rating_count']) * 2) : 0 ;
+
+        $rating= '';
+        for($i = 1 ; $i <= 5 ; $i++)
+        {
+        	if($rating_product>=2)
+        	{
+        		$type='on';
+        	}
+        	elseif($rating_product==1)
+        	{
+        		$type='half';
+        	}
+        	else
+        	{
+        		$type='off';
+        	}
+        	$rating_product -= 2;
+          $data['image'.$i] = 'star-'.$type.'_adult.png';
+        }
+      }
       
+      $data['gender_simple'] = $gender_value['translation_value'];
+      $data['customers_name'] = $customers['customers_firstname'] . ' ' . $customers['customers_lastname'];
+      mail_message($ogone_check['customers_id'], $mail_id, $data, 'plush');
   	  $sql_insert_ogone="insert into payment (date_added,payment_method, abo_id,customers_id,amount,payment_status,last_modified) values(now(),1,$abo_id,".$ogone_check['customers_id'].", ".$price.",2,now());";
   	  $i3 = tep_db_query($sql_insert_ogone);
   	  if($i1 == true && $i2 == true && $i3 == true )
