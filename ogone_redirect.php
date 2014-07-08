@@ -48,8 +48,8 @@ function generateShasign($fields) {
     $sha = new SHA;
     return $sha->hash_string($phrase);
 }
-if($host== 'localhost')
-{ 
+/*if($host== 'localhost')
+{*/ 
   if ($cust_info_values['orderid']=='A'){$COM = 'activation code' ;}else{$COM = TEXT_OGONE_COM ;}
   $customers_name = $customers_firstname . ' ' . $customers_lastname;
   $fields['ORDERID'] = $ogone_orderID;
@@ -82,11 +82,11 @@ if($host== 'localhost')
 	$fields['ALIAS'] = $alias;
 	$fields['ALIASUSAGE'] = $textaliasusage ;
 	$hasharray = generateShasign($fields);
-}
+/*}
 else
 {
   $hasharray = $sha->hash_string($ogone_orderID . $ogone_amount . 'EUR' . OGONE_PSPID . $alias . $textaliasusage . MODULE_PAYMENT_OGONE_SHA_STRING);
-}
+}*/
 
 if ($cust_info_values['orderid']=='A'){$COM = 'activation code' ;}else{$COM = TEXT_OGONE_COM ;}
 
