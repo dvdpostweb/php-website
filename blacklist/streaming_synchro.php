@@ -21,7 +21,7 @@ $servers=array(DB_SERVER,DB_SERVER_RO);
 
 
 $sql ='select * from dvdpost_be_prod.streaming_products';
-$result = @mysql_query($sql, $link1);
+$result = mysql_query($sql, $link1);
 echo '<table>';
 while($data = mysql_fetch_array($result, MYSQL_ASSOC))
 {
