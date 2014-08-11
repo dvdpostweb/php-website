@@ -19,13 +19,18 @@ $servers=array(DB_SERVER,DB_SERVER_RO);
 	$link1 = mysql_connect(DB_SERVER_RO, $username, $password);
 	mysql_select_db($database);
 
-
-$sql ='select * from dvdpost_be_prod.customers';
-$result = @mysql_query($sql, $link1);
+echo 'start';
+$start = $_GET['page']*10000;streapro
+$sql ='select * from dvdpost_be_prod.customers limit '.$start.',10000';
+echo $sql;
+$result = mysql_query($sql, $link1);
 echo '<table>';
+$i=0;
 while($data = mysql_fetch_array($result, MYSQL_ASSOC))
 {
+	$i++;
 	$sql2 ='select * from dvdpost_be_prod.customers where  customers_id = '.$data['customers_id'];
+	
 	$result2 = @mysql_query($sql2, $link0);
 	$data2 = mysql_fetch_array($result2, MYSQL_ASSOC);
 	
