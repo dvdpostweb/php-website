@@ -1079,7 +1079,7 @@ function formatAvailability($added_today, $products_next, $products_date_availab
     $mail->Host='email-smtp.eu-west-1.amazonaws.com';
     $mail->Port='587';
     $mail->Username = 'AKIAICQS7KIVA5N62SKQ';
-    $mail->Password = "Au/ZyAC8yBAZGGSPdGDNEz00v2biQZPjUnxpd+qLl3Xn"
+    $mail->Password = "Au/ZyAC8yBAZGGSPdGDNEz00v2biQZPjUnxpd+qLl3Xn";
     $mail->From=$from_email_address;
     $mail->FromName='DVDPost';
     $mail->AddAddress($recipient);
