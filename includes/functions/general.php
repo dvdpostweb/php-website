@@ -1073,29 +1073,15 @@ function formatAvailability($added_today, $products_next, $products_date_availab
 		
 		$recipient = $to_email_address;
 		$mail = new PHPmailer();
-
-    $mail->IsSMTP();
-    $mail->IsHTML(true);
-    $mail->Host='email-smtp.eu-west-1.amazonaws.com';
-    $mail->Port='587';
-    $mail->Username = 'AKIAICQS7KIVA5N62SKQ';
-    $mail->Password = "Au/ZyAC8yBAZGGSPdGDNEz00v2biQZPjUnxpd+qLl3Xn";
-    $mail->From=$from_email_address;
-    $mail->FromName='DVDPost';
-    $mail->AddAddress($recipient);
-    $mail->AddReplyTo($from_email_address); 
-    $mail->Subject= $email_subject;
-    $mail->Body=$email_text;
-
-		#$mail->IsSMTP();
-		#$mail->IsHTML(true);
-		#$mail->Host='mail.dvdpost.local';
-		#$mail->From=$from_email_address;
-		#$mail->FromName='DVDPost';
-		#$mail->AddAddress($recipient);
-		#$mail->AddReplyTo($from_email_address);	
-		#$mail->Subject= $email_subject;
-		#$mail->Body=$email_text;
+		$mail->IsSMTP();
+		$mail->IsHTML(true);
+		$mail->Host='mail.dvdpost.local';
+		$mail->From=$from_email_address;
+		$mail->FromName='DVDPost';
+		$mail->AddAddress($recipient);
+		$mail->AddReplyTo($from_email_address);	
+		$mail->Subject= $email_subject;
+		$mail->Body=$email_text;
 		if(!$mail->Send()){ //Teste si le return code est ok.
 		  echo $mail->ErrorInfo; //Affiche le message d'erreur (ATTENTION:voir section 7)
 		}else
