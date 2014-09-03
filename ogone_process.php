@@ -1,13 +1,13 @@
 <?php
 require('configure/application_top.php');
 /*plush*/
-if ( substr($HTTP_GET_VARS['orderID'], 0, 1) == 'p')
+if ( substr($_GET['orderID'], 0, 1) == 'p')
 {
   include('ogone_plush.php');
 	die('ok');
 }
 
-$sql="select * from ogone_check where orderid = '" . $HTTP_GET_VARS['orderID'] . "' ";
+$sql="select * from ogone_check where orderid = '" . $_GET['orderID'] . "' ";
 $ogone_check_query = tep_db_query($sql,'db',true);
 $ogone_check = tep_db_fetch_array($ogone_check_query);
 $customers_query = tep_db_query("select * from customers where customers_id = '" . $ogone_check['customers_id'] . "' ",'db',true);
@@ -30,7 +30,7 @@ tep_session_register('languages_id');
 $current_page_name = 'ogone_process.php';
 
 include(DIR_WS_INCLUDES . 'translation.php');
-$sql_query = "update customers set ppv_status_id = 1, ogone_owner='".addslashes($customers['customers_firstname'])." ".addslashes($customers['customers_lastname'])."' , ogone_exp_date ='" . $HTTP_GET_VARS['ED'] . "' , ogone_card_no='" . $HTTP_GET_VARS['CARDNO'] . "' , ogone_card_type='" . $HTTP_GET_VARS['BRAND'] . "' where customers_id = '" . $ogone_check['customers_id'] . "' ";
+$sql_query = "update customers set ppv_status_id = 1, ogone_owner='".addslashes($customers['customers_firstname'])." ".addslashes($customers['customers_lastname'])."' , ogone_exp_date ='" . $_GET['ED'] . "' , ogone_card_no='" . $_GET['CARDNO'] . "' , ogone_card_type='" . $_GET['BRAND'] . "' where customers_id = '" . $ogone_check['customers_id'] . "' ";
 tep_db_query($sql_query); 
 $check_logo_query = tep_db_query("select logo from site where site_id = '" . WEB_SITE_ID . "'");
 $check_log_values = tep_db_fetch_array($check_logo_query);
@@ -514,7 +514,7 @@ case 'dvdsale':
    	        $state='EX_RENTAL';
    	    else
    	        $state='ACCESSORY';
-		tep_db_query("insert into shopping_orders (customers_id, date, products_id, quantity, status, price, discount_code_id , products_type, products_state, order_id) values ( '" . $ogone_check['customers_id'] . "', now(), '" . $dvdsale['products_id'] . "','" . $dvdsale['quantity'] . "',1," . $dvdsale['quantity'] * $dvdsale['price'] . " ,  '" . $ogone_check['discount_code_id'] . "' , '".$type."', '".$state."', ".$HTTP_GET_VARS['orderID']." )");
+		tep_db_query("insert into shopping_orders (customers_id, date, products_id, quantity, status, price, discount_code_id , products_type, products_state, order_id) values ( '" . $ogone_check['customers_id'] . "', now(), '" . $dvdsale['products_id'] . "','" . $dvdsale['quantity'] . "',1," . $dvdsale['quantity'] * $dvdsale['price'] . " ,  '" . $ogone_check['discount_code_id'] . "' , '".$type."', '".$state."', ".$_GET['orderID']." )");
 		$insert_id = tep_db_insert_id();
 		$list_id.=$insert_id .',';
 		tep_db_query("insert into shopping_orders_status_history ( shopping_orders_id , new_value, old_value, date_added ) values ( '" . $insert_id . "', 1, 0, now()  )");
@@ -565,7 +565,7 @@ case 'dvdsale':
 		default:
 			$lang='fr';
 	}
-	header("location: http://private.dvdpost.com/".$lang."/shopping_orders/".$HTTP_GET_VARS['orderID']."?list=".$list_id);
+	header("location: http://private.dvdpost.com/".$lang."/shopping_orders/".$_GET['orderID']."?list=".$list_id);
 break;	
 
 case 'dvdsale_adult':
@@ -637,7 +637,7 @@ case 'droselia_credit':
 	{
 		$sucess = '0';
 	}
-	$url= "location: http://" . $_SERVER["SERVER_NAME"] . "/vod_order_conf.php?list=".$insert_id.'&id='.$HTTP_GET_VARS['orderID'].'&nb='.$nb.'&sucess='.$sucess;
+	$url= "location: http://" . $_SERVER["SERVER_NAME"] . "/vod_order_conf.php?list=".$insert_id.'&id='.$_GET['orderID'].'&nb='.$nb.'&sucess='.$sucess;
 	header($url);
 	
 break;
