@@ -1,5 +1,5 @@
 <? 
-if($HTTP_GET_VARS['test'] == '1' )
+if($_GET['test'] == '1' )
 {
   mysql_select_db('plush_staging');  
 }
@@ -7,7 +7,7 @@ else
 {
   mysql_select_db('plush_production');  
 }
-$sql="select * from ogone_check where orderid = '" . $HTTP_GET_VARS['orderID'] . "' ";
+$sql="select * from ogone_check where orderid = '" . $_GET['orderID'] . "' ";
 $ogone_check_query = tep_db_query($sql,'db',true);
 $ogone_check = tep_db_fetch_array($ogone_check_query);
 $customers_query = tep_db_query("select * from customers where customers_id = '" . $ogone_check['customers_id'] . "' ",'db',true);
@@ -16,7 +16,7 @@ $products_id = $customers['customers_abo_type'];
 $products_abo_query = tep_db_query("select * from products_abo where products_id = " . $products_id);
 $products_abo = tep_db_fetch_array($products_abo_query);
 $languages_id = $customers['customers_language'];
-$update = "update customers set customers_abo_payment_method = 1, ogone_owner='".$HTTP_GET_VARS['CN']."' , ogone_exp_date ='" . $HTTP_GET_VARS['ED'] . "' , ogone_card_no='" . $HTTP_GET_VARS['CARDNO'] . "' , ogone_card_type='" . $HTTP_GET_VARS['BRAND'] . "' where customers_id = '" . $ogone_check['customers_id'] . "' ";
+$update = "update customers set customers_abo_payment_method = 1, ogone_owner='".$_GET['CN']."' , ogone_exp_date ='" . $_GET['ED'] . "' , ogone_card_no='" . $_GET['CARDNO'] . "' , ogone_card_type='" . $_GET['BRAND'] . "' where customers_id = '" . $ogone_check['customers_id'] . "' ";
 tep_db_query($update);
 switch($languages_id)
 {
@@ -72,9 +72,12 @@ case 'credit_card_modification':
 case 'tvod':
   $time = 172800;
   $product_sql = 'select * from products p join products_description pd on p.products_id = pd.products_id and language_id = '.$customers['customers_language'].' where imdb_id = '.$ogone_check['products_id'];
+  #echo $product_sql;
+  #$product_sql = 'select * from products p join products_description pd on p.products_id = pd.products_id and language_id = '.$customers['customers_language'].' where imdb_id = '.$ogone_check['imdb_id'].' and season_id  = '.$ogone_check['season_id'].' and episode_id ='. $ogone_check['episode_id'];
   $query_product=tep_db_query($product_sql,'db_link',true);
 	$product=tep_db_fetch_array($query_product);
-	$stream_sql = "select * from streaming_products where imdb_id = ".$ogone_check['products_id']." and available = 1 and status = 'online_test_ok' order by id desc limit 1";
+	#$stream_sql = "select * from streaming_products where imdb_id = ".$ogone_check['imdb_id']." and season_id  = '.$ogone_check['season_id'].' and episode_id ='. $ogone_check['episode_id'] and available = 1 and status = 'online_test_ok' order by id desc limit 1";
+  $stream_sql = "select * from streaming_products where imdb_id = ".$ogone_check['products_id']." and available = 1 and status = 'online_test_ok' order by id desc limit 1";
 	$query_stream = tep_db_query($stream_sql,'db_link',true);
 	$streaming=tep_db_fetch_array($query_stream);
 	$filename = $streaming['filename'];
@@ -101,7 +104,8 @@ case 'tvod':
     {
       tep_begin();
       $price = intval($ogone_check['amount'])/100;
-	    $sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['products_id'].",1, ".$price.", 'BE', 'TVOD_ONLY')";
+	    #$sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind, season_id, episode_id) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['imdb_id'].",1, ".$price.", 'BE', 'TVOD_ONLY','.$ogone_check['season_id'].','.$ogone_check['episode_id'].")";
+      $sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind, source_id) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['products_id'].",1, ".$price.", 'BE', 'TVOD_ONLY', '69')";
   	  $i1 = tep_db_query($sql_token);
       $sql_action = "insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "', 37 ,now(), 6 , 'OGONE')";
   	  $i2 = tep_db_query($sql_action); 
