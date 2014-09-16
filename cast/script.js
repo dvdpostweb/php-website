@@ -84,8 +84,8 @@ function loadMedia() {
         }
 
         var mediaInfo = new
-chrome.cast.media.MediaInfo('http://i.imgur.com/IFD14.jpg');
-        mediaInfo.contentType = 'image/jpg';
+chrome.cast.media.MediaInfo('http://vod.dvdpost.be/53e35262d178f3.62422560_fre_non.m3u8');
+        mediaInfo.contentType = 'application/vnd.apple.mpegurl';
   
         var request = new chrome.cast.media.LoadRequest(mediaInfo);
         request.autoplay = true;
