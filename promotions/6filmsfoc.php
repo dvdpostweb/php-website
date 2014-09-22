@@ -2,7 +2,7 @@
 $canvas = 2;
 $nav=true;
 $image = 'bg_fatherday.jpg';
-$code = 'PAPFOC';
+$code = '6FIFOC';
 $css = 'canvas2.css';
 $date_limit = '12/06/2014';
 $promo = "6FILMS";
