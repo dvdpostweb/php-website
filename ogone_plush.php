@@ -71,11 +71,11 @@ case 'credit_card_modification':
 	break;
 case 'tvod':
   $time = 172800;
-  $product_sql = 'select * from products p join products_description pd on p.products_id = pd.products_id and language_id = '.$customers['customers_language'].' where imdb_id = '.$ogone_check['products_id'];
-  #$product_sql = 'select * from products p join products_description pd on p.products_id = pd.products_id and language_id = '.$customers['customers_language'].' where imdb_id = '.$ogone_check['imdb_id'].' and season_id  = '.$ogone_check['season_id'].' and episode_id ='. $ogone_check['episode_id'];
+  #$product_sql = 'select * from products p join products_description pd on p.products_id = pd.products_id and language_id = '.$customers['customers_language'].' where imdb_id = '.$ogone_check['products_id'];
+  $product_sql = 'select * from products p join products_description pd on p.products_id = pd.products_id and language_id = '.$customers['customers_language'].' where imdb_id = '.$ogone_check['imdb_id'].' and season_id  = '.$ogone_check['season_id'].' and episode_id ='. $ogone_check['episode_id'];
   $query_product=tep_db_query($product_sql,'db_link',true);
-	$product=tep_db_fetch_array($query_product);
-	#$stream_sql = "select * from streaming_products where imdb_id = ".$ogone_check['imdb_id']." and season_id  = ".$ogone_check['season_id']." and episode_id =". $ogone_check['episode_id']. " and available = 1 and status = 'online_test_ok' order by id desc limit 1";
+	#$product=tep_db_fetch_array($query_product);
+	$stream_sql = "select * from streaming_products where imdb_id = ".$ogone_check['imdb_id']." and season_id  = ".$ogone_check['season_id']." and episode_id =". $ogone_check['episode_id']. " and available = 1 and status = 'online_test_ok' order by id desc limit 1";
   $stream_sql = "select * from streaming_products where imdb_id = ".$ogone_check['products_id']." and available = 1 and status = 'online_test_ok' order by id desc limit 1";
 	$query_stream = tep_db_query($stream_sql,'db_link',true);
 	$streaming=tep_db_fetch_array($query_stream);
@@ -103,8 +103,8 @@ case 'tvod':
     {
       tep_begin();
       $price = intval($ogone_check['amount'])/100;
-	    #$sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind, season_id, episode_id, source_id) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['imdb_id'].",1, ".$price.", 'BE', 'TVOD_ONLY',".$ogone_check['season_id'].",".$ogone_check['episode_id'].",".$ogone_check['source_id'].")";
-      $sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind, source_id, payment_kind) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['products_id'].",1, ".$price.", 'BE', 'TVOD_ONLY', '69', 'PREPAID')";
+	    $sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind, season_id, episode_id, source_id) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['imdb_id'].",1, ".$price.", 'BE', 'TVOD_ONLY',".$ogone_check['season_id'].",".$ogone_check['episode_id'].",".$ogone_check['source_id'].")";
+      #$sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind, source_id, payment_kind) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['products_id'].",1, ".$price.", 'BE', 'TVOD_ONLY', '69', 'PREPAID')";
   	  $i1 = tep_db_query($sql_token);
       $sql_action = "insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "', 37 ,now(), 6 , 'OGONE')";
   	  $i2 = tep_db_query($sql_action); 
