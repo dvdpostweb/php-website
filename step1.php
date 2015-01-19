@@ -87,8 +87,16 @@ $authentification= new Authentification(array(
           setcookie('activation_code', $_POST['activation_code'], time()+2592000, substr(DIR_WS_CATALOG, 0, -1)); 
         }else{
           //mauvais code on force a freetest2
-          $activation_code='univers';
-          $activation_discount_code_id=1022;
+          if($_SERVER['SERVER_NAME'] = 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
+          {
+            $activation_code='DVDNL';
+            $activation_discount_code_id=1461;
+          }
+          else
+          {
+            $activation_code='univers';
+            $activation_discount_code_id=1022;
+          }
           $activation_discount_code_type="D";	
           $activation_discount_next=0;
           $goto_step=21;
@@ -106,11 +114,19 @@ $authentification= new Authentification(array(
     {
       //si il y a un probleme de cookies on force au FREETRIAL 	
 
-      $activation_discount_code_id=1022;
       $activation_discount_code_type="D";	
       $activation_discount_next=0;
       $goto_step=21;
-      $activation_code='univers';
+      if($_SERVER['SERVER_NAME'] = 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
+      {
+        $activation_code='DVDNL';
+        $activation_discount_code_id=1461;
+      }
+      else
+      {
+        $activation_code='univers';
+        $activation_discount_code_id=1022;
+      }
       if (!tep_session_is_registered('customer_id')) 
       {
         $cust_info ="SELECT discount_code_id , next_discount from discount_code where discount_code='". $_POST['activation_code']."'";
@@ -483,8 +499,16 @@ if (strpos(strtoupper($activation_code),'BGC') === 0) { ?>
 
     $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
     if ($_POST['activation_code']=='0' || $activation_code=='FREETEST2' || $activation_code=='univers' || $activation_code==''  ){
-      $activation_code='univers';
-      $activation_id=1022;	
+      if($_SERVER['SERVER_NAME'] = 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
+      {
+        $activation_code='DVDNL';
+        $activation_discount_code_id=1461;
+      }
+      else
+      {
+        $activation_code='univers';
+        $activation_id=1022;
+      }
 
       $show_discount_form=1;
     }

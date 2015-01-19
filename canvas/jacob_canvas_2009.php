@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_URI"] != '/password_forgotten.php' && $_SERVER["REQUEST_URI
 		break;
 		case 'www.dvdpost.nl':
 		case 'dvdpost.nl':
-		  tep_redirect_301('http://private.dvdpost.com/nl');
+		  tep_redirect_301('http://private.dvdpost.nl/nl');
 		break;
 		case 'www.dvdpost.lu':
 		case 'dvdpost.lu':
