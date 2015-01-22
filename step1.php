@@ -72,7 +72,6 @@ $authentification= new Authentification(array(
       {
         $disc_code ="SELECT discount_code_id,next_discount, goto_step,listing_products_allowed,discount_value,next_abo_type  from discount_code where discount_code='". $_POST['activation_code']."' and (discount_validityto > now() || discount_validityto is NULL) and discount_status=1";
         $disc_code_query = tep_db_query($disc_code);
-
         if($disc_code_values = tep_db_fetch_array($disc_code_query)){
           $activation_discount_code_id=$disc_code_values['discount_code_id'];
           if ($disc_code_values['next_abo_type'] > 0)
@@ -87,10 +86,11 @@ $authentification= new Authentification(array(
           setcookie('activation_code', $_POST['activation_code'], time()+2592000, substr(DIR_WS_CATALOG, 0, -1)); 
         }else{
           //mauvais code on force a freetest2
-          if($_SERVER['SERVER_NAME'] = 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
+          if($_SERVER['SERVER_NAME'] == 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
           {
             $activation_code='DVDNL';
-            $activation_discount_code_id=1461;
+            $activation_discount_code_id=130200;
+            $products_id = $activation_discount_code_id;
           }
           else
           {
@@ -117,10 +117,11 @@ $authentification= new Authentification(array(
       $activation_discount_code_type="D";	
       $activation_discount_next=0;
       $goto_step=21;
-      if($_SERVER['SERVER_NAME'] = 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
+      if($_SERVER['SERVER_NAME'] == 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
       {
         $activation_code='DVDNL';
         $activation_discount_code_id=1461;
+        $products_id = 130200;
       }
       else
       {
@@ -144,6 +145,7 @@ $authentification= new Authentification(array(
     //
 
     $current_products_id=$products_id;
+
     $current_products_query = tep_db_query("SELECT p.products_price, pa.qty_credit,qty_at_home from products p LEFT JOIN products_abo pa on pa.products_id=p.products_id  WHERE p.products_id='".$current_products_id. "'");
     $current_products_values = tep_db_fetch_array($current_products_query);
     $current_credits=$current_products_values['qty_credit'];
@@ -499,7 +501,7 @@ if (strpos(strtoupper($activation_code),'BGC') === 0) { ?>
 
     $breadcrumb->add(NAVBAR_TITLE, tep_href_link($current_page_name, '', 'NONSSL'));
     if ($_POST['activation_code']=='0' || $activation_code=='FREETEST2' || $activation_code=='univers' || $activation_code==''  ){
-      if($_SERVER['SERVER_NAME'] = 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
+      if($_SERVER['SERVER_NAME'] == 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
       {
         $activation_code='DVDNL';
         $activation_discount_code_id=1461;

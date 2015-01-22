@@ -1,13 +1,24 @@
 <?php 
 	if(!empty($customers_id))
 	{
-		$check_customers="select customers_firstname from customers where customers_id=".$customers_id;
+		$check_customers="select customers_id, customers_firstname,customers_default_address_id from customers where customers_id=".$customers_id;
 		$check_customers_query = tep_db_query($check_customers);
 		$check_customers_values = tep_db_fetch_array($check_customers_query);
+		$sql_a = "select * from address_book where customers_id = '" . $check_customers_values['customers_id'] . "' and address_book_id = '" . $check_customers_values['customers_default_address_id'] . "'";
+		$address = tep_db_query($sql_a);
+		$address_values = tep_db_fetch_array($address);
 	}
 	else{
 		$check_customers_values['customers_firstname']='';
+		$address_values = '';
 	}
+	$host=$_SERVER['HTTP_HOST'];
+  if(strpos($host,'.nl')>0 || ($address_values != '' && $address_values['entry_country_id'] == 150)){
+    $abo_cat = 10;
+  }
+  else {
+    $abo_cat = 6;
+  }
 ?>
 <!-- debut du CONTAINER -->
 <table cellspacing="0" cellpadding="0" border="0">
@@ -53,7 +64,7 @@
 	    			<table cellspacing="0" cellpadding="0" border="0" width="380">	    				
 	    				<?php  
 							$abo_passive ='SELECT pa.products_id, p.products_price, pa.qty_credit, pa.qty_at_home, pa.most_popular_group, qty_dvd_max FROM products p ';
-							$abo_passive .="LEFT JOIN products_abo pa ON pa.products_id = p.products_id WHERE p.products_type = 'ABO' AND pa.allowed_public_group = 6 or pa.allowed_private_group = 6 order by pa.qty_credit ASC" ;
+							$abo_passive .="LEFT JOIN products_abo pa ON pa.products_id = p.products_id WHERE p.products_type = 'ABO' AND pa.allowed_public_group = ". $abo_cat ." or pa.allowed_private_group = ". $abo_cat ." order by pa.qty_credit ASC" ;
 							$abo_passive_query = tep_db_query($abo_passive);		
 							$colspan=0;
 							

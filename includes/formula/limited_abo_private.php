@@ -25,8 +25,9 @@ $most_popular_values = tep_db_fetch_array($most_popular_query);
 	<div id="step90_price">€<?php  echo $abo_passive_values['products_price'] ;?></div>
 	<div class="step90_DVD_per_month"><?php  echo TEXT_DVD_PER_MONTH ;?></div>
 	<div class="step90_DVD_shipped">
-		<?= $abo_passive_values['qty_dvd_max'] ? $abo_passive_values['qty_dvd_max'] . ' films '.ALL_FORMATS.' +' : '' ?>
-		<?= ($abo_passive_values['qty_credit']-$abo_passive_values['qty_dvd_max']) . " VOD" ?>
+		<?= $abo_passive_values['qty_dvd_max'] ? $abo_passive_values['qty_dvd_max'] . ' films '.ALL_FORMATS : '' ?>
+		<?= $abo_passive_values['qty_dvd_max'] && ($abo_passive_values['qty_credit']-$abo_passive_values['qty_dvd_max']) > 0 ? ' + ' : '' ?>
+		<?=  ($abo_passive_values['qty_credit']-$abo_passive_values['qty_dvd_max']) > 0 ? ($abo_passive_values['qty_credit']-$abo_passive_values['qty_dvd_max']) . " VOD" : "" ?>
 	</div>
 </td>
 <td bgcolor="<?php  echo $bgcolor ;?>" class="step90_table_top_left" width="40" align="center">

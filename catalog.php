@@ -1,7 +1,7 @@
 <?php
 require('configure/application_top.php');
 
-header('Location: http://public.dvdpost.com/'.$lang_short.'/products?jacob='.$jacob);
+header('Location: '.ruby_host().$lang_short.'/products?jacob='.$jacob);
 $memcache_available=true; 
 
 $current_page_name = FILENAME_CATALOG;

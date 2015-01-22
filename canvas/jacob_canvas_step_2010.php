@@ -314,7 +314,7 @@ else
 		<div class="wrap">
 	   	<ul>
 	   	  <? $url = curPageURL() ?>
-		  	<li><a href="http://public.dvdpost.com/<?= $lang_short ?>/info/privacy?url_promo=<?= urlencode($url) ?>" class="footer"><?= BOX_INFORMATION_PRIVACY ?></a></li>
+		  	<li><a href="<?= ruby_host() ?><?= $lang_short ?>/info/privacy?url_promo=<?= urlencode($url) ?>" class="footer"><?= BOX_INFORMATION_PRIVACY ?></a></li>
 			</ul>
 		</div>
 	</div>
