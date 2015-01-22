@@ -312,6 +312,10 @@ $authentification= new Authentification(array(
         {
           $site = 'lavenir';
         }
+        elseif (strpos($_SERVER['HTTP_HOST'],'.nl')>0)
+        {
+          $site ='nl';
+        }
         else
         {
           if(!empty($_COOKIE['partner']))
