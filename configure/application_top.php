@@ -5,7 +5,7 @@
 //working prrocess
 header('P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"'); 
 date_default_timezone_set('Europe/Paris');
-
+#$_SERVER['SERVER_NAME'] = 'www.dvdpost.nl';
 
 function getBestMatchToInclude($pathname,$debug=0,$jacob=0) {
   $tmp = substr($pathname,0,-4);
@@ -1074,6 +1074,9 @@ if (SITE_IS_ADULT) {
 function removeCRForJS($text) {
     return preg_replace("/\r\n|\n\r|\n|\r/", ' ', $text);
 }
+
+/*$_SERVER['SERVER_NAME'] = 'www.dvdpost.nl';
+$_SERVER['HTTP_HOST'] ='dvdpost.nl';*/
 
 
 

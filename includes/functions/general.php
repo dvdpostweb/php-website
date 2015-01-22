@@ -1,5 +1,15 @@
 <?php  
-
+function ruby_host()
+{
+   if($_SERVER['SERVER_NAME'] == 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
+   {
+     return 'http://public.dvdpost.nl/';
+   }
+   else
+   {
+     return 'http://public.dvdpost.com/';
+   }
+}
 function scriptAvailable($tab,$page='')
 {
 	$result=false;
