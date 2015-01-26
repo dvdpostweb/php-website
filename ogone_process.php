@@ -90,7 +90,15 @@ case 'payment_method_change':
 	}
 	
 	tep_mail($email, $email, $mail_values['messages_title'], $email_text, 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
-	header("location: http://private.dvdpost.com/".$lang."/customers/".$ogone_check['customers_id']."/payment_methods?type=credit_card_finish");
+	if($customers['site']== 'nl')
+	{
+		$ext = 'nl';
+	}
+	else
+	{
+		$ext = 'com';
+	}
+	header("location: http://private.dvdpost.".$ext."/".$lang."/customers/".$ogone_check['customers_id']."/payment_methods?type=credit_card_finish");
 break;
 case 'ogone_change':
 	$sql_update='update customers set customers_abo_payment_method=1 where customers_id ='.$ogone_check['customers_id'];
@@ -126,10 +134,17 @@ case 'ogone_change':
 	$sql_abo='insert into abo(customerid,Action,Date,product_id,payment_method,comment,site) values ('.$ogone_check['customers_id'].',18,now(),'.$value_user['customers_abo_type'].',"'.$payment.'","(site)",'.WEB_SITE_ID.')';
 	tep_db_query($sql_abo);
 	
+	if($customers['site']== 'nl')
+	{
+		$ext = 'nl';
+	}
+	else
+	{
+		$ext = 'com';
+	}
 	
 	
-	
-	header("location: http://private.dvdpost.com/".$lang."/customers/".$ogone_check['customers_id']."/payment_methods?type=credit_card_modification_finish");
+	header("location: http://private.dvdpost.".$ext."/".$lang."/customers/".$ogone_check['customers_id']."/payment_methods?type=credit_card_modification_finish");
 break;
 case 'ogone_for_ppv':
 	$sql_user='SELECT qty_credit ,customers_abo_payment_method_name,customers_firstname,customers_lastname,customers_email_address,customers_abo_type
@@ -246,8 +261,16 @@ case 'activation':
 	$customer_id = $ogone_check['customers_id'];
 	tep_session_register('customer_id');
 
+	if($customers['site']== 'nl')
+	{
+		$host = 'www.dvdoist.nl';
+	}
+	else
+	{
+		$host = 'www.dvdoist.be';
+	}
 	
-  header("location: http://" . $_SERVER["SERVER_NAME"] . "/step4.php?type=ogone");
+  header("location: http://" . $host . "/step4.php?type=ogone");
 
 break;	
 
@@ -266,8 +289,15 @@ case 'norm':
 	setcookie('first_name', $customers['customers_firstname'], time()+2592000, substr(DIR_WS_CATALOG, 0, -1));	
 	$customer_id = $ogone_check['customers_id'];
 	tep_session_register('customer_id');
-
-	header("location: http://" . $_SERVER["SERVER_NAME"] . "/step4.php?type=ogone");
+	if($customers['site']== 'nl')
+	{
+		$host = 'www.dvdoist.nl';
+	}
+	else
+	{
+		$host = 'www.dvdoist.be';
+	}
+	header("location: http://" . $host . "/step4.php?type=ogone&valid=1");
 break;	
 
 case 'bcmc':
