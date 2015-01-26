@@ -1070,7 +1070,6 @@ if (SITE_IS_ADULT) {
 		}  
   	}
 }   
-  
 function removeCRForJS($text) {
     return preg_replace("/\r\n|\n\r|\n|\r/", ' ', $text);
 }
