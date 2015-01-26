@@ -1596,7 +1596,7 @@ function create_code_droselia()
 	}
 	return $droselia_codes;
 }
-function registration_activation($activation_code,$customers_id,$products_id,$site,$languages_id,$method_payment='OGONE',$mail_message=626,$type_payment=1)
+function registration_activation($activation_code,$customers_id,$products_id,$site,$languages_id,$method_payment='OGONE',$mail_message=645,$type_payment=1)
 {
 	$sql="select a.*,ac.droselia from activation_code a left join activation_campaign ac on a.campaign_id = ac.id where a.activation_id= " . $activation_code;
 	$code_query = tep_db_query($sql,'db_link',true);
@@ -1775,11 +1775,12 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
   $data['abo_price'] = $product_info_values['products_price'];
   $data['general_conditions'] = $conditions;
   $data['subscription'] = $product_info_values['products_model'];
+ 
 	mail_message($customers_id, $mail_message, $data);
 	
 }
 
-function registration_discount($discount_code_id,$customers_id,$products_id,$site,$languages_id,$belgiqueloisirs_id ,$method_payment='OGONE',$mail_message=626,$type_payment=1,$reference_id='')
+function registration_discount($discount_code_id,$customers_id,$products_id,$site,$languages_id,$belgiqueloisirs_id ,$method_payment='OGONE',$mail_message=645,$type_payment=1,$reference_id='')
 {
   #echo 'ici1';
   
@@ -2920,6 +2921,16 @@ function format($text,$data,$set_dico = true)
 }
 function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 {
+  if(strpos($_SERVER['HTTP_HOST'],'.nl')>0)
+  {
+    $data['host'] = 'www.dvdpost.nl';
+    $data['host_private'] = 'private.dvdpost.nl';
+  }
+  else
+  {
+    $data['host'] = 'www.dvdpost.nl';
+    $data['host_private'] = 'private.dvdpost.nl';
+  }
   if($site == 'plush')
   {
   	$mail_copy = 1;
@@ -2954,7 +2965,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 	  $email = $customers['customers_email_address'];
 	}
 	
-	if($mail_id==626)
+	if($mail_id==645)
 	{ 
 	  if($data['final_price']===$data['price'] && $data['final_price'] !=0)
 		{
@@ -2978,7 +2989,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 		}
 		else
 		{
-			$recipient = 'gs@dvdpost.be';
+			$recipient = 'it@dvdpost.be';
 		}
 		if($site == 'plush')
 		{
