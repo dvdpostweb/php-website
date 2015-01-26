@@ -274,7 +274,18 @@ if (!tep_session_is_registered('customer_id')) {
                	 tep_mail('info@dvdpost.be', 'info@dvdpost.be', 'demande d\'activation (client :'.$lang_short.')', 'Ce client '.$customer_id.' veut activer son compte. Merci de bien vouloir le rappeler au plus vite.', STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
                	$data = array();
        					$data['customers_name'] = ucwords($customers_value['customers_firstname']) . ' ' . ucwords($customers_value['customers_lastname']);
-       					mail_message($customers_value['customers_id'], 601, $data);
+       					if(strpos($_SERVER['HTTP_HOST'],'.nl')>0)
+                {
+                  $data['host'] = 'www.dvdpost.nl';
+                  $data['host_private'] = 'private.dvdpost.nl';
+                }
+                else
+                {
+                  $data['host'] = 'www.dvdpost.nl';
+                  $data['host_private'] = 'private.dvdpost.nl';
+                }
+                
+       					mail_message($customers_value['customers_id'], 647, $data);
               	}
 
 								$sql_phone='update customers set customers_abo_auto_stop_next_reconduction = "'.$auto_stop_next_reconduction.'",customers_telephone="'.$_POST['phone'].'" , customers_abo_payment_method=3,customers_registration_step=100 where customers_id = '.$customer_id;
@@ -301,7 +312,7 @@ if (!tep_session_is_registered('customer_id')) {
 							  	$product_info_values = tep_db_fetch_array($product_info);
 								
 
-								$sql='SELECT * FROM mail_messages m where mail_messages_id =626 and language_id = '.$lang;
+								$sql='SELECT * FROM mail_messages m where mail_messages_id =645 and language_id = '.$lang;
 
 								$mail_query = tep_db_query($sql);
 								$mail_values = tep_db_fetch_array($mail_query);
@@ -345,6 +356,16 @@ if (!tep_session_is_registered('customer_id')) {
 								$data['abo_price'] = $full_price;
                 $data['general_conditions'] = $conditions;
                 $data['subscription'] = $products_values['products_model'];
+                if(strpos($_SERVER['HTTP_HOST'],'.nl')>0)
+                {
+                  $data['host'] = 'www.dvdpost.nl';
+                  $data['host_private'] = 'private.dvdpost.nl';
+                }
+                else
+                {
+                  $data['host'] = 'www.dvdpost.nl';
+                  $data['host_private'] = 'private.dvdpost.nl';
+                }
                 
 								require('includes/classes/activation_code_actions.php');
 								$action=new Activation_code_actions();
@@ -357,7 +378,7 @@ if (!tep_session_is_registered('customer_id')) {
 								if ($error == 7)
 									parrainage_classic($customer_id);
 									
-								mail_message($customer_id, 626, $data);
+								mail_message($customer_id, 645, $data);
 								
 								
 								if ($customer_values['site'] == 'lavenir')
