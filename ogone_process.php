@@ -263,11 +263,11 @@ case 'activation':
 
 	if($customers['site']== 'nl')
 	{
-		$host = 'www.dvdoist.nl';
+		$host = 'www.dvdpost.nl';
 	}
 	else
 	{
-		$host = 'www.dvdoist.be';
+		$host = 'www.dvdpost.be';
 	}
 	
   header("location: http://" . $host . "/step4.php?type=ogone");
@@ -291,13 +291,13 @@ case 'norm':
 	tep_session_register('customer_id');
 	if($customers['site']== 'nl')
 	{
-		$host = 'www.dvdoist.nl';
+		$host = 'www.dvdpost.nl';
 	}
 	else
 	{
-		$host = 'www.dvdoist.be';
+		$host = 'www.dvdpost.be';
 	}
-	header("location: http://" . $host . "/step4.php?type=ogone&valid=1");
+	header("location: http://" . $host . "/step4.php?type=ogone");
 break;	
 
 case 'bcmc':
