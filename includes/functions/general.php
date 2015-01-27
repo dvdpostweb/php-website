@@ -2929,8 +2929,18 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
   }
   else
   {
-    $data['host'] = 'www.dvdpost.be';
-    $data['host_private'] = 'private.dvdpost.be';
+    $customers_query = tep_db_query("select * from customers where customers_id = '" . $customer_id . "' ",'db',true);
+    $customers = tep_db_fetch_array($customers_query);
+    if($customers['site'] == 'nl')
+    {
+      $data['host'] = 'www.dvdpost.nl';
+      $data['host_private'] = 'private.dvdpost.nl';
+    }
+    else
+    {
+      $data['host'] = 'www.dvdpost.be';
+      $data['host_private'] = 'private.dvdpost.be';  
+    }
   }
   if($site == 'plush')
   {
