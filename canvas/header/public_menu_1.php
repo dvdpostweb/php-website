@@ -36,7 +36,7 @@
 			}
 
 		}
-		?>&nbsp;|&nbsp;<a href ="/faq.php" class="yellowlink"><?php  echo TEXT_HELP ;?>
+		?>&nbsp;|&nbsp;<a href ="<?= ruby_host('private') ?><?= $lang_short ?>/faq" class="yellowlink"><?php  echo TEXT_HELP ;?>
 		</td>
 	</tr>
 	<tr>
