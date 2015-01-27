@@ -141,7 +141,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
                   
                 </p>
                 <p style="float: right;">
-                  <input type="submit" name="sent" value="<?= strpos(strtoupper($activation_values['activation_code']),'SMT') === 0 ? TEXT_GO_SITE : FILL_UP ?>" class="button_step" id="step1">
+                  <a href='<?= link_smt ?>' class="button_step" id="step1"><?= strpos(strtoupper($activation_values['activation_code']),'SMT') === 0 ? TEXT_GO_SITE : FILL_UP ?></a>
                 </p>
                 <div style="clear: both;"></div>
               </div>
