@@ -868,11 +868,7 @@ $private_page=array('/mydvdpost.php','/mywishlist.php','/login.php','/holiday_fo
 	}
   }
 
-if(WEB_SITE_ID==101)
-{
-	$languages_id=2;
-	$language='dutch';
-}
+
 $languages_id=intval($languages_id);
   setcookie('language_id', $languages_id, time()+2592000, '/');
   define("SHORT", $lang_short);
