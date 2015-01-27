@@ -78,7 +78,7 @@ function generateShasign($fields) {
 	}
 	$fields['BRAND'] = $brand;
 	$fields['COM'] = $COM;
-	$fields['TP'] ="http://www.dvdpost.be/".$template_ogone;
+	$fields['TP'] ="http://".SITE_ID."/".$template_ogone;
 	$fields['ALIAS'] = $alias;
 	$fields['ALIASUSAGE'] = $textaliasusage ;
 	$hasharray = generateShasign($fields);
