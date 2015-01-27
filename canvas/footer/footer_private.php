@@ -28,7 +28,7 @@ switch ($constants['ENTITY_ID']) {
 <table width="1009" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr align="center" valign="middle"> 
     <td height="40" colspan="2" class="yellowlink">
-		<a href="/whoweare.php" class="yellowlink"><?php    echo TEXT_WHO_WE_ARE; ?></a>
+		<a href="<?= ruby_host('private') ?>/<?= $short_lang ?>/info/whoweare" class="yellowlink"><?php    echo TEXT_WHO_WE_ARE; ?></a>
 		<img src="<?php    echo DIR_WS_IMAGES;?>canvas/footer_separator.png" width="7" height="22" align="absmiddle" class="imgseparator"> 
 		<a href="/contact.php" class="yellowlink"><?php    echo TEXT_CONTACT_US; ?></a>
 		<img src="<?php    echo DIR_WS_IMAGES;?>canvas/footer_separator.png" width="7" height="22" align="absmiddle" class="imgseparator">
@@ -53,7 +53,7 @@ switch ($constants['ENTITY_ID']) {
   <tr align="center">
     <td colspan="9" class="yellowlink">
 		<p align="center">
-			© 2002-2008 DVDpost<br>
+			© 2002- <?= date('Y') ?> DVDpost<br>
 			<?php 				
 				echo $company;
 			?>

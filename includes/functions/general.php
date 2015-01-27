@@ -1,13 +1,13 @@
 <?php  
-function ruby_host()
+function ruby_host($prefix = 'public')
 {
    if($_SERVER['SERVER_NAME'] == 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
    {
-     return 'http://public.dvdpost.nl/';
+     return 'http://'.$prefix.'.dvdpost.nl/';
    }
    else
    {
-     return 'http://public.dvdpost.com/';
+     return 'http://'.$prefix.'.dvdpost.com/';
    }
 }
 function scriptAvailable($tab,$page='')
