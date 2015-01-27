@@ -12,7 +12,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 </script>
 <tr align="center" valign="middle"> 
     <td height="40" colspan="2" class="yellowlink">
-		<a href="<?= ruby_host('private') ?>/<?= $short_lang ?>/info/whoweare" class="yellowlink"><?php    echo TEXT_WHO_WE_ARE; ?></a>
+		<a href="<?= ruby_host('private') ?><?= $lang_short ?>/info/whoweare" class="yellowlink"><?php    echo TEXT_WHO_WE_ARE; ?></a>
 		<img src="<?php    echo DIR_WS_IMAGES;?>canvas/footer_separator.png" width="7" height="22" align="absmiddle" class="imgseparator"> 
 		<a href="/contact.php" class="yellowlink"><?php    echo TEXT_CONTACT_US; ?></a>
 		<img src="<?php    echo DIR_WS_IMAGES;?>canvas/footer_separator.png" width="7" height="22" align="absmiddle" class="imgseparator">
