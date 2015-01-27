@@ -133,7 +133,7 @@ function postcode_keyup()
 	{
 	    var myRegExp = new RegExp("([^0-9])","g"); 
     	number=myRegExp.test($('#postcode').attr('value'));
-			if($('#postcode').attr('value').length <4 || number == true)
+			if($('#postcode').attr('value').length <4)
 			{
 				$('#check_zip').addClass('step_input_error').removeClass('step_input_ok').removeClass('step_input_none');
 				$('#check_zip').children('div').html($('#error_zip_text').html());
