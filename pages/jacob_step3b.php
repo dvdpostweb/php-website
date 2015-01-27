@@ -303,7 +303,7 @@ if(WEBSITE==101)
 										<span class="explain_text"><?php   echo TEXT_POST_CODE  ;?> <span class="asterisk_step">*</span></span>
 									</td>
 									<td>
-										<input class="new_step_input" type="text" autocomplete="off" name="postcode" id="postcode" value="<?php echo $postcode ;?>"  maxlength="<?= strpos($_SERVER['HTTP_HOST'],'dvdpost.nl')!==false ? 6 : 4 ?>">
+										<input class="new_step_input" type="text" autocomplete="off" name="postcode" id="postcode" value="<?php echo $postcode ;?>"  maxlength="<?= strpos($_SERVER['HTTP_HOST'],'dvdpost.nl')!==false ? 8 : 4 ?>">
 									</td>
 									<td align="left" class="explain_text">
 										<div id='check_zip' class="<?= $class_zip ?>"><div id="text"><?= $error_zip ?></div> </div>
