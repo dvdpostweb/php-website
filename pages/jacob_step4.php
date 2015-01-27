@@ -141,7 +141,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
                   
                 </p>
                 <p style="float: right;">
-                  <a href='<?= strpos(strtoupper($activation_values['activation_code']),'SMT') === 0 ? $link_smt : $link ?>' class="button_step" id="step1" style="padding; 6px 16px; color: #fff"><?= strpos(strtoupper($activation_values['activation_code']),'SMT') === 0 ? TEXT_GO_SITE : FILL_UP ?></a>
+                  <a href='<?= strpos(strtoupper($activation_values['activation_code']),'SMT') === 0 ? $link_smt : $link ?>' class="button_step" id="step1" style="padding: 6px 16px; color: #fff"><?= strpos(strtoupper($activation_values['activation_code']),'SMT') === 0 ? TEXT_GO_SITE : FILL_UP ?></a>
                 </p>
                 <div style="clear: both;"></div>
               </div>
