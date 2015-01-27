@@ -47,7 +47,7 @@
 
 if (!tep_session_is_registered('customer_id')) {
 ?>
- <table width="772" border="0" cellspacing="0" cellpadding="0">
+ <table border="0" cellspacing="0" cellpadding="0">
 	<tr> 
 	  <td width="95" valign="bottom"><?php   echo $button_home ;?></td>
 	  <td width="5"><img src="<?php    echo DIR_WS_IMAGES;?>canvas/bl_line.gif" width="6" height="30"></td>
@@ -55,7 +55,6 @@ if (!tep_session_is_registered('customer_id')) {
 	  <td width="5"><img src="<?php    echo DIR_WS_IMAGES;?>canvas/bl_line.gif" width="5" height="30"></td>
 	  <td width="114" valign="bottom"><?php   echo $button_catalog ;?></td>
 	  <td width="5"><img src="<?php    echo DIR_WS_IMAGES;?>canvas/bl_line.gif" width="5" height="30"></td>
-	  <td width="117" valign="bottom"><?php   echo $button_try ;?></td>
 	</tr>
  </table>
 <?php 
