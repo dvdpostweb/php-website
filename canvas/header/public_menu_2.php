@@ -1,7 +1,7 @@
 <?php    
  $button_home='<a href="'.ruby_host('private').''.$lang_short.'"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/welcome.png" border="0" alt="'.TEXT_HOME.'"></a>' ;
- $button_how='<a href="/how.php"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/how.png" border="0" alt="'.TEXT_HOW_DOES_IT_WORK.'"></a>' ;
- $button_catalog='<a href="/catalog.php"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/catalog.png" border="0" alt="'.TEXT_CATALOG.'"></a>' ;
+ $button_how='<a href="'.ruby_host('private').''.$lang_short.'/info/dvd"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/how.png" border="0" alt="'.TEXT_HOW_DOES_IT_WORK.'"></a>' ;
+ $button_catalog='<a href="'.ruby_host('private').''.$lang_short.'"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/catalog.png" border="0" alt="'.TEXT_CATALOG.'"></a>' ;
  $button_try='<a href="'.$link_freetrial.'"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/trial.png" border="0" alt="'.TEXT_FREETRIAL2.'"></a>' ;
  $button_tryinfo='<a href="/freetrial_info.php"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/freetrialinfo.png" border="0" alt="'.TEXT_FREETRIAL2.'"></a>' ;
  $button_shop='<a href="/mydvdshop_public.php"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/shop.png" border="0"></a>' ;
@@ -56,10 +56,6 @@ if (!tep_session_is_registered('customer_id')) {
 	  <td width="114" valign="bottom"><?php   echo $button_catalog ;?></td>
 	  <td width="5"><img src="<?php    echo DIR_WS_IMAGES;?>canvas/bl_line.gif" width="5" height="30"></td>
 	  <td width="117" valign="bottom"><?php   echo $button_try ;?></td>
-	  <td width="5"><img src="<?php    echo DIR_WS_IMAGES;?>canvas/bl_line.gif" width="5" height="30"></td>
-	  <td width="133" valign="bottom"><?php   echo $button_tryinfo ;?></td>
-	  <td width="57" background="<?php    echo DIR_WS_IMAGES;?>canvas/bl_line.gif"><img src="<?php    echo DIR_WS_IMAGES;?>canvas/bl_line.gif" width="6" height="30"></td>
-	  <td width="88" valign="bottom"><?php   echo $button_shop ;?></td>
 	</tr>
  </table>
 <?php 
