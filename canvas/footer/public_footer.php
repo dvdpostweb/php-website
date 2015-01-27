@@ -14,15 +14,15 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
     <td height="40" colspan="2" class="yellowlink">
 		<a href="<?= ruby_host('private') ?><?= $lang_short ?>/info/whoweare" class="yellowlink"><?php    echo TEXT_WHO_WE_ARE; ?></a>
 		<img src="<?php    echo DIR_WS_IMAGES;?>canvas/footer_separator.png" width="7" height="22" align="absmiddle" class="imgseparator"> 
-		<a href="/contact.php" class="yellowlink"><?php    echo TEXT_CONTACT_US; ?></a>
+		<a href="<?= ruby_host('private') ?><?= $lang_short ?>/phone_requests/new" class="yellowlink"><?php    echo TEXT_CONTACT_US; ?></a>
 		<img src="<?php    echo DIR_WS_IMAGES;?>canvas/footer_separator.png" width="7" height="22" align="absmiddle" class="imgseparator">
-		<a href="/privacy.php" class="yellowlink"><?php    echo TEXT_CONFIDENTIALITY; ?></a>
+		<a href="<?= ruby_host('private') ?><?= $lang_short ?>/info/privacy" class="yellowlink"><?php    echo TEXT_CONFIDENTIALITY; ?></a>
 		<img src="<?php    echo DIR_WS_IMAGES;?>canvas/footer_separator.png" width="7" height="22" align="absmiddle" class="imgseparator"> 
-		<a href="/conditions.php" class="yellowlink"><?php    echo TEXT_CONDITION; ?></a>
+		<a href="<?= ruby_host('private') ?><?= $lang_short ?>/info/conditions" class="yellowlink"><?php    echo TEXT_CONDITION; ?></a>
 		<img src="<?php    echo DIR_WS_IMAGES;?>canvas/footer_separator.png" width="7" height="22" align="absmiddle" class="imgseparator"> 
 		<!--<a href="/jobs.php" class="yellowlink">Jobs</a>
 		<img src="<?php    echo DIR_WS_IMAGES;?>canvas/footer_separator.png" width="7" height="22" align="absmiddle" class="imgseparator"> -->
-		<a href="/faq.php" class="yellowlink">FAQ</a>			
+		<a href="<?= ruby_host('private') ?><?= $lang_short ?>/faq" class="yellowlink">FAQ</a>			
 	</td>
 </tr>
 <tr align="center" valign="middle">
