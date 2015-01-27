@@ -131,8 +131,7 @@ if(scriptAvailable($script_available))
 	var eda_form_housenum_id = 'housenum';
   </script>     
   
-<script type="text/javascript" src="http://ws.formular1.biz/server/js/eda_formular1.js?v=2"></script>
-<link type="text/css" href="eda/formular1/eda_formular1.css" rel="stylesheet" />
+
 
 <script type="text/javascript" src="js/step3_jquery.js"></script>
 <script src="/js/default.js" type="text/javascript"></script>
