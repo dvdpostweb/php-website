@@ -1,5 +1,5 @@
 <?php    
- $button_home='<a href="/default.php"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/welcome.png" border="0" alt="'.TEXT_HOME.'"></a>' ;
+ $button_home='<a href="<?= ruby_host('private') ?><?= $lang_short ?>"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/welcome.png" border="0" alt="'.TEXT_HOME.'"></a>' ;
  $button_how='<a href="/how.php"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/how.png" border="0" alt="'.TEXT_HOW_DOES_IT_WORK.'"></a>' ;
  $button_catalog='<a href="/catalog.php"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/catalog.png" border="0" alt="'.TEXT_CATALOG.'"></a>' ;
  $button_try='<a href="'.$link_freetrial.'"><img src="'.DIR_WS_IMAGES.'languages/'.$language.'/images/buttons/inactive/trial.png" border="0" alt="'.TEXT_FREETRIAL2.'"></a>' ;
