@@ -37,7 +37,8 @@
 						echo '<p>'.TEXT_PROMO_CODE.'<br />';
 						echo '<input name="code" id="code" type="text" class="inputs_codes" size="20" size="18"><input name="imageField" type="image" src="'.DIR_WS_IMAGES.'canvas/go.gif" align="absbottom" border="0"></p>';
 						echo '<p>'.TEXT_ALSO_DO.'<br />';
-						echo '- <a href="'.ruby_host('private').''.$lang_short.'/phone_requests/new">'.TEXT_CONTACT_US.'</a><br />';
+						echo '- <a href="gift_form2.php">'.TEXT_BUY_GIFT.'</a><br />';
+						echo '- <a href="custserv_list_public.php">'.TEXT_CONTACT_US.'</a><br />';
 						echo'</p>';
 					?>
 				
