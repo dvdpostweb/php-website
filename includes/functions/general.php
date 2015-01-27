@@ -2903,10 +2903,11 @@ function format($text,$data,$set_dico = true)
 	{
 		if(!isset($data[$item]))
 		{
-			$key_missing=$item;
+			/*$key_missing=$item;
 			echo 'missing key'.$key_missing;
 			var_dump($data);
-			return false;
+			return false;*/
+      $fff=1;
 		}
 		$text = str_replace('$$$'.$item.'$$$',$data[$item],$text);
 		if($set_dico == true)
@@ -2928,8 +2929,8 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
   }
   else
   {
-    $data['host'] = 'www.dvdpost.nl';
-    $data['host_private'] = 'private.dvdpost.nl';
+    $data['host'] = 'www.dvdpost.be';
+    $data['host_private'] = 'private.dvdpost.be';
   }
   if($site == 'plush')
   {

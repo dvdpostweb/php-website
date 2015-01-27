@@ -281,8 +281,8 @@ if (!tep_session_is_registered('customer_id')) {
                 }
                 else
                 {
-                  $data['host'] = 'www.dvdpost.nl';
-                  $data['host_private'] = 'private.dvdpost.nl';
+                  $data['host'] = 'www.dvdpost.be';
+                  $data['host_private'] = 'private.dvdpost.be';
                 }
                 
        					mail_message($customers_value['customers_id'], 647, $data);
@@ -363,8 +363,8 @@ if (!tep_session_is_registered('customer_id')) {
                 }
                 else
                 {
-                  $data['host'] = 'www.dvdpost.nl';
-                  $data['host_private'] = 'private.dvdpost.nl';
+                  $data['host'] = 'www.dvdpost.be';
+                  $data['host_private'] = 'private.dvdpost.be';
                 }
                 
 								require('includes/classes/activation_code_actions.php');
