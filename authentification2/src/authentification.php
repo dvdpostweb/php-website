@@ -97,7 +97,7 @@ class Authentification
 		$result = curl_exec($ch);
 		if( $result === false)
 		{
-		    echo 'Curl error: ' . curl_error($ch);
+		    echo 'Curl error: ' .opts[CURLOPT_URL].' '. curl_error($ch);
 		}
     curl_close($ch);
     return $result;
