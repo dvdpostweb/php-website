@@ -28,9 +28,8 @@ $most_popular_values = tep_db_fetch_array($most_popular_query);
 	<div class="step90_DVD_shipped">
 		<? if $language == 'nl' ?>
 			<?=  $abo_passive_values['qty_at_home'].' '. TEXT_PER . ' '. $abo_passive_values['qty_at_home'] .' '. TEXT_SEND; ?>
-		<? }else{ ?>
+		<? else ?>
 			<?=  TEXT_SEND. ' ' . $abo_passive_values['qty_at_home'].' '. TEXT_PER . ' '. $abo_passive_values['qty_at_home']; ?>
-		 <? } ?>
 	</div>
 </td>
 <? } else { ?>
