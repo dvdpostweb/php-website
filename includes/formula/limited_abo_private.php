@@ -26,7 +26,7 @@ $most_popular_values = tep_db_fetch_array($most_popular_query);
 	<div id="step90_price">€<?php  echo $abo_passive_values['products_price'] ;?></div>
 	<div class="step90_DVD_per_month"><?php  echo TEXT_ABO_UNLIMITED_STEP90 ;?></div>
 	<div class="step90_DVD_shipped">
-		<?=  TEXT_SEND. ' ' . $abo_passive_values['qty_at_home'].' .TEXT_PER. '. $abo_passive_values['qty_at_home']; ?>
+		<?=  TEXT_SEND. ' ' . $abo_passive_values['qty_at_home'].' '. TEXT_PER . ' '. $abo_passive_values['qty_at_home']; ?>
 	</div>
 </td>
 <? } else { ?>
