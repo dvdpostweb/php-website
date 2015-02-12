@@ -2975,10 +2975,10 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 	{
 	  $email = $customers['customers_email_address'];
 	}
-	 tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'mail 645', $data['final_price'].'. .'.$data['price'].'d '.($data['final_price']===$data['price']). ' dd'.($data['final_price'] !=0) , 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
+	 tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'mail 645', $data['final_price'].'. .'.$data['price'].'d '.($data['final_price']==$data['price']). ' dd'.($data['final_price'] !=0) , 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
 	if($mail_id == 645)
 	{ 
-	  if($data['final_price']===$data['price'] && $data['final_price'] !=0)
+	  if($data['final_price']==$data['price'] && $data['final_price'] !=0)
 		{
 			$email_text = preg_replace('/<span id="you_promo">(.*)<\/span>/s', '',$email_text);
       tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'mail 645', $email_text , 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
