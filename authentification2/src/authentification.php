@@ -92,7 +92,7 @@ class Authentification
     {
       $opts[CURLOPT_POSTFIELDS] = $params;
     }
-    $opts[CURLOPT_URL] = $this->get_domain().$url.(($method == 'GET') ? '?'.http_build_query($params) : '');
+    $opts[CURLOPT_URL] = 'https://sso.dvdpost.be'.$url.(($method == 'GET') ? '?'.http_build_query($params) : '');
     curl_setopt_array($ch, $opts);
 		$result = curl_exec($ch);
 		if( $result === false)
