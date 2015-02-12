@@ -18,6 +18,19 @@ $most_popular_values = tep_db_fetch_array($most_popular_query);
 		$selected="";	
 		}
 ?>
+<? if($abo_passive_values['qty_credit'] == 0) {?>
+<td bgcolor="<?php  echo $bgcolor ;?>" class="step90_table_top" width="30" align="center" valign="middle">
+	<span class="step90_DVD"></span>
+</td>
+<td bgcolor="<?php  echo $bgcolor ;?>" class="step90_table_top" width="140">
+	<div id="step90_price">€<?php  echo $abo_passive_values['products_price'] ;?></div>
+	<div class="step90_DVD_per_month"><?php  echo TEXT_ABO_UNLIMITED ;?></div>
+	<div class="step90_DVD_shipped">
+		<?=  'Envoyé'. $abo_passive_values['qty_at_home'].' par '. $abo_passive_values['qty_at_home']; ?>
+	</div>
+</td>
+<? } else { ?>
+
 <td bgcolor="<?php  echo $bgcolor ;?>" class="step90_table_top" width="30" align="center" valign="middle">
 	<span class="step90_DVD"><?php  echo $abo_passive_values['qty_credit'] ;?></span>
 </td>
@@ -30,6 +43,7 @@ $most_popular_values = tep_db_fetch_array($most_popular_query);
 		<?=  ($abo_passive_values['qty_credit']-$abo_passive_values['qty_dvd_max']) > 0 ? ($abo_passive_values['qty_credit']-$abo_passive_values['qty_dvd_max']) . " VOD" : "" ?>
 	</div>
 </td>
+<? } ?> 
 <td bgcolor="<?php  echo $bgcolor ;?>" class="step90_table_top_left" width="40" align="center">
 	<input type="radio" name="products_id" value="<?php  echo $abo_passive_values['products_id'];?>" <?php  echo $selected ;?>>
 </td>

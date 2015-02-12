@@ -30,7 +30,7 @@ $sponsorship_link = PRIVATE_SITE.'/'.$lang_short.'/sponsorships?login=1';
               <div class="title"><span class="green_font"><?= TITLE_STEP4 ?></span></div>
               <p><?= COMPLETE ?></p>
               <div>
-								<? if (!($discount_values[discount_type]==1 && $discount_values[discount_value]==0) && ($discount_type=='D' || $discount_type=='A') && $abo_dvd_credit!=10000) {?>
+								<? if (!($discount_values[discount_type]==1 && $discount_values[discount_value]==100) && ($discount_type=='D' || $discount_type=='A') && $abo_dvd_credit!=10000) {?>
 								  <p class="title_summary"><strong><?= TEXT_ACTIVE_PROMO ?></strong></p>
 								<? } ?>
 								<? if ((empty($discount_value) && !($discount_values[discount_type]==1 && $discount_values[discount_value]==0)) &&  ($discount_type=='D' || $discount_type=='A') ){?>

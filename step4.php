@@ -91,6 +91,9 @@ if (!tep_session_is_registered('customer_id')) {
 			{
 			  $period_next = '2 VOD '.TEXT_PER.' '.TEXT_MONTH.' '.TEXT_FOR_EURO.' &euro; '.$price_abo_next;
 			}
+			elseif ($credits_next == 0) {
+				$period_next = $rotation_next.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo_next;
+			}
 			else
 			{
 			  $period_next = $credits_next.' '.TEXT_FILMS.' '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation_next.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo_next;  
