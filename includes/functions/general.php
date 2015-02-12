@@ -2976,11 +2976,11 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 	  $email = $customers['customers_email_address'];
 	}
 	
-	if($mail_id==645)
+	if($mail_id == 645)
 	{ 
 	  if($data['final_price']===$data['price'] && $data['final_price'] !=0)
 		{
-			$email_text = preg_replace('/<tr id="promo">(.*)<\/ tr>/s', '',$email_text);
+			$email_text = preg_replace('/<span id="you_promo">(.*)<\/span>/s', '',$email_text);
 		}
 	}
 	$data['display']='block';
