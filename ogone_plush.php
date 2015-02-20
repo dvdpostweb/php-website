@@ -80,30 +80,30 @@ case 'tvod':
 	$query_stream = tep_db_query($stream_sql,'db_link',true);
 	$streaming=tep_db_fetch_array($query_stream);
 	$filename = $streaming['filename'];
-  $url = "http://wesecure.alphanetworks.be/Webservice?method=createToken&key=acac0d12ed9061049880bf68f20519e65aa8ecb7&filename=".$filename."&lifetime=".$time."&simultIp=1&test=true";
-  $ch = curl_init();
-  
-  
-  curl_setopt($ch, CURLOPT_URL,$url);
-	curl_setopt($ch, CURLOPT_FAILONERROR,0);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-	curl_setopt($ch, CURLOPT_TIMEOUT, 15);
-	curl_setopt($ch, CURLOPT_USERPWD, 'dvdpost:sup3rnov4$$');
+  #$url = "http://wesecure.alphanetworks.be/Webservice?method=createToken&key=acac0d12ed9061049880bf68f20519e65aa8ecb7&filename=".$filename."&lifetime=".$time."&simultIp=1&test=true";
+  #$ch = curl_init();
+  #
+  #
+  #curl_setopt($ch, CURLOPT_URL,$url);
+	#curl_setopt($ch, CURLOPT_FAILONERROR,0);
+	#curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1);
+	#curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+	#curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+	#curl_setopt($ch, CURLOPT_USERPWD, 'dvdpost:sup3rnov4$$');
     
 	/*curl_setopt($process, CURLOPT_HTTPHEADER, array('Content-Type: application/xml'));*/
-  $return = curl_exec($ch);
-  curl_close($ch);
-  if (!($return == false || $return == 'NULL' || empty($return) || is_null($return) ))
+  #$return = curl_exec($ch);
+  #curl_close($ch);
+  if (1==1)
   {
-    $xml = simplexml_load_string($return) or die('die');
-    $token_string = $xml->xpath('//createToken/response');
-    $status = $xml->xpath('//createToken/status');
-    if ($status[0] == 'success')
+    #$xml = simplexml_load_string($return) or die('die');
+    #$token_string = $xml->xpath('//createToken/response');
+    #$status = $xml->xpath('//createToken/status');
+    if (1==1)
     {
       tep_begin();
       $price = intval($ogone_check['amount'])/100;
-	    $sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind, season_id, episode_id, source_id, payment_kind) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['imdb_id'].",1, ".$price.", 'BE', 'TVOD_ONLY',".$ogone_check['season_id'].",".$ogone_check['episode_id'].",".$ogone_check['source_id'].", 'PREPAID')";
+	    $sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind, season_id, episode_id, source_id, payment_kind) values ('3/i/".$product['imdb_id']."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['imdb_id'].",1, ".$price.", 'BE', 'TVOD_ONLY',".$ogone_check['season_id'].",".$ogone_check['episode_id'].",".$ogone_check['source_id'].", 'PREPAID')";
       #$sql_token = "insert into tokens (token,created_at, updated_at, customer_id, imdb_id, is_ppv, ppv_price,country, kind, source_id, payment_kind) values ('".$token_string[0]."', NOW(), NOW(), ".$ogone_check['customers_id'].", ".$ogone_check['products_id'].",1, ".$price.", 'BE', 'TVOD_ONLY', '69', 'PREPAID')";
   	  $i1 = tep_db_query($sql_token);
       $sql_action = "insert into abo (Customerid, Action , Date , product_id, payment_method) values ('" . $ogone_check['customers_id'] . "', 37 ,now(), 6 , 'OGONE')";
@@ -233,18 +233,18 @@ case 'tvod':
   	  }
   	  else
   	  {
-  	    tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'tvod only token error rollback', $url.'.'.$i1.'.'.$i2.'.'.$i3.'.'.$sql_token.'.'.$sql_action.'.'.$sql_insert_ogone.'.'.serialize($token_string).'.'.$ogone_check['customers_id'].'.'.$ogone_check['products_id'], 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
+  	    tep_mail('it@dvdpost.be', 'it@dvdpost.be', 'tvod only token error rollback', $url.'.'.$i1.'.'.$i2.'.'.$i3.'.'.$sql_token.'.'.$sql_action.'.'.$sql_insert_ogone.'.'.serialize($token_string).'.'.$ogone_check['customers_id'].'.'.$ogone_check['products_id'], 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
   	    tep_rollback();  
 	    }
     }
     else
     {
-      tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'tvod only token error', $url.'.'.serialize($token_string).'.'.$ogone_check['customers_id'].'.'.$ogone_check['products_id'], 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
+      tep_mail('it@dvdpost.be', 'it@dvdpost.be', 'tvod only token error', $url.'.'.serialize($token_string).'.'.$ogone_check['customers_id'].'.'.$ogone_check['products_id'], 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
     }
   }
   else
   {
-    tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'tvod only token 404 wrong url', $url.'.'.$ogone_check['customers_id'].'.'.$ogone_check['products_id'], 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
+    tep_mail('it@dvdpost.be', 'it@dvdpost.be', 'tvod only token 404 wrong url', $url.'.'.$ogone_check['customers_id'].'.'.$ogone_check['products_id'], 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
   }
 break;
 case 'new_discount':
