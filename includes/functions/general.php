@@ -1620,8 +1620,16 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	{
 	  $locale_id = 1;
 	}
-	
-	$dom = "select * from `i18n_db_translations` where tr_key = 'info'  and namespace = 'info.conditions' and locale_id = ".$locale_id;
+	if($customers['site'] == 'nl')
+  {
+    $info_c = 'info_nl';
+  }
+  else
+  {
+    $info_c = 'info';
+  }
+    
+	$dom = "select * from `i18n_db_translations` where tr_key = '".$info_c."'  and namespace = 'info.conditions' and locale_id = ".$locale_id;
   $dom_query = tep_db_query($dom);
   $dom_values = tep_db_fetch_array($dom_query);
   $conditions = $dom_values['text'];
@@ -1812,7 +1820,16 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	{
 	  $locale_id = 1;
 	}
-	$dom = "select * from `i18n_db_translations` where tr_key = 'info'  and namespace = 'info.conditions' and locale_id = ".$locale_id;
+  if($customers['site'] == 'nl')
+  {
+    $info_c = 'info_nl';
+  }
+  else
+  {
+    $info_c = 'info';
+  }
+  
+	$dom = "select * from `i18n_db_translations` where tr_key = '".$info_c."'  and namespace = 'info.conditions' and locale_id = ".$locale_id;
   $dom_query = tep_db_query($dom);
   $dom_values = tep_db_fetch_array($dom_query);
   $conditions = $dom_values['text'];
