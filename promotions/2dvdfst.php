@@ -1,10 +1,10 @@
 <?
 $canvas = 2;
 $nav=true;
-$image = 'bg_2dvdfree.jpg';
+$image = 'bg_bluray.jpg';
 $code = '2DVDFST';
 $css = 'canvas2.css';
-$date_limit = '21/08/2014';
+$date_limit = '30/04/2015';
 $promo = "2DVD";
 $vod_hide = 1;
 $hide_menu = true;
