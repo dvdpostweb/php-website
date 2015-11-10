@@ -3,7 +3,7 @@
 	<div class="banner_step_relance"  id="<?= $lang_short ?>" align="center">
 		<p style="width: 400px;margin: 26px auto;"><?= $promotion ?></p>
 	</div>
-<? } else if($customer_values['activation_discount_code_id']==1022 || $activation_id == 1022 || $promo_id == 1022) {?>
+<? } else if($customer_values['activation_discount_code_id']==10220 || $activation_id == 10220 || $promo_id == 10220) {?>
 	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_<?= $lang_short ?>.jpg' /></p>
 <? } else if($customer_values['activation_discount_code_id']==1461 || $activation_id == 1461 || $promo_id == 1461) {?>
 	<p style="width: 889px;margin: 26px auto;"><img src='/images/banner_step_<?= $lang_short ?>.jpg' /></p>
