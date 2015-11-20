@@ -164,7 +164,6 @@ if (!tep_session_is_registered('customer_id')) {
 			
 			$date=$date_sub.' '.CALL_NOW;
 		}
-		$price_abo_next
 		?>
 		<script>
     dataLayer = [{
