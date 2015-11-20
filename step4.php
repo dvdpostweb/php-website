@@ -164,7 +164,23 @@ if (!tep_session_is_registered('customer_id')) {
 			
 			$date=$date_sub.' '.CALL_NOW;
 		}
-		
+		$price_abo_next
+		?>
+		<script>
+    dataLayer = [{
+      'revenue': '<?= $price_abo_next %>'
+    }];
+</script>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PMD4QF"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-PMD4QF');</script>
+	<!-- End Google Tag Manager -->
+		<?
 		tep_db_query("update customers set customers_registration_step=100 where customers_id =".$customer_id);
 		setcookie('customers_registration_step', 100 , time()+2592000, substr(DIR_WS_CATALOG, 0, -1));
 		include(getBestMatchToInclude(DIR_WS_COMMON . 'canvas/canvas_step_2010.php',0,$jacob));
