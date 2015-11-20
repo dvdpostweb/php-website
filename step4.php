@@ -167,7 +167,7 @@ if (!tep_session_is_registered('customer_id')) {
 		?>
 		<script>
     dataLayer = [{
-      'revenue': '0'
+      'revenue': '<?= $price_abo_next ?>'
     }];
 </script>
 	<!-- Google Tag Manager -->
