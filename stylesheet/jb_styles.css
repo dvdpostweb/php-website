@@ -142,15 +142,15 @@ a:hover {
 	width: 957px;
 }
 .fr.banner_title {
-  background: url("../images/jb/bg_dicover_fr.png") no-repeat scroll 32px 0 transparent;
+  background: url("../images/jb/bg_bannerdiscover_step_fr.png") no-repeat scroll 32px 0 transparent;
   
 }
 .nl.banner_title {
-  background: url("../images/jb/bg_dicover_nl.png") no-repeat scroll 32px 0 transparent;
+  background: url("../images/jb/bg_bannerdiscover_step_nl.png") no-repeat scroll 32px 0 transparent;
   
 }
 .en.banner_title {
-  background: url("../images/jb/bg_dicover_en.png") no-repeat scroll 32px 0 transparent;
+  background: url("../images/jb/bg_bannerdiscover_step_en.png") no-repeat scroll 32px 0 transparent;
   
 }
 
