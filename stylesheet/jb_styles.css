@@ -141,15 +141,15 @@ a:hover {
 	text-align: center;
 	width: 957px;
 }
-.fr .banner_title {
+.fr.banner_title {
   background: url("../images/jb/bg_dicover_fr.png") no-repeat scroll 32px 0 transparent;
   
 }
-.nl .banner_title {
+.nl.banner_title {
   background: url("../images/jb/bg_dicover_nl.png") no-repeat scroll 32px 0 transparent;
   
 }
-.en .banner_title {
+.en.banner_title {
   background: url("../images/jb/bg_dicover_en.png") no-repeat scroll 32px 0 transparent;
   
 }
