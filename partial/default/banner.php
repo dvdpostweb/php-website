@@ -38,5 +38,5 @@
 <div class="banner_title <?= $lang_short ?>"><?= HUGE_CATALOG ?></div>
 <div class="banner_step" align="center">
   <p><?= $promotion ?></p>
-  <span><a href="catalog.php" class="browse_button"><?= EXPLORER ?></a></span> </div>
+</div>
 <? }}} ?>
