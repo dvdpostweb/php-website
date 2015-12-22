@@ -886,6 +886,42 @@ margin-top: 20px;
 	width:338px;
 }
 
+.fr .banner_step {
+  background: url("../images/jb/bg_bannerdiscover_step_fr.jpg") no-repeat scroll 32px 0 transparent;
+  font-size: 20px;
+  font-weight: bold;
+  height: 198px;
+  line-height: 20px;
+  padding-left: 592px;
+  padding-top: 15px;
+  text-align: left;
+  width:338px;
+}
+.nl .banner_step {
+  background: url("../images/jb/bg_bannerdiscover_step_nl.jpg") no-repeat scroll 32px 0 transparent;
+  font-size: 20px;
+  font-weight: bold;
+  height: 198px;
+  line-height: 20px;
+  padding-left: 592px;
+  padding-top: 15px;
+  text-align: left;
+  width:338px;
+}
+.en .banner_step {
+  background: url("../images/jb/bg_bannerdiscover_step_en.jpg") no-repeat scroll 32px 0 transparent;
+  font-size: 20px;
+  font-weight: bold;
+  height: 198px;
+  line-height: 20px;
+  padding-left: 592px;
+  padding-top: 15px;
+  text-align: left;
+  width:338px;
+}
+
+
+
 .title_step2{
 	font-size: 13pt;
 	font-weight: bold;
