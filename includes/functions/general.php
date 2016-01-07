@@ -2849,6 +2849,10 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 	{ 
 		if($abo_dvd_credit!=10000)
 		{
+      if(!empty($discount_text))
+      {
+        return $discount_text;
+      } 
 		  if($discount_values['discount_type']==1 && $discount_values['discount_value'] > 0)
 		  {
 		    return !empty($discount_text)? $discount_text : "<strong>-".round($discount_values['discount_value']).TEXT_PAID_PERCENT.' '.(intval($discount_values['discount_recurring_nbr_of_month'])+1).' '.TEXT_MONTHS."</strong>";
