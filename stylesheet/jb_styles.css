@@ -890,7 +890,7 @@ margin-top: 20px;
     width: 911px;
     color: #fff;
     text-shadow: 2px 2px #000;
-        background-size: 94.6%;
+
 }
 .banner_step p{
     width: 622px;
@@ -901,12 +901,15 @@ margin-top: 20px;
 
 .fr.banner_step {
   background: url("../images/jb/bg_bannerdiscover_step_fr.jpg") no-repeat scroll 32px 0 transparent;
+  background-size: 94.6%;
 }
 .nl.banner_step {
   background: url("../images/jb/bg_bannerdiscover_step_nl.jpg") no-repeat scroll 32px 0 transparent;
+  background-size: 94.6%;
 }
 .en.banner_step {
   background: url("../images/jb/bg_bannerdiscover_step_en.jpg") no-repeat scroll 32px 0 transparent;
+  background-size: 94.6%;
 }
 
 
