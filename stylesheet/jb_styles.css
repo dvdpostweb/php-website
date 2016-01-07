@@ -152,7 +152,9 @@ a:hover {
 }
 .navcontainer {
 
-background: url("../images/lc-bg.gif") repeat-y scroll 0 0 #C3D1DB;
+/*background: url("../images/lc-bg.gif") repeat-y scroll 0 0 #C3D1DB;*/
+background: #C3D1DB;
+
     display: block;
     margin-bottom: 0;
     float: left;
@@ -885,12 +887,12 @@ margin-top: 20px;
     padding-left: 44px;
     padding-top: 15px;
     text-align: left;
-    width: 930px;
+    width: 892px;
     color: #fff;
     text-shadow: 2px 2px #000;
 }
 .banner_step p{
-    width: 644px;
+    width: 622px;
     line-height: 46px;
     padding: 0 15px;
     background: rgba(0, 0, 0, 0.7);
