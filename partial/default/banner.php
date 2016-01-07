@@ -36,7 +36,7 @@
   ?>
   
 <div class="banner_title <?= $lang_short ?>"><?= HUGE_CATALOG ?></div>
-<div class="banner_step" align="center">
+<div class="banner_step  <?= $lang_short ?>" align="center">
   <p><?= $promotion ?></p>
 </div>
 <? }}} ?>
