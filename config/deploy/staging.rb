@@ -37,7 +37,7 @@ set :deploy_via, :remote_cache
 namespace :deploy do
   desc "Create the database yaml file"
   after "deploy:update_code" do
-    #run "cp /data/sites/benelux/releases/config/includes/functions/database.php  #{release_path}/includes/functions/database.php"
+    run "cp /data/sites/benelux/php_app/shared/cached-copy/releases/config/includes/functions/database.php  #{release_path}/includes/functions/database.php"
     #run "cp /data/sites/benelux/releases/config/configure/*  #{release_path}/configure/"
     #run "cp /data/sites/benelux/releases/zend/*  #{release_path}/rest/application/"
     #run "chmod 777 -R #{release_path}/webservice/"
