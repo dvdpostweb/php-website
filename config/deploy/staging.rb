@@ -29,7 +29,7 @@ role :db, domain, :primary => true
 #############################################################
 
 set :scm, :git
-set :branch, "deploy"
+set :branch, "master"
 set :scm_user, 'dvdpost'
 set :repository, "git@github.com:dvdpost/php-website.git"
 set :deploy_via, :remote_cache
