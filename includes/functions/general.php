@@ -1,4 +1,4 @@
-<?php  
+<?php
 function ruby_host($prefix = 'public')
 {
    if($_SERVER['SERVER_NAME'] == 'www.dvdpost.nl' ||  $_SERVER['SERVER_NAME'] == 'dvdpost.nl')
@@ -38,13 +38,13 @@ function scriptAvailable_new($tab,$page='')
 
 function replace_accents($string)
 {
-  return str_replace( array('à','á','â','ã','ä', 'ç', 'è','é','ê','ë', 'ì','í','î','ï', 'ñ', 'ò','ó','ô','õ','ö', 'ù','ú','û','ü', 'ý','ÿ', 'À','Á','Â','Ã','Ä', 'Ç', 'È','É','Ê','Ë', 'Ì','Í','Î','Ï', 'Ñ', 'Ò','Ó','Ô','Õ','Ö', 'Ù','Ú','Û','Ü', 'Ý'), array('a','a','a','a','a', 'c', 'e','e','e','e', 'i','i','i','i', 'n', 'o','o','o','o','o', 'u','u','u','u', 'y','y', 'A','A','A','A','A', 'C', 'E','E','E','E', 'I','I','I','I', 'N', 'O','O','O','O','O', 'U','U','U','U', 'Y'), $string);
+  return str_replace( array('ï¿½','ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½', 'ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½', 'ï¿½','ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½','ï¿½', 'ï¿½','ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½', 'ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½', 'ï¿½','ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½','ï¿½','ï¿½','ï¿½', 'ï¿½'), array('a','a','a','a','a', 'c', 'e','e','e','e', 'i','i','i','i', 'n', 'o','o','o','o','o', 'u','u','u','u', 'y','y', 'A','A','A','A','A', 'C', 'E','E','E','E', 'I','I','I','I', 'N', 'O','O','O','O','O', 'U','U','U','U', 'Y'), $string);
 }
 function formatAvailability($added_today, $products_next, $products_date_available, $products_availability) {
     if ($products_next > 0) {
-        //$lc_text = $lc_text . '<font color="#2C5196"><b>' . substr($listing_values['products_date_available'],0,10) . '</b></font>';        
+        //$lc_text = $lc_text . '<font color="#2C5196"><b>' . substr($listing_values['products_date_available'],0,10) . '</b></font>';
         $strdate = substr($products_date_available, 0, 10);
-        return '<font color="#2C5196"><b><span style="font-weight:bold">' . substr($strdate, 8, 2) . "/" . substr($strdate, 5, 2) . "/" . substr($strdate, 0, 4) . '</span></b></font>';        
+        return '<font color="#2C5196"><b><span style="font-weight:bold">' . substr($strdate, 8, 2) . "/" . substr($strdate, 5, 2) . "/" . substr($strdate, 0, 4) . '</span></b></font>';
     } else if ($added_today > 0) {
         return AVAILABILITY_ADDED_TODAY;
     } else {
@@ -92,7 +92,7 @@ function formatAvailability($added_today, $products_next, $products_date_availab
         $sqlfooter .= ')';
         if ($counter%100==0) {
             //BEN001 tep_db_query('update ' . TABLE_WISHLIST . ' set rank=' . $sqltrailer . 'rank' . $sqlfooter . ' where customers_id=\'' . $customers_id . '\'  ');
-			tep_db_query('update ' . TABLE_WISHLIST . ' set rank=' . $sqltrailer . 'rank' . $sqlfooter . ' where customers_id=\'' . $customers_id . '\' and wishlist_type = "DVD_NORM"'); //BEN001 
+			tep_db_query('update ' . TABLE_WISHLIST . ' set rank=' . $sqltrailer . 'rank' . $sqlfooter . ' where customers_id=\'' . $customers_id . '\' and wishlist_type = "DVD_NORM"'); //BEN001
             $sqltrailer = '';
             $sqlfooter = '';
         }
@@ -137,7 +137,7 @@ function formatAvailability($added_today, $products_next, $products_date_availab
 // Redirect to another page or site
   function tep_redirect($url) {
     #tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'redirect', $url, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
-  	
+
     header('Location: ' . $url);
     tep_exit();
   }
@@ -1056,11 +1056,11 @@ function formatAvailability($added_today, $products_next, $products_date_availab
   }
   function avg_count_fct($nb, $count)
   {
-	if($count==0)	
+	if($count==0)
 		$jsrate=0;
 	else
 		$jsrate=round($nb/$count,1);
-		
+
 	$jsrate*=10;
 	return array('avg'=>$jsrate,'count'=>$count);
   }
@@ -1077,41 +1077,42 @@ function formatAvailability($added_today, $products_next, $products_date_availab
 // $from_email_name   The name of the sender, e.g. Shop Administration
 // $from_email_adress The eMail address of the sender,
 //                    e.g. info@mytepshop.com
-	
+
   function tep_mail($to_name, $to_email_address, $email_subject, $email_text, $from_email_name, $from_email_address) {
     #if (SEND_EMAILS != 'true') return false;
-		
-		$recipient = $to_email_address;
-		$mail = new PHPmailer();
-		$mail->IsSMTP();
-		$mail->IsHTML(true);
-		$mail->Host='email-smtp.eu-west-1.amazonaws.com';
+
+//		$recipient = $to_email_address;
+//		$mail = new PHPmailer();
+//		$mail->IsSMTP();
+//		$mail->IsHTML(true);
+//		$mail->Host='email-smtp.eu-west-1.amazonaws.com';
 		#$mail->Port= 465;
 		#$mail->CharSet = 'us-ascii';
-		$mail->SMTPAuth = true;
-		$mail->SMTPSecure = "tls"; 
-    $mail->Username = "AKIAICQS7KIVA5N62SKQ";
-    $mail->Password = "Au/ZyAC8yBAZGGSPdGDNEz00v2biQZPjUnxpd+qLl3Xn";
-    
-		$mail->SetFrom('dvdpost@dvdpost.be', 'DVDPost');
+//		$mail->SMTPAuth = true;
+//		$mail->SMTPSecure = "tls";
+//    $mail->Username = "AKIAICQS7KIVA5N62SKQ";
+//    $mail->Password = "Au/ZyAC8yBAZGGSPdGDNEz00v2biQZPjUnxpd+qLl3Xn";
+
+//		$mail->SetFrom('dvdpost@dvdpost.be', 'DVDPost');
 		//$mail->Host='mail.dvdpost.local';
 		//die($from_email_address.';'.$email_text);
-		$mail->AddAddress($recipient);
-		#$mail->AddReplyTo($from_email_address);	
-		$mail->Subject= $email_subject;
-		$mail->Body=$email_text;
-		if(!$mail->Send()){ //Teste si le return code est ok.
-		  echo $mail->ErrorInfo; //Affiche le message d'erreur (ATTENTION:voir section 7)
-		}else
-		{
+//		$mail->AddAddress($recipient);
+		#$mail->AddReplyTo($from_email_address);
+//		$mail->Subject= $email_subject;
+//		$mail->Body=$email_text;
+//		if(!$mail->Send()){ //Teste si le return code est ok.
+//		  echo $mail->ErrorInfo; //Affiche le message d'erreur (ATTENTION:voir section 7)
+//		}else
+//		{
 			//echo 'ok';
-		}
-		$mail->SmtpClose();
-		unset($mail);
+//		}
+//		$mail->SmtpClose();
+//		unset($mail);
   }
+
   function tep_mail_plush($to_name, $to_email_address, $email_subject, $email_text, $from_email_name, $from_email_address) {
     #if (SEND_EMAILS != 'true') return false;
-		
+
 		$recipient = $to_email_address;
 		$mail = new PHPmailer();
 		$mail->IsSMTP();
@@ -1120,13 +1121,13 @@ function formatAvailability($added_today, $products_next, $products_date_availab
 		#$mail->Port= 465;
 		#$mail->CharSet = 'UTF-8';
 		$mail->SMTPAuth = true;
-		$mail->SMTPSecure = "tls"; 
+		$mail->SMTPSecure = "tls";
     $mail->Username = "AKIAICQS7KIVA5N62SKQ";
     $mail->Password = "Au/ZyAC8yBAZGGSPdGDNEz00v2biQZPjUnxpd+qLl3Xn";
-    
+
 		$mail->SetFrom('info@plush.be', 'Plush');
 		$mail->AddAddress($recipient);
-		#$mail->AddReplyTo('info@plush.be');	
+		#$mail->AddReplyTo('info@plush.be');
 		$mail->Subject= $email_subject;
 		$mail->Body=$email_text;
 		if(!$mail->Send()){ //Teste si le return code est ok.
@@ -1202,7 +1203,7 @@ function formatAvailability($added_today, $products_next, $products_date_availab
 
 
 
-		$chaine = ""; 
+		$chaine = "";
 
 
 
@@ -1313,7 +1314,7 @@ function formatAvailability($added_today, $products_next, $products_date_availab
   function mail_verify($email){
 	$regex='/^[a-zA-Z0-9][a-zA-Z0-9_-]*([.][a-zA-Z0-9_-]*)*[a-zA-Z0-9_-][@][a-zA-Z0-9][a-zA-Z0-9_-]*([.][a-zA-Z0-9_-]*)*[a-zA-Z0-9][.][a-zA-Z]{2,4}$/i';
 	// test de l'adresse e-mail
-	if (preg_match($regex, $email)) 
+	if (preg_match($regex, $email))
 		return true;
 	else
 	{
@@ -1332,19 +1333,19 @@ function formatAvailability($added_today, $products_next, $products_date_availab
   }
 function tep_rating($products_id, $imdb_id,$rate,$customer_id){
 	tep_db_query("insert into products_rating (products_id , products_rating, products_rating_date , customers_id,  rating_type, imdb_id) values ('" . $products_id . "', '" . $rate . "', now(), '" . $customer_id . "' , 'DVD_NORM',".$imdb_id.") ");
-	
+
 	if($imdb_id>0)
 		tep_db_query('update products set rating_users=rating_users+'.$rate.', rating_count=rating_count+1 where imdb_id = '.$imdb_id);
-	else	
+	else
 		tep_db_query('update products set rating_users=rating_users+'.$rate.', rating_count=rating_count+1 where products_id = '.$products_id);
 }
 function tep_rating_filter($products_id, $imdb_id,$rate,$language,$customer_id,$type){
 	tep_db_query("insert into products_rating (products_id , products_rating, products_rating_date , customers_id,  rating_type, imdb_id) values ('" . $products_id . "', '" . $rate . "', now(), '" . $customer_id . "' , '".$type."' ,".$imdb_id.") ");
 	if($imdb_id>0)
 		tep_db_query('update products set rating_users=rating_users+'.$rate.', rating_count=rating_count+1 where imdb_id = '.$imdb_id);
-	else	
+	else
 		tep_db_query('update products set rating_users=rating_users+'.$rate.', rating_count=rating_count+1 where products_id = '.$products_id);
-	
+
 	$request =  'http://partners.thefilter.com/DVDPostService';
 	$format = 'CaptureService.ashx';   // this can be xml, json, html, or php
 	$args .= 'cmd=AddEvidence';
@@ -1354,7 +1355,7 @@ function tep_rating_filter($products_id, $imdb_id,$rate,$language,$customer_id,$
 	$args .= '&userLanguage='.$language;
 	$args .= '&rating='.$rate;
 	$args .= '&clientIp='.$_SERVER['REMOTE_ADDR'];
-	
+
 
     // Get and config the curl session object
     $session = curl_init($request.'/'.$format.'?'.$args);
@@ -1363,14 +1364,14 @@ function tep_rating_filter($products_id, $imdb_id,$rate,$language,$customer_id,$
 	    //execute the request and close
     $response = curl_exec($session);
     curl_close($session);
-	
+
 }
 function tep_rating_review($products_id, $imdb_id,$rate,$name,$review,$languages_id,$customer_id){
-	tep_db_query("insert into " . TABLE_REVIEWS . " (products_id, customers_id, customers_name, reviews_rating , languages_id, reviews_text, date_added) values ('" . $products_id . "', '" . $customer_id . "', '" .  $name . "', '" . $rate . "', '" . $languages_id . "', '" . $review . "', now())");	
+	tep_db_query("insert into " . TABLE_REVIEWS . " (products_id, customers_id, customers_name, reviews_rating , languages_id, reviews_text, date_added) values ('" . $products_id . "', '" . $customer_id . "', '" .  $name . "', '" . $rate . "', '" . $languages_id . "', '" . $review . "', now())");
 
 	if($imdb_id>0)
 		tep_db_query('update products set rating_users=rating_users+'.$rate.', rating_count=rating_count+1 where imdb_id = '.$imdb_id);
-	else	
+	else
 		tep_db_query('update products set rating_users=rating_users+'.$rate.', rating_count=rating_count+1 where products_id = '.$products_id);
 	switch($languages_id){
 		case 1:
@@ -1392,7 +1393,7 @@ function tep_rating_review($products_id, $imdb_id,$rate,$name,$review,$languages
 	$args .= '&userLanguage='.$lang;
 	$args .= '&rating='.$rate;
 	$args .= '&clientIp='.$_SERVER['REMOTE_ADDR'];
-	
+
 
     // Get and config the curl session object
     $session = curl_init($request.'/'.$format.'?'.$args);
@@ -1401,7 +1402,7 @@ function tep_rating_review($products_id, $imdb_id,$rate,$name,$review,$languages
 	    //execute the request and close
     $response = curl_exec($session);
     curl_close($session);
-	
+
 }
 
 function tep_check_portable($phone)
@@ -1436,7 +1437,7 @@ function tep_send_portable($phone)
 	{
 		return array('customer'=>$value['customers_id'],'status'=>'SEND');
 	}
-	
+
 	else if(!empty($value['status']))
 	{
 		return array('customer'=>$value['customers_id'],'status'=>'WAIT');
@@ -1493,14 +1494,14 @@ function tep_ab_testing_link($url,$page='step1')
 	return $url;
 }
 function luhn_check($number) {
- 
+
   // Strip any non-digits (useful for credit card numbers with spaces and hyphens)
   $number=preg_replace('/\D/', '', $number);
- 
+
   // Set the string length and parity
   $number_length=strlen($number);
   $parity=$number_length % 2;
- 
+
   // Loop through each digit and do the maths
   $total=0;
   for ($i=0; $i<$number_length; $i++) {
@@ -1516,15 +1517,15 @@ function luhn_check($number) {
     // Total up the digits
     $total+=$digit;
   }
- 
+
   // If the total mod 10 equals 0, the number is valid
   return ($total % 10 == 0) ? TRUE : FALSE;
- 
+
 }
 function shipping($country,$nbrtotdvd)
 {
 	switch ($country){
-	case '21' :	
+	case '21' :
 		if($nbrtotdvd==0){
 			$price=0;
 		}else if($nbrtotdvd<=2){
@@ -1534,16 +1535,16 @@ function shipping($country,$nbrtotdvd)
 		}
 		else if($nbrtotdvd<=24){
 			$price=12.4;
-		}	
+		}
 		else if($nbrtotdvd<=37){
 			$price=19.1;
 		}
 		else
 		{
 			$price=0.51*$nbrtotdvd;
-		}	
-					
-							
+		}
+
+
 	break;
 	case '124' :
 		switch ($nbrtotdvd){
@@ -1559,8 +1560,8 @@ function shipping($country,$nbrtotdvd)
 					$price=9.30;
 					break;
 				default:
-					$price=(ceil($nbrtotdvd/12))*18.5;																	
-				break;								
+					$price=(ceil($nbrtotdvd/12))*18.5;
+				break;
 			}
 	break;
 	case '150' :
@@ -1577,8 +1578,8 @@ function shipping($country,$nbrtotdvd)
 					$price=9.30;
 					break;
 				default:
-					$price=(ceil($nbrtotdvd/12))*18.5;																	
-				break;								
+					$price=(ceil($nbrtotdvd/12))*18.5;
+				break;
 			}
 	break;
 	}
@@ -1587,11 +1588,11 @@ function shipping($country,$nbrtotdvd)
 function create_code_droselia()
 {
 	$intflag_activation_code_unique=0;
-	while($intflag_activation_code_unique<1){	
+	while($intflag_activation_code_unique<1){
 		$droselia_codes = 'VOD' . rand(11111,99999)	;
 		$actcode_unique_query = tep_db_query("select count(*) as cpt from droselia_codes where droselia_codes = '" . $droselia_codes . "' ");
 		$actcode_unique = tep_db_fetch_array($actcode_unique_query);
-		if ($actcode_unique['cpt'] == 0)	
+		if ($actcode_unique['cpt'] == 0)
 			$intflag_activation_code_unique = 1;
 	}
 	return $droselia_codes;
@@ -1603,7 +1604,7 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	$code = tep_db_fetch_array($code_query);
 	$products_abo_query = tep_db_query("select * from products_abo where products_id = " . $products_id);
 	$products_abo = tep_db_fetch_array($products_abo_query);
-	
+
 	$customers_query = tep_db_query("select * from customers where customers_id = '" . $customers_id . "' ",'db_link',true);
 	$customers = tep_db_fetch_array($customers_query);
 	$first_time = tep_db_query("select * from abo where customerid = '" . $customers_id . "' ",'db_link',true);
@@ -1628,12 +1629,12 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
   {
     $info_c = 'info';
   }
-    
+
 	$dom = "select * from `i18n_db_translations` where tr_key = '".$info_c."'  and namespace = 'info.conditions' and locale_id = ".$locale_id;
   $dom_query = tep_db_query($dom);
   $dom_values = tep_db_fetch_array($dom_query);
   $conditions = $dom_values['text'];
-  
+
 	if ($code['next_abo_type'] > 0)
 	{
 		$next = $code['next_abo_type'];
@@ -1643,14 +1644,14 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 		$next = $products_id;
 	}
 	if ($first_time_value['abo_id']>0){
-	}else{	
-			
+	}else{
+
 	}
-	
-	tep_db_query("insert into abo (Customerid, Action , code_id, Date , product_id, payment_method, site) values ('" . $customers_id . "', 8, '" . $activation_code . "' ,now(), '" . $products_id . "' , '".$method_payment."', '" . $site. "') "); 
-	
-	tep_db_query("update products set products_quantity  = products_quantity - 1 , products_ordered  = products_ordered + 1 where products_id = '" . $products_id . "' "); 
-	
+
+	tep_db_query("insert into abo (Customerid, Action , code_id, Date , product_id, payment_method, site) values ('" . $customers_id . "', 8, '" . $activation_code . "' ,now(), '" . $products_id . "' , '".$method_payment."', '" . $site. "') ");
+
+	tep_db_query("update products set products_quantity  = products_quantity - 1 , products_ordered  = products_ordered + 1 where products_id = '" . $products_id . "' ");
+
 	tep_db_query("update customers set customers_abo  = 1 , customers_registration_step=100 , customers_abo_payment_method  = ".$type_payment." , customers_abo_dvd_norm  =". $products_abo['qty_at_home']." , customers_abo_start_rentthismonth  =0 , customers_abo_type  = '" . $products_id . "',  customers_next_abo_type = '" . $next . "',customers_next_discount_code  =". $code['next_discount']." , customers_abo_auto_stop_next_reconduction =".$code['abo_auto_stop_next_reconduction']." where customers_id = '" . $customers_id . "'");
 	if(!isset($code['abo_auto_stop_next_reconduction']))
 	{
@@ -1672,15 +1673,15 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	}
 	if ($code['abo_dvd_credit'] > 0)
 	{
-		
+
 		credit_history($customers_id  , $customers['customers_abo_dvd_credit'],$code['abo_dvd_credit'],4);
-		
+
 		tep_db_query("update customers set customers_abo_dvd_credit  = customers_abo_dvd_credit + ". $code['abo_dvd_credit']." where customers_id = " . $customers_id . ";");
 	}
 	else
 	{
 		credit_history($customers_id  , $customers['customers_abo_dvd_credit'],$products_abo['qty_credit'],4);
-		
+
 		tep_db_query("update customers set customers_abo_dvd_credit  = customers_abo_dvd_credit + ". $products_abo['qty_credit']." where customers_id = " . $customers_id .";");
 
 	}
@@ -1693,8 +1694,8 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 			tep_db_query("insert into droselia_codes (droselia_codes, customers_id, buy_date , catalog_id) values ( '" . $droselia_codes . "','" . $customers_id . "',now() , 0 )");
 		}
 	}
-			
-	 tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 17, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') "); 
+
+	 tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 17, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') ");
 	switch ($code['activation_group']){
 	    case 39: //spector
 			tep_db_query("update customers set customers_abo_payment_method  = 9 where customers_id = '" . $customers_id . "'");
@@ -1727,7 +1728,7 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 			tep_db_query("update customers set customers_abo_auto_stop_next_reconduction = 1  where customers_id = '" . $customers_id . "'");
 		break;
 	}
-		
+
 	switch ($code['validity_type']){
 	    case 1: //day
 			tep_db_query("update customers set customers_abo_validityto   = DATE_ADD(now(), INTERVAL '" . $code['validity_value'] . "' DAY)  where customers_id = '" . $customers_id . "'");
@@ -1740,22 +1741,22 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	    break;
 	}
 	tep_db_query("update customers set customers_abo_rank  = 10 where customers_id = '" . $customers_id . "'");
-	
+
 	tep_db_query("update activation_code set activation_date  = now() , customers_id = '" . $customers_id . "' where activation_id  = '" . $code['activation_id'] . "' ");
-	
+
 	/*switch ($code['activation_group']){
 	    case 39: //spector
 			$email_text = TEXT_MAIL_SPECTOR;
-			$email_text = str_replace('µµµlogo_dvdpostµµµ', $logo , $email_text);
-			$email_text = str_replace('µµµcustomers_nameµµµ', $customers['customers_firstname'] . ' ' . $customers['customers_lastname'] , $email_text);
-			$email_text = str_replace('µµµabo_typeµµµ',  $product_info_values['products_name'] , $email_text);
-			$email_text = str_replace('µµµloginµµµ',  $customers['customers_email_address'] , $email_text);
-			$email_text = str_replace('µµµcustomers_addressµµµ',  $customers_addr['entry_street_address'] . ' ' . $customers_addr['entry_postcode'] . ' ' . $customers_addr['entry_city'], $email_text);
-			
+			$email_text = str_replace('ï¿½ï¿½ï¿½logo_dvdpostï¿½ï¿½ï¿½', $logo , $email_text);
+			$email_text = str_replace('ï¿½ï¿½ï¿½customers_nameï¿½ï¿½ï¿½', $customers['customers_firstname'] . ' ' . $customers['customers_lastname'] , $email_text);
+			$email_text = str_replace('ï¿½ï¿½ï¿½abo_typeï¿½ï¿½ï¿½',  $product_info_values['products_name'] , $email_text);
+			$email_text = str_replace('ï¿½ï¿½ï¿½loginï¿½ï¿½ï¿½',  $customers['customers_email_address'] , $email_text);
+			$email_text = str_replace('ï¿½ï¿½ï¿½customers_addressï¿½ï¿½ï¿½',  $customers_addr['entry_street_address'] . ' ' . $customers_addr['entry_postcode'] . ' ' . $customers_addr['entry_city'], $email_text);
+
 		  	tep_mail($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $customers['customers_email_address'], TEXT_MAIL_SUBJECT_SPECTOR, $email_text, STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
 	    break;
 	}*/
-	
+
 	//action parrainage
 	require('includes/classes/activation_code_actions.php');
 	$action=new Activation_code_actions();
@@ -1774,38 +1775,38 @@ function registration_activation($activation_code,$customers_id,$products_id,$si
 	$gender_query = tep_db_query($gender_sql);
 	$gender_value = tep_db_fetch_array($gender_query);
 	$promotion2 = promotion($products_id, $next, 'A', $activation_code, 2,$languages_id);
-	
+
 	$data['gender_simple'] = $gender_value['translation_value'];
 	$data['customers_name'] = $customers['customers_firstname'] . ' ' . $customers['customers_lastname'];
 	$data['email'] = $customers['customers_email_address'];
 	$data['promotion'] = $promotion2;
-	
+
   $data['abo_price'] = $product_info_values['products_price'];
   $data['general_conditions'] = $conditions;
   $data['subscription'] = $product_info_values['products_model'];
- 
+
 	mail_message($customers_id, $mail_message, $data);
-	
+
 }
 
 function registration_discount($discount_code_id,$customers_id,$products_id,$site,$languages_id,$belgiqueloisirs_id ,$method_payment='OGONE',$mail_message=645,$type_payment=1,$reference_id='')
 {
   #echo 'ici1';
-  
+
 	$sql="SELECT * FROM discount_code WHERE discount_code_id ='".$discount_code_id. "'";
 	$discount_query = tep_db_query($sql);
 	$discount_values = tep_db_fetch_array($discount_query);
 	$next_abo_type = $discount_values['next_abo_type'];
-	
-	
+
+
 	if(!$next_abo_type >0 )
 	{
 		$next_abo_type = $products_id;
 	}
-	
+
 	$products_abo_query = tep_db_query("SELECT * from products p LEFT JOIN products_abo pa on pa.products_id=p.products_id  WHERE p.products_id='".$products_id. "'",'db_link',true);
 	$products_abo = tep_db_fetch_array($products_abo_query);
-	
+
 	$customers_query = tep_db_query("select * from customers where customers_id = '" . $customers_id . "' ",'db_link',true);
 	$customers = tep_db_fetch_array($customers_query);
 	if($languages_id==1)
@@ -1828,16 +1829,16 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
   {
     $info_c = 'info';
   }
-  
+
 	$dom = "select * from `i18n_db_translations` where tr_key = '".$info_c."'  and namespace = 'info.conditions' and locale_id = ".$locale_id;
   $dom_query = tep_db_query($dom);
   $dom_values = tep_db_fetch_array($dom_query);
   $conditions = $dom_values['text'];
 	$first_time = tep_db_query("select * from abo where customerid = '" . $customers_id . "' ",'db_link',true);
-	$first_time_value = tep_db_fetch_array($first_time);	
+	$first_time_value = tep_db_fetch_array($first_time);
 	if ($first_time_value['abo_id']>0){
-	}else{	
-		
+	}else{
+
 	}
 	//action parraingage
 	require('includes/classes/activation_code_actions.php');
@@ -1847,14 +1848,14 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	$status=$data2['status'];
 	if ($error == 7)
 		parrainage_classic($customers_id);
-	
-	
+
+
 	#echo 'ici2';
 	if ($discount_code_id< 1){
 		//norm
-		tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method, site) values ('" . $customers_id . "', 1 ,now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') "); 
+		tep_db_query("insert into abo (Customerid, Action , Date , product_id, payment_method, site) values ('" . $customers_id . "', 1 ,now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') ");
 		$abo_id=tep_db_insert_id();
-		tep_db_query("update customers set customers_abo_validityto = DATE_ADD(now(), INTERVAL 1 MONTH), customers_abo_auto_stop_next_reconduction = 0 , customers_next_discount_code = 0  where customers_id = '" . $customers_id . "'");		
+		tep_db_query("update customers set customers_abo_validityto = DATE_ADD(now(), INTERVAL 1 MONTH), customers_abo_auto_stop_next_reconduction = 0 , customers_next_discount_code = 0  where customers_id = '" . $customers_id . "'");
 	}else{
 		//discount
 		$code_query_disc = tep_db_query("select * from discount_code where discount_code_id  = '" . $discount_code_id. "' ");
@@ -1867,39 +1868,39 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 				tep_db_query("insert into droselia_codes (droselia_codes, customers_id, buy_date , catalog_id) values ( '" . $droselia_codes . "','" . $customers_id . "',now() , 0 )");
 			}
 		}
-		tep_db_query("insert into abo (Customerid, Action , code_id, Date , product_id, payment_method, site) values ('" . $customers_id . "', 6, '" . $discount_code_id . "' ,now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') "); 
+		tep_db_query("insert into abo (Customerid, Action , code_id, Date , product_id, payment_method, site) values ('" . $customers_id . "', 6, '" . $discount_code_id . "' ,now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') ");
 		$abo_id=tep_db_insert_id();
 		tep_db_query("insert into discount_use  (discount_code_id , discount_use_date , customers_id) values ('" . $discount_code_id . "', now(), '" . $customers_id . "' )");
 		tep_db_query("update discount_code set discount_limit = discount_limit  -1 where  discount_code_id  = '" . $discount_code_id . "' ");
 		tep_db_query("update customers set activation_discount_code_id=".$discount_code_id.",customers_abo_validityto  = DATE_ADD(now(), INTERVAL 1 MONTH), customers_abo_auto_stop_next_reconduction =".$code_disc['abo_auto_stop_next_reconduction']." , customers_next_discount_code  =". $code_disc['next_discount']."   where customers_id = '" . $customers_id . "'");
-	
-	
+
+
 		switch ($code_disc['discount_abo_validityto_type']){
 			case 1:
-					tep_db_query("update customers set customers_abo_validityto  = DATE_ADD(now(), INTERVAL " . $code_disc['discount_abo_validityto_value'] . " DAY)  where customers_id = '" . $customers_id . "'");		
+					tep_db_query("update customers set customers_abo_validityto  = DATE_ADD(now(), INTERVAL " . $code_disc['discount_abo_validityto_value'] . " DAY)  where customers_id = '" . $customers_id . "'");
 			break;
 			case 2:
-					tep_db_query("update customers set customers_abo_validityto  = DATE_ADD(now(), INTERVAL " . $code_disc['discount_abo_validityto_value'] . " MONTH)  where customers_id = '" . $customers_id . "'");		
+					tep_db_query("update customers set customers_abo_validityto  = DATE_ADD(now(), INTERVAL " . $code_disc['discount_abo_validityto_value'] . " MONTH)  where customers_id = '" . $customers_id . "'");
 			break;
 			case 3:
-					tep_db_query("update customers set customers_abo_validityto  = DATE_ADD(now(), INTERVAL " . $code_disc['discount_abo_validityto_value'] . " YEAR)  where customers_id = '" . $customers_id . "'");		
-			break;		
+					tep_db_query("update customers set customers_abo_validityto  = DATE_ADD(now(), INTERVAL " . $code_disc['discount_abo_validityto_value'] . " YEAR)  where customers_id = '" . $customers_id . "'");
+			break;
 		}
 		//recurring discount
 		if ($code_disc['discount_recurring_nbr_of_month'] > 0 ){
-			tep_db_query("update customers set customers_abo_discount_recurring_to_date  = DATE_ADD(now(), INTERVAL " . $code_disc['discount_recurring_nbr_of_month'] . " MONTH)  where customers_id = '" . $customers_id . "'");		
-			tep_db_query("update customers set customers_abo_discount_recurring_to_date  = DATE_ADD(customers_abo_discount_recurring_to_date , INTERVAL 1 DAY)  where customers_id = '" . $customers_id . "'");		
+			tep_db_query("update customers set customers_abo_discount_recurring_to_date  = DATE_ADD(now(), INTERVAL " . $code_disc['discount_recurring_nbr_of_month'] . " MONTH)  where customers_id = '" . $customers_id . "'");
+			tep_db_query("update customers set customers_abo_discount_recurring_to_date  = DATE_ADD(customers_abo_discount_recurring_to_date , INTERVAL 1 DAY)  where customers_id = '" . $customers_id . "'");
 		}
 	}
-	
+
 	tep_db_query("update products set products_quantity  = products_quantity - 1, products_ordered  = products_ordered + 1 where products_id = '" . $products_id. "' ");
-		
+
 	tep_db_query("update customers set customers_abo  = 1 , customers_registration_step=100 , customers_abo_payment_method  = ".$type_payment." , customers_abo_rank  = 10 , customers_abo_type  = '" . $products_id. "',  customers_next_abo_type = '" . $next_abo_type. "' , customers_abo_start_rentthismonth  =0 where customers_id = '" . $customers_id . "'");
-	
+
 	//RALPH-001 START
 	//ogone payment
 	$price=$products_abo['products_price'];
-	
+
 	$final_price=abo_price($code_disc['discount_type'],$discount_code_id,$code_disc['discount_value'],$price);
 	if($final_price>0)
 	{
@@ -1911,15 +1912,15 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	}
 	if ($code_disc['abo_dvd_credit'] > 0 )
 	{
-		
+
 		credit_history($customers_id  , $customers['customers_abo_dvd_credit'],$code_disc['abo_dvd_credit'],$credit_history_type);
 		if($code_disc['abo_dvd_remain']>0)
 		{
 			$sql = "update customers set customers_abo_dvd_credit  = ". $code_disc['abo_dvd_credit']." ,customers_abo_dvd_remain = ".$code_disc['abo_dvd_remain'].", customers_abo_dvd_norm  =". $products_abo['qty_at_home'].", customers_abo_dvd_adult=0 where customers_id = '" . $customers_id . "'";
 			tep_db_query($sql);
-			
+
 		}
-		else 
+		else
 		{
 			$sql="update customers set customers_abo_dvd_credit  = customers_abo_dvd_credit + ". $code_disc['abo_dvd_credit']." , customers_abo_dvd_norm  =". $products_abo['qty_at_home']." where customers_id = '" . $customers_id . "'";
 			tep_db_query($sql);
@@ -1941,10 +1942,10 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 			tep_db_query($sql);
 		}
   }
-	
+
 	if($final_price>0)
 	{
-    
+
 	  if($type_payment == 4)
 	  {
 	    $nvpstr="&AMT=$final_price&CURRENCYCODE=EUR&PAYMENTACTION=SALE&REFERENCEID=$reference_id";
@@ -1970,9 +1971,9 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
       {
         $payment_id = 2;
       }
-      
-      
-      
+
+
+
 	  }
 	  else
 	  {
@@ -1985,21 +1986,21 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 		  $sql_paypal_hist = "insert into paypal_payments_history (payment_id, pp_request, pp_response, created_date, message, customer_id) values (".$id.", '".$nvpstr."' , '".serialize($resArray)."', NOW(),'".$resArray["ACK"]."', ".$customers_id.")";
 		  tep_db_query($sql_paypal_hist);
 	  }
-		
-		tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 7, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "' ) "); 
+
+		tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 7, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "' ) ");
 	}
 	else
 	{
-		tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 17, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') "); 
-		
+		tep_db_query("insert into abo (Customerid, Action ,  Date , product_id, payment_method, site) values ('" . $customers_id . "', 17, now(), '" . $products_id. "' , '".$method_payment."', '" . $site. "') ");
+
 	}
 	//belgiqueloisirs_id
-	if (strlen($belgiqueloisirs_id > 0 )){		
-		tep_db_query("update customers set belgiqueloisirs_id = '" . $belgiqueloisirs_id . "' where customers_id = '" . $customers_id . "'");		
+	if (strlen($belgiqueloisirs_id > 0 )){
+		tep_db_query("update customers set belgiqueloisirs_id = '" . $belgiqueloisirs_id . "' where customers_id = '" . $customers_id . "'");
 	}
   	$product_info = tep_db_query("select p.products_id, pd.products_name, pd.products_description, p.products_model, p.products_quantity, p.products_image, pd.products_image_big, pd.products_url, p.products_price, p.products_tax_class_id, p.products_date_added, p.products_date_available, p.manufacturers_id from " . TABLE_PRODUCTS . " p, " . TABLE_PRODUCTS_DESCRIPTION . " pd where p.products_id = '" . $products_id. "' and pd.products_id = '" . $products_id. "' and pd.language_id = '".$languages_id."' ",'db_link',true);
-  	$product_info_values = tep_db_fetch_array($product_info);					  		
-	
+  	$product_info_values = tep_db_fetch_array($product_info);
+
 	$promotion = promotion($products_id, $next_abo_type, 'D', $discount_code_id);
 	$promotion2 = promotion($products_id, $next_abo_type, 'D', $discount_code_id,2,$languages_id);
 	$data=array();
@@ -2007,7 +2008,7 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	$gender_sql = "select * from  dvdpost_common.translation2 where translation_key = '".$type_gender."' and language_id = ".$languages_id;
 	$gender_query = tep_db_query($gender_sql);
 	$gender_value = tep_db_fetch_array($gender_query);
-	
+
 	$data['gender_simple'] = $gender_value['translation_value'];
 	$data['customers_name'] = $customers['customers_firstname'] . ' ' . $customers['customers_lastname'];
 	$data['email'] = $customers['customers_email_address'];
@@ -2017,14 +2018,14 @@ function registration_discount($discount_code_id,$customers_id,$products_id,$sit
 	$data['abo_price'] = $price;
 	$data['subscription'] = $products_abo['products_model'];
 	$data['general_conditions'] = $conditions;
-/*	
+/*
 	if($final_price>0)
 	{
 		$formating['text'] = str_replace('<tr id="promo">', '<tr id="promo" style="display:none">',$formating['text']);
 	}
 */
 	mail_message($customers_id, $mail_message, $data );
-	
+
 }
 function products_link($lang,$title,$id)
 {
@@ -2110,7 +2111,7 @@ function cats_link($lang,$title,$parent_title='')
 	$name=ponctuation_link(replace_accents(strtolower($title)));
 	$name=(($name=='vampires___creatures')?'vampires':$name);
 	$name=(($name=='vampieren_en_monsters')?'vampieren':$name);
-	
+
 	if($id==16||$id==18||$id==19)
 	{
 		switch($language_id)
@@ -2126,7 +2127,7 @@ function cats_link($lang,$title,$parent_title='')
 			break;
 		}
 	}
-	
+
 	return '/'.$lang.'/'.$cat.((!empty($parent_title))?'/'.ponctuation_link(replace_accents(strtolower($parent_title))):'').'/'.$name;
 }
 function get_cats($id,$list,$lang='fr',$type="DVD_NORM")
@@ -2148,19 +2149,19 @@ function get_cats($id,$list,$lang='fr',$type="DVD_NORM")
 	}
 	if($type=='DVD_ADULT')
 	{
-		$cat.='/adult';	
+		$cat.='/adult';
 	}
 	if($id>0)
 	{
-		
+
 	$sql="SELECT l.code, (SELECT cd2.categories_name
 	FROM categories_description cd2
 	WHERE c.parent_id = cd2.categories_id
 	AND cd2.language_id = cd.language_id
 	) AS parent_name, categories_name,c.categories_id
 	FROM categories c
-	JOIN categories_description cd ON ( c.categories_id = cd.categories_id ) 
-	JOIN languages l ON ( cd.language_id = l.languages_id ) 
+	JOIN categories_description cd ON ( c.categories_id = cd.categories_id )
+	JOIN languages l ON ( cd.language_id = l.languages_id )
 	WHERE product_type = 'Movie'
 	and c.categories_id =".$id." and language_id=".$language_id;
 	$query = tep_db_query($sql);
@@ -2171,7 +2172,7 @@ function get_cats($id,$list,$lang='fr',$type="DVD_NORM")
 	$name=(($name=='vampires_creatures')?'vampires':$name);
 	$name=(($name=='vampieren_en_monsters')?'vampieren':$name);
 
-		
+
 	//echo $sql;
 	//echo $categorie_value['parent_name'];
 	if($id==16||$id==18||$id==19)
@@ -2191,7 +2192,7 @@ function get_cats($id,$list,$lang='fr',$type="DVD_NORM")
 	}
 	if($categorie_value['parent_name']=="Hors film"||$categorie_value['parent_name']=="Andere"||$categorie_value['parent_name']=="Not movies")
 	{
-	$categorie_value['parent_name']='';	
+	$categorie_value['parent_name']='';
 	}
 	$parent_name=ponctuation_link2(replace_accents(strtolower($categorie_value['parent_name'])));
 	return '/'.$lang.'/'.$cat.'/'.((!empty($categorie_value['parent_name']))? $parent_name.'/':'').$name;
@@ -2212,7 +2213,7 @@ function get_cats($id,$list,$lang='fr',$type="DVD_NORM")
 			case 'awards':
 				$list='prime';
 			break;
-			
+
 		}
 		$title=array(
 		'5star'=>array('','5_etoiles','5_sterren','5_stars'),
@@ -2257,7 +2258,7 @@ function remove_get($get,$list)
 	}
 	$query=substr($query,1);
 	return $query;
-	
+
 }
 function check_points($customer_id)
 {
@@ -2270,9 +2271,9 @@ function check_points($customer_id)
 		$query_action=tep_db_query($sql_action);
 		if($row_son=tep_db_fetch_array($query_action))
 		{
-			
+
 			tep_begin();
-			$check1=tep_db_query("update customers set mgm_points= mgm_points + ".$row['expected_points']." where customers_id = '" . $customer_id . "' ",'db_link',true);	    	    				
+			$check1=tep_db_query("update customers set mgm_points= mgm_points + ".$row['expected_points']." where customers_id = '" . $customer_id . "' ",'db_link',true);
 			//insert into point history
 			$check2=tep_db_query("insert into  customers_points_history (customers_id, date, action, sub_action, points ) values ('" . $customer_id . "', now(), 1, 1, ".$row['expected_points'].") ",'db_link',true);
 			$sql_update='update mem_get_mem_used set points='.$row['expected_points'].' where father_id ='.$customer_id.' and son_id = '.$row['son_id'];
@@ -2299,7 +2300,7 @@ function check_stop($customer_id)
 		$query_action=tep_db_query($sql_action);
 		if($row_son=tep_db_fetch_array($query_action))
 		{
-			
+
 			$sql_update='update mem_get_mem_used set expected_points=0, son_abo_type=0 where father_id ='.$customer_id.' and son_id = '.$row['son_id'];
 			$check3=tep_db_query($sql_update,'db_link',true);
 		}
@@ -2316,45 +2317,45 @@ function parrainage($customer_id,$type)
 	}
 	else if ($type == 'stop')
 	{
-		$point=' expected_points = 0 ';	
-		$points='points';	
+		$point=' expected_points = 0 ';
+		$points='points';
 		$class='red';
 		$text=TEXT_ABO_STOP;
 	}
 	else
 	{
-		$point=' points > 0 ';	
-		$points='points';	
+		$point=' points > 0 ';
+		$points='points';
 		$class='odd';
 		$text='<img alt="" src="images/check.gif">'.PAYED_STATUS;
 	}
-	$sql="select c.customers_firstname , c.customers_lastname , s.date as date1 , su.date as date2, su.son_abo_type,points, expected_points 
+	$sql="select c.customers_firstname , c.customers_lastname , s.date as date1 , su.date as date2, su.son_abo_type,points, expected_points
 	from mem_get_mem_used su
-	left join mem_get_mem s on su.father_id=s.customers_id 
+	left join mem_get_mem s on su.father_id=s.customers_id
 	left join customers c on  su.son_id=c.customers_id where father_id= '".$customer_id."' and ".$point."  group by c.customers_lastname order by date2 DESC";
 	$query_sponsoring = tep_db_query($sql);
 	while ($query_sponsoring_values = tep_db_fetch_array($query_sponsoring)) {
-		
-		
+
+
 		if($query_sponsoring_values['date1'] == null)
 			$query_sponsoring_values['date1']=$query_sponsoring_values['date2'];
 		if(empty($query_sponsoring_values['customers_lastname']))
 		{
 			$query_sponsoring_values['customers_lastname']='&nbsp;';
-		}	
+		}
 		if(empty($query_sponsoring_values['customers_firstname']))
 		{
 			$query_sponsoring_values['customers_firstname']='&nbsp;';
-		}	
+		}
 			echo '<tr>
 				<td class="'.$class.'">'.ucwords($query_sponsoring_values['customers_lastname']).'</td>
 				<td class="'.$class.'">'.ucwords($query_sponsoring_values['customers_firstname']).'</td>
 				<td class="'.$class.' brdr">'.substr($query_sponsoring_values['date1'], 0, 10).'</td>
 				<td class="'.$class.' brdr">'.$text.'</td>
 				<td class="'.$class.' brdr"><strong>'.$query_sponsoring_values[$points].'Pts</strong></td>
-			</tr>	'		;					
+			</tr>	'		;
 	}
-	
+
 }
 function gift($customer_id,$type,$lang_short,$languages_id)
 {
@@ -2367,12 +2368,12 @@ function gift($customer_id,$type,$lang_short,$languages_id)
 	}
 	else
 	{
-		$date='gift_sent_date';	
-		$status='1';	
+		$date='gift_sent_date';
+		$status='1';
 		$class='odd';
 		$text=GIFT_SEND;
 	}
-	$sql="SELECT * FROM mem_get_mem_gift_history m 
+	$sql="SELECT * FROM mem_get_mem_gift_history m
 	join mem_get_mem_gift mg on
 	m.gift_id = mg.mem_get_mem_gift_id
 	 where customers_id = ".$customer_id." and gift_sent= ".$status." order by 1 DESC";
@@ -2397,7 +2398,7 @@ function gift($customer_id,$type,$lang_short,$languages_id)
 							<td class="'.$class.' brdr"><strong>'. $query_sponsoring_values['points'].'Pts</strong></td>
 		  		</tr>	';
 	}
-	
+
 }
 function dvd_finally_arrived($orders_id,$customer_id,$languages_id=1)
 {
@@ -2417,7 +2418,7 @@ function dvd_finally_arrived($orders_id,$customer_id,$languages_id=1)
 	}
 	else
 	{
-	    $custserv_message_query = tep_db_query("select * from " . TABLE_CUSTSERV_AUTO_ANSWER . " where language_id = '" . $languages_id . "' and custserv_auto_answer_id = 20 ");  
+	    $custserv_message_query = tep_db_query("select * from " . TABLE_CUSTSERV_AUTO_ANSWER . " where language_id = '" . $languages_id . "' and custserv_auto_answer_id = 20 ");
 	    $custserv_message = tep_db_fetch_array($custserv_message_query);
 
 	    //insert cust serv avec admin auto
@@ -2426,20 +2427,20 @@ function dvd_finally_arrived($orders_id,$customer_id,$languages_id=1)
 
 	    tep_db_query("INSERT INTO " . TABLE_CUSTSERV_DELAYED_FINNALYARRIVED . " (custserv_id, customers_id , customer_date , orders_id, products_id , dvd_id) VALUES ('" . $insert_id . "','" . $customer_id . "', now(), '" . $orders_id . "', '" . $pid . "', '" . $dvdid . "' )");
 
-    
+
 	   tep_db_query("UPDATE products_dvd SET products_dvd_status = 1 WHERE products_id = '" . $pid . "' AND products_dvdid = '" . $dvdid . "'"); //BEN001
 
 	    //set orders delayed
-	    tep_db_query("update " . TABLE_ORDERS . " set orders_status = 2 where orders_id= '" . $orders_id . "' "); 
-	    tep_db_query("insert into " . TABLE_ORDERS_STATUS_HISTORY . "  (orders_id, new_value, old_value, date_added, customer_notified ) values ('" . $orders_id . "', 2, 17, now(), 1) "); 
-	    tep_db_query("update " . TABLE_ORDERS_PRODUCTS . " set orders_products_status = 1 where products_id = '" . $pid . "' and orders_id = '" . $orders_id . "' "); 
+	    tep_db_query("update " . TABLE_ORDERS . " set orders_status = 2 where orders_id= '" . $orders_id . "' ");
+	    tep_db_query("insert into " . TABLE_ORDERS_STATUS_HISTORY . "  (orders_id, new_value, old_value, date_added, customer_notified ) values ('" . $orders_id . "', 2, 17, now(), 1) ");
+	    tep_db_query("update " . TABLE_ORDERS_PRODUCTS . " set orders_products_status = 1 where products_id = '" . $pid . "' and orders_id = '" . $orders_id . "' ");
 
 	    //dvdathome!
 	    //BEN001 if ($pid > 9999) {
 		if (isAdult($pid)) { //BEN001
-	       tep_db_query("update " . TABLE_CUSTOMERS . " set customers_abo_dvd_home_adult = customers_abo_dvd_home_adult + 1  where customers_id = '" . $customer_id . "'  "); 
+	       tep_db_query("update " . TABLE_CUSTOMERS . " set customers_abo_dvd_home_adult = customers_abo_dvd_home_adult + 1  where customers_id = '" . $customer_id . "'  ");
 	    }else{
-	       tep_db_query(" update " . TABLE_CUSTOMERS . " set customers_abo_dvd_home_norm = customers_abo_dvd_home_norm + 1  where customers_id = '" . $customer_id . "' "); 
+	       tep_db_query(" update " . TABLE_CUSTOMERS . " set customers_abo_dvd_home_norm = customers_abo_dvd_home_norm + 1  where customers_id = '" . $customer_id . "' ");
 	    }
 	}
 }
@@ -2455,22 +2456,22 @@ function parrainage_classic($son_id)
 	if($son_verif_value['count']==0)
 	{
 		$query_mgm = tep_db_query("select * from mem_get_mem where email = '" . $son_value['customers_email_address'] . "' order by mem_get_mem_id limit 1",'db_link',true);
-		
-		if($query_mgm_value = tep_db_fetch_array($query_mgm)) 
+
+		if($query_mgm_value = tep_db_fetch_array($query_mgm))
 		{
 			if($query_mgm_value['mem_get_mem_id']>0)
 			{
 				$father = tep_db_query("select * from customers where customers_id = '" . $query_mgm_value['customers_id'] . "' ",'db_link',true);
-				$father_value = tep_db_fetch_array($father);	
+				$father_value = tep_db_fetch_array($father);
 				if ($father_value['customers_abo']>0)
 				{
-					
-					
 
-					
-					
-					tep_db_query("insert into mem_get_mem_used (date, father_id, father_abo_type, son_id , son_abo_type , points, expected_points) values (now(), '" . $query_mgm_value['customers_id'] . "', '" . $father_value['customers_abo_type'] . "', '" . $son_id . "', '" . $products_id. "', '0' ,'200')");	    	    				
-					
+
+
+
+
+					tep_db_query("insert into mem_get_mem_used (date, father_id, father_abo_type, son_id , son_abo_type , points, expected_points) values (now(), '" . $query_mgm_value['customers_id'] . "', '" . $father_value['customers_abo_type'] . "', '" . $son_id . "', '" . $products_id. "', '0' ,'200')");
+
 					$type_gender = (strtoupper($father_value['customers_gender']) == 'f' ? 'female_gender' : 'male_gender');
 					$gender_sql = "select * from  dvdpost_common.translation2 where translation_key = '".$type_gender."' and language_id = ".$father_value['customers_language'];
 					$gender_query = tep_db_query($gender_sql);
@@ -2499,15 +2500,15 @@ function parrainage_classic($son_id)
 		return array('status' => 'false', 'error'=> 9);
 	}
 }
-  // Fonction permettant de compter le nombre de jours ouvrés entre deux dates
+  // Fonction permettant de compter le nombre de jours ouvrï¿½s entre deux dates
   function get_nb_open_days($date_start, $date_stop) {
-  $arr_bank_holidays = array(); // Tableau des jours feriés
-  
-  // On boucle dans le cas où l'année de départ serait différente de l'année d'arrivée
+  $arr_bank_holidays = array(); // Tableau des jours feriï¿½s
+
+  // On boucle dans le cas oï¿½ l'annï¿½e de dï¿½part serait diffï¿½rente de l'annï¿½e d'arrivï¿½e
   $diff_year = date('Y', $date_stop) - date('Y', $date_start);
   for ($i = 0; $i <= $diff_year; $i++) {
   $year = (int)date('Y', $date_start) + $i;
-  // Liste des jours feriés
+  // Liste des jours feriï¿½s
   $arr_bank_holidays[] = '1_1_'.$year; // Jour de l'an
   $arr_bank_holidays[] = '1_5_'.$year; // Fete du travail
   $arr_bank_holidays[] = '21_7_'.$year; // Fete nationale
@@ -2515,8 +2516,8 @@ function parrainage_classic($son_id)
   $arr_bank_holidays[] = '1_11_'.$year; // Toussaint
   $arr_bank_holidays[] = '11_11_'.$year; // Armistice 1918
   $arr_bank_holidays[] = '25_12_'.$year; // Noel
-  
-  // Récupération de paques. Permet ensuite d'obtenir le jour de l'ascension et celui de la pentecote
+
+  // Rï¿½cupï¿½ration de paques. Permet ensuite d'obtenir le jour de l'ascension et celui de la pentecote
   //$easter = easter_date($year);
   //$arr_bank_holidays[] = date('j_n_'.$year, $easter + 86400); // Paques
   //$arr_bank_holidays[] = date('j_n_'.$year, $easter + (86400*39)); // Ascension
@@ -2525,7 +2526,7 @@ function parrainage_classic($son_id)
   //print_r($arr_bank_holidays);
   $nb_days_open = 0;
   while ($date_start < $date_stop) {
-  // Si le jour suivant n'est ni un dimanche (0) ou un samedi (6), ni un jour férié, on incrémente les jours ouvrés
+  // Si le jour suivant n'est ni un dimanche (0) ou un samedi (6), ni un jour fï¿½riï¿½, on incrï¿½mente les jours ouvrï¿½s
   if (!in_array(date('w', $date_start), array(0, 6))
   && !in_array(date('j_n_'.date('Y', $date_start), $date_start), $arr_bank_holidays)) {
   $nb_days_open++;
@@ -2550,7 +2551,7 @@ function wishlist_form($language='french',$languages_id=1,$customer_id=0,$type='
 					<B class="TYPO_STD_BLACK"><?php    echo TEXT_ADVICE; ?></B>
 				</td>
 				<td  width="176" height="35" align ="center" background="<?php    echo DIR_WS_IMAGES;?>img_recom/top_line_recom3.gif">
-	      			<table width="176" height="27" border="0" align="center" cellpadding="0" cellspacing="0"> 
+	      			<table width="176" height="27" border="0" align="center" cellpadding="0" cellspacing="0">
 		      			<tr>
 							<td width="53" align ="center">
 								<img src="<?php    echo DIR_WS_IMAGES;?>high.gif" width="27" height="27">
@@ -2568,12 +2569,12 @@ function wishlist_form($language='french',$languages_id=1,$customer_id=0,$type='
 					<B class="TYPO_STD_BLACK"><?php    echo TEXT_REMOVE; ?></B>
 				</td>
 		  		<td width="14" height="35" valign="top" ><img src="<?php    echo DIR_WS_IMAGES;?>img_recom/top_right_recom3.gif" width="14" height="35"></td>
-		 	  </tr>    	  
-			 		<?php   
+		 	  </tr>
+			 		<?php
 					$sql="select distinct p.products_rating,p.rating_users,p.rating_count,w.already_rented,p.products_media, pd.products_name, p.products_next, p.products_availability, w.wl_id, w.rank, w.priority, w.product_id, date_format(p.products_date_available,'%d/%m/%Y') day,p.imdb_id from " . TABLE_WISHLIST . " w LEFT join " . TABLE_PRODUCTS . " p on p.products_id=w.product_id left join " . TABLE_PRODUCTS_DESCRIPTION . " pd on pd.products_id = w.product_id and pd.language_id='" . $languages_id . "' where w.customers_id = '" . $customer_id . "' and w.wishlist_type = 'DVD_NORM' and products_status !=-1 ".(($type=='normal')?' and products_next=0 ':' and products_next!=0 ')."order by w.priority, pd.products_name";
 					#echo $sql;
-					$wl_query = tep_db_query($sql); 
-	      			$i=1;				
+					$wl_query = tep_db_query($sql);
+	      			$i=1;
 					while ($wl = tep_db_fetch_array($wl_query)) {
 						if ($i % 2 ==0){$bcolor='#F2F2F2'; }
 						else {$bcolor='#FFFFFF'; }
@@ -2585,12 +2586,12 @@ function wishlist_form($language='french',$languages_id=1,$customer_id=0,$type='
 	      				<tr align="center">
 							<td background="<?php    echo DIR_WS_IMAGES.'img_recom/left_line_recom_transpa.gif';?>" bgcolor="<?php    echo $bcolor;?>">
 								<img src="<?php    echo DIR_WS_IMAGES;?>blank.gif" width="14">
-							</td>						
+							</td>
 	        				<td width="300" align="left" bgcolor="<?php    echo $bcolor;?>" height="32">
 	          					<a class="basiclink" href="product_info.php?products_id=<?php    echo $wl['product_id']; ?>">
 	            				<b><font color="#000000"><?php    echo $wl['products_name'];?></font></b>
 	          					</a>
-	          					<?php   
+	          					<?php
 	          					echo '<img src="'.DIR_WS_IMAGES.'blank.gif" border="0" align="absmiddle" width="15" height="2">';
 
 	            				if ($wl['already_rented']=='YES'){
@@ -2601,9 +2602,9 @@ function wishlist_form($language='french',$languages_id=1,$customer_id=0,$type='
 							<td width="26" class="TYPO_STD_BLACK" bgcolor="<?php    echo $bcolor;?>">
 								<?php echo '<img src="'.DIR_WS_IMAGES.'canvas/'.$wl['products_media'].'.png" border="0" align="absmiddle" width="26" alt="'.strtolower($wl['products_media']).'" title="'.strtolower($wl['products_media']).'">'; ?>
 
-							</td>	
+							</td>
 	        				<td width="142" class="TYPO_STD_BLACK" bgcolor="<?php    echo $bcolor;?>">
-		          				<?php   
+		          				<?php
 		            			if ($wl['products_next'] > 0 ){
 		              				echo ' (' . TEXT_PRODUCTS_NEXT . $wl['day'] . ')';
 		            			}else{
@@ -2612,21 +2613,21 @@ function wishlist_form($language='french',$languages_id=1,$customer_id=0,$type='
 									}else{
 		              					$data_avg_count=avg_count_fct($wl['rating_users'],$wl['rating_count']);
 										$jsrate=$data_avg_count['avg'];
-									if ($jsrate==0){ 
-										echo '<a href="' . FILENAME_PRODUCT_REVIEWS_WRITE . '?cPath=21&products_id='. $wl['product_id'] .'">' . tep_image_button('button_write_review.gif', IMAGE_BUTTON_WRITE_REVIEW) . '</a>';						
-	//									echo '<a href="' . FILENAME_PRODUCT_REVIEWS_WRITE . '?cPath=21&products_id='. $wl['product_id'] .'">' . '<img border="0" src="' .DIR_WS_IMAGES_LANGUAGES . $language.'/images/buttons/button_write_review.gif">' . '</a>';						
+									if ($jsrate==0){
+										echo '<a href="' . FILENAME_PRODUCT_REVIEWS_WRITE . '?cPath=21&products_id='. $wl['product_id'] .'">' . tep_image_button('button_write_review.gif', IMAGE_BUTTON_WRITE_REVIEW) . '</a>';
+	//									echo '<a href="' . FILENAME_PRODUCT_REVIEWS_WRITE . '?cPath=21&products_id='. $wl['product_id'] .'">' . '<img border="0" src="' .DIR_WS_IMAGES_LANGUAGES . $language.'/images/buttons/button_write_review.gif">' . '</a>';
 									}
 									else {
 
 										echo  '<img src="'. DIR_WS_IMAGES . 'starbar/stars_1_'. $jsrate .'.gif">';
-										}								
+										}
 									}
 								}
 		          				?>
-	        				</td>        				
+	        				</td>
 	        				<td width="176" bgcolor="<?php    echo $bcolor;?>">
 		        				<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-			        				<tr align="center">	<input type='hidden' name='id[]' value='<?php    echo $wl['wl_id']; ?>' /> 
+			        				<tr align="center">	<input type='hidden' name='id[]' value='<?php    echo $wl['wl_id']; ?>' />
 				        					<td width="53">
 													<label title="<?php   echo TEXT_PRIORITY_H ;?>">
 														<input type='hidden' name='rank_original<?php    echo $wl['wl_id']; ?>' value='h' />
@@ -2646,7 +2647,7 @@ function wishlist_form($language='french',$languages_id=1,$customer_id=0,$type='
 
 		        				  </tr>
 	        				  </table>
-							</td>	
+							</td>
 	        				<td width="100" bgcolor="<?php    echo $bcolor;?>">
 	 	         				<label title="<?php   echo TEXT_REMOVE ;?>">
 	 	         					<INPUT type="radio" id="rank<?php    echo $wl['wl_id']; ?>" name="priority<?php    echo $wl['wl_id']; ?>" value="del" alt="<?php   echo TEXT_REMOVE ;?>">
@@ -2656,16 +2657,16 @@ function wishlist_form($language='french',$languages_id=1,$customer_id=0,$type='
 								<img src="<?php    echo DIR_WS_IMAGES;?>blank.gif" width="14">
 							</td>
 						</tr>
-						<?php   
-						$i++; 
-						} 
+						<?php
+						$i++;
+						}
 						?>
 			<tr>
 				<td height="14"><img src="<?php    echo DIR_WS_IMAGES;?>img_recom/back_left_recom.gif" width="14" height="14"></td>
 	      		<td colspan="5" background="<?php    echo DIR_WS_IMAGES;?>img_recom/back_line_recom.gif">
 					<img src="<?php    echo DIR_WS_IMAGES;?>blank.gif" width="14" height="3"></td>
 	      		<td><img src="<?php    echo DIR_WS_IMAGES;?>img_recom/back_right_recom.gif" width="14" height="14"></td>
-			</tr> 
+			</tr>
 
 
 	<?php
@@ -2676,10 +2677,10 @@ function abo_price($discount_type,$discount_code_id,$discount_value,$price)
 		case 1: // - X%
 			$final_price  = round($price  - ($discount_value  / 100 * $price ),2)  ;
 		break;
-		case 2: //tot=x euro 
+		case 2: //tot=x euro
 					$final_price =  $discount_value;
 		break;
-		case 3: //tot=tot - x euro 
+		case 3: //tot=tot - x euro
 			$final_price = ($price - $discount_value)  ;
 		break;
 		default:
@@ -2706,9 +2707,9 @@ function credit_history($customers_id, $credit, $quantity, $type_id=0)
   else
  {
   $credit_paid=0;
- }	
+ }
 	$sql='insert into credit_history (customers_id,credit_action_id,credit_paid,credit_free,quantity_free,user_modified) values ('.$customers_id.','.$type_id.','.$credit_paid.','.$credit_free.','.$quantity.',55);';
-	
+
 	return tep_db_query($sql);
 }
 function truncate($text,$numb,$etc = "...") {
@@ -2741,7 +2742,7 @@ function last_login($customer_id)
   else
   {
 		$sql_change="INSERT INTO customer_attributes (customer_id, number_of_logins, last_login_at, created_at, updated_at) VALUES (".$customer_id.",1,now(),now(),now())";
-  }	
+  }
 	return tep_db_query($sql_change);
 }
 
@@ -2749,7 +2750,7 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 {
   if($title ==2)
   {
-    
+
   $sql= 'select translation_key as cfgKey, translation_value as cfgValue from dvdpost_common.translation2 where language_id = ' . intval($lang) . ' and translation_page="root" and (site_host_id  = ' . SITE_HOST_ID . ' or site_host_id  = ' . WEBSITE . ' or site_host_id =0 )  order by FIELD(site_host_id,'.SITE_HOST_ID.','.WEBSITE.',0 )';
   #echo $sql;
   $translation_query = tep_db_query($sql);
@@ -2758,21 +2759,21 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
   	define($translation['cfgKey'], $translation['cfgValue']);
   }
   }
-  
+
 	$sql = "SELECT p.products_price, pa.qty_credit,qty_at_home from products p LEFT JOIN products_abo pa on pa.products_id=p.products_id  WHERE p.products_id='".$current_products_id. "'";
 	$current_products_query = tep_db_query($sql);
 	$current_products_values = tep_db_fetch_array($current_products_query);
 	$current_credits=$current_products_values['qty_credit'];
 	$promo_type = (($current_credits == 0) ? 'unlimited':'freetrial');
-	
-	
+
+
 	$products_query = tep_db_query("SELECT p.products_price, pa.qty_credit,qty_at_home from products p LEFT JOIN products_abo pa on pa.products_id=p.products_id  WHERE p.products_id='".$next_abo_type. "'");
 	$products_values = tep_db_fetch_array($products_query);
 	$credits=$products_values['qty_credit'];
 	$price_abo=$products_values['products_price'];
 	$rotation = $products_values['qty_at_home'];
 	if ($discount_type=='A'){
-	  
+
 		//ACTIVATION VIA OGONE
 		$activation_query = tep_db_query("SELECT * FROM activation_code WHERE activation_id ='".$promo_id. "'");
 		$activation_values = tep_db_fetch_array($activation_query);
@@ -2787,19 +2788,19 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 		}
 		$activation_text = activation_text($activation_values, SHORT);
 		switch ($activation_values['validity_type']){
-			case 1:	
+			case 1:
 				$duration = '<span class="red_font">'.$activation_values['validity_value'].' '.TEXT_DAYS.'</span>';
 				$period =  $credits.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-				
+
 			break;
-			case 2:	
+			case 2:
 				$duration = '<span class="red_font">'.$activation_values['validity_value'].' '.TEXT_MONTHS.'</span>';
 				$period = $credits.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
 			break;
-			case 3:	
+			case 3:
 				$duration = '<span class="red_font">'.$activation_values['validity_value'].' '.TEXT_YEAR.'</span>';
 				$period = $credits.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
-				
+
 			break;
 		}
 	}else{
@@ -2813,46 +2814,46 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
 			$abo_dvd_credit=$credits;
 		$nb = $discount_values['discount_recurring_nbr_of_month']> 0 ? ($discount_values['discount_recurring_nbr_of_month'] +1)  : $discount_values['discount_abo_validityto_value'];
 		switch ($discount_values['discount_abo_validityto_type']){
-			case 1:	
+			case 1:
 				$duration = '<span class="red_font">'.$nb.' '.TEXT_DAYS.'</span>';
 			break;
-			case 2:	
+			case 2:
 				$duration = '<span class="red_font">'.$nb.' '.TEXT_MONTHS.'</span>';
 			break;
-			case 3:	
+			case 3:
 				$duration = '<span class="red_font">'.$nb.' '.TEXT_YEAR.'</span>';
-				
+
 			break;
-			
+
 		}
 		if($abo_dvd_max > 0)
 		{
-			$period = $abo_dvd_max.' DVD/BLU-RAY/VOD & '.($abo_dvd_credit-$abo_dvd_max).' '.TEXT_FILMS_VOD.' '.TEXT_FOR.' '.$duration;			
+			$period = $abo_dvd_max.' DVD/BLU-RAY/VOD & '.($abo_dvd_credit-$abo_dvd_max).' '.TEXT_FILMS_VOD.' '.TEXT_FOR.' '.$duration;
 		}
 		else
 		{
-			$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;			
+			$period = $abo_dvd_credit.' '.TEXT_FILMS.' '.TEXT_FOR.' '.$duration;
 		}
-		
+
 		$period_next = $credits.' '.TEXT_FILMS.' '.TEXT_PER.' '.TEXT_MONTH.', '. $rotation.' '.TEXT_FILMS.' '.AT_TIME.' &euro; '.$price_abo;
-		
+
 	}
-	
+
 	if ($promo_type == 'pre_paid') {
 		if ($title == 1)
 			return TEXT_ACTIVE_PROMO." :<br/> ".$period;
 		else
 			return $period;
-		
+
 	}
 	else
-	{ 
+	{
 		if($abo_dvd_credit!=10000)
 		{
       if(!empty($discount_text))
       {
         return $discount_text;
-      } 
+      }
 		  if($discount_values['discount_type']==1 && $discount_values['discount_value'] > 0)
 		  {
 		    return !empty($discount_text)? $discount_text : "<strong>-".round($discount_values['discount_value']).TEXT_PAID_PERCENT.' '.(intval($discount_values['discount_recurring_nbr_of_month'])+1).' '.TEXT_MONTHS."</strong>";
@@ -2899,16 +2900,16 @@ function promotion($current_products_id, $next_abo_type, $discount_type, $promo_
   				    return "<strong>".TRIAL."</strong>: <span class='red_font'>".$period.'</span>';
   				  }
 				  }
-				}else{ 
+				}else{
 					return sprintf(UNLIMITED, $duration, $abo_dvd_credit);
 				}
-			}			
+			}
 		}
 		else
 		{
 			return "";
 		}
-	} 
+	}
 
 }
 
@@ -2933,7 +2934,7 @@ function format($text,$data,$set_dico = true)
 		$text = str_replace('$$$'.$item.'$$$',$data[$item],$text);
 		if($set_dico == true)
 		{
-			if (strpos($dico, $item) === false) 
+			if (strpos($dico, $item) === false)
 			{
 				$dico.= '$$$'.$item.'$$$'.':::'.$data[$item].';;;';
 			}
@@ -2960,7 +2961,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
     else
     {
       $data['host'] = 'www.dvdpost.be';
-      $data['host_private'] = 'private.dvdpost.be';  
+      $data['host_private'] = 'private.dvdpost.be';
     }
   }
   if($site == 'plush')
@@ -2990,7 +2991,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 	$category_id = $mail_values['category_id'];
 	if($site == 'plush')
 	{
-	  $email = $customers['email'];  
+	  $email = $customers['email'];
 	}
 	else
 	{
@@ -2998,7 +2999,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 	}
 	 #tep_mail('gs@dvdpost.be', 'gs@dvdpost.be', 'mail 645', $data['final_price'].'. .'.$data['price'].'d '.($data['final_price']==$data['price']). ' dd'.($data['final_price'] !=0) , 'dvdpost@dvdpost.be', 'dvdpost@dvdpost.be');
 	if($mail_id == 645)
-	{ 
+	{
 	  if($data['final_price']==$data['price'] && $data['final_price'] !=0)
 		{
 			$email_text = preg_replace('/<span id="you_promo">(.*)<\/span>/s', '',$email_text);
@@ -3011,7 +3012,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 		$sql_insert="INSERT INTO `mail_messages_sent_history` (`mail_messages_sent_history_id` ,`date` ,`customers_id` ,`mail_messages_id`,`language_id` ,	`mail_opened` ,	`mail_opened_date` ,`customers_email_address`)	VALUES (NULL , now(), ".$customer_id.", '".$mail_id."', ".$customers['customers_language'].", '0', NULL , '".$email."'	);";
 		tep_db_query($sql_insert);
 		$history_id=tep_db_insert_id();
-    
+
 		$data['mail_messages_sent_history_id'] = $history_id;
 		$formating = format($email_text, $data);
 		$sql_up = 'update mail_messages_sent_history set lstvariable = "'.addslashes($formating['dico']).'" where mail_messages_sent_history_id = '.$history_id;
@@ -3027,7 +3028,7 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 		if($site == 'plush')
 		{
   		tep_mail_plush($customers['customers_firstname'] . ' ' . $customers['customers_lastname'], $recipient, $mail_values['messages_title'], $formating['text'], STORE_OWNER, STORE_OWNER_EMAIL_ADDRESS, '');
-		  
+
 		}
 		else
 		{
@@ -3038,10 +3039,10 @@ function mail_message($customer_id, $mail_id, $data, $site = 'dvdpost')
 	{
 		$history_id='NULL';
 	}
-		
+
 	$data['mail_messages_sent_history_id'] = 0;
-	$formating = format($email_text, $data);	
-	
+	$formating = format($email_text, $data);
+
 	$sql_insert = "INSERT INTO `tickets` (`created_at`, `updated_at`, `category_ticket_id`, `remove`, `customer_id`) VALUES(now(), now(), $category_id, 0, ".$customer_id.")";
 	tep_db_query($sql_insert);
 	$insert_id = tep_db_insert_id();
@@ -3065,7 +3066,7 @@ function age($date_naissance)
  {
 $arr1 = explode('/', $date_naissance);
 $arr2 = explode('/', date('d/m/Y'));
- 
+
 if(($arr1[1] < $arr2[1]) || (($arr1[1] == $arr2[1]) && ($arr1[0] <= $arr2[0])))
 return $arr2[2] - $arr1[2];
 return $arr2[2] - $arr1[2] - 1;

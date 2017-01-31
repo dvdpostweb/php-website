@@ -1,10 +1,36 @@
 <?php
 require('configure/application_top.php');
 /*plush*/
-if ( substr($_GET['orderID'], 0, 1) == 'p')
-{
+
+
+if ( substr($_GET['orderID'], 0, 1) == 'p') {
   include('ogone_plush.php');
 	die('ok');
+}
+
+if (substr($_GET['Alias_OrderId'], 0, 1) == 'p') {
+  $base = 'http://www.plush.be/api/v1/ogone_parameters_accepturl';
+  $Alias_AliasId = $_GET["Alias_AliasId"];
+  $Card_Brand = $_GET["Card_Brand"];
+  $Card_CardNumber = $_GET["Card_CardNumber"];
+  $Card_CardHolderName = $_GET["Card_CardHolderName"];
+  $Card_ExpiryDate = $_GET["Card_ExpiryDate"];
+  $Alias_OrderId = $_GET["Alias_OrderId"];
+  $Alias_StorePermanently = $_GET["Alias_StorePermanently"];
+  $SHASign = $_GET["SHASign"];
+  $data = array(
+    'Alias_AliasId' => $Alias_AliasId,
+    'Card_Brand' => $Card_Brand,
+    'Card_CardNumber' => $Card_CardNumber,
+    'Card_CardHolderName' => $Card_CardHolderName,
+    'Card_ExpiryDate' => $Card_ExpiryDate,
+    'Alias_OrderId' => $Alias_OrderId,
+    'Alias_StorePermanently' => $Alias_StorePermanently,
+    'SHASign' => $SHASign
+  );
+  $url = $base . '?' . http_build_query($data);
+  header("Location: $url");
+  exit;
 }
 
 $sql="select * from ogone_check where orderid = '" . $_GET['orderID'] . "' ";
