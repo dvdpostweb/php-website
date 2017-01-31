@@ -19,8 +19,8 @@ set :scm_verbose, true
 #############################################################
 
 set :user, "phpapp"
-set :domain, "binga"
-set :port, 50022
+set :domain, "217.112.190.50"
+set :port, 54051
 server domain, :app, :web
 role :db, domain, :primary => true
 
@@ -29,7 +29,7 @@ role :db, domain, :primary => true
 #############################################################
 
 set :scm, :git
-set :branch, "master"
+set :branch, "deploy"
 set :scm_user, 'dvdpost'
 set :repository, "git@github.com:dvdpost/php-website.git"
 set :deploy_via, :remote_cache
