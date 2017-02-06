@@ -46,6 +46,7 @@ namespace :deploy do
 
     db_config = <<-EOF
     <?php 
+    
 	$links=array();
 	function tep_db_connect($server = DB_SERVER, $username = DB_SERVER_USERNAME, $password = DB_SERVER_PASSWORD, $database = DB_DATABASE, $link = 'db_link') 
 	{
