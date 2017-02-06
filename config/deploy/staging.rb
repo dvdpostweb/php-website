@@ -3,7 +3,7 @@
 #############################################################
 
 set :application, "phpapp"
-set :deploy_to, "/data/sites/benelux/php_app"
+set :deploy_to, "/data/sites/benelux/php_app_staging"
 
 #############################################################
 #	Settings
